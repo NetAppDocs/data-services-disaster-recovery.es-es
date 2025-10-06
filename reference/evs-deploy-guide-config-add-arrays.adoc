@@ -2,28 +2,28 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-config-add-arrays.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
-summary: Antes de utilizar NetApp Disaster Recovery, debe agregar instancias de almacenamiento alojadas en la nube y locales al sistema de consola de NetApp . 
+summary: Antes de utilizar NetApp Disaster Recovery, debe agregar instancias de almacenamiento alojadas en la nube y locales al sistema de NetApp Console . 
 ---
-= Agregue matrices locales al sistema de consola de NetApp para Amazon EVS con NetApp Disaster Recovery
+= Agregue matrices locales al sistema de NetApp Console para Amazon EVS con NetApp Disaster Recovery
 :allow-uri-read: 
 
 
 [role="lead"]
-Antes de utilizar NetApp Disaster Recovery, debe agregar instancias de almacenamiento alojadas en la nube y locales al sistema de consola de NetApp .
+Antes de utilizar NetApp Disaster Recovery, debe agregar instancias de almacenamiento alojadas en la nube y locales al sistema de NetApp Console .
 
 Necesitas hacer lo siguiente:
 
-* Agregue matrices locales a su sistema de consola NetApp .
-* Agregue instancias de Amazon FSx for NetApp ONTAP (FSx for ONTAP) a su sistema de consola NetApp .
+* Agregue matrices locales a su sistema de NetApp Console .
+* Agregue instancias de Amazon FSx for NetApp ONTAP (FSx for ONTAP) a su sistema de NetApp Console .
 
 
 
 
-== Agregue matrices de almacenamiento locales al sistema de consola de NetApp
+== Agregue matrices de almacenamiento locales al sistema de NetApp Console
 
-Agregue recursos de almacenamiento ONTAP locales a su sistema de consola NetApp .
+Agregue recursos de almacenamiento ONTAP locales a su sistema de NetApp Console .
 
-. Desde la página Sistemas de consola de NetApp , seleccione *Agregar sistema*.
+. Desde la página Sistemas de NetApp Console , seleccione *Agregar sistema*.
 +
 image:evs-canvas-add-working-env-1.png["Agregar sistema"]
 
@@ -51,11 +51,11 @@ image:evs-canvas-add-working-env-4-5.png["Agregar imagen del sistema"]
 
 
 
-== Agregue instancias de almacenamiento de Amazon FSx for NetApp ONTAP al sistema de consola de NetApp
+== Agregue instancias de almacenamiento de Amazon FSx for NetApp ONTAP al sistema de NetApp Console
 
-A continuación, agregue un recurso de almacenamiento de Amazon FSx for NetApp ONTAP a su sistema de consola NetApp .
+A continuación, agregue un recurso de almacenamiento de Amazon FSx for NetApp ONTAP a su sistema de NetApp Console .
 
-. Desde la página Sistemas de consola de NetApp , seleccione *Agregar sistema*.
+. Desde la página Sistemas de NetApp Console , seleccione *Agregar sistema*.
 +
 image:evs-canvas-add-working-env-1.png["Agregar imagen del sistema"]
 
@@ -68,7 +68,7 @@ image:evs-canvas-add-working-evs-2.png["Agregar imagen del sistema"]
 image:evs-canvas-add-working-evs-3.png["Agregar imagen del sistema"]
 
 . Seleccione las credenciales y la región de AWS que aloja la instancia de FSx para ONTAP .
-. Seleccione uno o más sistemas de archivos FSx para ONTAP que se agregarán.
+. Seleccione uno o más sistemas de archivos FSx para ONTAP que desea agregar.
 . Seleccione *Descubrir* en la parte inferior de la página.
 +
 image:evs-needs-updates-canvas-add-working-evs-4-5.png["Agregar imagen del sistema"]

@@ -20,8 +20,8 @@ La operación principal que posiblemente necesite realizar es la que espera que 
 La conmutación por error es un proceso iniciado manualmente.
 
 .Pasos para acceder a la operación de conmutación por error
-. Desde la barra de navegación izquierda de la consola de NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 
 
 .Pasos para realizar una conmutación por error
@@ -48,7 +48,7 @@ image:evs-rp-failover-dialog.png["Cuadro de diálogo de conmutación por error"]
 Una conmutación por error de prueba es similar a una conmutación por error, excepto por dos diferencias.
 
 * El sitio de producción todavía está activo y todas las máquinas virtuales siguen funcionando como se esperaba.
-* La protección de recuperación ante desastres de NetApp de las máquinas virtuales de producción continúa.
+* La protección de NetApp Disaster Recovery de las máquinas virtuales de producción continúa.
 
 
 Esto se logra mediante el uso de volúmenes ONTAP FlexClone nativos en el sitio de destino.  Para obtener más información sobre la conmutación por error de pruebas, consultelink:../use/failover.html["Conmutación por error de aplicaciones a un sitio remoto | Documentación de NetApp"] .
@@ -74,7 +74,7 @@ image:evs-test-failover-dialog.png["Cuadro de diálogo de prueba de conmutación
 
 == Ejecutar una verificación de cumplimiento
 
-Las comprobaciones de cumplimiento se ejecutan cada tres horas, de forma predeterminada.  En cualquier momento, es posible que desees ejecutar manualmente una verificación de cumplimiento.
+Los controles de cumplimiento se ejecutan cada tres horas, de forma predeterminada.  En cualquier momento, es posible que desees ejecutar manualmente una verificación de cumplimiento.
 
 .Pasos
 . Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
@@ -89,7 +89,7 @@ image:evs-rp-menu-compliance-check.png["Opción de menú Ejecutar verificación 
 
 == Actualizar recursos
 
-Cada vez que realice cambios en su infraestructura virtual (como agregar o eliminar máquinas virtuales, agregar o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos), deberá realizar una actualización de los clústeres de vCenter afectados en el servicio NetApp Disaster Recovery.  El servicio hace esto automáticamente una vez cada 24 horas de manera predeterminada, pero una actualización manual garantiza que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección contra desastres.
+Cada vez que realice cambios en su infraestructura virtual (como agregar o eliminar máquinas virtuales, agregar o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos), deberá realizar una actualización de los clústeres de vCenter afectados en el servicio NetApp Disaster Recovery .  El servicio hace esto automáticamente una vez cada 24 horas de manera predeterminada, pero una actualización manual garantiza que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección contra desastres.
 
 Hay dos casos en los que es necesaria una actualización:
 
@@ -97,7 +97,7 @@ Hay dos casos en los que es necesaria una actualización:
 * Actualización del plan de replicación: realice una actualización del plan de replicación cada vez que una máquina virtual se mueva entre almacenes de datos en el mismo clúster de vCenter de origen.
 
 
-image::evs-rp-menu-refresh-resources.png[Opción de menú Actualizar recursos]
+image::evs-rp-menu-refresh-resources.png[Opción Actualizar menú de recursos]
 
 
 
@@ -117,7 +117,7 @@ image::evs-rp-menu-migrate.png[Opción de menú Migrar]
 
 == Toma una instantánea ahora
 
-En cualquier momento, puede tomar una instantánea inmediata del plan de replicación.  Esta instantánea está incluida en las consideraciones de recuperación ante desastres de NetApp establecidas por el recuento de retención de instantáneas del plan de replicación.
+En cualquier momento, puede tomar una instantánea inmediata del plan de replicación.  Esta instantánea está incluida en las consideraciones de NetApp Disaster Recovery establecidas por el recuento de retención de instantáneas del plan de replicación.
 
 . Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
 . Para tomar una instantánea inmediata de los recursos del plan de replicación, seleccione *Tomar instantánea ahora* en el menú Acciones del plan de replicación:

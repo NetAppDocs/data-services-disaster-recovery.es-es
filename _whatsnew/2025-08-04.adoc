@@ -15,6 +15,6 @@ Esta versión incluye las siguientes actualizaciones:
 * Se eliminó una restricción que impedía que el volumen de destino fuera el mismo que el volumen de origen al crear el volumen como parte de la creación del plan de replicación.
 * Se agregó soporte para una suscripción de pago por uso (PAYGO) a NetApp Intelligent Services en Azure Marketplace y se agregó un vínculo a Azure Marketplace en el cuadro de diálogo de prueba gratuita.
 +
-Para más detalles, véase https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["Licencias de recuperación ante desastres de NetApp"] y https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
+Para más detalles, véase https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["Licencias de NetApp Disaster Recovery"] y https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
 
 

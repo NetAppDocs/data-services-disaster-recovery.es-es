@@ -4,20 +4,20 @@ permalink: reference/evs-deploy-guide-enable-draas.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  NetApp Disaster Recovery es un producto con licencia que debe adquirirse antes de poder usarse.  Existen varios tipos de licencias y varias formas de adquirirlas. 
 ---
-= Agregue el servicio NetApp Disaster Recovery a su cuenta de consola NetApp para Amazon EVS
+= Agregue el servicio NetApp Disaster Recovery a su cuenta de NetApp Console para Amazon EVS
 :allow-uri-read: 
 
 
 [role="lead"]
 NetApp Disaster Recovery es un producto con licencia que debe adquirirse antes de poder usarse.  Existen varios tipos de licencias y varias formas de adquirirlas.  Una licencia le da derecho a proteger una cantidad específica de datos durante un período de tiempo específico.
 
-Para obtener más información sobre las licencias de NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
+Para obtener más información sobre las licencias de NetApp Disaster Recovery , consultelink:../get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
 
 
 
 == Tipos de licencia
 
-Hay dos tipos de licencias principales:
+Hay dos tipos de licencia principales:
 
 * NetApp ofrece unalink:../get-started/dr-licensing.html["Licencia de prueba de 30 días"] que puede utilizar para evaluar NetApp Disaster Recovery utilizando sus recursos ONTAP y VMware.  Esta licencia proporciona 30 días de uso para una cantidad ilimitada de capacidad protegida.
 * Compre una licencia de producción si desea protección contra desastres más allá del período de prueba de 30 días.  Esta licencia se puede comprar a través de los mercados de cualquiera de los socios de nube de NetApp, pero para esta guía, recomendamos que compre su licencia de mercado para NetApp Disaster Recovery utilizando Amazon AWS Marketplace.  Para obtener más información sobre cómo comprar una licencia a través de Amazon Marketplace, consultelink:../get-started/dr-licensing.html["Suscríbete a través de AWS Marketplace"] .

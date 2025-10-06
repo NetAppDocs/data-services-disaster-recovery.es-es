@@ -12,16 +12,16 @@ summary: Antes de poder crear un plan de recuperación ante desastres, debe agre
 
 
 [role="lead"]
-Antes de poder crear un plan de recuperación ante desastres, debe agregar un servidor vCenter principal a un sitio y un sitio de recuperación ante desastres vCenter de destino en la consola de NetApp .
+Antes de poder crear un plan de recuperación ante desastres, debe agregar un servidor vCenter principal a un sitio y un sitio de recuperación ante desastres vCenter de destino en la NetApp Console.
 
 
-TIP: Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de consola de NetApp .
+TIP: Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de NetApp Console .
 
 Una vez agregados los vCenters, NetApp Disaster Recovery realiza un descubrimiento profundo de los entornos de vCenter, incluidos los clústeres de vCenter, los hosts ESXi, los almacenes de datos, la superficie de almacenamiento, los detalles de las máquinas virtuales, las réplicas de SnapMirror y las redes de máquinas virtuales.
 
-*Rol de consola de NetApp requerido* Administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 *Acerca de esta tarea*
 
@@ -58,10 +58,10 @@ NOTE: El servicio admite certificados de seguridad autofirmados o certificados d
 
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 +
-Accederá a la página del Panel de recuperación ante desastres de NetApp .  Cuando comience a utilizar el servicio, deberá agregar información de vCenter.  Más tarde, el Panel de control muestra datos sobre sus sitios y planes de replicación.
+Accederá a la página del Panel de NetApp Disaster Recovery .  Cuando comience a utilizar el servicio, deberá agregar información de vCenter.  Más tarde, el Panel de control muestra datos sobre sus sitios y planes de replicación.
 
 +
 
@@ -78,7 +78,7 @@ TIP: Si ya existen algunos sitios de vCenter y desea agregar más, en el menú s
 image:vcenter-add.png["Agregar captura de pantalla del servidor vCenter"]
 
 +
-** Seleccione un sitio, seleccione el agente de consola de NetApp y proporcione las credenciales de vCenter.
+** Seleccione un sitio, seleccione el agente de NetApp Console y proporcione las credenciales de vCenter.
 ** (Se aplica solo a sitios locales) Para aceptar certificados autofirmados para el vCenter de origen, marque la casilla.
 +
 
@@ -97,7 +97,7 @@ A continuación, agregará un vCenter de destino.
 .. Elija el sitio de destino y la ubicación.  Si el destino es la nube, seleccione *AWS*.
 +
 *** (Se aplica solo a sitios en la nube) *Token API*: Ingrese el token API para autorizar el acceso al servicio para su organización.  Cree el token API proporcionando roles de organización y servicio específicos.
-*** (Se aplica solo a sitios en la nube) *ID de organización larga*: Ingrese la ID única de la organización.  Puede identificar esta ID haciendo clic en el nombre de usuario en la sección Cuenta de la Consola de NetApp .
+*** (Se aplica solo a sitios en la nube) *ID de organización larga*: Ingrese la ID única de la organización.  Puede identificar esta ID haciendo clic en el nombre de usuario en la sección Cuenta de la NetApp Console.
 
 
 .. Seleccione *Agregar*.
@@ -139,7 +139,7 @@ El uso del mapeo de subredes es un proceso opcional de dos pasos:
 
 
 .Pasos
-. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. En el menú NetApp Disaster Recovery , seleccione *Sitios*.
 . De las accionesimage:icon-vertical-dots.png["Icono de acciones"] Icono de la derecha, seleccione *Agregar subred*.
 +
 image:dr-sites-subnet-menu.png["Agregar captura de pantalla del menú de subred"]
@@ -177,7 +177,7 @@ El uso del mapeo de subredes es un proceso opcional de dos pasos:
 
 
 .Pasos
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione *Agregar* para agregar un plan de replicación.
 . Complete los campos de la forma habitual agregando los servidores vCenter, seleccionando los grupos de recursos o aplicaciones y completando las asignaciones.
 . En la página Plan de replicación > Asignación de recursos, seleccione la sección *Máquinas virtuales*.
@@ -203,7 +203,7 @@ Si tiene vCenters de versiones anteriores y desea cambiar cuándo se ejecuta la 
 Si no desea programar la detección, puede deshabilitar la opción de detección programada y actualizar la detección manualmente en cualquier momento.
 
 .Pasos
-. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. En el menú NetApp Disaster Recovery , seleccione *Sitios*.
 . Seleccione el sitio que desea editar.
 . Seleccione las accionesimage:icon-vertical-dots.png["Icono de acciones"] icono de la derecha y seleccione *Editar*.
 . En la página Editar servidor vCenter, edite los campos según sea necesario.
@@ -221,7 +221,7 @@ image:sites-edit-schedule.png["Editar captura de pantalla del programa de descub
 Puede actualizar el descubrimiento manualmente en cualquier momento.  Esto es útil si ha agregado o eliminado máquinas virtuales y desea actualizar la información en NetApp Disaster Recovery.
 
 .Pasos
-. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. En el menú NetApp Disaster Recovery , seleccione *Sitios*.
 . Seleccione el sitio que desea actualizar.
 . Seleccione las accionesimage:icon-vertical-dots.png["Icono de acciones"] icono a la derecha y seleccione *Actualizar*.
 

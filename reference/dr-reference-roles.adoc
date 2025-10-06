@@ -22,9 +22,9 @@ El servicio utiliza los siguientes roles que son específicos de NetApp Disaster
 * *Visor de recuperación ante desastres*: ve información en NetApp Disaster Recovery, pero no puede realizar ninguna acción.
 
 
-Estos roles son específicos de NetApp Disaster Recovery y no son los mismos que los roles de plataforma que se utilizan en la consola de NetApp .  Para obtener detalles sobre todas las funciones de la plataforma NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["la documentación de configuración y administración de la consola de NetApp"^] .
+Estos roles son específicos de NetApp Disaster Recovery y no son los mismos que los roles de plataforma que se utilizan en la NetApp Console.  Para obtener detalles sobre todas las funciones de la plataforma NetApp Console , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["la documentación de configuración y administración de la NetApp Console"^] .
 
-La siguiente tabla indica las acciones que puede realizar cada rol de recuperación ante desastres de NetApp .
+La siguiente tabla indica las acciones que puede realizar cada rol de NetApp Disaster Recovery .
 
 [cols="30,20a,20a,20a,20a"]
 |===

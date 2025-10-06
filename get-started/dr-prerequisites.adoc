@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
 keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: Antes de utilizar NetApp Disaster Recovery, debe asegurarse de que su entorno cumpla con los requisitos de almacenamiento de ONTAP , clúster VMware vCenter y consola de NetApp . 
+summary: Antes de utilizar NetApp Disaster Recovery, debe asegurarse de que su entorno cumpla con los requisitos de almacenamiento de ONTAP , clúster VMware vCenter y NetApp Console . 
 ---
 = Requisitos previos de NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Antes de utilizar NetApp Disaster Recovery, debe asegurarse de que su e
 
 
 [role="lead"]
-Antes de utilizar NetApp Disaster Recovery, debe asegurarse de que su entorno cumpla con los requisitos de almacenamiento de ONTAP , clúster VMware vCenter y consola de NetApp .
+Antes de utilizar NetApp Disaster Recovery, debe asegurarse de que su entorno cumpla con los requisitos de almacenamiento de ONTAP , clúster VMware vCenter y NetApp Console .
 
 
 
@@ -83,19 +83,19 @@ Estos requisitos previos se aplican tanto a los clústeres de vCenter locales co
 
 
 
-== Requisitos previos de la consola de NetApp
+== Requisitos previos de la NetApp Console
 
 
 
-=== Comience a utilizar la consola de NetApp
+=== Comience a utilizar la NetApp Console
 
-Si aún no lo has hecho, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["Regístrese en la consola de NetApp y cree una organización"^] .
+Si aún no lo has hecho, https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["Regístrese en la NetApp Console y cree una organización"^] .
 
 
 
 === Recopilar credenciales para ONTAP y VMware
 
-* Las credenciales de Amazon FSx para ONTAP y AWS deben agregarse al sistema dentro del proyecto de consola de NetApp que se utilizará para administrar NetApp Disaster Recovery.
+* Las credenciales de Amazon FSx para ONTAP y AWS deben agregarse al sistema dentro del proyecto de NetApp Console que se utilizará para administrar NetApp Disaster Recovery.
 * NetApp Disaster Recovery requiere credenciales de vCenter.  Ingresa las credenciales de vCenter cuando agrega un sitio en NetApp Disaster Recovery.
 +
 Para obtener una lista de los privilegios de vCenter necesarios, consultelink:../reference/vcenter-privileges.html["Privilegios de vCenter necesarios para NetApp Disaster Recovery"] .  Para obtener instrucciones sobre cómo agregar un sitio, consultelink:../use/sites-add.html["Agregar un sitio"] .
@@ -104,13 +104,13 @@ Para obtener una lista de los privilegios de vCenter necesarios, consultelink:..
 
 
 
-=== Crear el agente de la consola de NetApp
+=== Crear el agente de la NetApp Console
 
 El agente de consola es un componente de software que permite que la consola se comunique con su almacenamiento ONTAP y los clústeres VMware vCenter.  Es necesario para que la recuperación ante desastres funcione correctamente.  El agente reside en su red privada (ya sea en un centro de datos local o en una VPC en la nube) y se comunica con sus instancias de almacenamiento de ONTAP y cualquier componente de servidor y aplicación adicional.  Para la recuperación ante desastres, este es el acceso a sus clústeres de vCenter administrados.
 
-Se debe configurar un agente de consola en la consola de NetApp .  Cuando utilice el agente, incluirá las capacidades adecuadas para el servicio de recuperación ante desastres.
+Se debe configurar un agente de consola en la NetApp Console.  Cuando utilice el agente, incluirá las capacidades adecuadas para el servicio de recuperación ante desastres.
 
-* NetApp Disaster Recovery solo funciona con la implementación del agente en modo estándar. Ver https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introducción a la consola de NetApp en modo estándar"^] .
+* NetApp Disaster Recovery solo funciona con la implementación del agente en modo estándar. Ver https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introducción a la NetApp Console en modo estándar"^] .
 * Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de consola.
 * Tipo de agente de consola necesario:
 +
@@ -123,7 +123,7 @@ TIP: Para conexiones locales a locales, utilice el agente de consola local.  Par
 ** El agente de consola instalado debe poder acceder a cualquier clúster de VMware que NetApp Disaster Recovery administrará.
 
 
-* Todas las matrices ONTAP que serán administradas por NetApp Disaster Recovery deben agregarse a cualquier sistema dentro del proyecto de la Consola NetApp que se utilizará para administrar NetApp Disaster Recovery.
+* Todas las matrices ONTAP que serán administradas por NetApp Disaster Recovery deben agregarse a cualquier sistema dentro del proyecto de la NetApp Console que se utilizará para administrar NetApp Disaster Recovery.
 +
 Ver https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Descubra los clústeres ONTAP locales"^] .
 

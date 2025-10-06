@@ -2,18 +2,18 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-install-connector.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  Si bien el conector se puede instalar en cualquiera de las ubicaciones de su red, para la recuperación ante desastres de NetApp recomendamos que instale el conector en el sitio de recuperación ante desastres.  Esto garantiza que, en caso de una falla del sitio principal, la interfaz de usuario de la consola de NetApp continúe teniendo contacto con el agente de la consola y pueda orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres. 
+summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  Si bien el conector se puede instalar en cualquiera de las ubicaciones de su red, para la NetApp Disaster Recovery recomendamos que instale el conector en el sitio de recuperación ante desastres.  Esto garantiza que, en caso de una falla del sitio principal, la interfaz de usuario de la consola de NetApp continúe teniendo contacto con el agente de la consola y pueda orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres. 
 ---
-= Instalar el agente de la consola de NetApp para NetApp Disaster Recovery
+= Instalar el agente de la NetApp Console para NetApp Disaster Recovery
 :allow-uri-read: 
 
 
 [role="lead"]
-Un agente de consola de NetApp es un software de NetApp que se ejecuta en su nube o red local.  Ejecuta las acciones que la consola de NetApp necesita realizar para administrar su infraestructura de datos.  El agente de consola sondea constantemente el software NetApp Disaster Recovery como una capa de servicio para detectar cualquier acción que deba tomar.
+Un agente de NetApp Console es un software de NetApp que se ejecuta en su nube o red local.  Ejecuta las acciones que la NetApp Console necesita realizar para administrar su infraestructura de datos.  El agente de consola sondea constantemente el software NetApp Disaster Recovery como una capa de servicio para detectar cualquier acción que deba tomar.
 
 Para NetApp Disaster Recovery, las acciones que se realizan orquestan los clústeres de VMware vCenter y las instancias de almacenamiento de ONTAP mediante API nativas para cada servicio respectivo a fin de brindar protección a las máquinas virtuales de producción que se ejecutan en una ubicación local.  Si bien el agente de consola se puede instalar en cualquiera de las ubicaciones de su red, para NetApp Disaster Recovery recomendamos que instale el agente de consola en el sitio de DR.  Esto garantiza que, en caso de una falla del sitio principal, la interfaz de usuario de la consola basada en la nube de NetApp continúa teniendo contacto con el agente de la consola y puede orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres.
 
-Para utilizar el servicio, instale el agente de consola en modo estándar.  Para obtener más información sobre los tipos de instalaciones del agente de consola, visite https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la consola de NetApp | Documentación de NetApp"^] .
+Para utilizar el servicio, instale el agente de consola en modo estándar.  Para obtener más información sobre los tipos de instalaciones del agente de consola, visite https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Obtenga más información sobre los modos de implementación de la NetApp Console | Documentación de NetApp"^] .
 
 Si bien el agente de consola es fundamental para utilizar el servicio, los pasos de instalación para instalar el agente de consola dependen de sus necesidades y de la configuración de la red.  Está fuera del alcance de esta información proporcionar instrucciones específicas para la instalación.
 

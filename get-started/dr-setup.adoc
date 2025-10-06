@@ -12,7 +12,7 @@ summary: Para utilizar NetApp Disaster Recovery, realice unos pocos pasos para c
 
 
 [role="lead"]
-Para utilizar NetApp Disaster Recovery, realice algunos pasos para configurarlo tanto en Amazon Web Services (AWS) como en la consola de NetApp .
+Para utilizar NetApp Disaster Recovery, realice algunos pasos para configurarlo tanto en Amazon Web Services (AWS) como en la NetApp Console.
 
 
 TIP: Revisarlink:../get-started/dr-prerequisites.html["prerrequisitos"] para garantizar que su sistema esté listo.
@@ -93,7 +93,7 @@ Para configurar NetApp Disaster Recovery para la protección local en la nube me
 
 * Agregue Amazon FSx para ONTAP al sistema y agregue las credenciales de AWS para FSx para ONTAP.
 * Cree o verifique su SVM ONTAP de destino en AWS FSx para la instancia de ONTAP .
-* Configure la replicación entre su clúster ONTAP local de origen y su instancia de FSx para ONTAP en la consola de NetApp .
+* Configure la replicación entre su clúster ONTAP local de origen y su instancia de FSx para ONTAP en la NetApp Console.
 
 
 Referirse a https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Cómo configurar un sistema FSx para ONTAP"^] para conocer los pasos detallados.
@@ -102,7 +102,7 @@ Referirse a https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creat
 
 ==== Configurar VMware Cloud en AWS SDDC
 
-https://www.vmware.com/products/vmc-on-aws.html["VMware Cloud en AWS"^]Proporciona una experiencia nativa de la nube para cargas de trabajo basadas en VMware en el ecosistema de AWS. Cada centro de datos definido por software (SDDC) de VMware se ejecuta en una Amazon Virtual Private Cloud (VPC) y proporciona una pila VMware completa (incluido vCenter Server), redes definidas por software NSX-T, almacenamiento definido por software vSAN y uno o más hosts ESXi que proporcionan recursos de procesamiento y almacenamiento a las cargas de trabajo.
+https://www.vmware.com/products/vmc-on-aws.html["VMware Cloud en AWS"^]Proporciona una experiencia nativa de la nube para cargas de trabajo basadas en VMware en el ecosistema de AWS. Cada centro de datos definido por software (SDDC) de VMware se ejecuta en una Amazon Virtual Private Cloud (VPC) y proporciona una pila VMware completa (incluido vCenter Server), redes definidas por software NSX-T, almacenamiento definido por software vSAN y uno o más hosts ESXi que proporcionan recursos informáticos y de almacenamiento a las cargas de trabajo.
 
 Para configurar un entorno de VMware Cloud en AWS, siga los pasos que se indican en https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-setup.html["Implementar y configurar el entorno de virtualización en AWS"^] Un grupo de luces piloto también se puede utilizar para fines de recuperación ante desastres.
 
@@ -143,10 +143,10 @@ Asegúrese de que se cumplan los siguientes requisitos antes de configurar NetAp
 
 === Soporte de proxy inteligente
 
-El agente de la consola de NetApp admite proxy inteligente.  El proxy inteligente es una forma liviana, segura y eficiente de conectar su entorno local a la consola de NetApp .  Proporciona una conexión segura entre su sistema y el servicio de consola sin necesidad de una VPN o acceso directo a Internet.  Esta implementación de proxy optimizada descarga el tráfico de API dentro de la red local.
+El agente de la NetApp Console admite proxy inteligente.  El proxy inteligente es una forma liviana, segura y eficiente de conectar su entorno local a la NetApp Console.  Proporciona una conexión segura entre su sistema y el servicio de consola sin necesidad de una VPN o acceso directo a Internet.  Esta implementación de proxy optimizada descarga el tráfico de API dentro de la red local.
 
 Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.
 
-La implementación del proxy de recuperación ante desastres de NetApp requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de recuperación ante desastres de NetApp dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
+La implementación del proxy de NetApp Disaster Recovery requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de NetApp Disaster Recovery dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
 
-Para obtener más información sobre la configuración general del proxy en la consola de NetApp , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
+Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .

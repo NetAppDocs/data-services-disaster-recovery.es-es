@@ -22,29 +22,29 @@ Descubra las novedades en NetApp Disaster Recovery.
 
 === La BlueXP disaster recovery ahora es NetApp Disaster Recovery
 
-La BlueXP disaster recovery ha pasado a llamarse Recuperación ante desastres de NetApp .
+La BlueXP disaster recovery ha pasado a llamarse NetApp Disaster Recovery.
 
 
 
 === BlueXP ahora es NetApp Console
 
-La consola NetApp , construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento NetApp y de los servicios de datos NetApp en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.
+La NetApp Console, construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los NetApp Data Services en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.
 
-Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de la versión de la consola de NetApp"] .
+Para obtener más detalles sobre lo que ha cambiado, consulte lalink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de la versión de la NetApp Console"] .
 
 
 
 === Otras actualizaciones
 
-* El soporte para Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP estaba en una vista previa pública.  Con este lanzamiento, ahora está disponible de forma generalizada. Para más detalles, consultelink:../reference/evs-deploy-guide-introduction.html["Introducción de NetApp Disaster Recovery mediante Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP"] .
+* El soporte para Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP estaba en una vista previa pública. Con este lanzamiento, ahora está disponible de forma generalizada. Para más detalles, consultelink:../reference/evs-deploy-guide-introduction.html["Introducción de NetApp Disaster Recovery mediante Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP"] .
 * Mejoras en el descubrimiento de almacenamiento, incluidos tiempos de descubrimiento reducidos para implementaciones locales
 * Compatibilidad con gestión de identidad y acceso (IAM), incluido el control de acceso basado en roles (RBAC) y permisos de usuario mejorados
-* Compatibilidad de vista previa privada con la solución VMware de Azure y Cloud Volumes ONTAP.  Con este soporte, ahora puede configurar la protección de recuperación ante desastres desde las instalaciones locales hasta la solución VMware de Azure mediante el almacenamiento de Cloud Volumes ONTAP .
+* Compatibilidad de vista previa privada con la solución VMware de Azure y Cloud Volumes ONTAP. Con este soporte, ahora puede configurar la protección de recuperación ante desastres desde las instalaciones locales hasta la solución VMware de Azure mediante el almacenamiento de Cloud Volumes ONTAP .
 
 
 
 
-== 04 de agosto de 2025
+== 4 de agosto de 2025
 
 Versión 4.2.5P2
 
@@ -61,7 +61,7 @@ Esta versión incluye las siguientes actualizaciones:
 * Se eliminó una restricción que impedía que el volumen de destino fuera el mismo que el volumen de origen al crear el volumen como parte de la creación del plan de replicación.
 * Se agregó soporte para una suscripción de pago por uso (PAYGO) a NetApp Intelligent Services en Azure Marketplace y se agregó un vínculo a Azure Marketplace en el cuadro de diálogo de prueba gratuita.
 +
-Para más detalles, véase https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["Licencias de recuperación ante desastres de NetApp"] y https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
+Para más detalles, véase https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["Licencias de NetApp Disaster Recovery"] y https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias para NetApp Disaster Recovery"] .
 
 
 
@@ -111,9 +111,9 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.
 ** Cuando se elimina un clúster, un host o un centro de datos en vCenter, NetApp Disaster Recovery ahora lo elimina del plan de replicación y del grupo de recursos.
 
 
-* Ahora puedes acceder a la documentación de Swagger en el modo de incógnito de tu navegador.  Puede acceder a él desde NetApp Disaster Recovery desde la opción Configuración > Documentación de API o directamente en la siguiente URL en el modo incógnito de su navegador: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentación de Swagger"^] .
-* En algunas situaciones, después de una operación de conmutación por error, el iGroup quedó abandonado una vez completada la operación.  Esta actualización elimina el iGroup si está obsoleto.
-* Si se utilizó el FQDN de NFS en el plan de replicación, NetApp Disaster Recovery ahora lo resuelve en una dirección IP.  Esta actualización es útil si el FQDN no se puede resolver en el sitio de recuperación ante desastres.
+* Ahora puedes acceder a la documentación de Swagger en el modo de incógnito de tu navegador. Puede acceder a él desde NetApp Disaster Recovery desde la opción Configuración > Documentación de API o directamente en la siguiente URL en el modo incógnito de su navegador: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentación de Swagger"^] .
+* En algunas situaciones, después de una operación de conmutación por error, el iGroup quedó abandonado una vez completada la operación. Esta actualización elimina el iGroup si está obsoleto.
+* Si se utilizó el FQDN de NFS en el plan de replicación, NetApp Disaster Recovery ahora lo resuelve en una dirección IP. Esta actualización es útil si el FQDN no se puede resolver en el sitio de recuperación ante desastres.
 * Mejoras en la alineación de la interfaz de usuario
 * Mejoras en el registro para capturar los detalles de tamaño de vCenter después del descubrimiento exitoso
 
@@ -266,15 +266,15 @@ Versión 4.2.1
 
 === Soporte de proxy inteligente
 
-El agente de la consola de NetApp admite proxy inteligente.  El proxy inteligente es una forma liviana, segura y eficiente de conectar su sistema local a NetApp Disaster Recovery.  Proporciona una conexión segura entre su sistema y NetApp Disaster Recovery sin necesidad de una VPN o acceso directo a Internet.  Esta implementación de proxy optimizada descarga el tráfico de API dentro de la red local.
+El agente de la NetApp Console admite proxy inteligente.  El proxy inteligente es una forma liviana, segura y eficiente de conectar su sistema local a NetApp Disaster Recovery.  Proporciona una conexión segura entre su sistema y NetApp Disaster Recovery sin necesidad de una VPN o acceso directo a Internet.  Esta implementación de proxy optimizada descarga el tráfico de API dentro de la red local.
 
 Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.
 
-La implementación del proxy de recuperación ante desastres de NetApp requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de recuperación ante desastres de NetApp dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
+La implementación del proxy de NetApp Disaster Recovery requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de NetApp Disaster Recovery dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
 
 Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configure su infraestructura para NetApp Disaster Recovery"] .
 
-Para obtener más información sobre la configuración general del proxy en la consola de NetApp , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
+Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
 
 
 
@@ -472,7 +472,7 @@ Aquí te explicamos cómo:
 
 
 
-== 05 de julio de 2024
+== 5 de julio de 2024
 
 Esta versión de NetApp Disaster Recovery incluye las siguientes actualizaciones:
 
@@ -533,7 +533,7 @@ Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.ht
 
 === Actualizaciones de la información de prerrequisitos
 
-Se ha actualizado la información sobre los requisitos previos de NetApp Disaster Recovery.
+Se ha actualizado la información sobre los requisitos previos de NetApp Disaster Recovery .
 
 Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["Requisitos previos de NetApp Disaster Recovery"] .
 
@@ -547,7 +547,7 @@ Esta versión de NetApp Disaster Recovery incluye las siguientes actualizaciones
 
 === Replicación de cargas de trabajo de VMware desde un entorno local a otro local
 
-Esta función ahora está disponible de forma general.  Anteriormente era una versión preliminar de tecnología con funcionalidad limitada.
+Esta función ahora está disponible de forma general.  Anteriormente era una versión preliminar de una tecnología con funcionalidad limitada.
 
 
 
@@ -561,7 +561,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 
 
-== 05 de marzo de 2024
+== 5 de marzo de 2024
 
 Esta es la versión de disponibilidad general de NetApp Disaster Recovery, que incluye las siguientes actualizaciones.
 
@@ -569,11 +569,11 @@ Esta es la versión de disponibilidad general de NetApp Disaster Recovery, que i
 
 === Actualizaciones de licencias
 
-Con NetApp Disaster Recovery, puede registrarse para una prueba gratuita de 90 días o traer su propia licencia (BYOL), que es un archivo de licencia de NetApp (NLF) que obtiene de su representante de ventas de NetApp .  Puede utilizar el número de serie de la licencia para activar el BYOL en las suscripciones de la consola de NetApp .  Los cargos de recuperación ante desastres de NetApp se basan en la capacidad aprovisionada de los almacenes de datos.
+Con NetApp Disaster Recovery, puede registrarse para una prueba gratuita de 90 días o traer su propia licencia (BYOL), que es un archivo de licencia de NetApp (NLF) que obtiene de su representante de ventas de NetApp .  Puede utilizar el número de serie de la licencia para activar el BYOL en las suscripciones de la NetApp Console .  Los cargos de NetApp Disaster Recovery se basan en la capacidad aprovisionada de los almacenes de datos.
 
 Para obtener detalles sobre la configuración de licencias para NetApp Disaster Recovery, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias"] .
 
-Para obtener detalles sobre la administración de licencias para *todos* los servicios de datos de la consola de NetApp , consulte https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Administrar licencias para todos los servicios de datos de la consola de NetApp"^] .
+Para obtener detalles sobre la administración de licencias para *todos* los servicios de datos de la NetApp Console , consulte https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Administrar licencias para todos los servicios de datos de la NetApp Console"^] .
 
 
 
@@ -653,7 +653,7 @@ Esta versión preliminar de NetApp Disaster Recovery incluye las siguientes actu
 
 Con esta versión, podrás acceder a la información de otras páginas desde el Panel de Control más rápidamente.
 
-https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtenga más información sobre la recuperación ante desastres de NetApp"] .
+https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtenga más información sobre la NetApp Disaster Recovery"] .
 
 
 
@@ -717,13 +717,13 @@ Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-cr
 
 
 
-== 01 de agosto de 2023
+== 1 de agosto de 2023
 
 
 
 === Vista previa de NetApp Disaster Recovery
 
-La versión preliminar de NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery, puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.
+La versión preliminar de NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery , puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.
 
 
 NOTE: Con esta oferta de vista previa, NetApp se reserva el derecho de modificar los detalles, el contenido y el cronograma de la oferta antes de la disponibilidad general.
@@ -766,6 +766,6 @@ Esta es la versión inicial de NetApp Disaster Recovery.
 
 === Servicio de recuperación ante desastres basado en la nube
 
-NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery, puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.
+NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery , puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.
 
 link:https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["Obtenga más información sobre NetApp Disaster Recovery"] .

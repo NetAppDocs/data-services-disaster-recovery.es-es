@@ -12,11 +12,11 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o _replicación_.  Los planes de replicación administran la protección de datos de la infraestructura de VMware.  Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo se deben restaurar y encender las aplicaciones.  Por ejemplo, puede agrupar máquinas virtuales (VM) asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares.  A estos planes a veces se les llama "proyectos".
+Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o _replicación_.  Los planes de replicación administran la protección de datos de la infraestructura de VMware.  Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo se deben restaurar y encender las aplicaciones.  Por ejemplo, puede agrupar máquinas virtuales (VM) asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares.  A veces estos planes se denominan "proyectos".
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 *Acerca de esta tarea*
 
@@ -83,9 +83,9 @@ Al crear el plan, debes seguir estas pautas:
 Primero, seleccione el vCenter de origen y luego seleccione el vCenter de destino.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación* y seleccione *Agregar*.  O bien, si recién está comenzando a utilizar el servicio, desde el Panel de control, seleccione *Agregar plan de replicación*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación* y seleccione *Agregar*.  O bien, si recién está comenzando a utilizar el servicio, desde el Panel de control, seleccione *Agregar plan de replicación*.
 +
 image:dr-plan-create-name2.png["Captura de pantalla que muestra la página Agregar plan de replicación > Agregar plan"]
 
@@ -113,7 +113,7 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 * No aloje máquinas virtuales protegidas y no protegidas en el mismo almacén de datos.  Si las máquinas virtuales protegidas y no protegidas están alojadas en el mismo almacén de datos, podrían surgir los siguientes problemas:
 +
 ** Debido a que NetApp Disaster Recovery utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para consideraciones de licencia.  En este caso, el espacio de volumen consumido por las máquinas virtuales protegidas y no protegidas se incluiría en este cálculo.
-** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales desprotegidas en el sitio de vCenter de conmutación por error.
+** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales no protegidas en el sitio de vCenter de conmutación por error.
 
 
 * Para que una VM esté protegida, debe estar incluida en un grupo de recursos.
@@ -211,7 +211,7 @@ NOTE: Puede asignar varias redes virtuales de origen a la misma red virtual de d
 
 En la pestaña Mapeos de conmutación por error, seleccione la flecha hacia abajo junto a *Redes virtuales*.  Seleccione la LAN virtual de origen y la LAN virtual de destino.
 
-Seleccione la asignación de red a la LAN virtual adecuada.  Las LAN virtuales ya deberían estar aprovisionadas, así que seleccione la LAN virtual adecuada para asignar la VM.
+Seleccione la asignación de red a la LAN virtual adecuada.  Las LAN virtuales ya deberían estar aprovisionadas, así que seleccione la LAN virtual adecuada para mapear la VM.
 
 
 
@@ -244,7 +244,7 @@ Puede aumentar o disminuir la cantidad de CPU virtuales asignadas a cada máquin
 
 En el nivel más básico (y predeterminado), la configuración simplemente utiliza la misma configuración de red TCP/IP para cada VM en el sitio de destino que la utilizada en el sitio de origen.  Esto requiere que configure los mismos ajustes TCP/IP en las redes virtuales de origen y destino.
 
-El servicio admite configuraciones de red de IP estática o de protocolo de configuración dinámica de host (DHCP) para máquinas virtuales.  DHCP proporciona un método basado en estándares para configurar dinámicamente los parámetros TCP/IP de un puerto de red host.  DHCP debe proporcionar, como mínimo, una dirección TCP/IP y también puede proporcionar una dirección de puerta de enlace predeterminada (para enrutar a una conexión a Internet externa), una máscara de subred y una dirección de servidor DNS.  El DHCP se utiliza comúnmente para dispositivos informáticos de usuarios finales, como computadoras de escritorio, portátiles y conexiones de teléfonos móviles de empleados, aunque también se puede utilizar para cualquier dispositivo informático en red, como servidores.
+El servicio admite configuraciones de red de IP estática o de protocolo de configuración dinámica de host (DHCP) para máquinas virtuales.  DHCP proporciona un método basado en estándares para configurar dinámicamente los parámetros TCP/IP de un puerto de red host.  DHCP debe proporcionar, como mínimo, una dirección TCP/IP y también puede proporcionar una dirección de puerta de enlace predeterminada (para enrutar a una conexión a Internet externa), una máscara de subred y una dirección de servidor DNS.  El DHCP se utiliza comúnmente para dispositivos informáticos de usuarios finales, como computadoras de escritorio, portátiles y conexiones de teléfonos móviles de empleados, aunque también se puede utilizar para cualquier dispositivo informático de red, como servidores.
 
 * Opción *Usar la misma máscara de subred, DNS y configuración de puerta de enlace*: debido a que estas configuraciones suelen ser las mismas para todas las máquinas virtuales conectadas a las mismas redes virtuales, es posible que le resulte más fácil configurarlas una vez y dejar que Disaster Recovery use las configuraciones para todas las máquinas virtuales en el grupo de recursos protegido por el plan de replicación.  Si algunas máquinas virtuales usan configuraciones diferentes, deberá desmarcar esta casilla y proporcionar esas configuraciones para cada máquina virtual.
 * *Tipo de dirección IP*: reconfigura la configuración de las máquinas virtuales para que coincida con los requisitos de la red virtual de destino.  NetApp Disaster Recovery ofrece dos opciones: DHCP o IP estática.  Para direcciones IP estáticas, configure la máscara de subred, la puerta de enlace y los servidores DNS.  Además, ingrese las credenciales para las máquinas virtuales.
@@ -378,7 +378,7 @@ Una vez configurado esto, el servicio no toma ninguna instantánea programada re
 
 TIP: La cantidad de instantáneas retenidas junto con la tasa de cambio de datos entre cada instantánea determina la cantidad de espacio de almacenamiento consumido tanto en el origen como en el destino.  Cuanto más instantáneas conserve, más espacio de almacenamiento se consumirá.
 
-* *Almacenes de datos de origen y destino*: si existen múltiples relaciones SnapMirror (de distribución), puede seleccionar el destino que desea utilizar.  Si un volumen ya tiene una relación SnapMirror establecida, aparecen los almacenes de datos de origen y destino correspondientes.  Si un volumen no tiene una relación SnapMirror , puede crear uno ahora seleccionando un clúster de destino, seleccionando un SVM de destino y proporcionando un nombre de volumen.  El servicio creará el volumen y la relación SnapMirror .
+* *Almacenes de datos de origen y destino*: si existen múltiples relaciones SnapMirror (de abanico), puede seleccionar el destino que desea utilizar.  Si un volumen ya tiene una relación SnapMirror establecida, aparecen los almacenes de datos de origen y destino correspondientes.  Si un volumen no tiene una relación SnapMirror , puede crear uno ahora seleccionando un clúster de destino, seleccionando un SVM de destino y proporcionando un nombre de volumen.  El servicio creará el volumen y la relación SnapMirror .
 +
 
 NOTE: Si desea crear una relación SnapMirror en este servicio, el clúster y su emparejamiento SVM ya deben haberse configurado fuera de NetApp Disaster Recovery.
@@ -436,7 +436,7 @@ El plan se agrega a la lista de planes.
 
 
 
-== Edite los cronogramas para probar el cumplimiento y garantizar que las pruebas de conmutación por error funcionen
+== Editar programaciones para probar el cumplimiento y garantizar que las pruebas de conmutación por error funcionen
 
 Es posible que desees configurar cronogramas para probar pruebas de cumplimiento y conmutación por error para asegurarte de que funcionarán correctamente si las necesitas.
 
@@ -450,7 +450,7 @@ Una conmutación por error de prueba crea un volumen FlexClone , monta el almac�
 Según el cronograma, se ejecuta la prueba de conmutación por error y garantiza que las cargas de trabajo se muevan al destino especificado por el plan de replicación.
 
 .Pasos
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 +
 image:dr-plan-list.png["Captura de pantalla que muestra la lista de planes de replicación"]
 

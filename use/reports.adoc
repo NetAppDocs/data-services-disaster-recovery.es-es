@@ -4,7 +4,7 @@ permalink: use/reports.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
 summary: Revisar los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de conmutaciones por error y recuperación, detalles de replicación en todos los sitios y detalles de trabajos del año pasado. 
 ---
-= Crear informes de recuperación ante desastres de NetApp
+= Crear informes de NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,16 +12,16 @@ summary: Revisar los informes de recuperación ante desastres puede ayudarle a a
 
 
 [role="lead"]
-Revisar los informes de recuperación ante desastres de NetApp puede ayudarlo a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de las conmutaciones por error de pruebas, detalles del plan de replicación y detalles del trabajo en todos los sitios dentro de una cuenta durante los últimos siete días.
+Revisar los informes de NetApp Disaster Recovery puede ayudarlo a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de las conmutaciones por error de pruebas, detalles del plan de replicación y detalles del trabajo en todos los sitios dentro de una cuenta durante los últimos siete días.
 
 Puede descargar informes en formato PDF, HTML o JSON.
 
 El enlace de descarga es válido por seis horas.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. Desde la barra de navegación izquierda de la consola de NetApp , seleccione *Planes de replicación*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde la barra de navegación izquierda de la NetApp Console , seleccione *Planes de replicación*.
 . Seleccione *Crear informe*.
 . Seleccione el tipo de formato de archivo y el período de tiempo dentro de los últimos 7 días.
 . Seleccione *Crear*.

@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 [role="lead"]
 Después de agregar sitios de vCenter, puede crear grupos de recursos para proteger las máquinas virtuales por máquina virtual o almacén de datos como una sola unidad.  Los grupos de recursos le permiten organizar un conjunto de máquinas virtuales dependientes en grupos lógicos que satisfacen sus requisitos.  Por ejemplo, puede agrupar máquinas virtuales asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares.  Como otro ejemplo, los grupos podrían contener órdenes de arranque retrasadas que se puedan ejecutar durante la recuperación.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 *Acerca de esta tarea*
 
@@ -68,7 +68,7 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 * No aloje máquinas virtuales protegidas y no protegidas en el mismo almacén de datos.  Si las máquinas virtuales protegidas y no protegidas están alojadas en el mismo almacén de datos, podrían surgir los siguientes problemas:
 +
 ** Debido a que NetApp Disaster Recovery utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para consideraciones de licencia.  En este caso, el espacio de volumen consumido por las máquinas virtuales protegidas y no protegidas se incluiría en este cálculo.
-** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales desprotegidas en el sitio de vCenter de conmutación por error.
+** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales no protegidas en el sitio de vCenter de conmutación por error.
 
 
 * Para que una VM esté protegida, debe estar incluida en un grupo de recursos.
@@ -77,9 +77,9 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 *MEJORES PRÁCTICAS*: Organice sus máquinas virtuales antes de implementar NetApp Disaster Recovery para minimizar la “expansión del almacén de datos”.  Coloque las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y coloque las máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos.  Asegúrese de que las máquinas virtuales en un almacén de datos determinado no estén protegidas por diferentes planes de replicación.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery, seleccione *Grupos de recursos*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery , seleccione *Grupos de recursos*.
 . Seleccione *Agregar*.
 . Introduzca un nombre para el grupo de recursos.
 . Seleccione el clúster vCenter de origen donde se encuentran las máquinas virtuales.

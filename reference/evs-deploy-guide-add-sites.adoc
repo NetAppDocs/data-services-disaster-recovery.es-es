@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-add-sites.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
-summary: Antes de poder proteger su infraestructura de VM, el servicio de recuperación ante desastres de NetApp necesita saber qué clústeres de VMware vCenter alojan las VM que se van a proteger y dónde se encuentran esos vCenters.  El primer paso es crear un sitio para representar los centros de datos de origen y destino.  Un sitio es un dominio de falla o un dominio de recuperación. 
+summary: Antes de poder proteger su infraestructura de VM, el servicio de NetApp Disaster Recovery necesita saber qué clústeres de VMware vCenter alojan las VM que se van a proteger y dónde se encuentran esos vCenters.  El primer paso es crear un sitio para representar los centros de datos de origen y destino.  Un sitio es un dominio de falla o un dominio de recuperación. 
 ---
 = Agregar sitios en NetApp Disaster Recovery para Amazon EVS
 :allow-uri-read: 
@@ -24,7 +24,7 @@ Necesitas crear lo siguiente:
 Cree un sitio vCenter de producción.
 
 .Pasos
-. Desde la barra de navegación izquierda de la consola de NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde cualquier página de NetApp Disaster Recovery, seleccione la opción *Sitios*.
 +
 image:evs-create-site-op-1.png["Opción de sitios"]

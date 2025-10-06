@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/dr-login.html 
 keywords: bluexp login, disaster recovery log in 
-summary: Comience a utilizar NetApp Disaster Recovery accediendo al servicio en la consola de NetApp . 
+summary: Comience a utilizar NetApp Disaster Recovery accediendo al servicio en la NetApp Console. 
 ---
 = Acceda a NetApp Disaster Recovery
 :hardbreaks:
@@ -12,19 +12,19 @@ summary: Comience a utilizar NetApp Disaster Recovery accediendo al servicio en 
 
 
 [role="lead"]
-Utilice la consola de NetApp para iniciar sesión en el servicio de recuperación ante desastres de NetApp .
+Utilice la NetApp Console para iniciar sesión en el servicio de NetApp Disaster Recovery .
 
 Para iniciar sesión, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la nube de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
 
-Tareas específicas requieren roles de usuario específicos. link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+Tareas específicas requieren roles de usuario específicos. link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 .Pasos
-. Abra un navegador web y vaya a https://console.netapp.com/["Consola de NetApp"^] .
+. Abra un navegador web y vaya a https://console.netapp.com/["NetApp Console"^] .
 +
-Aparece la página de inicio de sesión de la consola de NetApp .
+Aparece la página de inicio de sesión de la NetApp Console .
 
-. Inicie sesión en la consola de NetApp .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Inicie sesión en la NetApp Console.
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 +
 Si es la primera vez que inicia sesión en este servicio, aparecerá la página de inicio y podrá registrarse para una prueba gratuita.
 
@@ -32,15 +32,15 @@ Si es la primera vez que inicia sesión en este servicio, aparecerá la página 
 image:draas-landing6-free-trial.png["Captura de pantalla de la página de destino de NetApp Disaster Recovery"]
 
 +
-De lo contrario, aparecerá el Panel de recuperación ante desastres de NetApp .
+De lo contrario, aparecerá el Panel de NetApp Disaster Recovery .
 
 +
-** Si aún no ha agregado un agente de consola de NetApp , deberá agregar uno.  Para agregar el agente, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
-** Si es un usuario de la consola de NetApp con un agente existente, cuando selecciona "Recuperación ante desastres", aparece un mensaje sobre cómo registrarse.
+** Si aún no ha agregado un agente de NetApp Console , deberá agregar uno.  Para agregar el agente, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
+** Si es un usuario de la NetApp Console con un agente existente, cuando selecciona "Recuperación ante desastres", aparece un mensaje sobre cómo registrarse.
 ** Si ya está utilizando el servicio, cuando seleccione "Recuperación ante desastres", aparecerá el Panel de control.
 
 
 +
-image:dr-dashboard.png["Panel de recuperación ante desastres de NetApp"]
+image:dr-dashboard.png["Panel de NetApp Disaster Recovery"]
 
 

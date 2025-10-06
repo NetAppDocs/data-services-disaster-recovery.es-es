@@ -2,7 +2,7 @@
 section: get-started
 title: Empezar
 entries:
-- title: Obtenga más información sobre la recuperación ante desastres de NetApp
+- title: Obtenga más información sobre la NetApp Disaster Recovery
   url: "/get-started/dr-intro.html"
 - title: Prerrequisitos
   url: "/get-started/dr-prerequisites.html"

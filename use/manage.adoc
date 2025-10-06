@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
-summary: Puede obtener una vista rápida de todos sus recursos de recuperación ante desastres de NetApp y administrar sitios de vCenter, grupos de recursos y planes de replicación. 
+summary: Puede obtener una vista rápida de todos sus recursos de NetApp Disaster Recovery y administrar sitios de vCenter, grupos de recursos y planes de replicación. 
 ---
 = Administre sitios, grupos de recursos, planes de replicación, almacenes de datos e información de máquinas virtuales con NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Puede obtener una vista rápida de todos sus recursos de recuperación 
 
 
 [role="lead"]
-Puede obtener un vistazo rápido de todos sus recursos de recuperación ante desastres de NetApp o ver cada uno en detalle:
+Puede obtener un vistazo rápido de todos sus recursos de NetApp Disaster Recovery o ver cada uno en detalle:
 
 * Sitios
 * Grupos de recursos
@@ -21,9 +21,9 @@ Puede obtener un vistazo rápido de todos sus recursos de recuperación ante des
 * Máquinas virtuales
 
 
-Las tareas requieren diferentes roles de la consola de NetApp .  Para obtener más detalles, consulte la sección *Rol de consola de NetApp requerido* en cada tarea.
+Las tareas requieren diferentes roles de la NetApp Console .  Para obtener más detalles, consulte la sección *Rol de NetApp Console requerido* en cada tarea.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 
 
@@ -31,7 +31,7 @@ link:../reference/dr-reference-roles.html["Obtenga información sobre los roles 
 
 Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 
-*Rol de consola de NetApp requerido* Rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
+*Rol de NetApp Console requerido* Rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Sitios*.
@@ -45,7 +45,7 @@ Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 
 Si bien puede agregar un grupo de recursos como parte de la creación de un plan de replicación, es posible que le resulte más conveniente agregar los grupos por separado y luego usar esos grupos en el plan.  Puede crear grupos de recursos por máquinas virtuales o por almacenes de datos.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 Puede crear un grupo de recursos por almacenes de datos de las siguientes maneras:
 
@@ -56,7 +56,7 @@ Puede crear un grupo de recursos por almacenes de datos de las siguientes manera
 Puede realizar las siguientes tareas con grupos de recursos:
 
 * Cambiar el nombre del grupo de recursos.
-* Agregue máquinas virtuales al grupo de recursos.
+* Agregar máquinas virtuales al grupo de recursos.
 * Eliminar máquinas virtuales del grupo de recursos.
 * Eliminar grupos de recursos.
 
@@ -75,7 +75,7 @@ Para obtener detalles sobre cómo crear un grupo de recursos, consultelink:resou
 
 Puede deshabilitar, habilitar y eliminar planes de replicación.  Puedes cambiar los horarios.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 * Si desea pausar un plan de replicación temporalmente, puede deshabilitarlo y habilitarlo más tarde.
 * Si ya no necesitas el plan, puedes eliminarlo.
@@ -112,7 +112,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 Puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino.  Esto podría ocurrir si se eliminan instantáneas en un destino fuera de NetApp Disaster Recovery.  El servicio elimina automáticamente la instantánea de la fuente cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -130,7 +130,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 Puede eliminar un plan de replicación si ya no lo necesita.  Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -146,7 +146,7 @@ Puede eliminar un plan de replicación si ya no lo necesita.  Si elimina un plan
 
 Puede cambiar la cantidad de almacenes de datos que se conservan.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -165,7 +165,7 @@ image:../use/dr-plan-failover-edit.png["Página de edición de asignaciones de c
 
 Puede ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Panel de control*.
@@ -180,7 +180,7 @@ Puede ver información sobre cuántos almacenes de datos existen en el origen y 
 
 Puede ver información sobre cuántas máquinas virtuales existen en el origen y en el destino junto con la CPU, la memoria y la capacidad disponible.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Panel de control*.

@@ -12,7 +12,7 @@ entries:
     url: "/reference/evs-deploy-guide-introduction.html"
   - title: Descripción general de la solución
     url: "/reference/evs-deploy-guide-solution-overview.html"
-  - title: Instalar el agente de la consola de NetApp
+  - title: Instalar el agente de la NetApp Console
     url: "/reference/evs-deploy-guide-install-connector.html"
   - title: Configurar NetApp Disaster Recovery para Amazon EVS
     entries:

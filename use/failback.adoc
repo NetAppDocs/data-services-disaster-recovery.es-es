@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 [role="lead"]
 Una vez resuelto un desastre, se realiza un retorno desde el sitio de recuperación ante desastres al sitio de origen para regresar a las operaciones normales.  Puede seleccionar la instantánea desde la cual desea recuperar.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 *Acerca de esta tarea*
 
@@ -31,9 +31,9 @@ En este flujo de trabajo, NetApp Disaster Recovery replica (resincroniza) cualqu
 
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Revertir*.
 . Ingrese el nombre del plan de replicación para confirmar e iniciar la conmutación por error.

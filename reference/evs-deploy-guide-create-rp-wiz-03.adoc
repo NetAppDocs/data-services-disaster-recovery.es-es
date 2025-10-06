@@ -9,13 +9,13 @@ summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon 
 
 
 [role="lead"]
-Una vez que tenga una lista de máquinas virtuales que desea proteger mediante NetApp Disaster Recovery, proporcione información de configuración de máquina virtual y mapeo de conmutación por error para usar durante una conmutación por error.
+Una vez que tenga una lista de máquinas virtuales que desea proteger mediante NetApp Disaster Recovery, proporcione la información de configuración de las máquinas virtuales y el mapeo de conmutación por error para usar durante una conmutación por error.
 
 Es necesario mapear cuatro tipos principales de información:
 
 * Recursos computacionales
 * Redes virtuales
-* Reconfiguración de VM
+* Reconfiguración de la máquina virtual
 * Mapeo de almacenes de datos
 
 
@@ -108,7 +108,7 @@ image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Crear un plan de replica
 Hay varias opciones para reconfigurar los recursos informáticos de la máquina virtual.  NetApp Disaster Recovery admite cambiar la cantidad de CPU virtuales, la cantidad de DRAM virtual y el nombre de la máquina virtual.
 
 .Especifique cualquier cambio en la configuración de la máquina virtual
-. (Opcional) Modifique la cantidad de CPU virtuales que debe utilizar cada máquina virtual.  Esto puede ser necesario si los hosts del clúster vCenter de DR no tienen tantos núcleos de CPU como el clúster vCenter de origen.
+. (Opcional) Modifique la cantidad de CPU virtuales que debe usar cada máquina virtual.  Esto puede ser necesario si los hosts del clúster vCenter de DR no tienen tantos núcleos de CPU como el clúster vCenter de origen.
 . (Opcional) Modifique la cantidad de DRAM virtual que debe utilizar cada máquina virtual.  Esto puede ser necesario si los hosts del clúster vCenter de DR no tienen tanta DRAM física como los hosts del clúster vCenter de origen.
 +
 image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Crear un plan de replicación, recursos de VM"]

@@ -18,7 +18,7 @@ image:evs-add-vcenter-1.png["Agregar opción vCenter"]
 
 . En el cuadro de diálogo Agregar servidor vCenter, seleccione o proporcione la siguiente información:
 +
-.. El agente de consola de NetApp alojado dentro de su VPC de AWS.
+.. El agente de NetApp Console alojado dentro de su VPC de AWS.
 .. La dirección IP o FQDN del vCenter que se agregará.
 .. Si es diferente, cambie el valor del puerto al puerto TCP utilizado por el administrador de clúster de vCenter.
 .. El nombre de usuario de vCenter para la cuenta creada anteriormente que NetApp Disaster Recovery utilizará para administrar vCenter.

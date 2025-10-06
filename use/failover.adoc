@@ -14,9 +14,9 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 [role="lead"]
 En caso de desastre, conmute su sitio local principal de VMware a otro sitio local de VMware o VMware Cloud en AWS.  Puede probar el proceso de conmutación por error para garantizar el éxito cuando lo necesite.
 
-*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
 
 *Acerca de esta tarea*
 
@@ -58,9 +58,9 @@ Para una conmutación por error de prueba, Disaster Recovery realiza las siguien
 
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Probar conmutación por error*.
 . En la página de Conmutación por error de prueba, ingrese “Conmutación por error de prueba” y seleccione *Conmutación por error de prueba*.
@@ -74,7 +74,7 @@ Para una conmutación por error de prueba, Disaster Recovery realiza las siguien
 Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno de prueba.  Este proceso elimina las máquinas virtuales temporales de la ubicación de prueba, los FlexClones y los almacenes de datos temporales.
 
 .Pasos
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Limpiar prueba de conmutación por error*.
 . En la página de prueba de conmutación por error, ingrese “Limpiar conmutación por error” y seleccione *Limpiar prueba de conmutación por error*.
@@ -105,7 +105,7 @@ El proceso de conmutación por error implica las siguientes operaciones:
 TIP: Una vez iniciada la conmutación por error, podrá ver las máquinas virtuales recuperadas en el vCenter del sitio de recuperación ante desastres (máquinas virtuales, redes y almacenes de datos).  De forma predeterminada, las máquinas virtuales se recuperan en la carpeta Carga de trabajo.
 
 .Pasos
-. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Conmutación por error*.
 +

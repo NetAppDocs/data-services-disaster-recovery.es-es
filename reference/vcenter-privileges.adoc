@@ -50,7 +50,7 @@ Máquina virtual.Configuración.Modificar la configuración del dispositivo
 |   a| 
 Máquina virtual.Configuración.Recargar desde la ruta
  a| 
-Úselo para cambiar un parche de configuración de VM preservando la identidad de la VM.  Soluciones como VMware vCenter Site Recovery Manager utilizan esta operación para mantener la identidad de la máquina virtual durante la conmutación por error y la recuperación.
+Úselo para cambiar un parche de configuración de VM mientras preserva la identidad de la VM.  Soluciones como VMware vCenter Site Recovery Manager utilizan esta operación para mantener la identidad de la máquina virtual durante la conmutación por error y la conmutación por recuperación.
 
 
 

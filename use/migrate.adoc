@@ -21,8 +21,8 @@ TIP: Después de crear el plan de replicación, identificar la recurrencia en el
 Antes de iniciar la migración, debe haber creado un plan de replicación y haber seleccionado migrar las aplicaciones.  Luego, aparece la opción *Migrar* en el menú Acciones.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
-. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde el menú, seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Migrar*.
