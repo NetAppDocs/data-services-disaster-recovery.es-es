@@ -1,0 +1,39 @@
+= Descubrimiento programado para máquinas virtuales
+:allow-uri-read: 
+
+
+
+
+=== Descubrimiento programado para máquinas virtuales
+
+NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Con esta versión, ahora puede personalizar el programa de descubrimiento para satisfacer sus necesidades y reducir el impacto en el rendimiento cuando lo necesite.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 48 horas.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
+
+Si no desea programar el descubrimiento, puede deshabilitar la opción de descubrimiento programado y actualizar el descubrimiento manualmente en cualquier momento.
+
+Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
+
+
+
+=== Compatibilidad con almacenes de datos de grupos de recursos
+
+Anteriormente, solo se podían crear grupos de recursos por máquinas virtuales.  Con esta versión, puede crear un grupo de recursos por almacenes de datos.  Cuando crea un plan de replicación y crea un grupo de recursos para ese plan, se enumerarán todas las máquinas virtuales en un almacén de datos.  Esto es útil si tiene una gran cantidad de máquinas virtuales y desea agruparlas por almacén de datos.
+
+Puede crear un grupo de recursos con un almacén de datos de las siguientes maneras:
+
+* Cuando agrega un grupo de recursos mediante almacenes de datos, puede ver una lista de almacenes de datos.  Puede seleccionar uno o más almacenes de datos para crear un grupo de recursos.
+* Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
+
+
+Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+
+
+
+=== Notificaciones de prueba gratuita o vencimiento de licencia
+
+Este comunicado proporciona notificaciones de que la prueba gratuita expirará en 60 días para garantizar que tenga tiempo de obtener una licencia.  Esta versión también proporciona notificaciones el día en que vence la licencia.
+
+
+
+=== Notificación de actualizaciones del servicio
+
+Con esta versión, aparece un banner en la parte superior para indicar que los servicios se están actualizando y que el servicio se coloca en modo de mantenimiento.  El banner aparece cuando se está actualizando el servicio y desaparece cuando se completa la actualización.  Si bien puede continuar trabajando en la interfaz de usuario mientras la actualización está en progreso, no puede enviar nuevos trabajos.  Los trabajos programados se ejecutarán después de que se complete la actualización y el servicio vuelva al modo de producción.

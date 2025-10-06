@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/replicate.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Con NetApp Disaster Recovery, puede replicar aplicaciones de VMware en su sitio de origen a un sitio remoto de recuperación ante desastres en la nube mediante la replicación SnapMirror . 
+---
+= Replique aplicaciones a otro sitio con NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Con NetApp Disaster Recovery, puede replicar aplicaciones de VMware en su sitio de origen a un sitio remoto de recuperación ante desastres en la nube mediante la replicación SnapMirror .
+
+
+TIP: Después de crear el plan de recuperación ante desastres, identificar la recurrencia en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos NetApp Disaster Recovery verifica que la replicación realmente se esté realizando de acuerdo con el plan. Puede supervisar el progreso en la página Monitor de trabajo.
+
+*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de conmutación por error de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Antes de empezar
+Antes de iniciar la replicación, debe haber creado un plan de replicación y haber seleccionado replicar las aplicaciones.  Luego, aparece la opción *Replicar* en el menú Acciones.
+
+.Pasos
+. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
+. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde el menú, seleccione *Planes de replicación*.
+. Seleccione el plan de replicación.
+. A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Replicar*.
+

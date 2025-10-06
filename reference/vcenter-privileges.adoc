@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: reference/vcenter-privileges.html 
+keywords: disaster recovery, bluexp, vcenter, 
+summary: 'La cuenta de vCenter debe tener un conjunto mínimo de privilegios de vCenter para permitir que NetApp Disaster Recovery realice sus servicios, como registrar y anular el registro de almacenes de datos, iniciar y detener máquinas virtuales y reconfigurar máquinas virtuales (VM).  En la siguiente tabla se enumeran todos los privilegios necesarios para que NetApp Disaster Recovery interactúe con un clúster de vCenter.' 
+---
+= Privilegios de vCenter necesarios para NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+La cuenta de vCenter debe tener un conjunto mínimo de privilegios de vCenter para permitir que NetApp Disaster Recovery realice sus servicios, como registrar y anular el registro de almacenes de datos, iniciar y detener máquinas virtuales y reconfigurar máquinas virtuales (VM).  En la siguiente tabla se enumeran todos los privilegios necesarios para que NetApp Disaster Recovery interactúe con un clúster de vCenter.
+
+[cols="25,35a,40a"]
+|===
+| Tipo | Nombre del privilegio | Descripción 
+
+
+| *Almacén de datos*  a| 
+Almacén de datos.Configurar almacén de datos
+ a| 
+Úselo para configurar un almacén de datos.
+
+
+
+|   a| 
+Almacén de datos.Eliminar almacén de datos
+ a| 
+Úselo para eliminar un almacén de datos.
+
+
+
+| *Máquina virtual*  a| 
+Máquina virtual.Configuración.Cambiar configuración
+ a| 
+Úselo para cambiar la configuración general de la máquina virtual.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Modificar la configuración del dispositivo
+ a| 
+Úselo para cambiar las propiedades de un dispositivo existente.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Recargar desde la ruta
+ a| 
+Úselo para cambiar un parche de configuración de VM preservando la identidad de la VM.  Soluciones como VMware vCenter Site Recovery Manager utilizan esta operación para mantener la identidad de la máquina virtual durante la conmutación por error y la recuperación.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Cambiar nombre
+ a| 
+Úselo para cambiar el nombre de una VM o modificar los nodos asociados de una VM.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Restablecer información del invitado
+ a| 
+Úselo para editar la información del sistema operativo invitado para una máquina virtual.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Cambiar memoria
+ a| 
+Úselo para cambiar la cantidad de memoria asignada a la VM.
+
+
+
+|   a| 
+Máquina virtual.Configuración.Cambiar el número de CPU
+ a| 
+Úselo para cambiar el número de CPU virtuales.
+
+
+
+| *Invitado de máquina virtual*  a| 
+Máquina virtual.Operaciones de invitado.Modificaciones de operaciones de invitado
+ a| 
+Permite operaciones de invitado de VM que implican cambios en un sistema operativo invitado en una VM, como transferir un archivo a la VM.
+
+
+
+| *Interacción con máquinas virtuales*  a| 
+Máquina virtual.Interacción.Apagado
+ a| 
+Úselo para apagar una máquina virtual encendida.  Esta operación apaga el sistema operativo invitado.
+
+
+
+|   a| 
+Máquina virtual.Interacción.Encendido
+ a| 
+Úselo para encender una máquina virtual apagada y reanudar una máquina virtual suspendida.
+
+
+
+|   a| 
+Máquina virtual.Interacción.Instalación de VMware Tools
+ a| 
+Úselo para montar y desmontar el instalador del CD de VMware Tools como un CD-ROM para el sistema operativo invitado.
+
+
+
+| *Inventario de máquinas virtuales*  a| 
+Máquina virtual.Inventario.Crear nuevo
+ a| 
+Úselo para crear una máquina virtual y asignar recursos para su ejecución.
+
+
+
+|   a| 
+Máquina virtual.Inventario.Registrar
+ a| 
+Úselo para agregar una máquina virtual existente a un servidor vCenter o al inventario de host.
+
+
+
+|   a| 
+Máquina virtual.Inventario.Cancelar registro
+ a| 
+Úselo para anular el registro de una máquina virtual de un inventario de host o de un servidor vCenter.
+
+
+
+| *Estado de la máquina virtual*  a| 
+Máquina virtual. Gestión de instantáneas. Crear instantánea
+ a| 
+Úselo para crear una instantánea del estado actual de la máquina virtual.
+
+
+
+|   a| 
+Máquina virtual.Administración de instantáneas.Eliminar instantánea
+ a| 
+Úselo para eliminar una instantánea del historial de instantáneas.
+
+
+
+|   a| 
+Máquina virtual.Administración de instantáneas.Volver a instantánea
+ a| 
+Úselo para establecer la máquina virtual al estado en el que se encontraba en una instantánea determinada.
+
+|===

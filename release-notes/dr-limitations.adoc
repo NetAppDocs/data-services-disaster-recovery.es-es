@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: release-notes/dr-limitations.html 
+keywords: disaster recovery, bluexp 
+summary: Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del servicio o que no interactúan correctamente con él. 
+---
+= Limitaciones en la recuperación ante desastres de NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Las limitaciones conocidas identifican plataformas, dispositivos o funciones que no son compatibles con esta versión del servicio o que no interactúan correctamente con él.
+
+
+
+== Espere hasta que se complete la conmutación por error antes de ejecutar el descubrimiento
+
+Una vez finalizada una conmutación por error, no inicie la detección en el vCenter de origen manualmente.  Espere hasta que finalice la conmutación por error y luego inicie la detección en el vCenter de origen.
+
+
+
+== Es posible que la consola de NetApp no ​​detecte Amazon FSx for NetApp ONTAP
+
+A veces, la consola de NetApp no ​​detecta Amazon FSx for NetApp ONTAP .  Esto podría deberse a que las credenciales de FSx no eran correctas.
+
+*Solución alternativa*: agregue el clúster Amazon FSx for NetApp ONTAP en la consola de NetApp y actualice periódicamente el clúster para mostrar cualquier cambio.
+
+Si necesita eliminar el clúster ONTAP FSx de NetApp Disaster Recovery, complete los siguientes pasos:
+
+. En el agente de la consola de NetApp , use las opciones de conectividad de su proveedor de nube, conéctese a la máquina virtual Linux en la que se ejecuta el agente de la consola, reinicie el servicio "occm" usando el `docker restart occm` dominio.
+
+
+Referirse a https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Administrar agentes de consola existentes"^] .
+
+. En la página Sistemas de consola de NetApp , agregue nuevamente el sistema Amazon FSx para ONTAP y proporcione las credenciales de FSx.
++
+Referirse a https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Cree un sistema de archivos Amazon FSx for NetApp ONTAP"^] .
+
+. Desde NetApp Disaster Recovery, seleccione *Sitios*, en la fila vCenter seleccione la opción *Acciones*image:../use/icon-vertical-dots.png["Icono del menú Acciones en NetApp Disaster Recovery"] y en el menú Acciones, seleccione *Actualizar* para actualizar la detección de FSx en NetApp Disaster Recovery.
++
+Esto redescubre el almacén de datos, sus máquinas virtuales y su relación de destino.
+
+

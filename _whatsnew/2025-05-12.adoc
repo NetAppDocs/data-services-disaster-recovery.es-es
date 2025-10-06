@@ -1,0 +1,53 @@
+= Mapeo de subredes
+:allow-uri-read: 
+
+
+
+
+=== Mapeo de subredes
+
+Con esta versión, puede administrar direcciones IP en conmutación por error de una nueva manera mediante el mapeo de subredes, que le permite agregar subredes para cada vCenter.  Al hacerlo, define el CIDR IPv4, la puerta de enlace predeterminada y el DNS para cada red virtual.
+
+En caso de conmutación por error, NetApp Disaster Recovery determina la dirección IP adecuada de cada vNIC observando el CIDR proporcionado para la red virtual asignada y lo utiliza para derivar la nueva dirección IP.
+
+Por ejemplo:
+
+* RedA = 10.1.1.0/24
+* RedB = 192.168.1.0/24
+
+
+VM1 tiene una vNIC (10.1.1.50) que está conectada a NetworkA.  La red A se asigna a la red B en la configuración del plan de replicación.
+
+En caso de conmutación por error, NetApp Disaster Recovery reemplaza la parte de red de la dirección IP original (10.1.1) y conserva la dirección de host (.50) de la dirección IP original (10.1.1.50).  Para VM1, NetApp Disaster Recovery analiza la configuración CIDR para NetworkB y utiliza la parte de red de NetworkB 192.168.1 mientras conserva la parte del host (.50) para crear la nueva dirección IP para VM1.  La nueva IP pasa a ser 192.168.1.50.
+
+En resumen, la dirección del host permanece igual, mientras que la dirección de red se reemplaza con la que esté configurada en la asignación de subred del sitio.  Esto le permite administrar la reasignación de direcciones IP en caso de conmutación por error con mayor facilidad, especialmente si tiene cientos de redes y miles de máquinas virtuales para administrar.
+
+Para obtener detalles sobre cómo incluir la asignación de subredes en sus sitios, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
+
+
+
+=== Protección contra saltos
+
+Ahora puede omitir la protección para que el servicio no cree automáticamente una relación de protección inversa después de una conmutación por error del plan de replicación.  Esto es útil si desea realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
+
+Cuando se inicia una conmutación por error, de manera predeterminada el servicio crea automáticamente una relación de protección inversa para cada volumen en el plan de replicación, si el sitio de origen original está en línea.  Esto significa que el servicio crea una relación SnapMirror desde el sitio de destino hasta el sitio de origen.  El servicio también revierte automáticamente la relación SnapMirror cuando se inicia una conmutación por recuperación.
+
+Al iniciar una conmutación por error, ahora puede elegir la opción *Omitir protección*.  Con esto, el servicio no revierte automáticamente la relación SnapMirror .  En lugar de ello, deja el volumen escribible en ambos lados del plan de replicación.
+
+Una vez que el sitio de origen original vuelva a estar en línea, puede establecer una protección inversa seleccionando *Proteger recursos* en el menú Acciones del plan de replicación.  Esto intenta crear una relación de replicación inversa para cada volumen del plan.  Puede ejecutar este trabajo repetidamente hasta que se restablezca la protección.  Cuando se restablezca la protección, puede iniciar una conmutación por error de la forma habitual.
+
+Para obtener más detalles sobre cómo omitir la protección, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
+
+
+
+=== Actualizaciones de programación de SnapMirror en el plan de replicación
+
+NetApp Disaster Recovery ahora admite el uso de soluciones de gestión de instantáneas externas, como el programador de políticas nativo ONTAP SnapMirror o integraciones de terceros con ONTAP.  Si cada almacén de datos (volumen) en el plan de replicación ya tiene una relación SnapMirror que se administra en otro lugar, puede usar esas instantáneas como puntos de recuperación en NetApp Disaster Recovery.
+
+Para configurar, en la sección Plan de replicación > Asignación de recursos, marque la casilla de verificación *Usar copias de seguridad administradas por la plataforma y programas de retención* al configurar la asignación de almacenes de datos.
+
+Cuando se selecciona la opción, NetApp Disaster Recovery no configura una programación de respaldo.  Sin embargo, aún es necesario configurar un programa de retención porque aún se podrían tomar instantáneas para operaciones de prueba, conmutación por error y recuperación.
+
+Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
+
+Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .

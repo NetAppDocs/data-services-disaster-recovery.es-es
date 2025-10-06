@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-02.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  Seleccione las máquinas virtuales que se protegerán mediante NetApp Disaster Recovery. 
+---
+= Crear un plan de replicación: Paso 2: Seleccionar recursos de VM en NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Seleccione las máquinas virtuales que se protegerán mediante NetApp Disaster Recovery.
+
+Hay varias formas de seleccionar máquinas virtuales para protección:
+
+* *Seleccionar máquinas virtuales individuales*: al hacer clic en el botón *Máquinas virtuales* podrá seleccionar máquinas virtuales individuales para proteger.  A medida que selecciona cada VM, el servicio la agrega a un grupo de recursos predeterminado ubicado en el lado derecho de la pantalla.
+* *Seleccionar grupos de recursos creados previamente*: puede crear grupos de recursos personalizados de antemano utilizando la opción Grupo de recursos del menú NetApp Disaster Recovery.  Esto no es un requisito ya que puede utilizar los otros dos métodos para crear un grupo de recursos como parte del proceso del plan de replicación. Para obtener más información, consulte link:../use/drplan-create.html["Crear un plan de replicación"] .
+* *Seleccionar almacenes de datos de vCenter completos*: si tiene muchas máquinas virtuales para proteger con este plan de replicación, es posible que no sea tan eficiente seleccionar máquinas virtuales individuales.  Debido a que NetApp Disaster Recovery utiliza la replicación SnapMirror basada en volumen para proteger las máquinas virtuales, todas las máquinas virtuales que residen en un almacén de datos se replicarán como parte del volumen.  En la mayoría de los casos, debe hacer que NetApp Disaster Recovery proteja y reinicie cualquier máquina virtual ubicada en el almacén de datos.  Utilice esta opción para indicarle al servicio que agregue cualquier máquina virtual alojada en un almacén de datos seleccionado a la lista de máquinas virtuales protegidas.
+
+
+Para esta instrucción guiada, seleccionamos todo el almacén de datos de vCenter.
+
+.Pasos para acceder a esta página
+. Desde la página *Plan de replicación*, continúe a la sección *Aplicaciones*.
+. Revise la información en la página *Aplicaciones* que se abre.
++
+image:evs-create-rp-wiz-b-1-4.png["Plan de replicación, página de aplicaciones"]
+
+
+
+.Pasos para seleccionar el almacén o almacenes de datos:
+. Seleccione *Almacenes de datos*.
+. Marque las casillas de verificación junto a cada almacén de datos que desee proteger.
+. (Opcionalmente) Cambie el nombre del grupo de recursos a un nombre adecuado seleccionando el ícono de lápiz junto al nombre del grupo de recursos.
+. Seleccione *Siguiente*.
+
+
+Continuar conlink:evs-deploy-guide-create-rp-wiz-03.html["Asistente para crear un plan de replicación Paso 3"] .

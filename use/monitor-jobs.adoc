@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: use/monitor-jobs.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
+summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Puede supervisar todos los trabajos de recuperación ante desastres y determinar su progreso. 
+---
+= Supervisar trabajos de recuperación ante desastres de NetApp
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Puede supervisar todos los trabajos de recuperación ante desastres de NetApp y determinar su progreso.
+
+
+
+== Ver trabajos
+
+*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
+. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde el menú, seleccione *Supervisión de trabajos*.
+. Explora todos los trabajos relacionados con operaciones y revisa sus marcas de tiempo y estado.
+. Para ver los detalles de un trabajo en particular, seleccione esa fila.
+. Para actualizar la información, seleccione *Actualizar*.
+
+
+
+
+== Cancelar un trabajo
+
+Si un trabajo está en progreso o en estado de cola y no desea que continúe, puede cancelarlo.  Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola.  Es posible que desees cancelar un trabajo antes de que caduque.
+
+*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Desde la barra de navegación izquierda de la consola de NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde el menú, seleccione *Supervisión de trabajos*.
+. En la página del Monitor de trabajos, anote el ID del trabajo que desea cancelar.
++
+El trabajo debe estar en estado "En progreso" o "En cola".
+
+. En la columna Acciones, seleccione *Cancelar trabajo*.
+

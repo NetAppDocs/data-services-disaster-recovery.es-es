@@ -1,0 +1,25 @@
+= Soporte de proxy inteligente
+:allow-uri-read: 
+
+
+
+
+=== Soporte de proxy inteligente
+
+El agente de la consola de NetApp admite proxy inteligente.  El proxy inteligente es una forma liviana, segura y eficiente de conectar su sistema local a NetApp Disaster Recovery.  Proporciona una conexión segura entre su sistema y NetApp Disaster Recovery sin necesidad de una VPN o acceso directo a Internet.  Esta implementación de proxy optimizada descarga el tráfico de API dentro de la red local.
+
+Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.
+
+La implementación del proxy de recuperación ante desastres de NetApp requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de recuperación ante desastres de NetApp dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
+
+Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configure su infraestructura para NetApp Disaster Recovery"] .
+
+Para obtener más información sobre la configuración general del proxy en la consola de NetApp , consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
+
+
+
+=== Finaliza la prueba gratuita en cualquier momento
+
+Puedes detener la prueba gratuita en cualquier momento o esperar hasta que caduque.
+
+Ver https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Finalizar la prueba gratuita"] .

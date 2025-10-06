@@ -1,0 +1,16 @@
+= Compatibilidad con almacenes de datos VMware VMFS locales a locales
+:allow-uri-read: 
+
+
+
+
+=== Compatibilidad con almacenes de datos VMware VMFS locales a locales
+
+Esta versión incluye soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para iSCSI y FC protegidos en almacenamiento local.  Anteriormente, el servicio proporcionaba una _vista previa de tecnología_ compatible con almacenes de datos VMFS para iSCSI y FC.
+
+A continuación se presentan algunas consideraciones adicionales con respecto a los protocolos iSCSI y FC:
+
+* El soporte de FC es para protocolos front-end del cliente, no para replicación.
+* NetApp Disaster Recovery solo admite un único LUN por volumen ONTAP .  El volumen no debe tener múltiples LUN.
+* Para cualquier plan de replicación, el volumen ONTAP de destino debe utilizar los mismos protocolos que el volumen ONTAP de origen que aloja las máquinas virtuales protegidas.  Por ejemplo, si el origen utiliza un protocolo FC, el destino también debe utilizar FC.
+

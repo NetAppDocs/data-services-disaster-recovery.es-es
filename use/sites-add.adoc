@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: use/sites-add.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: Antes de poder crear un plan de recuperación ante desastres, debe agregar un sitio de vCenter principal y un sitio de recuperación ante desastres de vCenter de destino en NetApp Disaster Recovery. 
+---
+= Agregar vCenters a un sitio en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Antes de poder crear un plan de recuperación ante desastres, debe agregar un servidor vCenter principal a un sitio y un sitio de recuperación ante desastres vCenter de destino en la consola de NetApp .
+
+
+TIP: Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de consola de NetApp .
+
+Una vez agregados los vCenters, NetApp Disaster Recovery realiza un descubrimiento profundo de los entornos de vCenter, incluidos los clústeres de vCenter, los hosts ESXi, los almacenes de datos, la superficie de almacenamiento, los detalles de las máquinas virtuales, las réplicas de SnapMirror y las redes de máquinas virtuales.
+
+*Rol de consola de NetApp requerido* Administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+*Acerca de esta tarea*
+
+Si agregó vCenters en versiones anteriores y desea personalizar la programación de detección, debe editar el sitio del servidor vCenter y configurar la programación.
+
+
+TIP: NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Después de configurar un sitio, puede editar más tarde el vCenter para personalizar la programación de detección que satisfaga sus necesidades.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 23 horas y 59 minutos.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.  El intervalo mínimo es de 30 minutos y el máximo de 24 horas.
+
+Primero debe realizar algunos descubrimientos manuales para obtener la información más actualizada sobre su entorno.  Después de esto, puedes configurar el cronograma para que se ejecute automáticamente.
+
+Si tiene vCenters de versiones anteriores y desea cambiar cuándo se ejecuta la detección, edite el sitio del servidor vCenter y configure la programación.
+
+Las máquinas virtuales recién agregadas o eliminadas se reconocen en la próxima detección programada o durante una detección manual inmediata.
+
+Las máquinas virtuales solo se pueden proteger si el plan de replicación se encuentra en uno de los siguientes estados:
+
+* Listo
+* Conmutación por recuperación comprometida
+* Prueba de conmutación por error confirmada
+
+
+*Clústeres de vCenter en un sitio* Cada sitio contiene uno o más vCenters.  Estos vCenters utilizan uno o más clústeres de almacenamiento ONTAP para alojar almacenes de datos NFS o VMFS.
+
+Un clúster de vCenter puede residir en un solo sitio.  Necesita la siguiente información para agregar un clúster de vCenter a un sitio:
+
+* La dirección IP o FQDN de administración de vCenter
+* Credenciales para una cuenta de vCenter con los privilegios necesarios para realizar operaciones. Ver link:vcenter--privileges.html["privilegios de vCenter requeridos"] Para más información.
+* Para los sitios VMware alojados en la nube, las claves de acceso a la nube necesarias
+* Un certificado de seguridad para acceder a su vCenter.
++
+
+NOTE: El servicio admite certificados de seguridad autofirmados o certificados de una autoridad de certificación (CA) central.
+
+
+
+.Pasos
+. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
+. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
++
+Accederá a la página del Panel de recuperación ante desastres de NetApp .  Cuando comience a utilizar el servicio, deberá agregar información de vCenter.  Más tarde, el Panel de control muestra datos sobre sus sitios y planes de replicación.
+
++
+
+NOTE: Aparecen diferentes campos según el tipo de sitio que esté agregando.
+
+. Si ya existen algunos sitios de vCenter y desea agregar más, en el menú, seleccione *Sitios* y luego seleccione *Agregar*.
+. En la página Sitios, seleccione el sitio y seleccione *Agregar vCenter*.
+. *Fuente*: seleccione *Descubrir servidores vCenter* para ingresar información sobre el sitio vCenter de origen.
++
+
+TIP: Si ya existen algunos sitios de vCenter y desea agregar más, en el menú superior, seleccione *Sitios* y luego seleccione *Agregar*.
+
++
+image:vcenter-add.png["Agregar captura de pantalla del servidor vCenter"]
+
++
+** Seleccione un sitio, seleccione el agente de consola de NetApp y proporcione las credenciales de vCenter.
+** (Se aplica solo a sitios locales) Para aceptar certificados autofirmados para el vCenter de origen, marque la casilla.
++
+
+NOTE: Los certificados autofirmados no son tan seguros como otros certificados.  Si su vCenter *NO* está configurado con certificados de autoridad de certificación (CA), debe marcar esta casilla; de lo contrario, la conexión al vCenter no funcionará.
+
+
+
+. Seleccione *Agregar*.
++
+A continuación, agregará un vCenter de destino.
+
+. Agregue nuevamente un sitio para el vCenter de destino.
+. Nuevamente, seleccione *Agregar vCenter* y agregue la información del vCenter de destino.
+. *Objetivo*:
++
+.. Elija el sitio de destino y la ubicación.  Si el destino es la nube, seleccione *AWS*.
++
+*** (Se aplica solo a sitios en la nube) *Token API*: Ingrese el token API para autorizar el acceso al servicio para su organización.  Cree el token API proporcionando roles de organización y servicio específicos.
+*** (Se aplica solo a sitios en la nube) *ID de organización larga*: Ingrese la ID única de la organización.  Puede identificar esta ID haciendo clic en el nombre de usuario en la sección Cuenta de la Consola de NetApp .
+
+
+.. Seleccione *Agregar*.
++
+Los vCenters de origen y destino aparecen en la lista de sitios.
+
++
+image:sites-list2.png["Captura de pantalla de la página del sitio"]
+
+
+
+. Para ver el progreso de la operación, desde el menú, seleccione *Monitoreo de trabajos*.
+
+
+
+
+== Agregar asignación de subred para un sitio de vCenter
+
+Puede administrar direcciones IP en operaciones de conmutación por error mediante la asignación de subredes, lo que le permite agregar subredes para cada vCenter.  Al hacerlo, define el CIDR IPv4, la puerta de enlace predeterminada y el DNS para cada red virtual.
+
+En caso de conmutación por error, NetApp Disaster Recovery utiliza el CIDR de la red asignada para asignar a cada vNIC una nueva dirección IP.
+
+Por ejemplo:
+
+* RedA = 10.1.1.0/24
+* RedB = 192.168.1.0/24
+
+
+VM1 tiene una vNIC (10.1.1.50) que está conectada a NetworkA.  La red A se asigna a la red B en la configuración del plan de replicación.
+
+En caso de conmutación por error, NetApp Disaster Recovery reemplaza la parte de red de la dirección IP original (10.1.1) y conserva la dirección de host (.50) de la dirección IP original (10.1.1.50).  Para VM1, NetApp Disaster Recovery analiza la configuración CIDR para NetworkB y utiliza la parte de red de NetworkB 192.168.1 mientras conserva la parte del host (.50) para crear la nueva dirección IP para VM1.  La nueva IP pasa a ser 192.168.1.50.
+
+En resumen, la dirección del host permanece igual, mientras que la dirección de red se reemplaza con la que esté configurada en la asignación de subred del sitio.  Esto le permite administrar la reasignación de direcciones IP en caso de conmutación por error con mayor facilidad, especialmente si tiene cientos de redes y miles de máquinas virtuales para administrar.
+
+El uso del mapeo de subredes es un proceso opcional de dos pasos:
+
+* Primero, agregue la asignación de subred para cada sitio de vCenter.
+* En segundo lugar, en el plan de replicación, indique que desea utilizar la asignación de subred en la pestaña Máquinas virtuales y en el campo IP de destino.
+
+
+.Pasos
+. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. De las accionesimage:icon-vertical-dots.png["Icono de acciones"] Icono de la derecha, seleccione *Agregar subred*.
++
+image:dr-sites-subnet-menu.png["Agregar captura de pantalla del menú de subred"]
+
++
+Aparece la página Configurar subred:
+
++
+image:sites-subnet-add.png["Agregar captura de pantalla de mapeo de subred"]
+
+. En la página Configurar subred, ingrese la siguiente información:
++
+.. Subred: ingrese el CIDR IPv4 para la subred hasta /32.
++
+
+TIP: La notación CIDR es un método para especificar direcciones IP y sus máscaras de red.  El /24 denota la máscara de red.  El número consta de una dirección IP con el número después del "/" indicando cuántos bits de la dirección IP denotan la red.  Por ejemplo, 192.168.0.50/24, la dirección IP es 192.168.0.50 y el número total de bits en la dirección de red es 24.  192.168.0.50 255.255.255.0 se convierte en 192.168.0.0/24.
+
+.. Puerta de enlace: introduzca la puerta de enlace predeterminada para la subred.
+.. DNS: Ingrese el DNS para la subred.
+
+
+. Seleccione *Agregar mapeo de subred*.
+
+
+
+
+=== Seleccionar la asignación de subred para un plan de replicación
+
+Al crear un plan de replicación, puede seleccionar la asignación de subred para el plan de replicación.
+
+El uso del mapeo de subredes es un proceso opcional de dos pasos:
+
+* Primero, agregue la asignación de subred para cada sitio de vCenter.
+* En segundo lugar, en el plan de replicación, indique que desea utilizar la asignación de subred.
+
+
+.Pasos
+. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+. Seleccione *Agregar* para agregar un plan de replicación.
+. Complete los campos de la forma habitual agregando los servidores vCenter, seleccionando los grupos de recursos o aplicaciones y completando las asignaciones.
+. En la página Plan de replicación > Asignación de recursos, seleccione la sección *Máquinas virtuales*.
++
+image:dr-plan-vm-subnet-option.png["Captura de pantalla de selección de mapeo de subred"]
+
+. En el campo *IP de destino*, seleccione *Usar asignación de subred* de la lista desplegable.
++
+
+NOTE: Si hay dos máquinas virtuales (por ejemplo, una es Linux y la otra es Windows), las credenciales solo se necesitan para Windows.
+
+. Continúe con la creación del plan de replicación.
+
+
+
+
+== Edite el sitio del servidor vCenter y personalice la programación de detección
+
+Puede editar el sitio del servidor vCenter para personalizar la programación de detección.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 23 horas y 59 minutos.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
+
+Si tiene vCenters de versiones anteriores y desea cambiar cuándo se ejecuta la detección, edite el sitio del servidor vCenter y configure la programación.
+
+Si no desea programar la detección, puede deshabilitar la opción de detección programada y actualizar la detección manualmente en cualquier momento.
+
+.Pasos
+. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. Seleccione el sitio que desea editar.
+. Seleccione las accionesimage:icon-vertical-dots.png["Icono de acciones"] icono de la derecha y seleccione *Editar*.
+. En la página Editar servidor vCenter, edite los campos según sea necesario.
+. Para personalizar la programación de descubrimiento, marque la casilla *Habilitar descubrimiento programado* y seleccione el intervalo de fecha y hora que desee.
++
+image:sites-edit-schedule.png["Editar captura de pantalla del programa de descubrimiento"]
+
+. Seleccione *Guardar*.
+
+
+
+
+== Actualizar el descubrimiento manualmente
+
+Puede actualizar el descubrimiento manualmente en cualquier momento.  Esto es útil si ha agregado o eliminado máquinas virtuales y desea actualizar la información en NetApp Disaster Recovery.
+
+.Pasos
+. En el menú Recuperación ante desastres de NetApp , seleccione *Sitios*.
+. Seleccione el sitio que desea actualizar.
+. Seleccione las accionesimage:icon-vertical-dots.png["Icono de acciones"] icono a la derecha y seleccione *Actualizar*.
+

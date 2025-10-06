@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-solution-overview.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, bluexp, evs, console, amazon elastic vmware service 
+summary: Descripción general de la solución de recuperación ante desastres de NetApp mediante Amazon EVS y Amazon FSxN. 
+---
+= Descripción general de la solución de recuperación ante desastres de NetApp con Amazon EVS y Amazon FSs para NetApp ONTAP
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp Disaster Recovery es un servicio de valor agregado alojado dentro del entorno de software como servicio de NetApp Console, que depende de la arquitectura central de NetApp Console.  Varios componentes principales comprenden el servicio DR para la protección de VMware dentro de la consola.
+
+Para obtener una descripción general completa de la solución NetApp Disaster Recovery, consultelink:../get-started/dr-intro.html["Obtenga más información sobre NetApp Disaster Recovery para VMware"] .
+
+Si desea proteger sus máquinas virtuales alojadas en VMware localmente en Amazon AWS, utilice el servicio para realizar copias de seguridad en Amazon EVS con Amazon FSx for NetApp ONTAP .
+
+La siguiente figura muestra cómo funciona el servicio para proteger sus máquinas virtuales con Amazon EVS.
+
+Descripción general de NetApp Disaster Recovery con Amazon EVS y FSx para ONTAPimage:evs-soloverview-evs.png["Descripción general de NetApp Disaster Recovery con Amazon EVS y FSx para ONTAP"]
+
+. Amazon EVS se implementa en su cuenta en una única configuración de zona de disponibilidad (AZ) y dentro de su nube privada virtual (VPC).
+. Un sistema de archivos FSx para ONTAP se implementa en la misma AZ que la implementación de Amazon EVS.  El sistema de archivos se conecta a Amazon EVS directamente a través de una interfaz de red elástica (ENI), una conexión de pares de VPC o un AmazonTransit Gateway.
+. El agente de la consola de NetApp está instalado en su VPC.  El agente de la consola de NetApp aloja varios servicios de administración de datos (llamados agentes), incluido el agente de recuperación ante desastres de NetApp que administra la recuperación ante desastres de la infraestructura de VMware tanto en sus centros de datos físicos locales como en sus recursos alojados en Amazon AWS.
+. El agente de recuperación ante desastres de NetApp se comunica de forma segura con el servicio alojado en la nube de la consola de NetApp para recibir tareas y distribuirlas a las instancias de almacenamiento locales adecuadas, alojadas en AWS y vCenter y ONTAP .
+. Puede crear un plan de replicación mediante la consola de interfaz de usuario alojada en la nube de NetApp Console, que indica las máquinas virtuales que se deben proteger, la frecuencia con la que se deben proteger y los procedimientos que se deben realizar para reiniciar esas máquinas virtuales en caso de una conmutación por error desde el sitio local.
+. El plan de replicación determina qué almacenes de datos de vCenter alojan las máquinas virtuales protegidas y los volúmenes de ONTAP que alojan esos almacenes de datos.  Si aún no existen volúmenes en el clúster FSx para ONTAP , NetApp Disaster Recovery los crea automáticamente.
+. Se crea una relación SnapMirror para cada volumen ONTAP de origen identificado con cada FSx de destino para el volumen ONTAP alojado en ONTAP y se crea un programa de replicación basado en el RPO proporcionado por el usuario en el plan de replicación.
+. En caso de falla del sitio principal, un administrador inicia un proceso de conmutación por error manual dentro de la consola de NetApp y selecciona una copia de seguridad para usar como punto de restauración.
+. El agente de recuperación ante desastres de NetApp activa FSx para volúmenes de protección de datos alojados en ONTAP .
+. El agente registra cada volumen FSx para ONTAP activado con Amazon EVS vCenter, registra cada VM protegida con Amazon EVS vCenter y las inicia según las reglas predefinidas contenidas en el plan de replicación.
+

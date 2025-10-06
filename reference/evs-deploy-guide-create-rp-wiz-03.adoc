@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-03.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  Una vez que tenga una lista de máquinas virtuales que se deben proteger, NetApp Disaster Recovery requiere que proporcione información de configuración de máquinas virtuales y mapeo de conmutación por error para usar durante una conmutación por error. 
+---
+= Crear un plan de replicación: Paso 3: Asignar recursos en NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Una vez que tenga una lista de máquinas virtuales que desea proteger mediante NetApp Disaster Recovery, proporcione información de configuración de máquina virtual y mapeo de conmutación por error para usar durante una conmutación por error.
+
+Es necesario mapear cuatro tipos principales de información:
+
+* Recursos computacionales
+* Redes virtuales
+* Reconfiguración de VM
+* Mapeo de almacenes de datos
+
+
+Cada VM requiere los primeros tres tipos de información.  Se requiere el mapeo del almacén de datos para cada almacén de datos que aloja máquinas virtuales que se van a proteger.
+
+* Las secciones con el icono de precaución (image:evs-caution-icon.png["25,25"] ) requieren que usted proporcione información cartográfica.
+* La sección marcada con el icono de verificación (image:evs-check-icon.png["25,25"] ) han sido mapeados o tienen asignaciones predeterminadas.  Revísalos para asegurarte de que la configuración actual cumpla con tus requisitos.
+
+
+.Pasos para acceder a esta página
+. Desde la página *Plan de replicación*, continúe a la sección *Mapeo de recursos*.
+. Revise la información en la página *Mapeo de recursos* que se abre.
++
+image:evs-create-rp-wiz-c0.png["Crear plan de replicación, página de mapeo de recursos"]
+
+. Para abrir cada categoría de asignaciones requeridas, seleccione la flecha hacia abajo (*v*) junto a la sección.
+
+
+
+
+== Mapeo de recursos computacionales
+
+Debido a que un sitio puede alojar varios centros de datos virtuales y varios clústeres de vCenter, debe identificar en qué clúster de vCenter recuperar las máquinas virtuales en caso de una conmutación por error.
+
+.Pasos para mapear recursos computacionales
+. Seleccione el centro de datos virtual de la lista de centros de datos ubicados en el sitio de recuperación ante desastres.
+. Seleccione el clúster para alojar los almacenes de datos y las máquinas virtuales de la lista de clústeres dentro del centro de datos virtual seleccionado.
+. (Opcional) Seleccione un host de destino en el clúster de destino.
++
+Este paso no es necesario porque NetApp Disaster Recovery selecciona el primer host agregado al clúster en vCenter.  En ese momento, las máquinas virtuales continúan ejecutándose en ese host ESXi o VMware DRS mueve la máquina virtual a un host ESXi diferente según sea necesario en función de las reglas de DRS configuradas.
+
+. (Opcional) Proporcione el nombre de una carpeta vCenter de nivel superior donde colocar los registros de VM.
++
+Esto es para sus necesidades organizativas y no es obligatorio.
+
++
+image:evs-create-rp-wiz-c-compute-resources-1-4.png["Crear un plan de replicación, calcular recursos"]
+
+
+
+
+
+== Mapear recursos de red virtual
+
+Cada máquina virtual puede tener una o más NIC virtuales conectadas a redes virtuales dentro de la infraestructura de red de vCenter.  Para garantizar que cada máquina virtual esté conectada correctamente a las redes deseadas al reiniciar en el sitio de DR, identifique a qué redes virtuales del sitio de DR conectará estas máquinas virtuales.  Para ello, asigne cada red virtual del sitio local a una red asociada en el sitio de recuperación ante desastres.
+
+.Seleccione qué red virtual de destino asignar a cada red virtual de origen
+. Seleccione el segmento objetivo de la lista desplegable.
+. Repita el paso anterior para cada red virtual de origen indicada.
++
+image:evs-create-rp-wiz-c-network-resources-1-2.png["Crear un plan de replicación, recursos de red"]
+
+
+
+
+
+== Definir opciones para la reconfiguración de la máquina virtual durante la conmutación por error
+
+Es posible que cada máquina virtual requiera modificaciones para funcionar correctamente en el sitio DR vCenter.  La sección Máquinas virtuales le permite proporcionar los cambios necesarios.
+
+De forma predeterminada, NetApp Disaster Recovery utiliza la misma configuración para cada máquina virtual que la utilizada en el sitio local de origen.  Esto supone que las máquinas virtuales utilizarán la misma dirección IP, CPU virtual y configuración de DRAM virtual.
+
+
+
+=== Reconfiguración de la red
+
+Los tipos de direcciones IP admitidos son estáticos y DHCP.  Para direcciones IP estáticas, tienes las siguientes configuraciones de IP de destino:
+
+* *Igual que el origen*: como sugiere el nombre, el servicio utiliza la misma dirección IP en la máquina virtual de destino que se utilizó en la máquina virtual en el sitio de origen.  Esto requiere que configure las redes virtuales que se asignaron en el paso anterior para las mismas configuraciones de subred.
+* *Diferente de la fuente*: el servicio proporciona un conjunto de campos de dirección IP para cada VM que deben configurarse para la subred adecuada utilizada en la red virtual de destino, que asignó en la sección anterior.  Para cada máquina virtual debe proporcionar una dirección IP, una máscara de subred, un DNS y valores de puerta de enlace predeterminados.  De manera opcional, utilice la misma máscara de subred, DNS y configuración de puerta de enlace para todas las máquinas virtuales para simplificar el proceso cuando todas las máquinas virtuales se conectan a la misma subred.
+* *Mapeo de subred*: esta opción reconfigura la dirección IP de cada máquina virtual en función de la configuración CIDR de la red virtual de destino.  Para utilizar esta función, asegúrese de que las redes virtuales de cada vCenter tengan una configuración CIDR definida dentro del servicio, como se modificó en la información de vCenter en la página Sitios.
+
+
+Después de configurar las subredes, la asignación de subredes utiliza el mismo componente de unidad de la dirección IP para la configuración de la máquina virtual de origen y de destino, pero reemplaza el componente de subred de la dirección IP en función de la información CIDR proporcionada.  Esta función también requiere que tanto la red virtual de origen como la de destino tengan la misma clase de dirección IP (la `/xx` componente del CIDR).  Esto garantiza que haya suficientes direcciones IP disponibles en el sitio de destino para alojar todas las máquinas virtuales protegidas.
+
+Para esta configuración de EVS, asumimos que las configuraciones de IP de origen y destino son las mismas y no requieren ninguna reconfiguración adicional.
+
+.Realizar cambios en la reconfiguración de la configuración de red
+. Seleccione el tipo de dirección IP que se utilizará para las máquinas virtuales conmutadas por error.
+. (Opcional) Proporcione un esquema de cambio de nombre de VM para las VM reiniciadas proporcionando un valor de prefijo y sufijo opcionales.
++
+image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Crear un plan de replicación, recursos de red"]
+
+
+
+
+
+=== Reconfiguración de recursos informáticos de la máquina virtual
+
+Hay varias opciones para reconfigurar los recursos informáticos de la máquina virtual.  NetApp Disaster Recovery admite cambiar la cantidad de CPU virtuales, la cantidad de DRAM virtual y el nombre de la máquina virtual.
+
+.Especifique cualquier cambio en la configuración de la máquina virtual
+. (Opcional) Modifique la cantidad de CPU virtuales que debe utilizar cada máquina virtual.  Esto puede ser necesario si los hosts del clúster vCenter de DR no tienen tantos núcleos de CPU como el clúster vCenter de origen.
+. (Opcional) Modifique la cantidad de DRAM virtual que debe utilizar cada máquina virtual.  Esto puede ser necesario si los hosts del clúster vCenter de DR no tienen tanta DRAM física como los hosts del clúster vCenter de origen.
++
+image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Crear un plan de replicación, recursos de VM"]
+
+
+
+
+
+=== Orden de arranque
+
+NetApp Disaster Recovery admite un reinicio ordenado de las máquinas virtuales según un campo de orden de arranque.  El campo Orden de arranque indica cómo se inician las máquinas virtuales en cada grupo de recursos.  Aquellas máquinas virtuales con el mismo valor en el campo Orden de arranque arrancan en paralelo.
+
+.Modificar la configuración del orden de arranque
+. (Opcionalmente) Modifique el orden en que desea que se reinicien sus máquinas virtuales.  Este campo acepta cualquier valor numérico.  NetApp Disaster Recovery intenta reiniciar las máquinas virtuales que tienen el mismo valor numérico en paralelo.
+. (Opcionalmente) Proporcione un retraso que se utilizará entre cada reinicio de la máquina virtual.  El tiempo se inyecta después de que se completa el reinicio de esta VM y antes de las VM con el siguiente número de orden de arranque más alto.  Este número está en minutos.
++
+image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Crear plan de replicación, orden de arranque"]
+
+
+
+
+
+=== Operaciones personalizadas del sistema operativo invitado
+
+NetApp Disaster Recovery permite realizar algunas operaciones del sistema operativo invitado para cada máquina virtual:
+
+* NetApp Disaster Recovery puede realizar copias de seguridad consistentes con las aplicaciones de las máquinas virtuales que ejecutan bases de datos Oracle y Microsoft SQL Server.
+* NetApp Disaster Recovery puede ejecutar scripts personalizados definidos adecuados para el sistema operativo invitado para cada máquina virtual.  La ejecución de dichos scripts requiere credenciales de usuario aceptables para el sistema operativo invitado con amplios privilegios para ejecutar las operaciones enumeradas en el script.
+
+
+.Modificar las operaciones del sistema operativo invitado personalizado de cada máquina virtual
+. (Opcional) Marque la casilla de verificación *Crear réplicas consistentes de la aplicación* si la máquina virtual aloja una base de datos Oracle o SQL Server.
+. (Opcional) Para realizar acciones personalizadas dentro del sistema operativo invitado como parte del proceso de inicio, cargue un script para cualquier máquina virtual.  Para ejecutar un solo script en todas las máquinas virtuales, utilice la casilla de verificación resaltada y complete los campos.
+. Ciertos cambios de configuración requieren credenciales de usuario con permisos adecuados para realizar las operaciones.  Proporcionar credenciales en los siguientes casos:
++
+** El sistema operativo invitado ejecutará un script dentro de la máquina virtual.
+** Es necesario realizar una instantánea consistente con la aplicación.
+
+
+
+
+image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Crear un plan de replicación, operaciones personalizadas del sistema operativo invitado"]
+
+
+
+== Almacenes de datos de mapas
+
+El paso final en la creación de un plan de replicación es identificar cómo ONTAP debe proteger los almacenes de datos.  Estas configuraciones definen el objetivo de punto de recuperación (RPO) de los planes de replicación, cuántas copias de seguridad se deben mantener y dónde replicar los volúmenes ONTAP de alojamiento de cada almacén de datos de vCenter.
+
+De manera predeterminada, NetApp Disaster Recovery administra su propio programa de replicación de instantáneas; sin embargo, de manera opcional, puede especificar que desea utilizar el programa de política de replicación de SnapMirror existente para la protección del almacén de datos.
+
+Además, puede personalizar opcionalmente qué LIF de datos (interfaces lógicas) y política de exportación utilizar.  Si no proporciona estas configuraciones, NetApp Disaster Recovery utiliza todos los LIF de datos asociados con el protocolo apropiado (NFS, iSCSI o FC) y utiliza la política de exportación predeterminada para volúmenes NFS.
+
+.Para configurar la asignación de almacén de datos (volumen)
+. (Opcional) Decida si desea utilizar un programa de replicación de ONTAP SnapMirror existente o que NetApp Disaster Recovery administre la protección de sus máquinas virtuales (predeterminado).
+. Proporcionar un punto de partida para indicar cuándo el servicio debe comenzar a realizar copias de seguridad.
+. Especifique con qué frecuencia el servicio debe realizar una copia de seguridad y replicarla en el clúster de destino de recuperación ante desastres de Amazon FSx for NetApp ONTAP .
+. Especifique cuántas copias de seguridad históricas se deben conservar.  El servicio mantiene la misma cantidad de copias de seguridad en el clúster de almacenamiento de origen y destino.
+. (Opcional) Seleccione una interfaz lógica predeterminada (LIF de datos) para cada volumen.  Si no se selecciona ninguno, se configuran todos los LIF de datos en el SVM de destino que admiten el protocolo de acceso al volumen.
+. (Opcional) Seleccione una política de exportación para cualquier volumen NFS.  Si no se selecciona, se utiliza la política de exportación predeterminada
++
+image:evs-create-rp-wiz-c-datastore-mapping.png["Crear un plan de replicación y mapeo del almacén de datos"]
+
+
+
+Continuar conlink:evs-deploy-guide-create-rp-wiz-04.html["Asistente para crear un plan de replicación Paso 4"] .

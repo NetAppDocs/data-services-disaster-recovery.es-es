@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: use/dashboard-view.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
+summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
+---
+= Vea el estado de sus planes de recuperación ante desastres de NetApp en el Panel de control
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Con el panel de recuperación ante desastres de NetApp , puede determinar el estado de sus sitios de recuperación ante desastres y sus planes de replicación.  Puede determinar rápidamente qué sitios y planes están en buen estado, desconectados o degradados.
+
+*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la consola de NetApp para todos los servicios"^] .
+
+.Pasos
+. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
+. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. Desde el menú Recuperación ante desastres de NetApp , seleccione *Panel de control*.
++
+image:dr-dashboard.png["Panel de recuperación ante desastres de NetApp"]
+
+. Revise la siguiente información en el Tablero:
++
+** *Sitios*: vea el estado de sus sitios.  Un sitio puede tener uno de los siguientes estados:
++
+*** *En ejecución*: el vCenter está conectado, en buen estado y funcionando.
+*** *Caído*: No se puede acceder al vCenter o hay problemas de conectividad.
+*** *Problema*: No se puede acceder al vCenter o hay problemas de conectividad.
++
+Para ver los detalles del sitio, seleccione *Ver todo* para un estado o *Ver sitios* para verlos todos.
+
+
+
+** *Planes de replicación*: vea el estado de sus planes.  Un plan puede tener uno de los siguientes estados:
++
+*** *Listo*
+*** *Fallido*
++
+Para revisar los detalles del plan de replicación, seleccione *Ver todo* para ver un estado o *Ver planes de replicación* para verlos todos.
+
+
+
+** *Grupos de recursos*: vea el estado de sus grupos de recursos.  Un grupo de recursos puede tener uno de los siguientes estados:
+** *Máquinas virtuales protegidas*: Las máquinas virtuales son parte de un grupo de recursos.
+** *Máquinas virtuales no protegidas*: Las máquinas virtuales no son parte de un grupo de recursos.
++
+Para revisar los detalles, seleccione el enlace *Ver* debajo de cada uno.
+
+** El número de conmutaciones por error, conmutaciones por error de prueba y migraciones.  Por ejemplo, si creó dos planes y migró a los destinos, el recuento de migración aparece como "2".
+
+
+. Revise todas las operaciones en el panel Actividad.  Para ver todas las operaciones en el Monitor de trabajos, seleccione *Ver todos los trabajos*.
+

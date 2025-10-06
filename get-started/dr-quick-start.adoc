@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-quick-start.html 
+keywords: how to get started with bluexp disaster recovery, disaster recovery quick start, failover, failback 
+summary: Comience a utilizar el servicio NetApp Disaster Recovery en unos pocos pasos. 
+---
+= Inicio rápido para NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+A continuación se muestra una descripción general de los pasos necesarios para comenzar a utilizar NetApp Disaster Recovery. Los enlaces dentro de cada paso lo llevarán a una página que proporciona más detalles.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]Revisar los prerrequisitos
+[role="quick-margin-para"]
+link:../get-started/dr-prerequisites.html["Asegúrese de que su sistema cumpla estos requisitos"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]Configurar NetApp Disaster Recovery
+[role="quick-margin-list"]
+* link:../get-started/dr-setup.html["Configurar la infraestructura para el servicio"] .
+* link:../get-started/dr-licensing.html["Configurar licencias"] .
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]¿Que sigue?
+[role="quick-margin-para"]
+Después de configurar el servicio, esto es lo que puedes hacer a continuación.
+
+[role="quick-margin-list"]
+* link:../use/sites-add.html["Agregue sus sitios de vCenter a NetApp Disaster Recovery"] .
+* link:../use/manage.html#manage-resource-groups["Crea tu primer grupo de recursos"] .
+* link:../use/drplan-create.html["Crea tu primer plan de replicación"] .
+* link:../use/replicate.html["Replicar aplicaciones a otro sitio"] .
+* link:../use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
+* link:../use/failback.html["Regresar las aplicaciones al sitio de origen original"] .
+* link:../use/manage.html["Administrar sitios, grupos de recursos y planes de replicación"] .
+* link:../use/monitor-jobs.html["Supervisar las operaciones de recuperación ante desastres"] .
+

@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-rp-operations.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.  Utilice NetApp Disaster Recovery con Amazon EVS y Amazon FSx for NetApp ONTAP para realizar la conmutación por error, probar la conmutación por error, actualizar recursos, migrar, tomar una instantánea ahora, deshabilitar o habilitar planes de replicación, limpiar instantáneas antiguas, conciliar instantáneas, eliminar un plan de replicación y editar programaciones. 
+---
+= Realice operaciones de plan de replicación con NetApp Disaster Recovery
+:allow-uri-read: 
+
+
+[role="lead"]
+Utilice NetApp Disaster Recovery con Amazon EVS y Amazon FSx for NetApp ONTAP para realizar las siguientes operaciones: conmutación por error, probar la conmutación por error, actualizar recursos, migrar, tomar una instantánea ahora, deshabilitar/habilitar el plan de replicación, limpiar instantáneas antiguas, conciliar instantáneas, eliminar el plan de replicación y editar programaciones.
+
+
+
+== Conmutación por error
+
+La operación principal que posiblemente necesite realizar es la que espera que nunca suceda: conmutar por error al centro de datos de DR (destino) en caso de una falla catastrófica en el sitio de producción local.
+
+La conmutación por error es un proceso iniciado manualmente.
+
+.Pasos para acceder a la operación de conmutación por error
+. Desde la barra de navegación izquierda de la consola de NetApp , seleccione *Protección* > *Recuperación ante desastres*.
+. En el menú NetApp Disaster Recovery, seleccione *Planes de replicación*.
+
+
+.Pasos para realizar una conmutación por error
+. Desde la página Planes de replicación, seleccione la opción Acciones del plan de replicaciónimage:icon-horizontal-dots.png["Puntos horizontales para el menú Acciones"] .
+. Seleccione *Conmutación por error*.
++
+image:evs-rp-menu-failover.png["Opción de menú de conmutación por error"]
+
+. Si el sitio de producción (protegido) no es accesible, seleccione una instantánea creada previamente como su imagen de recuperación.  Para ello, seleccione *Seleccionar*.
+. Seleccione la copia de seguridad que se utilizará para la recuperación.
+. (Opcional) Seleccione si desea que NetApp Disaster Recovery fuerce el proceso de conmutación por error independientemente del estado del plan de replicación.  Esto sólo debe hacerse como último recurso.
+. (Opcional) Seleccione si desea que NetApp Disaster Recovery cree automáticamente una relación de protección inversa después de que se haya recuperado el sitio de producción.
+. Escriba la palabra “Failover” para verificar que desea continuar.
+. Seleccione *Conmutación por error*.
++
+image:evs-rp-failover-dialog.png["Cuadro de diálogo de conmutación por error"]
+
+
+
+
+
+== Prueba de conmutación por error
+
+Una conmutación por error de prueba es similar a una conmutación por error, excepto por dos diferencias.
+
+* El sitio de producción todavía está activo y todas las máquinas virtuales siguen funcionando como se esperaba.
+* La protección de recuperación ante desastres de NetApp de las máquinas virtuales de producción continúa.
+
+
+Esto se logra mediante el uso de volúmenes ONTAP FlexClone nativos en el sitio de destino.  Para obtener más información sobre la conmutación por error de pruebas, consultelink:../use/failover.html["Conmutación por error de aplicaciones a un sitio remoto | Documentación de NetApp"] .
+
+Los pasos para ejecutar una conmutación por error de prueba son idénticos a los utilizados para ejecutar una conmutación por error real, excepto que se utiliza la operación Conmutación por error de prueba en el menú contextual del plan de replicación.
+
+.Pasos
+. Seleccione la opción Acciones del plan de replicaciónimage:icon-horizontal-dots.png["Puntos horizontales para el menú Acciones"] .
+. Seleccione *Prueba de conmutación por error* en el menú.
++
+image:evs-rp-menu-test-failover.png["Opción de menú de prueba de conmutación por error"]
+
+. Decide si quieres obtener el último estado del entorno de producción (Tomar instantánea ahora) o utilizar una copia de seguridad del plan de replicación creada previamente (Seleccionar)
+. Si eligió una copia de seguridad creada previamente, seleccione la copia de seguridad que se utilizará para la recuperación.
+. Escriba la palabra “Prueba de conmutación por error” para verificar que desea continuar.
+. Seleccione *Prueba de conmutación por error*.
++
+image:evs-test-failover-dialog.png["Cuadro de diálogo de prueba de conmutación por error"]
+
+
+
+
+
+== Ejecutar una verificación de cumplimiento
+
+Las comprobaciones de cumplimiento se ejecutan cada tres horas, de forma predeterminada.  En cualquier momento, es posible que desees ejecutar manualmente una verificación de cumplimiento.
+
+.Pasos
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Seleccione la opción *Ejecutar verificación de cumplimiento* en el menú Acciones del plan de replicación:
++
+image:evs-rp-menu-compliance-check.png["Opción de menú Ejecutar verificación de cumplimiento"]
+
+. Para cambiar la frecuencia con la que NetApp Disaster Recovery ejecuta automáticamente comprobaciones de cumplimiento, seleccione la opción *Editar programaciones* en el menú Acciones del plan de replicación.
+
+
+
+
+== Actualizar recursos
+
+Cada vez que realice cambios en su infraestructura virtual (como agregar o eliminar máquinas virtuales, agregar o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos), deberá realizar una actualización de los clústeres de vCenter afectados en el servicio NetApp Disaster Recovery.  El servicio hace esto automáticamente una vez cada 24 horas de manera predeterminada, pero una actualización manual garantiza que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección contra desastres.
+
+Hay dos casos en los que es necesaria una actualización:
+
+* Actualización de vCenter: realice una actualización de vCenter cada vez que se agreguen, eliminen o muevan máquinas virtuales de un clúster de vCenter:
+* Actualización del plan de replicación: realice una actualización del plan de replicación cada vez que una máquina virtual se mueva entre almacenes de datos en el mismo clúster de vCenter de origen.
+
+
+image::evs-rp-menu-refresh-resources.png[Opción de menú Actualizar recursos]
+
+
+
+== Emigrar
+
+Si bien NetApp Disaster Recovery se utiliza principalmente para casos de uso de recuperación ante desastres, también puede permitir movimientos únicos de un conjunto de máquinas virtuales desde el sitio de origen al sitio de destino.  Esto podría ser para un proyecto de migración concertada a la nube o podría usarse para evitar desastres, como mal tiempo, conflictos políticos u otros posibles eventos catastróficos temporales.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para mover las máquinas virtuales en un plan de replicación al clúster de Amazon EVS de destino, seleccione *Migrar* en el menú Acciones del plan de replicación:
++
+image::evs-rp-menu-migrate.png[Opción de menú Migrar]
+
+. Introduzca información en el cuadro de diálogo Migrar.
+
+
+
+
+== Toma una instantánea ahora
+
+En cualquier momento, puede tomar una instantánea inmediata del plan de replicación.  Esta instantánea está incluida en las consideraciones de recuperación ante desastres de NetApp establecidas por el recuento de retención de instantáneas del plan de replicación.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para tomar una instantánea inmediata de los recursos del plan de replicación, seleccione *Tomar instantánea ahora* en el menú Acciones del plan de replicación:
++
+image::evs-rp-menu-take-snapshot-now.png[Opción de menú Tomar instantánea ahora]
+
+
+
+
+
+== Deshabilitar o habilitar el plan de replicación
+
+Es posible que sea necesario detener temporalmente el plan de replicación para realizar alguna operación o mantenimiento que pueda afectar el proceso de replicación.  El servicio proporciona un método para detener e iniciar la replicación.
+
+. Para detener temporalmente la replicación, seleccione *Deshabilitar* en el menú Acciones del plan de replicación.
+. Para reiniciar la replicación, seleccione *Habilitar* en el menú Acciones del plan de replicación.
++
+Cuando el plan de replicación está activo, el comando *Habilitar* aparece desactivado.  Cuando el plan de replicación está deshabilitado, el comando *Deshabilitar* aparece desactivado.
+
++
+image::evs-rp-menu-disable-enable.png[Deshabilitar/Habilitar opción de menú]
+
+
+
+
+
+== Limpiar instantáneas antiguas
+
+Es posible que desees limpiar instantáneas antiguas que se hayan conservado en los sitios de origen y destino.  Esto puede suceder si se modifica el recuento de retención de instantáneas del plan de replicación.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para eliminar estas instantáneas antiguas manualmente, seleccione *Limpiar instantáneas antiguas* en el menú Acciones del plan de replicación.
++
+image::evs-rp-menu-cleanup-old-snapshots.png[Opción de menú Limpiar instantáneas antiguas]
+
+
+
+
+
+== Conciliar instantáneas
+
+Debido a que el servicio orquesta instantáneas de volumen de ONTAP , es posible que un administrador de almacenamiento de ONTAP elimine directamente instantáneas mediante el Administrador del sistema de ONTAP , la CLI de ONTAP o las API REST de ONTAP sin el conocimiento del servicio.  El servicio elimina automáticamente cualquier instantánea del origen que no esté en el clúster de destino cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para eliminar instantáneas del clúster de origen que no existen en el clúster de destino, seleccione *Reconciliar instantáneas* en el menú Acciones del plan de replicación.
++
+image::evs-rp-menu-reconcile-snapshots.png[Opción de menú Conciliar instantáneas]
+
+
+
+
+
+== Eliminar plan de replicación
+
+Si el plan de replicación ya no es necesario, puede eliminarlo.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para eliminar el plan de replicación, seleccione *Eliminar* en el menú contextual del plan de replicación.
++
+image::evs-rp-menu-delete.png[Eliminar opción de menú]
+
+
+
+
+
+== Editar horarios
+
+Se realizan dos operaciones de forma automática según una programación regular: conmutaciones por error de prueba y comprobaciones de cumplimiento.
+
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Para cambiar estos programas para cualquiera de estas dos operaciones, seleccione *Editar programas* para el plan de replicación.
++
+image::evs-rp-menu-edit-schedules.png[Opción de menú Editar horarios]
+
+
+
+
+
+=== Cambiar el intervalo de verificación de cumplimiento
+
+De forma predeterminada, las comprobaciones de cumplimiento se realizan cada tres horas.  Puede cambiar esto a cualquier intervalo entre 30 minutos y 24 horas.
+
+Para cambiar este intervalo, cambie el campo Frecuencia en el cuadro de diálogo Editar horarios:
+
+image::evs-rp-edit-compliance-check-schedule.png[Cronograma de verificación de cumplimiento]
+
+
+
+=== Programar conmutaciones por error de pruebas automatizadas
+
+Las conmutaciones por error de prueba se ejecutan manualmente de forma predeterminada.  Puede programar conmutaciones por error de pruebas automáticas, lo que ayuda a garantizar que sus planes de replicación funcionen como se espera.  Para obtener más información sobre el proceso de conmutación por error de prueba, consultelink:../use/failover.html["Probar el proceso de conmutación por error"] .
+
+.Pasos para programar conmutaciones por error de pruebas
+. Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
+. Seleccione *Ejecutar conmutación por error*.
+. Marque la casilla de verificación *Ejecutar conmutaciones por error de prueba según un cronograma*.
+. (Opcional) Marque la opción *Usar instantánea a pedido para conmutación por error de prueba programada*.
+. Seleccione un tipo de intervalo en el menú desplegable Repetir.
+. Seleccione cuándo realizar la prueba de conmutación por error
++
+.. Semanal: seleccione el día de la semana
+.. Mensual: seleccione el día del mes
+
+
+. Elija la hora del día para ejecutar la prueba de conmutación por error
+. Elija la fecha de inicio.
+. Decida si desea que el servicio limpie automáticamente el entorno de prueba y durante cuánto tiempo desea que el entorno de prueba se ejecute antes de que comience el proceso de limpieza.
+. Seleccione *Guardar*.
++
+image::evs-rp-edit-schedule-test-failover.png[Editar la programación de pruebas de conmutación por error]
+
+

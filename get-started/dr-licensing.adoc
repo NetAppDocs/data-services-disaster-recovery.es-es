@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-licensing.html 
+keywords: bluexp license, disaster recovery licensing 
+summary: Con NetApp Disaster Recovery, puede utilizar diferentes planes de licencia, incluida una prueba gratuita, una suscripción de pago por uso o traer su propia licencia. 
+---
+= Configurar licencias para NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Con NetApp Disaster Recovery, puede utilizar diferentes planes de licencia, incluida una prueba gratuita, una suscripción de pago por uso o traer su propia licencia.
+
+*Rol de consola de NetApp requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+
+link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso para todos los servicios"^] .
+
+*Opciones de licencia* Puede utilizar las siguientes opciones de licencia:
+
+* Regístrese para una prueba gratuita de 30 días.
+* Compre una suscripción de pago por uso (PAYGO) en Amazon Web Services (AWS) Marketplace o en Microsoft Azure Marketplace.
+* Traiga su propia licencia (BYOL), que es un archivo de licencia de NetApp (NLF) que obtiene de su representante de ventas de NetApp .  Puede utilizar el número de serie de la licencia para activar el BYOL en la consola de NetApp .
+
+
+
+NOTE: Los cargos de recuperación ante desastres de NetApp se basan en la capacidad utilizada de los almacenes de datos en el sitio de origen cuando hay al menos una máquina virtual que tiene un plan de replicación.  La capacidad para un almacén de datos conmutado por error no está incluida en la capacidad asignada.  En el caso de un BYOL, si los datos exceden la capacidad permitida, las operaciones en el servicio estarán limitadas hasta que obtenga una licencia de capacidad adicional o actualice la licencia en la consola de NetApp .
+
+link:https://docs.netapp.com/us-en/bluexp-digital-wallet/concept-digital-wallet.html["Obtenga más información sobre las suscripciones"^] .
+
+Una vez finalizada la prueba gratuita o caducada la licencia, aún puedes hacer lo siguiente en el servicio:
+
+* Ver cualquier recurso, como una carga de trabajo o un plan de replicación.
+* Eliminar cualquier recurso, como una carga de trabajo o un plan de replicación.
+* Ejecute todas las operaciones programadas que se crearon durante el período de prueba o bajo la licencia.
+
+
+
+
+== Pruébelo utilizando una prueba gratuita de 30 días
+
+Puede probar NetApp Disaster Recovery mediante una prueba gratuita de 30 días.
+
+
+NOTE: No se aplican límites de capacidad durante la prueba.
+
+Para continuar después de la prueba, deberá comprar una licencia BYOL o una suscripción PAYGO de AWS.  Puede obtener una licencia en cualquier momento y no se le cobrará hasta que finalice el período de prueba.
+
+Durante la prueba, tendrás acceso a todas las funciones.
+
+.Pasos
+. Iniciar sesión en el https://console.netapp.com/["Consola de NetApp"^] .
+. Desde el panel de navegación izquierdo de la consola NetApp , seleccione *Protección* > *Recuperación ante desastres*.
++
+Si es la primera vez que inicia sesión en este servicio, aparecerá la página de destino.
+
++
+image:draas-landing6-free-trial.png["Captura de pantalla de la página de destino de NetApp Disaster Recovery"]
+
+. Si aún no ha agregado un agente de consola para otros servicios, agregue uno.
++
+Para agregar un agente de consola, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
+
+. Después de configurar el agente, en la página de inicio de NetApp Disaster Recovery, el botón para agregar el agente cambia a un botón para iniciar una prueba gratuita.  Seleccione *Iniciar prueba gratuita*.
+. Comience agregando vCenters.
++
+Para obtener más información, consulte link:../use/sites-add.html["Agregar sitios de vCenter"] .
+
+
+
+
+
+== Una vez finalizada la prueba, suscríbete a través de uno de los Marketplaces
+
+Una vez finalizada la prueba gratuita, puede comprar una licencia de NetApp o suscribirse a través de AWS Marketplace o Microsoft Azure Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en uno de los Marketplaces.
+
+.Pasos
+. En NetApp Disaster Recovery, verá un mensaje que indica que la prueba gratuita está por vencer.  En el mensaje, seleccione *Suscribirse o comprar una licencia*.
++
+O bien, desde , seleccione *Ver métodos de pago*.
+
++
+image:dr-licensing-payment-methods.png["La página de métodos de pago de NetApp Disaster Recovery"]
+
+. Seleccione *Suscribirse en AWS Marketplace* o *Suscribirse en Azure Marketplace*.
+. Utilice AWS Marketplace o Microsoft Azure Marketplace para suscribirse a * NetApp Disaster Recovery*.
+. Cuando regrese a NetApp Disaster Recovery, aparecerá un mensaje que indica que está suscrito.
++
+Puede ver los detalles de la suscripción en la página de suscripción de la consola de NetApp . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Obtenga más información sobre cómo administrar suscripciones con la consola de NetApp"^] .
+
+
+
+
+
+== Una vez finalizada la prueba, compre una licencia BYOL a través de NetApp
+
+Una vez finalizada la prueba, puede comprar una licencia a través de su representante de ventas de NetApp .
+
+Si trae su propia licencia (BYOL), la configuración incluye comprar la licencia, obtener el archivo de licencia de NetApp (NLF) y agregar la licencia a la consola de NetApp .
+
+*Agregue la licencia a la consola de NetApp ** Después de haber comprado su licencia de recuperación ante desastres de NetApp a un representante de ventas de NetApp , puede administrar la licencia en la consola.
+
+https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias con la consola de NetApp"^] .
+
+
+
+== Actualice su licencia cuando expire
+
+Si su período de licencia está cerca de la fecha de vencimiento o si su capacidad de licencia está alcanzando el límite, se le notificará en la interfaz de usuario de recuperación ante desastres de NetApp .  Puede actualizar su licencia de NetApp Disaster Recovery antes de que caduque para que no haya interrupciones en su capacidad de acceder a los datos escaneados.
+
+
+TIP: Este mensaje también aparece en la consola de NetApp y en https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"] .
+
+https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Obtenga información sobre cómo actualizar licencias con la consola de NetApp"^] .
+
+
+
+== Finalizar la prueba gratuita
+
+Puedes detener la prueba gratuita en cualquier momento o esperar hasta que caduque.
+
+.Pasos
+. En NetApp Disaster Recovery, seleccione *Prueba gratuita - Ver detalles*.
+. En los detalles desplegables, seleccione *Finalizar prueba gratuita*.
++
+image:draas-trial-end3.png["Finalizar la página de prueba gratuita"]
+
+. Si desea eliminar todos los datos, marque *Eliminar datos inmediatamente después de finalizar mi prueba gratuita*.
++
+Esto elimina todas las programaciones, planes de replicación, grupos de recursos, vCenters y sitios.  Los datos de auditoría, los registros de operaciones y el historial de trabajos se conservan hasta el final de la vida útil del producto.
+
++
+
+NOTE: Si finaliza la prueba gratuita, no solicitó la eliminación de datos y no compra una licencia o suscripción, NetApp Disaster Recovery eliminará todos sus datos 60 días después de que finalice la prueba gratuita.
+
+. Escriba "finalizar prueba" en el cuadro de texto.
+. Seleccione *Fin*.
+

@@ -1,0 +1,57 @@
+---
+indexpage:
+  title: Documentación de recuperación ante desastres de NetApp
+  summary: Con NetApp Disaster Recovery para VMware, puede replicar sus cargas de
+    trabajo locales de VMware que ejecutan almacenamiento ONTAP en un centro de datos
+    definido por software de VMware en una nube pública como un sitio de recuperación
+    ante desastres utilizando almacenamiento en la nube de NetApp .
+  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
+  lead: La recuperación ante desastres en la nube es una forma resiliente y rentable
+    de proteger las cargas de trabajo contra interrupciones del sitio y eventos de
+    corrupción de datos (por ejemplo, ransomware).  Con NetApp Disaster Recovery for
+    VMware, puede replicar sus cargas de trabajo locales de VMware que ejecutan almacenamiento
+    ONTAP en un centro de datos definido por software de VMware en una nube pública
+    o en otro sitio local como sitio de recuperación ante desastres.
+  tiles:
+  - title: Empezar
+    links:
+    - title: Obtenga más información sobre la recuperación ante desastres de NetApp
+      url: "/get-started/dr-intro.html"
+    - title: Novedades en NetApp Disaster Recovery
+      url: "/release-notes/dr-whats-new.html"
+    - title: Inicio rápido
+      url: "/get-started/dr-quick-start.html"
+    - title: Prerrequisitos
+      url: "/get-started/dr-prerequisites.html"
+    - title: Acceda a NetApp Disaster Recovery
+      url: "/get-started/dr-login.html"
+    - title: Preguntas frecuentes
+      url: "/get-started/dr-faq.html"
+  - title: Utilice NetApp Disaster Recovery
+    links:
+    - title: Agregar vCenters a un sitio
+      url: "/use/sites-add.html"
+    - title: Crear un plan de recuperación ante desastres
+      url: "/use/drplan-create.html"
+    - title: Replicar aplicaciones a otro sitio
+      url: "/use/replicate.html"
+    - title: Migrar aplicaciones a otro sitio
+      url: "/use/migrate.html"
+    - title: Conmutar por error las aplicaciones a un sitio remoto
+      url: "/use/failover.html"
+    - title: Regresar las aplicaciones al sitio de origen original
+      url: "/use/failback.html"
+  - title: Blogs y comunidad
+    links:
+    - title: Consola de NetApp
+      url: https://www.netapp.com/console
+    - title: Servicios de datos de NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Comunidad de NetApp
+      url: https://community.netapp.com
+    - title: Blog de recuperación ante desastres de NetApp
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
+    - title: Introducción a NetApp Disaster Recovery as a Service Lab on Demand
+      url: https://labondemand.netapp.com/lab/draas
+    - title: Vídeos
+      url: https://www.youtube.com/@netapp/videos
