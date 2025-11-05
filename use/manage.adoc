@@ -12,7 +12,7 @@ summary: Puede obtener una vista rápida de todos sus recursos de NetApp Disaste
 
 
 [role="lead"]
-Puede obtener un vistazo rápido de todos sus recursos de NetApp Disaster Recovery o ver cada uno en detalle:
+NetApp Disaster Recovery ofrece descripciones generales y perspectivas más detalladas de todos sus recursos:
 
 * Sitios
 * Grupos de recursos
@@ -43,7 +43,7 @@ Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 
 == Administrar grupos de recursos
 
-Si bien puede agregar un grupo de recursos como parte de la creación de un plan de replicación, es posible que le resulte más conveniente agregar los grupos por separado y luego usar esos grupos en el plan.  Puede crear grupos de recursos por máquinas virtuales o por almacenes de datos.
+Puede crear grupos de recursos por máquinas virtuales o almacenes de datos.  Se pueden agregar al crear el plan de replicación o posteriormente.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
@@ -53,7 +53,7 @@ Puede crear un grupo de recursos por almacenes de datos de las siguientes manera
 * Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
 
 
-Puede realizar las siguientes tareas con grupos de recursos:
+Con los grupos de recursos puede realizar las siguientes tareas:
 
 * Cambiar el nombre del grupo de recursos.
 * Agregar máquinas virtuales al grupo de recursos.
@@ -66,7 +66,7 @@ Para obtener detalles sobre cómo crear un grupo de recursos, consultelink:resou
 .Pasos
 . Desde el menú, seleccione *Grupos de recursos*.
 . Para agregar un grupo de recursos, seleccione *Agregar grupo*.
-. Para realizar acciones con el grupo de recursos, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha y seleccione cualquiera de las opciones, como *Editar grupo de recursos* o *Eliminar grupo de recursos*.
+. Puede modificar o eliminar el grupo de recursos seleccionando la opción *Acciones*.image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] .
 
 
 
@@ -110,7 +110,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 === Conciliar instantáneas a pedido
 
-Puede conciliar instantáneas que no estén sincronizadas entre el origen y el destino.  Esto podría ocurrir si se eliminan instantáneas en un destino fuera de NetApp Disaster Recovery.  El servicio elimina automáticamente la instantánea de la fuente cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
+La recuperación ante desastres elimina automáticamente las instantáneas de la fuente cada 24 horas.  Si descubre que las instantáneas no están sincronizadas entre el origen y el destino, deberá resolver la discrepancia entre las instantáneas para garantizar la coherencia entre los sitios.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
@@ -119,7 +119,7 @@ Puede conciliar instantáneas que no estén sincronizadas entre el origen y el d
 +
 image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
-. De la lista de planes de replicación, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha del plan y seleccione *Reconciliar instantáneas*.
+. En la lista de planes de replicación, seleccione la opción *Acciones*.image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] Luego, *conciliar instantáneas*.
 . Revise la información de conciliación.
 . Seleccione *Reconciliar*.
 
@@ -128,15 +128,15 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 === Eliminar un plan de replicación
 
-Puede eliminar un plan de replicación si ya no lo necesita.  Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.
+Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
 . Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha del plan y seleccione *Eliminar*.
-. Seleccione si desea eliminar las instantáneas principales, las instantáneas secundarias o solo los metadatos creados por el plan.
-. Escriba "eliminar" para confirmar la eliminación.
+. Seleccione si desea eliminar las instantáneas primarias, las instantáneas secundarias o solo los metadatos creados por el plan.
+. Introduzca "eliminar" para confirmar la eliminación.
 . Seleccione *Eliminar*.
 
 
@@ -144,18 +144,18 @@ Puede eliminar un plan de replicación si ya no lo necesita.  Si elimina un plan
 
 === Cambiar el recuento de retención para programaciones de conmutación por error
 
-Puede cambiar la cantidad de almacenes de datos que se conservan.
+Modificar el recuento de retención le permite aumentar o disminuir el número de almacenes de datos guardados.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
-. Seleccione el plan de replicación, seleccione la pestaña *Asignación de conmutación por error* y seleccione el ícono de lápiz *Editar*.
-. Seleccione la flecha *Almacenes de datos* para expandirla.
+. Seleccione el plan de replicación y luego la pestaña *Asignación de conmutación por error*. Seleccione el icono del lápiz *Editar*.
+. Seleccione la flecha hacia abajo en la fila *Almacenes de datos* para expandirla.
 +
 image:../use/dr-plan-failover-edit.png["Página de edición de asignaciones de conmutación por error"]
 
-. Cambiar el valor del recuento de retención en el plan de replicación.
+. Cambie el valor del **Recuento de retención para todos los almacenes de datos**.
 . Con el plan de replicación seleccionado, seleccione el menú Acciones, luego seleccione *Limpiar instantáneas antiguas* para eliminar instantáneas antiguas en el destino para que coincidan con el nuevo recuento de retención.
 
 

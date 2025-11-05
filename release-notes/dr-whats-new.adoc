@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Descubra las novedades en NetApp Disaster Recovery.
+Descubre las novedades de NetApp Disaster Recovery.
 
 
 
@@ -461,11 +461,11 @@ Esta versión incluye actualizaciones a los datos del plan de replicación, lo q
 Aquí te explicamos cómo:
 
 . Desde el menú, seleccione *Planes de replicación*.
-. Seleccione el plan de replicación, haga clic en la pestaña *Asignación de conmutación por error* y haga clic en el ícono de lápiz *Editar*.
-. Haga clic en la flecha *Almacenes de datos* para expandirla.
-. Tenga en cuenta el valor del recuento de retención en el plan de replicación.  Necesitará restablecer este valor original cuando haya terminado con estos pasos.
+. Seleccione el plan de replicación, seleccione la pestaña *Asignación de conmutación por error* y seleccione el ícono de lápiz *Editar*.
+. Seleccione la flecha *Almacenes de datos* para expandirla.
+. Tenga en cuenta el valor del recuento de retención en el plan de replicación. Debes restablecer este valor original cuando hayas terminado con estos pasos.
 . Reduce el conteo a 1.
-. Inicie una instantánea a pedido.  Para hacerlo, en la página del plan de replicación, seleccione el plan, haga clic en el ícono Acciones y seleccione *Tomar instantánea ahora*.
+. Inicie una instantánea a pedido. Para ello, en la página del plan de replicación, seleccione el plan, seleccione el icono Acciones y seleccione *Tomar instantánea ahora*.
 . Una vez que el trabajo de instantánea se complete exitosamente, aumente el recuento en el plan de replicación a su valor original que anotó en el primer paso.
 . Repita estos pasos para todos los planes de replicación existentes.
 
@@ -682,7 +682,7 @@ Esta versión preliminar de NetApp Disaster Recovery incluye las siguientes actu
 
 === Actualizaciones del panel de control
 
-Ahora puede hacer clic en las opciones del Panel de Control, lo que le permitirá revisar la información rápidamente con mayor facilidad. Además, el Panel de Control ahora muestra el estado de las conmutaciones por error y las migraciones.
+Ahora puedes seleccionar las opciones en el Panel de control, lo que te facilitará revisar la información rápidamente. Además, el Panel de Control ahora muestra el estado de las conmutaciones por error y las migraciones.
 
 Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["Vea el estado de sus planes de recuperación ante desastres en el Panel de Control"] .
 
