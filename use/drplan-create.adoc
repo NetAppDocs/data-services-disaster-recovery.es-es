@@ -275,6 +275,7 @@ Para habilitar la ejecución de scripts con el sistema operativo invitado de la 
 
 
 
+* *Reducir la versión del hardware de la máquina virtual y registrarla*: Seleccione esta opción si la versión del host ESX de destino es anterior a la del origen para que coincidan durante el registro.
 * *Prefijo y sufijo de la máquina virtual de destino*: en los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y un sufijo a cada nombre de máquina virtual conmutada por error.  Esto puede resultar útil para diferenciar las máquinas virtuales conmutadas por error de las máquinas virtuales de producción que se ejecutan en el mismo clúster de vCenter.  Por ejemplo, puede agregar un prefijo "DR-" y un sufijo "-failover" al nombre de la VM.  Algunas personas agregan un segundo vCenter de producción para alojar máquinas virtuales temporalmente en un sitio diferente en caso de desastre.  Agregar un prefijo o sufijo puede ayudarle a identificar rápidamente las máquinas virtuales conmutadas por error.  También puedes usar el prefijo o sufijo en scripts personalizados.
 +
 Puede utilizar el método alternativo para configurar la carpeta de la máquina virtual de destino en la sección Recursos de cómputo.
@@ -399,7 +400,8 @@ Para un control adicional sobre la seguridad del acceso a los datos del NAS, el 
 
 
 
-*MEJORES PRÁCTICAS*: Le recomendamos encarecidamente que cree una política de exportación dedicada que limite el acceso al volumen únicamente a los hosts vCenter ESXi de origen y destino que alojarán las máquinas virtuales protegidas.  Esto ayuda a garantizar que las entidades externas no puedan acceder a la exportación NFS.
+
+TIP: Se recomienda crear una política de exportación dedicada que limite el acceso al volumen _únicamente_ a los hosts vCenter ESXi de origen y destino que alojarán las máquinas virtuales protegidas. Esto garantiza que entidades externas no puedan acceder a la exportación NFS.
 
 
 
