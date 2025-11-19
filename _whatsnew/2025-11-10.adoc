@@ -14,7 +14,7 @@ Ahora puede configurar una relación en cascada en ONTAP y utilizar cualquiera d
 
 La función de Recuperación ante Desastres ahora permite degradar el hardware de VMware a una versión anterior de vSphere durante el registro. Esto resulta útil cuando el host ESX de origen ejecuta una versión posterior a la del sitio de recuperación ante desastres.
 
-Para obtener más información, consulte xref:drplan-create.html#map-resources-virtual-machines-section[Crear un plan de replicación en NetApp Disaster Recovery].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].
 
 
 
@@ -28,4 +28,4 @@ La recuperación ante desastres ahora apaga las máquinas virtuales de forma con
 
 Ahora puedes inyectar scripts personalizados en el flujo de trabajo de conmutación por error para que se ejecuten antes de crear una copia de seguridad. La creación de scripts previos a la copia de seguridad le permite controlar el estado de la máquina virtual antes de que se replique una instantánea y preparar una máquina virtual para una transición. Por ejemplo, puede inyectar un script que desmonte un montaje NFS que se volverá a montar utilizando un script diferente después de la conmutación por error.
 
-Para obtener más información, consulte xref:drplan-create.html#map-resources-virtual-machines-section[Crear un plan de replicación en NetApp Disaster Recovery].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].

@@ -1918,7 +1918,6 @@
   <block id="8115dd8449bd907d08f3347f6d04324a" category="paragraph">Ahora puede configurar una relación en cascada en ONTAP y utilizar cualquiera de las ramas de esa relación de replicación para la recuperación ante desastres.</block>
   <block id="eb2fa9dcb8eaa46c82c070f8bbe8418a" category="section-title">Reducción de la compatibilidad con hardware de VMware durante el registro</block>
   <block id="f83d7a6597b186db7483e2f478aeb8fa" category="paragraph">La función de Recuperación ante Desastres ahora permite degradar el hardware de VMware a una versión anterior de vSphere durante el registro. Esto resulta útil cuando el host ESX de origen ejecuta una versión posterior a la del sitio de recuperación ante desastres.</block>
-  <block id="a412b7de9758b999e39beb6a86f38803" category="paragraph">Para obtener más información, consulte <block ref="3b88d2273f8f2a777f18a77cece1dbb2" category="inline-xref-macro-rx"></block>.</block>
   <block id="bcf697aa5ef7fc37fba63ce6d2bf0e43" category="section-title">Apagado correcto</block>
   <block id="9437b903cdafc2fdfce3c66af80b97f0" category="paragraph">La recuperación ante desastres ahora apaga las máquinas virtuales de forma controlada en lugar de apagarlas bruscamente. Si una máquina virtual tarda más de diez minutos en apagarse, el sistema de recuperación ante desastres la apaga.</block>
   <block id="9b9e3165f7ecae3e2e3b2c795e562976" category="section-title">Soporte para scripts previos a la copia de seguridad</block>
@@ -1926,4 +1925,5 @@
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">10 de noviembre de 2025</block>
   <block id="67d901d806b31ec45748075cf6b4b785" category="list-text">*Reducir la versión del hardware de la máquina virtual y registrarla*: Seleccione esta opción si la versión del host ESX de destino es anterior a la del origen para que coincidan durante el registro.</block>
   <block id="c41917a6c517c418de809b1e4f43f537" category="admonition">Se recomienda crear una política de exportación dedicada que limite el acceso al volumen _únicamente_ a los hosts vCenter ESXi de origen y destino que alojarán las máquinas virtuales protegidas. Esto garantiza que entidades externas no puedan acceder a la exportación NFS.</block>
+  <block id="11decf8e913c8fbeb5d947338d43e3b0" category="paragraph">Para obtener más información, consulte <block ref="bf6dbdf786c7323ca961bfd2e12103c6" category="inline-link-macro-rx"></block>.</block>
 </blocks>
