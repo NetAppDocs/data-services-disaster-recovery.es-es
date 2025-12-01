@@ -12,9 +12,9 @@ Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse direc
 
 La implementación del proxy de NetApp Disaster Recovery requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de NetApp Disaster Recovery dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
 
-Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["Configure su infraestructura para NetApp Disaster Recovery"] .
+Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-setup.html["Configure su infraestructura para NetApp Disaster Recovery"] .
 
-Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
+Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
 
 
 
@@ -22,4 +22,4 @@ Para obtener más información sobre la configuración general del proxy en la N
 
 Puedes detener la prueba gratuita en cualquier momento o esperar hasta que caduque.
 
-Ver https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Finalizar la prueba gratuita"] .
+Ver https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["Finalizar la prueba gratuita"] .

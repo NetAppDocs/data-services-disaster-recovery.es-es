@@ -4,8 +4,6 @@ title: Referencia
 entries:
 - title: Privilegios de vCenter necesarios para NetApp Disaster Recovery
   url: "/reference/vcenter-privileges.html"
-- title: Funciones y privilegios de NetApp Disaster Recovery
-  url: "/reference/dr-reference-roles.html"
 - title: Utilice NetApp Disaster Recovery con Amazon EVS
   entries:
   - title: Descripción general de NetApp Disaster Recovery con Amazon EVS

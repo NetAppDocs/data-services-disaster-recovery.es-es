@@ -33,7 +33,7 @@ Si necesita eliminar el clúster ONTAP FSx de NetApp Disaster Recovery, complete
 . En el agente de la NetApp Console , use las opciones de conectividad de su proveedor de nube, conéctese a la máquina virtual Linux en la que se ejecuta el agente de la consola, reinicie el servicio "occm" usando el `docker restart occm` dominio.
 
 
-Referirse a https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Administrar agentes de consola existentes"^] .
+Referirse a https://docs.netapp.com/us-en/console-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Administrar agentes de consola existentes"^] .
 
 . En la página Sistemas de NetApp Console , agregue nuevamente el sistema Amazon FSx para ONTAP y proporcione las credenciales de FSx.
 +
@@ -43,4 +43,12 @@ Referirse a https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-st
 +
 Esto redescubre el almacén de datos, sus máquinas virtuales y su relación de destino.
 
+
+
+
+
+== Limitaciones de Google Cloud NetApp Volumes
+
+* Después de ejecutar una prueba de conmutación por error, debe esperar al menos 52 horas para eliminar el volumen clonado.  Debes eliminar el volumen manualmente.  Después de 52 horas, puedes probar la conmutación por error nuevamente.
+* Si alguna parte de la operación de montaje falla, la conmutación por error no tendrá éxito y los trabajos expirarán.  Google tarda hasta tres días en analizar el problema, durante los cuales se bloquean todas las operaciones relacionadas con el almacén de datos en vCenter.
 

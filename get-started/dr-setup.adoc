@@ -88,7 +88,7 @@ Para configurar NetApp Disaster Recovery para la protección local en la nube me
 * Cree un sistema de archivos Amazon FSx for NetApp ONTAP .
 +
 ** Aprovisionar y configurar FSx para ONTAP.  Amazon FSx for NetApp ONTAP es un servicio completamente administrado que proporciona almacenamiento de archivos altamente confiable, escalable, de alto rendimiento y con gran cantidad de funciones, creado sobre el sistema de archivos NetApp ONTAP .
-** Siga los pasos en https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["Informe técnico 4938: Monte Amazon FSx ONTAP como un almacén de datos NFS con VMware Cloud en AWS"^] y https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Inicio rápido de Amazon FSx for NetApp ONTAP"] para aprovisionar y configurar FSx para ONTAP.
+** Siga los pasos en https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["Informe técnico 4938: Monte Amazon FSx ONTAP como un almacén de datos NFS con VMware Cloud en AWS"^] y https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/task-getting-started-fsx.html["Inicio rápido de Amazon FSx for NetApp ONTAP"] para aprovisionar y configurar FSx para ONTAP.
 
 
 * Agregue Amazon FSx para ONTAP al sistema y agregue las credenciales de AWS para FSx para ONTAP.
@@ -149,4 +149,4 @@ Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse direc
 
 La implementación del proxy de NetApp Disaster Recovery requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de NetApp Disaster Recovery dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.
 
-Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .
+Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["Configurar el agente de la consola para utilizar un servidor proxy"^] .

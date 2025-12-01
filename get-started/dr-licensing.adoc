@@ -16,7 +16,7 @@ Con NetApp Disaster Recovery, puede utilizar diferentes planes de licencia, incl
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso para todos los servicios"^] .
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso para todos los servicios"^].
 
 *Opciones de licencia* Puede utilizar las siguientes opciones de licencia:
 
@@ -61,7 +61,7 @@ image:draas-landing6-free-trial.png["Captura de pantalla de la página de destin
 
 . Si aún no ha agregado un agente de consola para otros servicios, agregue uno.
 +
-Para agregar un agente de consola, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
+Para agregar un agente de consola, consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
 
 . Después de configurar el agente, en la página de inicio de NetApp Disaster Recovery , el botón para agregar el agente cambia a un botón para iniciar una prueba gratuita.  Seleccione *Iniciar prueba gratuita*.
 . Comience agregando vCenters.
@@ -88,7 +88,7 @@ image:dr-licensing-payment-methods.png["La página de métodos de pago de NetApp
 . Utilice AWS Marketplace o Microsoft Azure Marketplace para suscribirse a * NetApp Disaster Recovery*.
 . Cuando regrese a NetApp Disaster Recovery, aparecerá un mensaje que indica que está suscrito.
 +
-Puede ver los detalles de la suscripción en la página de suscripción de la NetApp Console . link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["Obtenga más información sobre cómo administrar suscripciones con la NetApp Console"^] .
+Puede ver los detalles de la suscripción en la página de suscripción de la NetApp Console . link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-homepage.html["Obtenga más información sobre cómo administrar suscripciones con la NetApp Console"^].
 
 
 
@@ -102,7 +102,7 @@ Si trae su propia licencia (BYOL), la configuración incluye comprar la licencia
 
 *Agregue la licencia a la NetApp Console** Después de haber comprado su licencia de NetApp Disaster Recovery a un representante de ventas de NetApp , puede administrar la licencia en la consola.
 
-https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias con la NetApp Console"^] .
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias con la NetApp Console"^].
 
 
 
@@ -111,9 +111,9 @@ https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-li
 Si su período de licencia está cerca de la fecha de vencimiento o si su capacidad de licencia está alcanzando el límite, se le notificará en la interfaz de usuario de NetApp Disaster Recovery .  Puede actualizar su licencia de NetApp Disaster Recovery antes de que caduque para que no haya interrupciones en su capacidad de acceder a los datos escaneados.
 
 
-TIP: Este mensaje también aparece en la NetApp Console y en https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"] .
+TIP: Este mensaje también aparece en la NetApp Console y en https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"] .
 
-https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Obtenga información sobre cómo actualizar licencias con la NetApp Console"^] .
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Obtenga información sobre cómo actualizar licencias con la NetApp Console"^].
 
 
 

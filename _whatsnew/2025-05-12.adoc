@@ -22,7 +22,7 @@ En caso de conmutación por error, NetApp Disaster Recovery reemplaza la parte d
 
 En resumen, la dirección del host permanece igual, mientras que la dirección de red se reemplaza con la que esté configurada en la asignación de subred del sitio.  Esto le permite administrar la reasignación de direcciones IP en caso de conmutación por error con mayor facilidad, especialmente si tiene cientos de redes y miles de máquinas virtuales para administrar.
 
-Para obtener detalles sobre cómo incluir la asignación de subredes en sus sitios, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
+Para obtener detalles sobre cómo incluir la asignación de subredes en sus sitios, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
 
 
 
@@ -36,7 +36,7 @@ Al iniciar una conmutación por error, ahora puede elegir la opción *Omitir pro
 
 Una vez que el sitio de origen original vuelva a estar en línea, puede establecer una protección inversa seleccionando *Proteger recursos* en el menú Acciones del plan de replicación.  Esto intenta crear una relación de replicación inversa para cada volumen del plan.  Puede ejecutar este trabajo repetidamente hasta que se restablezca la protección.  Cuando se restablezca la protección, puede iniciar una conmutación por error de la forma habitual.
 
-Para obtener más detalles sobre cómo omitir la protección, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
+Para obtener más detalles sobre cómo omitir la protección, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
 
 
 
@@ -50,4 +50,4 @@ Cuando se selecciona la opción, NetApp Disaster Recovery no configura una progr
 
 Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
 
-Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .

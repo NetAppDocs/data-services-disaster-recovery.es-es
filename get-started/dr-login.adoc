@@ -16,7 +16,7 @@ Utilice la NetApp Console para iniciar sesión en el servicio de NetApp Disaster
 
 Para iniciar sesión, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la nube de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
 
-Tareas específicas requieren roles de usuario específicos. link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+Tareas específicas requieren roles de usuario específicos. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Abra un navegador web y vaya a https://console.netapp.com/["NetApp Console"^] .
@@ -35,7 +35,7 @@ image:draas-landing6-free-trial.png["Captura de pantalla de la página de destin
 De lo contrario, aparecerá el Panel de NetApp Disaster Recovery .
 
 +
-** Si aún no ha agregado un agente de NetApp Console , deberá agregar uno.  Para agregar el agente, consulte https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
+** Si aún no ha agregado un agente de NetApp Console , deberá agregar uno. Para agregar el agente, consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
 ** Si es un usuario de la NetApp Console con un agente existente, cuando selecciona "Recuperación ante desastres", aparece un mensaje sobre cómo registrarse.
 ** Si ya está utilizando el servicio, cuando seleccione "Recuperación ante desastres", aparecerá el Panel de control.
 

@@ -21,7 +21,7 @@ Una vez agregados los vCenters, NetApp Disaster Recovery realiza un descubrimien
 
 *Rol de NetApp Console requerido* Administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
 
-link:../reference/dr-reference-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^] .
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 *Acerca de esta tarea*
 

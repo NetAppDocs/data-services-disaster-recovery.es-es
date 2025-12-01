@@ -6,7 +6,6 @@
   <block id="8b0a520b04093a504975b99493c33a06" category="section-title">Cancelación de trabajo</block>
   <block id="e37d535f557154a6dd6ed413e0e7782c" category="paragraph">Con esta versión, ahora puedes cancelar un trabajo en la interfaz de usuario del Monitor de trabajos.</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="inline-link">Monitorear trabajos</block>
-  <block id="5ef55533619d84d0298304b37a76eeff" category="paragraph">Referirse a<block ref="786959fe8223b685d5c08f8e62246672" category="inline-link-rx"></block> .</block>
   <block id="5d95f17e7ddbf703465910039fd80c35" category="doc">Compatibilidad con almacenes de datos VMware VMFS locales a locales</block>
   <block id="089160f6b14935d2f39adf9a95c5da5a" category="paragraph">Esta versión incluye soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para iSCSI y FC protegidos en almacenamiento local.  Anteriormente, el servicio proporcionaba una _vista previa de tecnología_ compatible con almacenes de datos VMFS para iSCSI y FC.</block>
   <block id="0eb65976c0b0c5ffa90b07d4a062e509" category="paragraph">A continuación se presentan algunas consideraciones adicionales con respecto a los protocolos iSCSI y FC:</block>
@@ -16,11 +15,9 @@
   <block id="c5562ce2e22a86c247849904ecef3dc8" category="doc">Informes</block>
   <block id="5139de9c5a9b2b36569213d7e9b32f21" category="paragraph">Ahora puede generar y descargar informes que le ayudarán a analizar su panorama.  Los informes prediseñados resumen las conmutaciones por error y por recuperación, muestran detalles de replicación en todos los sitios y muestran detalles de trabajos de los últimos siete días.</block>
   <block id="054b753af44fc4eeee43c9ba6037caaa" category="inline-link">Crear informes de recuperación ante desastres</block>
-  <block id="023cf8170104660fc796a64fdad98afa" category="paragraph">Referirse a<block ref="cca93cc3cfc082fe882eefc731706487" category="inline-link-rx"></block> .</block>
   <block id="5ef05167488611c5bd4ff0f410595ce4" category="section-title">Prueba gratuita de 30 días</block>
   <block id="63bc53d085ebccb62249a2a375a45db0" category="paragraph">Ahora puede registrarse para una prueba gratuita de 30 días de NetApp Disaster Recovery.  Anteriormente, las pruebas gratuitas duraban 90 días.</block>
   <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="inline-link">Configurar licencias</block>
-  <block id="1cb57fbf1f1452e87f62dd668ea03759" category="paragraph">Referirse a<block ref="7585b54fad00f1219b8233730153156f" category="inline-link-rx"></block> .</block>
   <block id="3d1d28bb2a74cb6e16888dd71e05374a" category="section-title">Deshabilitar y habilitar planes de replicación</block>
   <block id="6f963c01bb5a207fe21d3d9137892d53" category="paragraph">Una versión anterior incluía actualizaciones a la estructura del cronograma de pruebas de conmutación por error, que era necesario para soportar cronogramas diarios y semanales.  Esta actualización requiere que deshabilite y vuelva a habilitar todos los planes de replicación existentes para poder utilizar los nuevos programas de pruebas de conmutación por error diarios y semanales.  Este es un requisito único.</block>
   <block id="7043d4fb27c94bc9a206c106cef9d80c" category="paragraph">Aquí te explicamos cómo:</block>
@@ -31,11 +28,9 @@
   <block id="2c4b676c68e03ba0114109310daeb0bb" category="section-title">Mapeo de carpetas</block>
   <block id="3bdb4d4a16c6f952e581bc706b1882f1" category="paragraph">Cuando crea un plan de replicación y asigna recursos informáticos, ahora puede asignar carpetas para que las máquinas virtuales se recuperen en una carpeta que especifique para el centro de datos, el clúster y el host.</block>
   <block id="64bbb11437b30da2acf631c36bd785dd" category="inline-link">Crear un plan de replicación</block>
-  <block id="1a390a4e18b059462c8f07ea2ea02106" category="paragraph">Para más detalles, consulte<block ref="5cf2140f2775e5f1ccc24bb836a069a3" category="inline-link-rx"></block> .</block>
   <block id="ddf914c371b7feb4383b7444a99b5fd7" category="section-title">Detalles de la máquina virtual disponibles para conmutación por error, recuperación y conmutación por error de prueba</block>
   <block id="363712ac31c5614bfddfdcfad95b6a12" category="paragraph">Cuando ocurre una falla y usted está iniciando una conmutación por error, realizando una conmutación por recuperación o probando la conmutación por error, ahora puede ver los detalles de las máquinas virtuales e identificar cuáles no se reiniciaron.</block>
   <block id="b1fb5b4805d079fc23dedcbe4848437e" category="inline-link">Conmutar por error las aplicaciones a un sitio remoto</block>
-  <block id="ab132121a366abdd7667443cc98f3a69" category="paragraph">Referirse a<block ref="1cbf59ee3e77dd0082612a21b0900f81" category="inline-link-rx"></block> .</block>
   <block id="5f20b8908706e397cd745a0bb1264de2" category="section-title">Retraso en el arranque de la máquina virtual con secuencia de arranque ordenada</block>
   <block id="7e15dbae84fa8dee12ba906ffe20a1d1" category="paragraph">Al crear un plan de replicación, ahora puede establecer un retraso de arranque para cada máquina virtual en el plan.  Esto le permite establecer una secuencia para que las máquinas virtuales se inicien a fin de garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.</block>
   <block id="bb121112267374f0e2c29742b8091ab6" category="section-title">Información del sistema operativo de la máquina virtual</block>
@@ -45,11 +40,9 @@
   <block id="126e7b7b7fdb43e70f3e1542c1f0b51a" category="section-title">Limpiar instantáneas antiguas</block>
   <block id="61a7f53a93554e648fe2eb9ad8dd6468" category="paragraph">Puede eliminar cualquier instantánea que ya no necesite más allá del recuento de retención especificado.  Las instantáneas pueden acumularse con el tiempo cuando reduce el recuento de retención de instantáneas, y ahora puede eliminarlas para liberar espacio.  Puede hacer esto en cualquier momento a pedido o cuando elimine un plan de replicación.</block>
   <block id="3eddfb488d257605e7713c24d210beee" category="inline-link">Administrar sitios, grupos de recursos, planes de replicación, almacenes de datos e información de máquinas virtuales</block>
-  <block id="310c40c0ef022c90f1370d1fe91ca720" category="paragraph">Para más detalles, consulte<block ref="db7c318fcbcad8cfb9a44ac897b870b2" category="inline-link-rx"></block> .</block>
   <block id="8cd43e146a4fc163d690bdc8bdc47fc6" category="section-title">Conciliar instantáneas</block>
   <block id="f5bc06f43acbf838e0aae7e4aa0c2734" category="paragraph">Ahora puedes conciliar instantáneas que no están sincronizadas entre el origen y el destino.  Esto podría ocurrir si se eliminan instantáneas en un destino fuera de NetApp Disaster Recovery.  El servicio elimina la instantánea de la fuente automáticamente cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.</block>
   <block id="07851e0287e57a794c18de627c09e0e7" category="inline-link">Administrar planes de replicación</block>
-  <block id="9a3a6422d384602f3e19e123263dc99f" category="paragraph">Para más detalles, consulte<block ref="59c3623215c45197e971057378c86d42" category="inline-link-rx"></block> .</block>
   <block id="ca716ff875c64c5d237c8e862b62065c" category="doc">Compatibilidad de ASA r2 con máquinas virtuales y almacenes de datos en almacenamiento VMFS</block>
   <block id="e4aaffdd5c2b681bfd77c1e96ef49a64" category="paragraph">Esta versión de NetApp Disaster Recovery proporciona soporte para ASA r2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS.  En un sistema ASA r2, el software ONTAP admite la funcionalidad SAN esencial y elimina funciones que no son compatibles con los entornos SAN.</block>
   <block id="d154d7f159ffe4fedd65f7894a405e59" category="paragraph">Esta versión admite las siguientes funciones para ASA r2:</block>
@@ -62,18 +55,14 @@
   <block id="22bdd006372a21a7421e91ec3c961b0e" category="paragraph">Cuando se configura un proxy, NetApp Disaster Recovery intenta comunicarse directamente con VMware o ONTAP y utiliza el proxy configurado si falla la comunicación directa.</block>
   <block id="31b4d4ad3330a84784c410994b607584" category="paragraph">La implementación del proxy de NetApp Disaster Recovery requiere comunicación del puerto 443 entre el agente de la consola y cualquier servidor vCenter y matriz ONTAP que utilice un protocolo HTTPS.  El agente de NetApp Disaster Recovery dentro del agente de consola se comunica directamente con VMware vSphere, VC u ONTAP cuando realiza cualquier acción.</block>
   <block id="cdded4964ab567a69437e4b83477d88d" category="inline-link">Configure su infraestructura para NetApp Disaster Recovery</block>
-  <block id="dd5f5cfa205cad4099eefbde65163d32" category="paragraph">Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte<block ref="b2454abe2d583a64564ed9c56d71bd98" category="inline-link-rx"></block> .</block>
   <block id="77cd07a93b2ed6d0bf84ea310225e9ff" category="inline-link">Configurar el agente de la consola para utilizar un servidor proxy</block>
-  <block id="bd0927696cdca2c1fd79c12dfd68bcb8" category="paragraph">Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte<block ref="55ea0b68cc88cfb5c3d0ec03eec1b711" category="inline-link-rx"></block> .</block>
   <block id="7469dc0d82ce9411c03b852f2163d515" category="section-title">Finaliza la prueba gratuita en cualquier momento</block>
   <block id="859b0ef2563ddd8c6712d419656bde38" category="paragraph">Puedes detener la prueba gratuita en cualquier momento o esperar hasta que caduque.</block>
   <block id="8d4d6551ee286317b2a4f297766952f5" category="inline-link">Finalizar la prueba gratuita</block>
-  <block id="b618f30aeca114d464120de119b19ced" category="paragraph">Ver<block ref="5f37f8bd4230e4b629c60b7dc23a5850" category="inline-link-rx"></block> .</block>
   <block id="f2265cb494c0b6dc346cf3703718b766" category="doc">Descubrimiento programado para máquinas virtuales</block>
   <block id="4d7081c65e57893409340c222c85b903" category="paragraph">NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Con esta versión, ahora puede personalizar el programa de descubrimiento para satisfacer sus necesidades y reducir el impacto en el rendimiento cuando lo necesite.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 48 horas.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.</block>
   <block id="7e2d4377602fe8c7a718d5ef8759c008" category="paragraph">Si no desea programar el descubrimiento, puede deshabilitar la opción de descubrimiento programado y actualizar el descubrimiento manualmente en cualquier momento.</block>
   <block id="d04fa3ae362a3ea46fde26bdba81b204" category="inline-link">Agregar sitios de servidor vCenter</block>
-  <block id="0002b275859484d6cdca867fbab8e165" category="paragraph">Para más detalles, consulte<block ref="54555db921feb31b73553520fa282341" category="inline-link-rx"></block> .</block>
   <block id="84307a139104b06aba6c6de9c728b2ff" category="section-title">Compatibilidad con almacenes de datos de grupos de recursos</block>
   <block id="ed0d134f0d7b751b80633ad848722c7a" category="paragraph">Anteriormente, solo se podían crear grupos de recursos por máquinas virtuales.  Con esta versión, puede crear un grupo de recursos por almacenes de datos.  Cuando crea un plan de replicación y crea un grupo de recursos para ese plan, se enumerarán todas las máquinas virtuales en un almacén de datos.  Esto es útil si tiene una gran cantidad de máquinas virtuales y desea agruparlas por almacén de datos.</block>
   <block id="84ae8aaf40a4b59fed9a4fa741ccf225" category="paragraph">Puede crear un grupo de recursos con un almacén de datos de las siguientes maneras:</block>
@@ -92,19 +81,16 @@
   <block id="c8512209d54525f96f71aef40bda4d89" category="paragraph">VM1 tiene una vNIC (10.1.1.50) que está conectada a NetworkA.  La red A se asigna a la red B en la configuración del plan de replicación.</block>
   <block id="02f256cabc4b808f99fb2f9cf4cac302" category="paragraph">En caso de conmutación por error, NetApp Disaster Recovery reemplaza la parte de red de la dirección IP original (10.1.1) y conserva la dirección de host (.50) de la dirección IP original (10.1.1.50).  Para VM1, NetApp Disaster Recovery analiza la configuración CIDR para NetworkB y utiliza la parte de red de NetworkB 192.168.1 mientras conserva la parte del host (.50) para crear la nueva dirección IP para VM1.  La nueva IP pasa a ser 192.168.1.50.</block>
   <block id="726a53952ba1f868d3ec9d1d32a62b2e" category="paragraph">En resumen, la dirección del host permanece igual, mientras que la dirección de red se reemplaza con la que esté configurada en la asignación de subred del sitio.  Esto le permite administrar la reasignación de direcciones IP en caso de conmutación por error con mayor facilidad, especialmente si tiene cientos de redes y miles de máquinas virtuales para administrar.</block>
-  <block id="e28871dd1f9f31bb54d653e42ab61487" category="paragraph">Para obtener detalles sobre cómo incluir la asignación de subredes en sus sitios, consulte<block ref="54555db921feb31b73553520fa282341" category="inline-link-rx"></block> .</block>
   <block id="a16eb72c6e9708bc4bdfd310db9a1760" category="section-title">Protección contra saltos</block>
   <block id="75fb2c4bb71a53fe34a3f858c72ed11d" category="paragraph">Ahora puede omitir la protección para que el servicio no cree automáticamente una relación de protección inversa después de una conmutación por error del plan de replicación.  Esto es útil si desea realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.</block>
   <block id="83f2c5047d69bb49c6372714354b223e" category="paragraph">Cuando se inicia una conmutación por error, de manera predeterminada el servicio crea automáticamente una relación de protección inversa para cada volumen en el plan de replicación, si el sitio de origen original está en línea.  Esto significa que el servicio crea una relación SnapMirror desde el sitio de destino hasta el sitio de origen.  El servicio también revierte automáticamente la relación SnapMirror cuando se inicia una conmutación por recuperación.</block>
   <block id="39adaab4c8da99c378ac7814cd837b82" category="paragraph">Al iniciar una conmutación por error, ahora puede elegir la opción *Omitir protección*.  Con esto, el servicio no revierte automáticamente la relación SnapMirror .  En lugar de ello, deja el volumen escribible en ambos lados del plan de replicación.</block>
   <block id="0ed1a7f2cfa308cb3f608d5a24b47b8f" category="paragraph">Una vez que el sitio de origen original vuelva a estar en línea, puede establecer una protección inversa seleccionando *Proteger recursos* en el menú Acciones del plan de replicación.  Esto intenta crear una relación de replicación inversa para cada volumen del plan.  Puede ejecutar este trabajo repetidamente hasta que se restablezca la protección.  Cuando se restablezca la protección, puede iniciar una conmutación por error de la forma habitual.</block>
-  <block id="981aed0e5104e08339386a1c5379d13f" category="paragraph">Para obtener más detalles sobre cómo omitir la protección, consulte<block ref="1cbf59ee3e77dd0082612a21b0900f81" category="inline-link-rx"></block> .</block>
   <block id="bc1bbd522e7b060cf5530955a21a60e0" category="section-title">Actualizaciones de programación de SnapMirror en el plan de replicación</block>
   <block id="31f2424ab39d905440864b490816c13a" category="paragraph">NetApp Disaster Recovery ahora admite el uso de soluciones de gestión de instantáneas externas, como el programador de políticas nativo ONTAP SnapMirror o integraciones de terceros con ONTAP.  Si cada almacén de datos (volumen) en el plan de replicación ya tiene una relación SnapMirror que se administra en otro lugar, puede usar esas instantáneas como puntos de recuperación en NetApp Disaster Recovery.</block>
   <block id="51b94dd4c3836facc3789590ed219960" category="paragraph">Para configurar, en la sección Plan de replicación &gt; Asignación de recursos, marque la casilla de verificación *Usar copias de seguridad administradas por la plataforma y programas de retención* al configurar la asignación de almacenes de datos.</block>
   <block id="7e96824a61349784cf4806c066d89fc9" category="paragraph">Cuando se selecciona la opción, NetApp Disaster Recovery no configura una programación de respaldo.  Sin embargo, aún es necesario configurar un programa de retención porque aún se podrían tomar instantáneas para operaciones de prueba, conmutación por error y recuperación.</block>
   <block id="84c71600543673f6d7dd403d3e7a164a" category="paragraph">Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.</block>
-  <block id="05861d9bf485f3b7dc6f56871ad28892" category="paragraph">Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte<block ref="5cf2140f2775e5f1ccc24bb836a069a3" category="inline-link-rx"></block> .</block>
   <block id="97d3a415f1d32e0fd7045cf243744acd" category="doc">Compatibilidad con la solución de contraseña de administrador local de Windows (LAPS)</block>
   <block id="016381830d7dd927c4b8504121b26175" category="paragraph">La Solución de contraseña de administrador local de Windows (Windows LAPS) es una función de Windows que administra y realiza copias de seguridad automáticamente de la contraseña de una cuenta de administrador local en Active Directory.</block>
   <block id="33e3d20ad0d71e75d746da0b85431750" category="paragraph">Ahora puede seleccionar las opciones de mapeo de subred y marcar la opción LAPS proporcionando los detalles del controlador de dominio.  Al utilizar esta opción, no es necesario proporcionar una contraseña para cada una de sus máquinas virtuales.</block>
@@ -121,9 +107,7 @@
   <block id="919421d556cf702a4e06810fc276b335" category="list-text">*Visor de recuperación ante desastres*: ve información en NetApp Disaster Recovery, pero no puede realizar ninguna acción.</block>
   <block id="eeacd7a9a09a00a4f78e8e20c24b39e4" category="paragraph">Si hace clic en el servicio NetApp Disaster Recovery y lo configura por primera vez, debe tener el permiso *SnapCenterAdmin* o el rol *Organization Admin*.</block>
   <block id="228f454cf16a61507e28cfb734b215ab" category="inline-link">Roles y permisos de usuario en NetApp Disaster Recovery</block>
-  <block id="044ee78e955ad31e7cec671d271aff49" category="paragraph">Para obtener más información, consulte <block ref="064655cf5aa70bddc10e05f71e3f59a1" category="inline-link-rx"></block> .</block>
   <block id="9e51129a710cb333676e7ff392c0610c" category="inline-link">Obtenga información sobre los roles de acceso para todos los servicios</block>
-  <block id="d0f140b1f3426612fda3714d998f3232" category="paragraph"><block ref="ea112d812fe0cc251b9a8c88105fdf11" category="inline-link-rx"></block> .</block>
   <block id="1e9f4844ea9e9792cbb09aa643cdd0b9" category="section-title">Otras actualizaciones en NetApp Disaster Recovery</block>
   <block id="982f7e3070a4d65cdf30b78b12adb75b" category="list-text">Descubrimiento de red mejorado</block>
   <block id="3b5745c72d48a29358cef7c9db7cd826" category="list-text">Mejoras de escalabilidad:</block>
@@ -151,13 +135,11 @@
   <block id="4de413f6189881cc6b259fb6e68df02c" category="list-text">Se agregó soporte para una suscripción de pago por uso (PAYGO) a NetApp Intelligent Services en Azure Marketplace y se agregó un vínculo a Azure Marketplace en el cuadro de diálogo de prueba gratuita.</block>
   <block id="2987548294e292332cf7adcf36589fc5" category="inline-link">Licencias de NetApp Disaster Recovery</block>
   <block id="ee93b1d439ecea7d556ad659d00a499f" category="inline-link">Configurar licencias para NetApp Disaster Recovery</block>
-  <block id="66987db2f4ddc01df2f2608d224490a6" category="paragraph">Para más detalles, véase<block ref="daf049a4e68b2c2a66995f2733e6d093" category="inline-link-rx"></block> y<block ref="502b84db50f651e0d1e6368db24aec66" category="inline-link-rx"></block> .</block>
   <block id="bdffab7d1fc5c739af6bcacd7556d32b" category="doc">La BlueXP disaster recovery ahora es NetApp Disaster Recovery</block>
   <block id="b8479b63a059f61189d191d9d8206a0e" category="paragraph">La BlueXP disaster recovery ha pasado a llamarse NetApp Disaster Recovery.</block>
   <block id="bc2fe31b1e2682a9a79513d792e9c721" category="section-title">BlueXP ahora es NetApp Console</block>
   <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">La NetApp Console, construida sobre la base BlueXP mejorada y reestructurada, proporciona una gestión centralizada del almacenamiento de NetApp y de los NetApp Data Services en entornos locales y en la nube a nivel empresarial, brindando información en tiempo real, flujos de trabajo más rápidos y una administración simplificada, que es altamente segura y compatible.</block>
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">Notas de la versión de la NetApp Console</block>
-  <block id="9fad6bb6d30ac060d7377371e39b12c0" category="paragraph">Para obtener más detalles sobre lo que ha cambiado, consulte la<block ref="a3987562479f1a66db4eec298b79e00c" category="inline-link-macro-rx"></block> .</block>
   <block id="74ec2cbf7ad010d86af9ea5f2d47ee39" category="section-title">Otras actualizaciones</block>
   <block id="77ce624f79cabd64ddedccf3196e9b1a" category="inline-link-macro">Introducción de NetApp Disaster Recovery mediante Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP</block>
   <block id="e6b27502ab6a46e1039ef9e004cb65ff" category="list-text">El soporte para Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP estaba en una vista previa pública. Con este lanzamiento, ahora está disponible de forma generalizada. Para más detalles, consulte<block ref="d77dcab16ff9979356836b689cffd0ee" category="inline-link-macro-rx"></block> .</block>
@@ -188,10 +170,8 @@
   <block id="616ce84bf378a10ce41492e7361102ce" category="paragraph">Se puede acceder a NetApp Disaster Recovery a través de la NetApp Console.</block>
   <block id="0a0979a6d279475a420ea5c279943daa" category="paragraph">La NetApp Console proporciona una gestión centralizada de los servicios de datos y almacenamiento de NetApp en entornos locales y en la nube a nivel empresarial. La consola es necesaria para acceder y utilizar los servicios de datos de NetApp . Como interfaz de administración, le permite administrar muchos recursos de almacenamiento desde una sola interfaz. Los administradores de la consola pueden controlar el acceso al almacenamiento y los servicios para todos los sistemas dentro de la empresa.</block>
   <block id="7118a6b22768dabe4720d84710ea1e43" category="paragraph">No necesita una licencia o suscripción para comenzar a usar NetApp Console y solo incurre en cargos cuando necesita implementar agentes de Console en su nube para garantizar la conectividad con sus sistemas de almacenamiento o servicios de datos de NetApp . Sin embargo, algunos servicios de datos de NetApp accesibles desde la consola requieren licencia o suscripción.</block>
-  <block id="4d0bb76e32bfe205406b10f5dfa9d47b" category="paragraph">Obtenga más información sobre el<block ref="e6368f2dd82be1e975475a1098863578" category="inline-link-rx"></block> .</block>
   <block id="93f490f610bd41da6de2c611374d8ef0" category="section-title">Beneficios de utilizar NetApp Disaster Recovery para VMware</block>
   <block id="9c8909695d59c2331ebbd096a98be570" category="paragraph">NetApp Disaster Recovery ofrece los siguientes beneficios:</block>
-  <block id="1ab9c5b68f0adcc2d61e5b57e92ca144" category="list-text">Experiencia de usuario simplificada para el descubrimiento y la recuperación de aplicaciones de vCenter con múltiples operaciones de recuperación en puntos específicos del tiempo. </block>
   <block id="093e9c8a453c519550f226d3d29e9b37" category="list-text">Menor costo total de propiedad con menor costo de operaciones y capacidad de crear y ajustar planes de recuperación ante desastres con recursos mínimos.</block>
   <block id="d3a13ad4dd1e4d628df918e874d5e8c8" category="list-text">Preparación para la recuperación ante desastres continua con pruebas de conmutación por error virtual que no interrumpen las operaciones.  Puede probar periódicamente sus planes de conmutación por error de DR sin afectar las cargas de trabajo de producción.</block>
   <block id="01077bfd931662ce1ab00a202e5bf919" category="list-text">Tiempos más rápidos para obtener valor con cambios dinámicos en su entorno de TI y capacidad de abordarlos en sus planes de recuperación ante desastres.</block>
@@ -209,7 +189,6 @@
   <block id="018263fa29e11b076aa94025f663d232" category="paragraph"><block ref="018263fa29e11b076aa94025f663d232" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c4fe9c45ef78c85146c600da191efec" category="admonition">La configuración del servidor vSphere se realiza fuera de NetApp Disaster Recovery en vSphere Server.</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">Costo</block>
-  <block id="155a12b9dc701f5b67925b9ebfab8702" category="paragraph">NetApp no ​​le cobra por utilizar la versión de prueba de NetApp Disaster Recovery.</block>
   <block id="1052dee9d95f73d0a99fb04f5d6fbf58" category="paragraph">NetApp Disaster Recovery se puede utilizar con una licencia de NetApp o con un plan de suscripción anual a través de Amazon Web Services.</block>
   <block id="d91f8d9cdc7fc66a71d44f83fa879b24" category="inline-link-macro">Novedades en NetApp Disaster Recovery</block>
   <block id="651317bb11a538ba9d919edf1e5c7c09" category="admonition">Algunos lanzamientos incluyen una vista previa de la tecnología.  NetApp no ​​le cobrará por ninguna capacidad de carga de trabajo previsualizada.  Ver<block ref="fb27637493881b877668c566a2759a9e" category="inline-link-macro-rx"></block> para obtener información sobre los últimos avances tecnológicos.</block>
@@ -271,7 +250,6 @@
   <block id="be2e75d3289741b6da261571f9377091" category="summary">Con NetApp Disaster Recovery, puede utilizar diferentes planes de licencia, incluida una prueba gratuita, una suscripción de pago por uso o traer su propia licencia.</block>
   <block id="aceeb447f410f96a1ea84c7aa3d50b31" category="paragraph">*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.</block>
   <block id="6fb21aa5ad614d3da3c4d910339be1a1" category="inline-link-macro">Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery</block>
-  <block id="47e01dd360601fde5edb4844bb11f563" category="paragraph"><block ref="5ee95b9951a403f3ce8a1382578a4abd" category="inline-link-macro-rx"></block> . <block ref="ea112d812fe0cc251b9a8c88105fdf11" category="inline-link-rx"></block> .</block>
   <block id="caf89067dc5383afa96e1ac3e7c34bb7" category="paragraph">*Opciones de licencia* Puede utilizar las siguientes opciones de licencia:</block>
   <block id="7f2210756be2a83d832be1ebb9b06adf" category="list-text">Compre una suscripción de pago por uso (PAYGO) en Amazon Web Services (AWS) Marketplace o en Microsoft Azure Marketplace.</block>
   <block id="4e33b7dde110d702aea770ac0e58ff70" category="inline-link-macro">Obtenga más información sobre las suscripciones</block>
@@ -292,7 +270,6 @@
   <block id="c3b1bb824e3213d8d78d521e17427748" category="paragraph"><block ref="c3b1bb824e3213d8d78d521e17427748" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2898ede4dd2058939d6e98d118ac9fa" category="list-text">Si aún no ha agregado un agente de consola para otros servicios, agregue uno.</block>
   <block id="91e534d044a3d9c6a1c8575f89e73c9b" category="inline-link">Obtenga más información sobre los agentes de consola</block>
-  <block id="9b7bf35ae667c8a62a18b2a57d0f5ad5" category="paragraph">Para agregar un agente de consola, consulte<block ref="be47360914e9c5a32b9a06216cb3cec0" category="inline-link-rx"></block> .</block>
   <block id="611f4cdd6f9e4edab1d69e8c49266816" category="list-text">Después de configurar el agente, en la página de inicio de NetApp Disaster Recovery , el botón para agregar el agente cambia a un botón para iniciar una prueba gratuita.  Seleccione *Iniciar prueba gratuita*.</block>
   <block id="4701248bbe25ed364a5f0c79467e9f29" category="list-text">Comience agregando vCenters.</block>
   <block id="5be11c5dad3dd5860416e2978e91dae5" category="inline-link-macro">Agregar sitios de vCenter</block>
@@ -307,19 +284,15 @@
   <block id="635721e85cf2d7f2354041b84719041b" category="list-text">Utilice AWS Marketplace o Microsoft Azure Marketplace para suscribirse a * NetApp Disaster Recovery*.</block>
   <block id="8b38749ddf0f3f839f250b143af17447" category="list-text">Cuando regrese a NetApp Disaster Recovery, aparecerá un mensaje que indica que está suscrito.</block>
   <block id="69351db009ad4b6cb7d230b4c8b9fe27" category="inline-link-macro">Obtenga más información sobre cómo administrar suscripciones con la NetApp Console</block>
-  <block id="f55f69e6af9c722dad2c5788b736fd1e" category="paragraph">Puede ver los detalles de la suscripción en la página de suscripción de la NetApp Console . <block ref="09f2644e75f3042514a84dc8b1a01afc" category="inline-link-macro-rx"></block> .</block>
   <block id="ee6d03e51dd7b0fc10c6b3c8fcab3718" category="section-title">Una vez finalizada la prueba, compre una licencia BYOL a través de NetApp</block>
   <block id="b9ef842238fa8d82db6b7559f33adc6c" category="paragraph">Una vez finalizada la prueba, puede comprar una licencia a través de su representante de ventas de NetApp .</block>
   <block id="6c91d60fe9654fb65360592ac8d4e690" category="paragraph">Si trae su propia licencia (BYOL), la configuración incluye comprar la licencia, obtener el archivo de licencia de NetApp (NLF) y agregar la licencia a la NetApp Console.</block>
   <block id="23e142acdeae4b23dc9fb6130ca0ad30" category="paragraph">*Agregue la licencia a la NetApp Console** Después de haber comprado su licencia de NetApp Disaster Recovery a un representante de ventas de NetApp , puede administrar la licencia en la consola.</block>
   <block id="6a2741e1bf15e5399236487df9335e92" category="inline-link">Obtenga información sobre cómo agregar licencias con la NetApp Console</block>
-  <block id="2d43b73e7aed092eb0fb0574fb205032" category="paragraph"><block ref="b0facba4ec49a882a302df2a1250fcb5" category="inline-link-rx"></block> .</block>
   <block id="756a96ce8c3b6dda4a9b7e72f55d1e13" category="section-title">Actualice su licencia cuando expire</block>
   <block id="1e7287db172afab2eb39a0b47d6223d6" category="paragraph">Si su período de licencia está cerca de la fecha de vencimiento o si su capacidad de licencia está alcanzando el límite, se le notificará en la interfaz de usuario de NetApp Disaster Recovery .  Puede actualizar su licencia de NetApp Disaster Recovery antes de que caduque para que no haya interrupciones en su capacidad de acceder a los datos escaneados.</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="inline-link">Notificaciones</block>
-  <block id="9d92c8559332c66d99641a3997de0fc9" category="admonition">Este mensaje también aparece en la NetApp Console y en<block ref="b553b83f4f3ab8ad7adf12f36cefd6a6" category="inline-link-rx"></block> .</block>
   <block id="d328601196a0fd3429ae19dd5f6b8276" category="inline-link">Obtenga información sobre cómo actualizar licencias con la NetApp Console</block>
-  <block id="f34adee0ab981df83e661e268bca62a5" category="paragraph"><block ref="a6dcec154594f1929509877ce5add3fb" category="inline-link-rx"></block> .</block>
   <block id="9fdb268fb3ed8768b1c5bc407d4422ba" category="list-text">En NetApp Disaster Recovery, seleccione *Prueba gratuita - Ver detalles*.</block>
   <block id="2c6b9011807f7d1e8a37a31be26bb7c0" category="list-text">En los detalles desplegables, seleccione *Finalizar prueba gratuita*.</block>
   <block id="fc145d0284ba4e60c3b5f315355ac505" category="inline-image-macro">Finalizar la página de prueba gratuita</block>
@@ -335,13 +308,11 @@
   <block id="8e917942a77709dfd28c155f42a97553" category="inline-link">Obtenga más información sobre cómo iniciar sesión</block>
   <block id="2b7ccab8331ca8f22c1a0f67ad9bbf1f" category="paragraph">Para iniciar sesión, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la nube de NetApp usando su correo electrónico y una contraseña.<block ref="83012c4a40bb3321733997744c83daa9" category="inline-link-rx"></block> .</block>
   <block id="a5999c1155de9850d34ba60075be7171" category="inline-link">Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios</block>
-  <block id="80527cc30678739efc866ebecf8c3794" category="paragraph">Tareas específicas requieren roles de usuario específicos. <block ref="5ee95b9951a403f3ce8a1382578a4abd" category="inline-link-macro-rx"></block> . <block ref="f3890bd69b65a6b74a515e7372dba6f8" category="inline-link-rx"></block> .</block>
   <block id="6a65fb509b9c682f9df5eb122484e2f7" category="list-text">Abra un navegador web y vaya a<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block> .</block>
   <block id="0daac1b9cd4c3a240bf2f6b44ba178a1" category="paragraph">Aparece la página de inicio de sesión de la NetApp Console .</block>
   <block id="83046549bdfbacafb1888d0467d8acc4" category="list-text">Inicie sesión en la NetApp Console.</block>
   <block id="8deb19747c06e3643bab5716cb645635" category="paragraph">Si es la primera vez que inicia sesión en este servicio, aparecerá la página de inicio y podrá registrarse para una prueba gratuita.</block>
   <block id="60df1204aca74059babd44a247508093" category="paragraph">De lo contrario, aparecerá el Panel de NetApp Disaster Recovery .</block>
-  <block id="b2bcab299136c201d7ae31d721b106aa" category="list-text">Si aún no ha agregado un agente de NetApp Console , deberá agregar uno.  Para agregar el agente, consulte<block ref="be47360914e9c5a32b9a06216cb3cec0" category="inline-link-rx"></block> .</block>
   <block id="617ffa21588a547140fa18404ccc6c3d" category="list-text">Si es un usuario de la NetApp Console con un agente existente, cuando selecciona "Recuperación ante desastres", aparece un mensaje sobre cómo registrarse.</block>
   <block id="e2066cd1f4f96874fad4da9c48f8715b" category="list-text">Si ya está utilizando el servicio, cuando seleccione "Recuperación ante desastres", aparecerá el Panel de control.</block>
   <block id="41fc27202bd95bf86c36faca5aa2292a" category="inline-image-macro">Panel de NetApp Disaster Recovery</block>
@@ -379,7 +350,6 @@
   <block id="ddf3847f7872b5880bf48b3bc2295516" category="section-title">Requisitos previos de la NetApp Console</block>
   <block id="831ceac8c52f9043ae3044fe65d3762a" category="section-title">Comience a utilizar la NetApp Console</block>
   <block id="924c58a8fd83feffaf2992bcfe6747f1" category="inline-link">Regístrese en la NetApp Console y cree una organización</block>
-  <block id="a365735407987353fb0d409038d3fcd5" category="paragraph">Si aún no lo has hecho,<block ref="d976bcdfe98c8a7f3f75b182d4034c67" category="inline-link-rx"></block> .</block>
   <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">Recopilar credenciales para ONTAP y VMware</block>
   <block id="d70a6a4283fe47d23c6adff45d1620fb" category="list-text">NetApp Disaster Recovery requiere credenciales de vCenter.  Ingresa las credenciales de vCenter cuando agrega un sitio en NetApp Disaster Recovery.</block>
   <block id="0f0ee2397f9657d6f4e252d0c2f19706" category="inline-link-macro">Privilegios de vCenter necesarios para NetApp Disaster Recovery</block>
@@ -388,17 +358,13 @@
   <block id="04611b209933eb29e1f8fdaec6553eaa" category="section-title">Crear el agente de la NetApp Console</block>
   <block id="9703473550a81b3fd3679dafa7c81b5c" category="paragraph">Se debe configurar un agente de consola en la NetApp Console.  Cuando utilice el agente, incluirá las capacidades adecuadas para el servicio de recuperación ante desastres.</block>
   <block id="c8838dcf38d330918fef4cc55c1d8bda" category="inline-link">Introducción a la NetApp Console en modo estándar</block>
-  <block id="51dd3d7e28a72cf0fdec6a253e1d1518" category="list-text">NetApp Disaster Recovery solo funciona con la implementación del agente en modo estándar. Ver<block ref="5a1f12b31848038fb05bcfabb59a655f" category="inline-link-rx"></block> .</block>
   <block id="60fef96933d93f92aac90515fdde5cdb" category="list-text">Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de consola.</block>
   <block id="15d628067243085634a88cba0c9fd55b" category="list-text">Tipo de agente de consola necesario:</block>
   <block id="6e45b3ccf0fe4c67d798d465f04ffc2b" category="inline-link">Instalar y configurar el agente de consola en las instalaciones</block>
-  <block id="9af57f30498413181424b17fb0ae6171" category="list-text">*Recuperación ante desastres local a local*: instale el agente local de la consola en el sitio de recuperación ante desastres.  Con este método, una falla del sitio principal no impide que el servicio reinicie sus recursos virtuales en el sitio de recuperación ante desastres. Referirse a<block ref="df0d648eb79542cf15dcde842108f68f" category="inline-link-rx"></block> .</block>
   <block id="7ff9f8e2467774df163161a38d2d5040" category="inline-link">Opciones de instalación del agente de consola en AWS</block>
-  <block id="14fe150f182f90b42cc29c3f50abaade" category="list-text">*En las instalaciones de AWS*: instale el agente de consola para AWS en su VPC de AWS. Referirse a<block ref="70bdc3086a31c8e9f05388b39311f274" category="inline-link-rx"></block> .</block>
   <block id="24b5be8f6df5fb021eca578769b77774" category="admonition">Para conexiones locales a locales, utilice el agente de consola local.  Para las instalaciones locales en AWS, utilice el agente de la consola de AWS, que tiene acceso al vCenter local de origen y al vCenter local de destino.</block>
   <block id="ab3c83e3945cd7f2df0456e2d8f83bb0" category="list-text">Todas las matrices ONTAP que serán administradas por NetApp Disaster Recovery deben agregarse a cualquier sistema dentro del proyecto de la NetApp Console que se utilizará para administrar NetApp Disaster Recovery.</block>
   <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">Descubra los clústeres ONTAP locales</block>
-  <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">Ver<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block> .</block>
   <block id="fbd9e0d462c5faca3f694e91b0c91c11" category="list-text">Para obtener información sobre cómo configurar un proxy inteligente para NetApp Disaster Recovery, consulte<block ref="cf59e5634dbfec3a92f4b44d96581d59" category="inline-link-macro-rx"></block> .</block>
   <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">Requisitos previos de la carga de trabajo</block>
   <block id="6a84d76f499de61c5fe29550fe09a932" category="paragraph">Para garantizar que los procesos de coherencia de aplicaciones sean exitosos, aplique estos requisitos previos:</block>
@@ -469,7 +435,6 @@
   <block id="f83af651f99faebce61bfdb7abb0dbf5" category="list-text">Aprovisionar y configurar FSx para ONTAP.  Amazon FSx for NetApp ONTAP es un servicio completamente administrado que proporciona almacenamiento de archivos altamente confiable, escalable, de alto rendimiento y con gran cantidad de funciones, creado sobre el sistema de archivos NetApp ONTAP .</block>
   <block id="ecd0c703f047cbcdb8259fca7001cb0a" category="inline-link">Informe técnico 4938: Monte Amazon FSx ONTAP como un almacén de datos NFS con VMware Cloud en AWS</block>
   <block id="c2ca61cdaafcad548af5836df039fcb3" category="inline-link">Inicio rápido de Amazon FSx for NetApp ONTAP</block>
-  <block id="a692fa8adfb1c24fd08861d585caf255" category="list-text">Siga los pasos en<block ref="69ac71aae3c3019102e9a90ab4fd3799" category="inline-link-rx"></block> y<block ref="594efabf60d7236eeecf072ead1cf02b" category="inline-link-rx"></block> para aprovisionar y configurar FSx para ONTAP.</block>
   <block id="b38adb57818f48bf3fbe345eb697fb5b" category="list-text">Agregue Amazon FSx para ONTAP al sistema y agregue las credenciales de AWS para FSx para ONTAP.</block>
   <block id="45e9eff03edaa58cd4676220141041d3" category="list-text">Cree o verifique su SVM ONTAP de destino en AWS FSx para la instancia de ONTAP .</block>
   <block id="292073f6feb975d74898ace0eb43eb36" category="list-text">Configure la replicación entre su clúster ONTAP local de origen y su instancia de FSx para ONTAP en la NetApp Console.</block>
@@ -514,42 +479,9 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">Los archivos de aviso proporcionan información sobre derechos de autor y licencias de terceros utilizados en el software de NetApp .</block>
   <block id="23b519c50f06635f068893b1eddfed44" category="inline-link-macro">Aviso para NetApp Disaster Recovery</block>
   <block id="d6f198e1fd40f77c71448afefa59375d" category="paragraph"><block ref="d6f198e1fd40f77c71448afefa59375d" category="inline-link-macro-rx"></block></block>
-  <block id="8897262f762ec38be4b38bc404edb37a" category="summary">NetApp Disaster Recovery emplea roles para gobernar el acceso que tiene cada usuario a funciones y acciones específicas.</block>
-  <block id="da747fe03b7ce6abb6e4945b29f9b33a" category="doc">Acceso a funciones basado en roles de NetApp Disaster Recovery</block>
-  <block id="5d7e9e8d1aca33f32d8b3e76ee577b18" category="inline-link">la documentación de configuración y administración de la NetApp Console</block>
-  <block id="b65a6a0a8ac5b6abe5977c07a83407e0" category="paragraph">Estos roles son específicos de NetApp Disaster Recovery y no son los mismos que los roles de plataforma que se utilizan en la NetApp Console.  Para obtener detalles sobre todas las funciones de la plataforma NetApp Console , consulte<block ref="92063e3b7898c4338162ac5828bd75d7" category="inline-link-rx"></block> .</block>
-  <block id="c2eaa90f744f0eb1a3fb6e93642e69d2" category="paragraph">La siguiente tabla indica las acciones que puede realizar cada rol de NetApp Disaster Recovery .</block>
-  <block id="4420e7353184ac575b539cdce1b991db" category="cell">Característica y acción</block>
-  <block id="df2d943b4d0652d322ec6b3cb52e3036" category="cell">Administración de recuperación ante desastres</block>
-  <block id="71aa2505b70e192a741f69ce63677f4b" category="cell">Administrador de conmutación por error de recuperación ante desastres</block>
-  <block id="49f16ca5444f519e5203bb5067957eef" category="cell">Administrador de aplicaciones de recuperación ante desastres</block>
-  <block id="ba4b33592d18613c28d684c20110e152" category="cell">Visor de recuperación ante desastres</block>
-  <block id="b60c44c6bbbb3793d0c08c34cd6e2382" category="cell">Ver el panel y todas las pestañas</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="paragraph">Sí</block>
-  <block id="78c7efbfa07116553a52f59800129dde" category="cell">Comience una prueba gratuita</block>
   <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="paragraph">No</block>
-  <block id="42174d568723a8694dc7e6dfd143cb12" category="cell">Iniciar el descubrimiento de cargas de trabajo</block>
-  <block id="666d2ef63ada639c9aafe5a0d4332126" category="cell">Ver información de la licencia</block>
-  <block id="9ea1b41f4c4dc25b684804b2da7fcf2d" category="cell">Activar licencia</block>
-  <block id="b4c13a3706e6e457a99621f49562dbb4" category="cell">*En la opción Sitios*:</block>
-  <block id="24f9533e942cbf2b6f6f10572e7060a3" category="cell">Ver sitios</block>
-  <block id="3e8a9a8e5a257cee36226ed2012c6b3c" category="cell">Agregar, modificar o eliminar sitios</block>
-  <block id="7e17d197edb7cef21770cc85d8a04a55" category="cell">*En la opción Planes de replicación*:</block>
-  <block id="735da8d6e9fa3b588537574c24f9dcf0" category="cell">Ver planes de replicación</block>
-  <block id="7b84a7ee34168bfbf6886ef0061658cc" category="cell">Ver detalles del plan de replicación</block>
-  <block id="baee89c048bf90468e3ec3f5606cf60b" category="cell">Crear o modificar planes de replicación</block>
-  <block id="ef7a7b1bec08bef324977926c1fc910c" category="cell">Crear informes</block>
-  <block id="d31af31443f48fa119d00d0bba8ea175" category="cell">Ver instantáneas</block>
-  <block id="db3c6b3ab5f4657dbde3dec8ccb9ecc0" category="cell">Realizar pruebas de conmutación por error</block>
-  <block id="c5bcd887212759ab57c8af218b99eb31" category="cell">Realizar conmutaciones por error</block>
-  <block id="322e135616f19e459c874a724520fa1e" category="cell">Realizar conmutaciones por recuperación</block>
-  <block id="8b72223aa730d2269a7ba95f83cef65e" category="cell">Realizar migraciones</block>
-  <block id="47a0aeeab608b6f655379332ffde4c66" category="cell">*En la opción Grupos de recursos*:</block>
-  <block id="e413f3ae098a2b13a5631e34e8843bd1" category="cell">Ver grupos de recursos</block>
-  <block id="007c91bf4efbb78277d4ee064ec28f3a" category="cell">Crear, modificar o eliminar grupos de recursos</block>
-  <block id="e44c0a4c6e6fd6b34debdde149ce767a" category="cell">*Opción de Monitoreo en el Trabajo*:</block>
   <block id="c6b984bc2ca856b4291f8e64fa30cd9a" category="cell">Ver trabajos</block>
-  <block id="295cc024728a10becfec47e1d454c4f9" category="cell">Cancelar trabajos</block>
   <block id="e4b7e270395bc221a701179b864d6a13" category="summary">Antes de poder proteger su infraestructura de VM, el servicio de NetApp Disaster Recovery necesita saber qué clústeres de VMware vCenter alojan las VM que se van a proteger y dónde se encuentran esos vCenters.  El primer paso es crear un sitio para representar los centros de datos de origen y destino.  Un sitio es un dominio de falla o un dominio de recuperación.</block>
   <block id="47dd3699625ecdc0896312a37b176e82" category="doc">Agregar sitios en NetApp Disaster Recovery para Amazon EVS</block>
   <block id="59cabc3db90da0724955c7298ca562a1" category="paragraph">Antes de poder proteger su infraestructura de VM, identifique qué clústeres de VMware vCenter alojan las VM que se van a proteger y dónde se encuentran esos vCenters.  El primer paso es crear un sitio para representar los centros de datos de origen y destino.  Un sitio es un dominio de falla o un dominio de recuperación.</block>
@@ -818,10 +750,8 @@
   <block id="fc4a391c0a58b66db6357158ead085ca" category="paragraph">Un agente de NetApp Console es un software de NetApp que se ejecuta en su nube o red local.  Ejecuta las acciones que la NetApp Console necesita realizar para administrar su infraestructura de datos.  El agente de consola sondea constantemente el software NetApp Disaster Recovery como una capa de servicio para detectar cualquier acción que deba tomar.</block>
   <block id="44c1129cf47adfaefa0605f58d53c810" category="paragraph">Para NetApp Disaster Recovery, las acciones que se realizan orquestan los clústeres de VMware vCenter y las instancias de almacenamiento de ONTAP mediante API nativas para cada servicio respectivo a fin de brindar protección a las máquinas virtuales de producción que se ejecutan en una ubicación local.  Si bien el agente de consola se puede instalar en cualquiera de las ubicaciones de su red, para NetApp Disaster Recovery recomendamos que instale el agente de consola en el sitio de DR.  Esto garantiza que, en caso de una falla del sitio principal, la interfaz de usuario de la consola basada en la nube de NetApp continúa teniendo contacto con el agente de la consola y puede orquestar el proceso de recuperación dentro de ese sitio de recuperación ante desastres.</block>
   <block id="f495e7db7cb2a546534fe711f0127e3d" category="inline-link">Obtenga más información sobre los modos de implementación de la NetApp Console | Documentación de NetApp</block>
-  <block id="f9fa4561c3d49a82314f4ce6da327db1" category="paragraph">Para utilizar el servicio, instale el agente de consola en modo estándar.  Para obtener más información sobre los tipos de instalaciones del agente de consola, visite<block ref="ffaebef1f61408e524b472a9e02a3f1a" category="inline-link-rx"></block> .</block>
   <block id="dd0b929797a2918fb91fe0b43cb02f42" category="paragraph">Si bien el agente de consola es fundamental para utilizar el servicio, los pasos de instalación para instalar el agente de consola dependen de sus necesidades y de la configuración de la red.  Está fuera del alcance de esta información proporcionar instrucciones específicas para la instalación.</block>
   <block id="ed8f1435250d71b466ec4682ae30820f" category="inline-link">Crear un agente de consola desde AWS Marketplace | Documentación de NetApp</block>
-  <block id="bc13da23c488c673a73f5ef16e3b6333" category="paragraph">El método más simple para instalar el agente de consola con Amazon AWS es utilizar AWS Marketplace.  Para obtener detalles sobre la instalación del agente de consola mediante AWS Marketplace, consulte<block ref="98d23ab2624d522fe7ad97fbdecc430f" category="inline-link-rx"></block> .</block>
   <block id="06034a243ae2009d8ded7acc9689b052" category="summary">Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon FSx for NetApp ONTAP.</block>
   <block id="562ef4025c5a60ba97f47d8285729a0b" category="paragraph">Cada vez más, los clientes dependen más de las infraestructuras virtualizadas para cargas de trabajo informáticas de producción, como aquellas basadas en VMware vSphere.  A medida que estas máquinas virtuales (VM) se han vuelto más críticas para sus negocios, los clientes necesitan proteger estas VM de los mismos tipos de desastres que sus recursos informáticos físicos.  Las soluciones de recuperación ante desastres (DR) que se ofrecen actualmente son complejas, costosas y requieren un uso intensivo de recursos.  NetApp, el mayor proveedor de almacenamiento utilizado para infraestructuras virtualizadas, tiene un interés personal en garantizar que las máquinas virtuales de sus clientes estén protegidas de la misma manera que protegemos los datos alojados en el almacenamiento ONTAP de cualquier tipo.  Para alcanzar este objetivo, NetApp creó el servicio NetApp Disaster Recovery .</block>
   <block id="a3fe2ebdabea83ec0809c3eaabe8b916" category="paragraph">Uno de los principales desafíos de cualquier solución de recuperación ante desastres es administrar el costo incremental de comprar, configurar y mantener recursos de computación, red y almacenamiento adicionales solo para brindar una infraestructura de replicación y recuperación de recuperación ante desastres.  Una opción popular para proteger recursos virtuales críticos locales es utilizar recursos virtuales alojados en la nube como infraestructura de replicación y recuperación ante desastres.  Amazon es un ejemplo de una solución que puede proporcionar recursos rentables que son compatibles con las infraestructuras de máquinas virtuales alojadas en NetApp ONTAP .</block>
@@ -1017,7 +947,6 @@
   <block id="4abf0577f3f5e02a03a3f7f622f92917" category="paragraph">Si necesita eliminar el clúster ONTAP FSx de NetApp Disaster Recovery, complete los siguientes pasos:</block>
   <block id="30c421e393d5aa57d14a1f76bca8f48f" category="list-text">En el agente de la NetApp Console , use las opciones de conectividad de su proveedor de nube, conéctese a la máquina virtual Linux en la que se ejecuta el agente de la consola, reinicie el servicio "occm" usando el<block ref="8a101e578f40cd60390b7bf862cd4130" prefix=" " category="inline-code"></block> dominio.</block>
   <block id="9f4c815c2ac6282475b2ac5c847609a7" category="inline-link">Administrar agentes de consola existentes</block>
-  <block id="9e6e8191a56ec085f482cb72d32c1f52" category="paragraph">Referirse a<block ref="ad7875d90798448fe1006e8d322c3a99" category="inline-link-rx"></block> .</block>
   <block id="96aeb70e42c22a98a839a95da74bd7cb" category="list-text">En la página Sistemas de NetApp Console , agregue nuevamente el sistema Amazon FSx para ONTAP y proporcione las credenciales de FSx.</block>
   <block id="827b8bb0e0d78845a402f73585acad5c" category="inline-link">Cree un sistema de archivos Amazon FSx for NetApp ONTAP</block>
   <block id="39fb83aee67d4723e4f71102667f9390" category="paragraph">Referirse a<block ref="be032c15c845f0ce5587a4047eb0721a" category="inline-link-rx"></block> .</block>
@@ -1061,21 +990,17 @@
   <block id="dd201962e893b06992d33a2eaba2ffb4" category="section-title">Soporte para la serie AFF A</block>
   <block id="7e074b8e5be6e37ff994dec8db0daff1" category="paragraph">Esta versión es compatible con las plataformas de hardware NetApp AFF serie A.</block>
   <block id="04865156d99b396070246fd919c01f72" category="paragraph">Esta versión incluye una _vista previa tecnológica_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere protegidos en el almacenamiento local.  Con esta versión, se admite la recuperación ante desastres en una vista previa de tecnología para cargas de trabajo de VMware locales en entornos de VMware locales con almacenes de datos VMFS.</block>
-  <block id="0f9f40db25fcedefd723c0bb676ca1ed" category="paragraph">Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de mapeo de recursos. Referirse a<block ref="5cf2140f2775e5f1ccc24bb836a069a3" category="inline-link-rx"></block> .</block>
   <block id="243b4ade55314e7ac41d77333eebc25c" category="section-title">Editar planes de replicación</block>
   <block id="8fba0556e394667a98e03ac72f0425c1" category="paragraph">Con esta versión, se ha mejorado la página de asignaciones de conmutación por error para lograr mayor claridad.</block>
   <block id="e9558a079e21d43034f54a99b19f2ad7" category="inline-link">Administrar planes</block>
-  <block id="583edef1d12ac8fcf925b864da2d76c6" category="paragraph">Referirse a<block ref="a8a4a23c947d3e2e3dc169027b7cac12" category="inline-link-rx"></block> .</block>
   <block id="ef7d051518cc0e9d684615d2573a82f1" category="section-title">Editar máquinas virtuales</block>
   <block id="abbe3932aad6fdc33c1f5375a61f5b50" category="paragraph">Con esta versión, el proceso de edición de máquinas virtuales en el plan incluyó algunas mejoras menores en la interfaz de usuario.</block>
   <block id="5f1df9fa6d6ce95c36680ae870250af7" category="inline-link">Administrar máquinas virtuales</block>
-  <block id="f7e4cafc0e54e03cc0ff738b39e333cb" category="paragraph">Referirse a<block ref="1d44a072309f2a4f38fd6e17ed7eb631" category="inline-link-rx"></block> .</block>
   <block id="dc1e07a914c069a9af948be662e1eee8" category="section-title">Actualizaciones con conmutación por error</block>
   <block id="30de1fbee43629f7336cc76e23ad2d9b" category="paragraph">Antes de iniciar una conmutación por error, ahora puede determinar el estado de las máquinas virtuales y si están encendidas o apagadas.  El proceso de conmutación por error ahora le permite tomar una instantánea ahora o elegir las instantáneas.</block>
   <block id="7a432f13dc69203884162d5181283bdd" category="paragraph">Ahora puede editar las pruebas de conmutación por error y establecer programaciones diarias, semanales y mensuales para las pruebas de conmutación por error.</block>
   <block id="9223735a44654f830630e16621e06b02" category="section-title">Actualizaciones de la información de prerrequisitos</block>
   <block id="750e75f4bc3220deaf846d6eb5623184" category="paragraph">Se ha actualizado la información sobre los requisitos previos de NetApp Disaster Recovery .</block>
-  <block id="fa0a452397a5b717659a39f9a2242a1b" category="paragraph">Referirse a<block ref="28b78deb4ab1b3278a24f4182eede0b4" category="inline-link-rx"></block> .</block>
   <block id="93716955add4f66b2af685a33bac4789" category="section-title">15 de mayo de 2024</block>
   <block id="dfc3ff60c25f075fd5633bb257473951" category="section-title">Replicación de cargas de trabajo de VMware desde un entorno local a otro local</block>
   <block id="675fb6431a706ae38f335d519b868c98" category="paragraph">Esta función ahora está disponible de forma general.  Anteriormente era una versión preliminar de una tecnología con funcionalidad limitada.</block>
@@ -1083,16 +1008,12 @@
   <block id="aab207fabbdc24c537203a4c7e93b911" category="paragraph">Con NetApp Disaster Recovery, puede registrarse para una prueba gratuita de 90 días, comprar una suscripción de pago por uso (PAYGO) con Amazon Marketplace o traer su propia licencia (BYOL), que es un archivo de licencia de NetApp (NLF) que obtiene de su representante de ventas de NetApp o del sitio de soporte de NetApp (NSS).</block>
   <block id="a07f121ce6bc9bf06d9deb38742dcdeb" category="paragraph">Para obtener detalles sobre la configuración de licencias para NetApp Disaster Recovery, consulte<block ref="eaa54a57026891d12cbf928afd176564" category="inline-link-macro-rx"></block> .</block>
   <block id="4d1ce2c89b354fabfe77d96169345b5a" category="inline-link">Obtenga más información sobre NetApp Disaster Recovery</block>
-  <block id="689e18051213a05c9520e0a9fcc69484" category="paragraph"><block ref="a0bad0821bfb422cb5e382a4c83c1cad" category="inline-link-rx"></block> .</block>
   <block id="c3084a9e2d458e9a14fb0606a505126d" category="section-title">5 de marzo de 2024</block>
   <block id="f8640dd898f95d34767690049d6f8e0d" category="paragraph">Esta es la versión de disponibilidad general de NetApp Disaster Recovery, que incluye las siguientes actualizaciones.</block>
   <block id="4f5e9dc667fbe953a0afd3cae9f276c2" category="paragraph">Con NetApp Disaster Recovery, puede registrarse para una prueba gratuita de 90 días o traer su propia licencia (BYOL), que es un archivo de licencia de NetApp (NLF) que obtiene de su representante de ventas de NetApp .  Puede utilizar el número de serie de la licencia para activar el BYOL en las suscripciones de la NetApp Console .  Los cargos de NetApp Disaster Recovery se basan en la capacidad aprovisionada de los almacenes de datos.</block>
-  <block id="a15996c9641c7ea366712495aca0eed2" category="paragraph">Para obtener detalles sobre la configuración de licencias para NetApp Disaster Recovery, consulte<block ref="7585b54fad00f1219b8233730153156f" category="inline-link-rx"></block> .</block>
   <block id="181fd78fab840533bb083eb8db997093" category="inline-link">Administrar licencias para todos los servicios de datos de la NetApp Console</block>
-  <block id="6d04ed5410c3d0c09747a2a37dd0ef12" category="paragraph">Para obtener detalles sobre la administración de licencias para *todos* los servicios de datos de la NetApp Console , consulte<block ref="744a59c0ce69bebd5c267903a51b6473" category="inline-link-rx"></block> .</block>
   <block id="382435e4c4253ed5f6764c8ef821291f" category="paragraph">Con esta versión, ahora puede configurar cronogramas para probar pruebas de cumplimiento y conmutación por error para asegurarse de que funcionarán correctamente si las necesita.</block>
   <block id="4b2bfa262e877a668b7102f58d207f63" category="inline-link">Crear el plan de replicación</block>
-  <block id="976dcedce9d4c9dc14db60abc49c5867" category="paragraph">Para más detalles, consulte<block ref="8026234d3eaba16fdffb266108c2804b" category="inline-link-rx"></block> .</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">01 de febrero de 2024</block>
   <block id="e211fea12586855383b68b15d395bc8e" category="paragraph">Esta versión preliminar de NetApp Disaster Recovery incluye las siguientes actualizaciones:</block>
   <block id="39fbd21560b88d32b617eacef07d54ae" category="section-title">Mejora de la red</block>
@@ -1102,7 +1023,6 @@
   <block id="083d10ed5645a35b897f5756cc2b537c" category="section-title">Scripts personalizados</block>
   <block id="57bdc23b2e7b4eb42e2fef1cbb444ca9" category="paragraph">Ahora se pueden incluir como procesos posteriores a la conmutación por error.  Con scripts personalizados, puede hacer que NetApp Disaster Recovery ejecute su script después de un proceso de conmutación por error.  Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez completada la conmutación por error.</block>
   <block id="2652fb9c2d661c6e545a590071ac6a1f" category="inline-link">Conmutación por error a un sitio remoto</block>
-  <block id="162522900f68ffca5220e53ec0e2c907" category="paragraph">Para más detalles, consulte<block ref="7cdfded96340b83fb1e5d3c286b13377" category="inline-link-rx"></block> .</block>
   <block id="cd6e9b8dd5b2724c597265c71ef73b68" category="section-title">Relación de SnapMirror</block>
   <block id="a8ed02d504bcc692995ea3653abefc1a" category="paragraph">Ahora puede crear una relación SnapMirror mientras desarrolla el plan de replicación.  Anteriormente, era necesario crear la relación fuera de NetApp Disaster Recovery.</block>
   <block id="6165c4352e1504dbaeef34d0cc50c187" category="section-title">Grupos de consistencia</block>
@@ -1116,7 +1036,6 @@
   <block id="a19c46c941eaff1f6354bcd13c9d8e31" category="section-title">Panel de control más rápido</block>
   <block id="77a292951e2cd7ee0d1bc7d3db0020ec" category="paragraph">Con esta versión, podrás acceder a la información de otras páginas desde el Panel de Control más rápidamente.</block>
   <block id="47f06bba899dca6455909cab1702b2dc" category="inline-link">Obtenga más información sobre la NetApp Disaster Recovery</block>
-  <block id="5cb24560c114ec0c10242c6ce975edde" category="paragraph"><block ref="50b3d3aab406b6f5099f437c56071b5b" category="inline-link-rx"></block> .</block>
   <block id="2971377ab46c11db3998ef23731b52cf" category="section-title">20 de octubre de 2023</block>
   <block id="3b0ed19f82866f402e194fbaed90a1a4" category="paragraph">Esta versión preliminar de NetApp Disaster Recovery incluye las siguientes actualizaciones.</block>
   <block id="3faa7f320285eae50e4b897f584c4219" category="section-title">Proteja las cargas de trabajo de VMware locales basadas en NFS</block>
@@ -1125,13 +1044,10 @@
   <block id="0d2ad64b559232943585fd7b1d8a6a97" category="section-title">27 de septiembre de 2023</block>
   <block id="de9bf2b4fc18ad740d18dc573f01d00d" category="section-title">Actualizaciones del panel de control</block>
   <block id="be74a2f8b73ed15a46d21c202566b3bb" category="inline-link">Vea el estado de sus planes de recuperación ante desastres en el Panel de Control</block>
-  <block id="d1181cbae4acc0d9feb9f608b3ee586f" category="paragraph">Referirse a<block ref="cdc1638a4873b7c2cfc1c5962a5d03ab" category="inline-link-rx"></block> .</block>
   <block id="056f6fba19f65e991a1c38d676e1c20d" category="list-text">*RPO*: Ahora puede ingresar el Objetivo de punto de recuperación (RPO) y el recuento de retención en la sección Almacenes de datos del plan de replicación. Esto indica la cantidad de datos que deben existir que no sean más antiguos que el tiempo establecido. Si, por ejemplo, lo configura en 5 minutos, el sistema puede perder hasta 5 minutos de datos si ocurre un desastre sin afectar las necesidades críticas del negocio.</block>
-  <block id="6b4866d6790f0b6c044df7d2894f1313" category="paragraph">Referirse a<block ref="5cf2140f2775e5f1ccc24bb836a069a3" category="inline-link-rx"></block> .</block>
   <block id="d547a941d090b496bcc4b6e7e5b8b1eb" category="list-text">*Mejoras de red*: al asignar redes entre ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, NetApp Disaster Recovery ahora ofrece dos opciones: DHCP o IP estática. Anteriormente solo se admitía DHCP. Para las direcciones IP estáticas, configure la subred, la puerta de enlace y los servidores DNS. Además, ahora puedes ingresar credenciales para máquinas virtuales.</block>
   <block id="fe329f91281efd1c71c4145c82444ecd" category="list-text">*Editar programaciones*: ahora puedes actualizar las programaciones del plan de replicación.</block>
   <block id="ecd36d02576c4fe28ab61b5c14fa69c4" category="inline-link">Administrar recursos</block>
-  <block id="4cfb152ee6cdcd5bb952055f0451eb1e" category="paragraph">Referirse a<block ref="62052e6a6f987a8752e8d90cacdd602d" category="inline-link-rx"></block> .</block>
   <block id="58adec32627fd44ceeefdcc62aeec6fc" category="list-text">* Automatización de SnapMirror *: mientras crea el plan de replicación en esta versión, puede definir la relación de SnapMirror entre los volúmenes de origen y destino en una de las siguientes configuraciones:</block>
   <block id="92b7daac1d86d399dc5b1e009d09f0f5" category="list-text">1 a 1</block>
   <block id="352d4f9f99cbd649fab2edc17c761e66" category="list-text">1 a muchos en una arquitectura de abanico</block>
@@ -1142,19 +1058,14 @@
   <block id="82f57a2f06f1514742a4ca1c0dcc31e4" category="paragraph">La versión preliminar de NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery , puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.</block>
   <block id="380047022cd9a81208dbad36b7a00acb" category="section-title">Actualización de los grupos de recursos para el orden de arranque</block>
   <block id="08e4438284e48b3ad77e9a0d04037ea7" category="inline-link">Seleccionar aplicaciones para replicar y asignar grupos de recursos</block>
-  <block id="d6eda1ee7ba9b0544b3abd0dd59e5711" category="paragraph">Cuando crea un plan de replicación o recuperación ante desastres, puede agregar máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos le permiten colocar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan con sus requisitos. Por ejemplo, los grupos podrían contener el orden de arranque que se puede ejecutar durante la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en que las incluya en el plan. Referirse a<block ref="290954acdd6fc55b493b2726d4197a5a" category="inline-link-rx"></block> .</block>
   <block id="2eadbfcbf9d76cb330a79283e42ad557" category="section-title">Verificación de replicación</block>
-  <block id="69798e58eff764573bf07442d9318dbc" category="paragraph">Después de crear el plan de recuperación ante desastres o de replicación, identificar la recurrencia en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos NetApp Disaster Recovery verifica que la replicación realmente se esté realizando de acuerdo con el plan. Puede supervisar el progreso en la página Monitor de trabajo. Consulte <block ref="e2d34ab7e7f8a76fb6ba2dcd38a58bb2" category="inline-link-rx"></block> .</block>
   <block id="095782ee526b72c68df8646a5900ccd1" category="section-title">El plan de replicación muestra los cronogramas de transferencia del objetivo del punto de recuperación (RPO)</block>
-  <block id="19662e7ad081cbe9f63cfc0504f0e369" category="paragraph">Cuando crea un plan de replicación o recuperación ante desastres, selecciona las máquinas virtuales. En esta versión, ahora puede ver el SnapMirror asociado con cada uno de los volúmenes asociados con el almacén de datos o la máquina virtual. También puede ver los programas de transferencia de RPO que están asociados con el programa de SnapMirror . RPO le ayuda a determinar si su programa de copias de seguridad es suficiente para recuperarse después de un desastre. Referirse a<block ref="5cf2140f2775e5f1ccc24bb836a069a3" category="inline-link-rx"></block> .</block>
   <block id="f0d8fca280d8272d1fbf03bd197dc6c6" category="section-title">Actualización del monitor de trabajo</block>
   <block id="7fad1567be7a7caec7818041fdf4a9c6" category="inline-link">Supervisar trabajos de recuperación ante desastres</block>
-  <block id="aee89117776781844e5694928335b749" category="paragraph">La página Monitor de trabajo ahora incluye una opción Actualizar para que pueda obtener un estado actualizado de las operaciones. Consulte <block ref="701085704c7bdf4268d7fbe3111fe8b9" category="inline-link-rx"></block> .</block>
   <block id="405e835e0544bb4cc8bbd26a2c840b54" category="section-title">18 de mayo de 2023</block>
   <block id="46aae999fad517a75f0ccba3b71bd481" category="paragraph">Esta es la versión inicial de NetApp Disaster Recovery.</block>
   <block id="2f2414748c5c55333b00da7bf5d583fc" category="section-title">Servicio de recuperación ante desastres basado en la nube</block>
   <block id="0be6cabb97a73364c0da66cecb2442e8" category="paragraph">NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Inicialmente, con la vista previa de NetApp Disaster Recovery , puede proteger sus cargas de trabajo VMware locales basadas en NFS que ejecutan almacenamiento NetApp en VMware Cloud (VMC) en AWS con Amazon FSx para ONTAP.</block>
-  <block id="196909d2916d81a00e084955535bfd0b" category="paragraph"><block ref="4ed50d9c464b3a958f9ede72e812cfcf" category="inline-link-macro-rx"></block> .</block>
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">NetApp proporciona soporte para BlueXP de distintas maneras. Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas, los 7 días de la semana, como artículos de la base de conocimientos (KB) y un foro comunitario. Su registro de soporte incluye soporte técnico remoto mediante tickets web.</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">Obtener ayuda</block>
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">Obtenga soporte para un servicio de archivos de un proveedor de nube</block>
@@ -1257,7 +1168,6 @@
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">Vea el estado de sus planes de NetApp Disaster Recovery en el Panel de control</block>
   <block id="f236d43ec0e67c4b89d0afe52b6b6a75" category="paragraph">Con el panel de NetApp Disaster Recovery , puede determinar el estado de sus sitios de recuperación ante desastres y sus planes de replicación.  Puede determinar rápidamente qué sitios y planes están en buen estado, desconectados o degradados.</block>
   <block id="ab5b32e2ccac1c245a804a25ba2d8a6c" category="paragraph">*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.</block>
-  <block id="e0e54fc9987960916f31ec7bec988ba1" category="paragraph"><block ref="5ee95b9951a403f3ce8a1382578a4abd" category="inline-link-macro-rx"></block> . <block ref="f3890bd69b65a6b74a515e7372dba6f8" category="inline-link-rx"></block> .</block>
   <block id="f23e4fbac73cf601cee1add8b6e11922" category="list-text">Desde el menú NetApp Disaster Recovery , seleccione *Panel de control*.</block>
   <block id="04edaa59dc99bd9193a5ad37083cc900" category="list-text">Revise la siguiente información en el Tablero:</block>
   <block id="b845a02ab309809100805f1256a064e8" category="list-text">*Sitios*: vea el estado de sus sitios.  Un sitio puede tener uno de los siguientes estados:</block>
@@ -1277,7 +1187,6 @@
   <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">Revise todas las operaciones en el panel Actividad.  Para ver todas las operaciones en el Monitor de trabajos, seleccione *Ver todos los trabajos*.</block>
   <block id="9299519b5b784ca0a2d9fd13dcb23201" category="summary">NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de replicación o recuperación ante desastres.</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">Crear un plan de replicación en NetApp Disaster Recovery</block>
-  <block id="11d903b00511c1f0113eab049c611065" category="paragraph">Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o _replicación_.  Los planes de replicación administran la protección de datos de la infraestructura de VMware.  Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo se deben restaurar y encender las aplicaciones.  Por ejemplo, puede agrupar máquinas virtuales (VM) asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares.  A veces estos planes se denominan "proyectos".</block>
   <block id="5d69fbf6172766c9a9f097615bf01170" category="paragraph">*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*Acerca de esta tarea*</block>
   <block id="978c7c7ea4c54312c02456ee28acd332" category="paragraph">Puede crear un plan de replicación y también editar cronogramas para cumplimiento y pruebas.  Ejecute conmutaciones por error de prueba de máquinas virtuales sin afectar las cargas de trabajo de producción.</block>
@@ -1797,7 +1706,6 @@
   <block id="07aa9d3d6d093cd998a453815b1b718f" category="sidebar">Documentación de NetApp Disaster Recovery</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">Referencia</block>
   <block id="0ac57782b45d2b5a287308d71b382a58" category="sidebar">Privilegios de vCenter necesarios para NetApp Disaster Recovery</block>
-  <block id="f3dfbaa5da1f39e5d7de7846034dc5fe" category="sidebar">Funciones y privilegios de NetApp Disaster Recovery</block>
   <block id="58d06f6d0c071d1a9211629997a6fb0d" category="sidebar">Utilice NetApp Disaster Recovery con Amazon EVS</block>
   <block id="bd599b695632fefb842a7a4afc918840" category="sidebar">Descripción general de NetApp Disaster Recovery con Amazon EVS</block>
   <block id="c0c4b60d27032c028c91440e9d3be949" category="sidebar">Descripción general de la solución</block>
@@ -1915,4 +1823,110 @@
   <block id="daf104544b5203a46e1580e1b8583f1f" category="paragraph">La asociación de credenciales NSS con su cuenta de NetApp Console es diferente a la asociación de una cuenta NSS con un inicio de sesión de usuario de consola.</block>
   <block id="5bc1315a63455544e7a917a7cc968939" category="paragraph">Estas credenciales de NSS están asociadas con su ID de cuenta de consola específica. Los usuarios que pertenecen a la organización de la Consola pueden acceder a estas credenciales desde *Soporte &gt; Administración de NSS*.</block>
   <block id="7687b0a57d5cb728d9fb892dfc814715" category="paragraph">Estas acciones permiten que la consola utilice su cuenta NSS para cosas como descargas de licencias, verificación de actualizaciones de software y futuros registros de soporte.</block>
+  <block id="7ca099323edf71b926fc9164cd6dcb98" category="paragraph">Referirse a<block ref="0a2897e75205749364bfed93d3636453" category="inline-link-rx"></block> .</block>
+  <block id="b71720246684e5a9cba49f80952de19b" category="paragraph">Referirse a<block ref="19734f32800b77f80c48c6717b016804" category="inline-link-rx"></block> .</block>
+  <block id="fc00d1eb9f65781e23eb29e05e16f837" category="paragraph">Referirse a<block ref="fc64bd880d64e61d0dbe79a637246086" category="inline-link-rx"></block> .</block>
+  <block id="3748c3bb5f6a3e18e8791cfe63ac90ed" category="paragraph">Para más detalles, consulte<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> .</block>
+  <block id="f919fb3669b4f95fd99d2925ae7cf012" category="paragraph">Referirse a<block ref="c2e2735f5609b13c3e77b7f1dd3c4dad" category="inline-link-rx"></block> .</block>
+  <block id="c140aa662ebc9f67c4fdea4bd57be0e2" category="paragraph">Para más detalles, consulte<block ref="cfcdee33513d18f6855d2d753dc01df1" category="inline-link-rx"></block> .</block>
+  <block id="e64b87421bcdfea630f17affd0f556c0" category="paragraph">Para más detalles, consulte<block ref="3e814dc0810571f12f20160040a8a04b" category="inline-link-rx"></block> .</block>
+  <block id="21ec54e8fa286f966369a08c489ae5fa" category="paragraph">Para obtener más información sobre el proxy inteligente para NetApp Disaster Recovery, consulte<block ref="820c3eb457916fa58a4c11f592fa4b9c" category="inline-link-rx"></block> .</block>
+  <block id="6cdbb0f5e24518e290be78d5087326d9" category="paragraph">Para obtener más información sobre la configuración general del proxy en la NetApp Console, consulte<block ref="ee748f633e32a464408350c15b5a4a4d" category="inline-link-rx"></block> .</block>
+  <block id="6fb6ea5db25971f01c5b56b2d1293a99" category="paragraph">Ver<block ref="5a3087a2b114066de4e4955d8182a972" category="inline-link-rx"></block> .</block>
+  <block id="ebb3e9d9870ecf428a0b48a6447c51af" category="paragraph">Para más detalles, consulte<block ref="3699cc08be4a1997a50967db5ff8a709" category="inline-link-rx"></block> .</block>
+  <block id="3964efa0939093eca0bac611eeb1782b" category="paragraph">Para obtener detalles sobre cómo incluir la asignación de subredes en sus sitios, consulte<block ref="3699cc08be4a1997a50967db5ff8a709" category="inline-link-rx"></block> .</block>
+  <block id="7429a4296bdaa8beacce19bbe1ee25ad" category="paragraph">Para obtener más detalles sobre cómo omitir la protección, consulte<block ref="c2e2735f5609b13c3e77b7f1dd3c4dad" category="inline-link-rx"></block> .</block>
+  <block id="73186230192d25a414390478c44bd34f" category="paragraph">Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> .</block>
+  <block id="d95f27e12b72826e0000aff7eb4934ca" category="paragraph">Para más detalles, consulte<block ref="5b36581a8c5714c490f4a04bda49832a" category="inline-link-macro-rx"></block> .</block>
+  <block id="05e04f0a4cee848be9555214d6a9a0eb" category="paragraph"><block ref="900bb528e3d03c800725eef508ff790f" category="inline-link-rx"></block>.</block>
+  <block id="19c500c3c2adf84e8ebbabf4b17c0a08" category="paragraph">Para más detalles, consulte<block ref="2d6eef6191819db2b4455acbd8ebc7a8" category="inline-link-rx"></block> y<block ref="28b3e4280c0ca3a3af1ee0d05785e9b6" category="inline-link-rx"></block> .</block>
+  <block id="800c173937521899b70a4ab5d735d3d7" category="paragraph">Para obtener más detalles sobre los cambios, consulte el <block ref="b78e17cf58c4e309929c8d6a69594c7d" category="inline-link-macro-rx"></block>.</block>
+  <block id="cab2138409405e17442c0b2913348b5c" category="doc">Compatibilidad con Google Cloud VMware Engine mediante Google Cloud NetApp Volumes</block>
+  <block id="eccf4b156fba5109ca6b1ef2be2fd64e" category="paragraph">NetApp Disaster Recovery ahora es compatible con Google Cloud VMware Engine mediante Google Cloud NetApp Volumes para operaciones de migración, conmutación por error, recuperación y prueba.  Esta integración permite flujos de trabajo de recuperación ante desastres sin inconvenientes entre entornos locales y Google Cloud.</block>
+  <block id="7984e947265cc8b94c06702adbf28865" category="inline-link-macro">limitaciones</block>
+  <block id="4fae34c4a960e8f2c583a66a68cf6fdc" category="paragraph">Asegúrese de revisar el<block ref="0b97dbd151642cb26d83aa16e8ffd9ce" category="inline-link-macro-rx"></block> y<block ref="86229131b08ad70f4dd9ffc7440523ad" category="inline-link-macro-rx"></block> para Google Cloud.</block>
+  <block id="3c56503a9f48478890ac41e17395c762" category="list-text">Google Cloud VMware Engine (GCVE) con Google Cloud NetApp Volumes</block>
+  <block id="1a90436cad6b2c834a6f0bf4b63bb676" category="paragraph">Obtenga más información sobre el<block ref="185be9890bef04443cd0fba90b4aff11" category="inline-link-rx"></block> .</block>
+  <block id="9ad4327ee2b15571b0ae33cd44518465" category="list-text">Experiencia de usuario simplificada para el descubrimiento y la recuperación de aplicaciones de vCenter con múltiples operaciones de recuperación en puntos específicos del tiempo.</block>
+  <block id="9c1f27493de915ea446fcd10980fb25b" category="paragraph">NetApp no ​​le cobra por utilizar la versión de prueba de NetApp Disaster Recovery.</block>
+  <block id="f4f7d6aee50e35b48e1594126cdb4f78" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>. <block ref="900bb528e3d03c800725eef508ff790f" category="inline-link-rx"></block>.</block>
+  <block id="395a0c83d18cd49c5468e19cda311fa7" category="paragraph">Para agregar un agente de consola, consulte<block ref="552a7d66ccd9c93a9dbc55fd8ef74d52" category="inline-link-rx"></block> .</block>
+  <block id="eb90be323cff385f058b6740db7ea9b1" category="paragraph">Puede ver los detalles de la suscripción en la página de suscripción de la NetApp Console . <block ref="cfbd6da620b5229d14162ae0313e9c37" category="inline-link-macro-rx"></block>.</block>
+  <block id="8a6e25252289a1daedac4f0edba496da" category="paragraph"><block ref="d5b487b8647d589ee708465fa8f6ee1a" category="inline-link-rx"></block>.</block>
+  <block id="6b12a212016aaf0720b69178e6a86c8c" category="admonition">Este mensaje también aparece en la NetApp Console y en<block ref="2355a5350c49a10d2ea41458fca03a98" category="inline-link-rx"></block> .</block>
+  <block id="5ac6ac982b7e70ea7339a4a3b33bf830" category="paragraph"><block ref="e9f92cb99927db4b051f21efde07f04c" category="inline-link-rx"></block>.</block>
+  <block id="b94b95cfe5aca58d64e6ae08bf0d9e9d" category="paragraph">Tareas específicas requieren roles de usuario específicos. <block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>. <block ref="e704c98551e5f8acdbf19af28a86dcf3" category="inline-link-rx"></block>.</block>
+  <block id="82a261e8102a004fba23416c32d2396d" category="list-text">Si aún no ha agregado un agente de NetApp Console , deberá agregar uno. Para agregar el agente, consulte<block ref="552a7d66ccd9c93a9dbc55fd8ef74d52" category="inline-link-rx"></block> .</block>
+  <block id="58da51d642fdf90e20b6bc81ffd17071" category="cell">Google Cloud VMware Engine con Google Cloud NetApp Volumes</block>
+  <block id="c16627d554485432d2c775a2396d8ad6" category="section-title">Requisitos previos y consideraciones de Google Cloud</block>
+  <block id="0dd6c8c9ea64057d5ec7128ee39d5a87" category="paragraph">Con la recuperación ante desastres en Google Cloud VMware Engine mediante Google Cloud NetApp Volumes, asegúrese de configurar los permisos correctos y cumplir con las consideraciones señaladas.</block>
+  <block id="971d1063ce9247fe87bcb8988cc17ed7" category="list-text">Comuníquese con el equipo de SRE de Google para incluir en la lista de permitidos lo siguiente:</block>
+  <block id="8c9cabeb12945e6dfce2d25647e6e557" category="list-text">API de sincronización para transferir instantáneas desde el almacenamiento local a Google Cloud NetApp Volumes.</block>
+  <block id="e215e3a3a25c1736152f94b148654580" category="list-text">el proyecto de Google con el motor VMware para crear, montar y desmontar almacenes de datos.</block>
+  <block id="2fe0fe58c3081588c23e7aea159284a8" category="inline-link-macro">Presente una solicitud para incluir en la lista de permitidos sus volúmenes de replicación híbrida</block>
+  <block id="4d0b4a091845c1ceedd7eaaf10f375e9" category="list-text">Usted debe<block ref="89efbf554bc5bcf96584e459dff96620" category="inline-link-macro-rx"></block> .</block>
+  <block id="d49cee722b8a66a3a05375a228d31190" category="inline-link-macro">Cuota y límites de Google Cloud NetApp Volumes</block>
+  <block id="d149f68cfd2937d2e8d871dbfb0cbedb" category="list-text">Tenga en cuenta la<block ref="3af07db1cb91b7e60ad6672ea4bc6781" category="inline-link-macro-rx"></block> .</block>
+  <block id="8086884cdea0ea24d9f6308a19cdf043" category="list-text">Solo puede agregar un volumen o almacén de datos a un plan de replicación.</block>
+  <block id="0cad1bab03dc44ec351d2de019d82607" category="list-text">Revisar el<block ref="8f7fb2d6ad43669f8a59b96f07943aee" category="inline-link-macro-rx"></block> .</block>
+  <block id="b6c17338accc8d99b423f332451f50ad" category="paragraph">**Consideraciones sobre conmutación por error**</block>
+  <block id="f8772b1ca9ad18417bf5318a8f27afba" category="list-text">La conmutación por error solo se admite utilizando la última instantánea.  Si es necesario, puede crear una nueva instantánea durante la captura de instantáneas (es decir, la opción de instantánea selectiva debe estar deshabilitada).</block>
+  <block id="242733299daaca561039b733176ac1b7" category="list-text">No es posible crear una nueva instantánea después de una conmutación por error.</block>
+  <block id="c05df755e6c0a942398c7fcd1eb14679" category="list-text">No es posible conservar ni conciliar instantáneas después de una conmutación por error.</block>
+  <block id="a6b1001c218e39c86bcccb2fe9813de3" category="paragraph">**Consideraciones sobre la recuperación**</block>
+  <block id="3758fe71aaf9a0852333acda31fa116f" category="list-text">La recuperación solo es posible con la opción de instantánea selectiva.  No es posible realizar una conmutación por recuperación tomando una nueva instantánea.</block>
+  <block id="1f76d7f030886fb987cb91dedab13a5a" category="inline-link-macro">Eliminar una relación de pares vserver</block>
+  <block id="96f91091a82bd278b7b54aa4310778fc" category="list-text">Si elimina el emparejamiento de clústeres entre el almacenamiento local y los clústeres de almacenamiento de Google Cloud NetApp Volumes , debe borrar manualmente la entrada de emparejamiento de clústeres y máquinas virtuales de almacenamiento del clúster local. Para obtener más información, consulte <block ref="c9d19940a40c6ca284ada61c82d06836" category="inline-link-macro-rx"></block>.</block>
+  <block id="d3846482b7a5f3467b05518965422219" category="section-title">Permisos de Google Cloud</block>
+  <block id="f4332067bbf3d864649a2f8ff6f383af" category="paragraph">Al principal de servicio en Google Cloud se le deben asignar los siguientes roles o permisos equivalentes:</block>
+  <block id="46bfb0b6a950e491727cd7b9952be257" category="inline-link-macro">Rol de administrador de cómputo</block>
+  <block id="6b2faa962f7aef2275d1a23970007e90" category="list-text"><block ref="6b2faa962f7aef2275d1a23970007e90" category="inline-link-macro-rx"></block></block>
+  <block id="638eb41402d462f2afaf2a4e6e47f93e" category="inline-link-macro">Permisos de Google Cloud para la NetApp Console</block>
+  <block id="b790e791f550336125079c0f9b6a19be" category="list-text"><block ref="b790e791f550336125079c0f9b6a19be" category="inline-link-macro-rx"></block></block>
+  <block id="436bff0805748a902328fcc07cf013a5" category="inline-link-macro">Administrador de Google Cloud NetApp Volumes</block>
+  <block id="a24314b6c16689ddf141ffe22d96d229" category="list-text"><block ref="a24314b6c16689ddf141ffe22d96d229" category="inline-link-macro-rx"></block></block>
+  <block id="a436e2bcc90e8b16f95397aa0884cf4d" category="inline-link-macro">Administrador de servicios de VMware Engine</block>
+  <block id="f11373266f0d280d006bef83dd7e9ca8" category="list-text"><block ref="f11373266f0d280d006bef83dd7e9ca8" category="inline-link-macro-rx"></block></block>
+  <block id="655a4a62c68d50b259a7df6d586552fb" category="section-title">Permisos de la NetApp Console</block>
+  <block id="f92d96a49c616edb63fefcdc05a06cdf" category="paragraph">El usuario de la NetApp Console debe tener los siguientes roles:</block>
+  <block id="077ceb8a17d475a37128a6986bf1819f" category="inline-link-macro">Administrador de Google Cloud NetApp Volumes</block>
+  <block id="9bdd703d68516c0b5901287aed3fd299" category="list-text"><block ref="9bdd703d68516c0b5901287aed3fd299" category="inline-link-macro-rx"></block></block>
+  <block id="36910b765d93c29f4611f725c05faabe" category="inline-link-macro">Administrador de SnapCenter</block>
+  <block id="670f1aa1b0f3517b704b1e0bbfc5bb78" category="list-text"><block ref="670f1aa1b0f3517b704b1e0bbfc5bb78" category="inline-link-macro-rx"></block></block>
+  <block id="c6990b299c4b29696e405251db7539ca" category="inline-link-macro">Administrador de conmutación por error de recuperación ante desastres</block>
+  <block id="94c02ddd984f67eb8b79c11dbd8b654a" category="list-text"><block ref="94c02ddd984f67eb8b79c11dbd8b654a" category="inline-link-macro-rx"></block></block>
+  <block id="4dc42c993e8bd7091a49f3fe75b4cc7f" category="paragraph">Si aún no lo has hecho,<block ref="94e30243c99a58315474317c40996996" category="inline-link-rx"></block> .</block>
+  <block id="c6d4ec9aebbd9adbd6cd055b1e2ef0b4" category="list-text">NetApp Disaster Recovery solo funciona con la implementación del agente en modo estándar. Ver<block ref="1dca0eb7ce67e238dc32613ea2fd1e70" category="inline-link-rx"></block> .</block>
+  <block id="d79ddc5d144ac6cb3cc81d1fd8bbf16b" category="list-text">*Recuperación ante desastres local a local*: instale el agente local de la consola en el sitio de recuperación ante desastres. Con este método, una falla del sitio principal no impide que el servicio reinicie sus recursos virtuales en el sitio de recuperación ante desastres. Referirse a<block ref="aa1d5488876933382cbfe9d426d413f9" category="inline-link-rx"></block> .</block>
+  <block id="229e27e5e98d46ffabb19ff45325734b" category="list-text">*En las instalaciones de AWS*: instale el agente de consola para AWS en su VPC de AWS. Referirse a<block ref="1169d6a654f5038ebfa8fc4462054b47" category="inline-link-rx"></block> .</block>
+  <block id="db93e33cfb5094bef5af78afec2a318a" category="paragraph">Ver<block ref="7710287f166c6260d467d0ffbd4c652b" category="inline-link-rx"></block> .</block>
+  <block id="9fb45d8b59f2c406ddf7a9711c1391c2" category="list-text">Siga los pasos en<block ref="69ac71aae3c3019102e9a90ab4fd3799" category="inline-link-rx"></block> y<block ref="3f510c006b92994b3ccaf7ccb9cc0351" category="inline-link-rx"></block> para aprovisionar y configurar FSx para ONTAP.</block>
+  <block id="5280fea1000838e74051510a8adb21e9" category="paragraph">Para utilizar el servicio, instale el agente de consola en modo estándar. Para obtener más información sobre los tipos de instalaciones del agente de consola, visite<block ref="e87d59187940f672670f4b294a02b363" category="inline-link-rx"></block> .</block>
+  <block id="b567b746a04d21aaaa45a342f69073cb" category="paragraph">El método más simple para instalar el agente de consola con Amazon AWS es utilizar AWS Marketplace. Para obtener detalles sobre la instalación del agente de consola mediante AWS Marketplace, consulte<block ref="7f4733cc86c855f6efc0e6a18921c741" category="inline-link-rx"></block> .</block>
+  <block id="52f0067dfdeb72bf780f9e3a808fbb01" category="paragraph">Referirse a<block ref="d83a9ddc5356a460fd8c8bdc5b02cf7f" category="inline-link-rx"></block> .</block>
+  <block id="ea22e49b05f0c437898dd362ac3cb582" category="section-title">Limitaciones de Google Cloud NetApp Volumes</block>
+  <block id="0b3bf876c8f0155fffe01bfe66919ae7" category="list-text">Después de ejecutar una prueba de conmutación por error, debe esperar al menos 52 horas para eliminar el volumen clonado.  Debes eliminar el volumen manualmente.  Después de 52 horas, puedes probar la conmutación por error nuevamente.</block>
+  <block id="7b968ed584e6ac7fc895a20d4c4e19e6" category="list-text">Si alguna parte de la operación de montaje falla, la conmutación por error no tendrá éxito y los trabajos expirarán.  Google tarda hasta tres días en analizar el problema, durante los cuales se bloquean todas las operaciones relacionadas con el almacén de datos en vCenter.</block>
+  <block id="b0cddd5e1e4185232bf6d1fb2418ed79" category="section-title">1 de diciembre de 2025</block>
+  <block id="a59dc75ba3acb75a76892cc518033bf2" category="paragraph">Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de mapeo de recursos. Referirse a<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> .</block>
+  <block id="dec8bee8343c6d117f63ae394850253f" category="paragraph">Referirse a<block ref="b19db5f70a49f12a345f60ed67ac796b" category="inline-link-rx"></block> .</block>
+  <block id="f846876bddc172040b4b43e5a785c530" category="paragraph">Referirse a<block ref="890d7063dc9de57ba2bcf88f9266693d" category="inline-link-rx"></block> .</block>
+  <block id="b2d5f1c59a3bea052f379bdc27494bcc" category="paragraph">Referirse a<block ref="af17dd838b93f65aaed7f355089a6a52" category="inline-link-rx"></block> .</block>
+  <block id="845eaf23d1b45041c6f0657e886d391e" category="paragraph"><block ref="b60b5c6bd90c6adf0ff4939b80ae6f1f" category="inline-link-rx"></block>.</block>
+  <block id="2c8bcb491668d28b6eba5cce3541ef3e" category="paragraph">Para obtener detalles sobre la configuración de licencias para NetApp Disaster Recovery, consulte<block ref="fc64bd880d64e61d0dbe79a637246086" category="inline-link-rx"></block> .</block>
+  <block id="b0bbeee8e580e57328dc54758ad05415" category="paragraph">Para obtener detalles sobre la administración de licencias para *todos* los servicios de datos de la NetApp Console , consulte<block ref="260681515c15b3ca1586b5059c0196d2" category="inline-link-rx"></block> .</block>
+  <block id="0adaadb84969a574419502132b942f31" category="paragraph">Para más detalles, consulte<block ref="1eedc685a089def20e2f9a421813a733" category="inline-link-rx"></block> .</block>
+  <block id="fc20a50b039b8d99c2b0cd66e0d23ce2" category="paragraph">Para más detalles, consulte<block ref="b23e600e479112761333de8c4f7b2fd9" category="inline-link-rx"></block> .</block>
+  <block id="ba8fe6f6789e5f7199519941aefafefb" category="paragraph"><block ref="6d1992c3ae7ff61967726232cb57483c" category="inline-link-rx"></block>.</block>
+  <block id="248f029169ae1dc7e09893ffc08dc712" category="paragraph">Referirse a<block ref="0807a737bd78695b4a254e4d38c54d1a" category="inline-link-rx"></block> .</block>
+  <block id="4b3c6cbf4a48d0bd709bc99a41eaf5c4" category="paragraph">Referirse a<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> .</block>
+  <block id="5231740592cdd924e6fd895d6bf9f92a" category="paragraph">Referirse a<block ref="fdfc4e9bafc2bb55b4145b1390d051cc" category="inline-link-rx"></block> .</block>
+  <block id="db4b2a2fab0c7502080a219b908784ae" category="paragraph">Cuando crea un plan de replicación o recuperación ante desastres, puede agregar máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos le permiten colocar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan con sus requisitos. Por ejemplo, los grupos podrían contener el orden de arranque que se puede ejecutar durante la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en que las incluya en el plan. Referirse a<block ref="ee1fea06d7478ebea6a6c5ae2d2b4dd8" category="inline-link-rx"></block> .</block>
+  <block id="647d9243c873ee85a5b5ef91c0cde1be" category="paragraph">Después de crear el plan de recuperación ante desastres o de replicación, identificar la recurrencia en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos NetApp Disaster Recovery verifica que la replicación realmente se esté realizando de acuerdo con el plan. Puede supervisar el progreso en la página Monitor de trabajo. Referirse a<block ref="467be6b72bdf445e572b40cb9aef5aef" category="inline-link-rx"></block> .</block>
+  <block id="db57896cfd5fc20498a884f5493db9e2" category="paragraph">Cuando crea un plan de replicación o recuperación ante desastres, selecciona las máquinas virtuales. En esta versión, ahora puede ver el SnapMirror asociado con cada uno de los volúmenes asociados con el almacén de datos o la máquina virtual. También puede ver los programas de transferencia de RPO que están asociados con el programa de SnapMirror . RPO le ayuda a determinar si su programa de copias de seguridad es suficiente para recuperarse después de un desastre. Referirse a<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> .</block>
+  <block id="727d2884239e62cf5ec5d59f2ae538a1" category="paragraph">La página Monitor de trabajo ahora incluye una opción Actualizar para que pueda obtener un estado actualizado de las operaciones. Referirse a<block ref="45f7b5a446086d3a895fd4d6d899ff32" category="inline-link-rx"></block> .</block>
+  <block id="e6a35b0cc097a073b142d2f77dd698c4" category="paragraph"><block ref="5b01ddd771a87fa6b71f782d09b9b7b3" category="inline-link-macro-rx"></block>.</block>
+  <block id="bae7a0a97273516d5296fb983700a411" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>. <block ref="e704c98551e5f8acdbf19af28a86dcf3" category="inline-link-rx"></block>.</block>
+  <block id="a805fee248bed5144adc2fef83e46569" category="paragraph">Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de recuperación ante desastres o _replicación_. Los planes de replicación administran la protección de datos de la infraestructura de VMware. Seleccione los vCenters de origen y destino, elija los grupos de recursos y agrupe cómo se deben restaurar y encender las aplicaciones. Por ejemplo, puede agrupar máquinas virtuales (VM) asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares. A veces estos planes se denominan "proyectos".</block>
+  <block id="3cd914b858fef92fe1881cac0800b73b" category="paragraph">&gt;[!IMPORTANTE] &gt;Con Google Cloud, solo puedes agregar un volumen o almacén de datos a un plan de replicación.</block>
 </blocks>

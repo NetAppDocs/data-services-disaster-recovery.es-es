@@ -10,7 +10,7 @@ NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Con e
 
 Si no desea programar el descubrimiento, puede deshabilitar la opción de descubrimiento programado y actualizar el descubrimiento manualmente en cualquier momento.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
 
 
 
@@ -24,7 +24,7 @@ Puede crear un grupo de recursos con un almacén de datos de las siguientes mane
 * Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
 
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 
 
 

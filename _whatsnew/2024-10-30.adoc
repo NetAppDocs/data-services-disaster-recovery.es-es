@@ -8,7 +8,7 @@
 
 Ahora puede generar y descargar informes que le ayudarán a analizar su panorama.  Los informes prediseñados resumen las conmutaciones por error y por recuperación, muestran detalles de replicación en todos los sitios y muestran detalles de trabajos de los últimos siete días.
 
-Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["Crear informes de recuperación ante desastres"] .
+Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/reports.html["Crear informes de recuperación ante desastres"] .
 
 
 
@@ -16,7 +16,7 @@ Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.h
 
 Ahora puede registrarse para una prueba gratuita de 30 días de NetApp Disaster Recovery.  Anteriormente, las pruebas gratuitas duraban 90 días.
 
-Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["Configurar licencias"] .
+Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["Configurar licencias"] .
 
 
 
@@ -38,7 +38,7 @@ Aquí te explicamos cómo:
 
 Cuando crea un plan de replicación y asigna recursos informáticos, ahora puede asignar carpetas para que las máquinas virtuales se recuperen en una carpeta que especifique para el centro de datos, el clúster y el host.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 
 
 
@@ -46,7 +46,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recov
 
 Cuando ocurre una falla y usted está iniciando una conmutación por error, realizando una conmutación por recuperación o probando la conmutación por error, ahora puede ver los detalles de las máquinas virtuales e identificar cuáles no se reiniciaron.
 
-Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
+Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
 
 
 
@@ -54,7 +54,7 @@ Referirse a https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.
 
 Al crear un plan de replicación, ahora puede establecer un retraso de arranque para cada máquina virtual en el plan.  Esto le permite establecer una secuencia para que las máquinas virtuales se inicien a fin de garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 
 
 
@@ -62,7 +62,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recov
 
 Al crear un plan de replicación, ahora puede ver el sistema operativo de cada máquina virtual en el plan.  Esto es útil para decidir cómo agrupar las máquinas virtuales en un grupo de recursos.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 
 
 
@@ -70,7 +70,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recov
 
 Al crear un plan de replicación, ahora puede agregar un prefijo y un sufijo a los nombres de las máquinas virtuales en el sitio de recuperación ante desastres.  Esto le permite utilizar un nombre más descriptivo para las máquinas virtuales en el plan.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 
 
 
@@ -78,7 +78,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recov
 
 Puede eliminar cualquier instantánea que ya no necesite más allá del recuento de retención especificado.  Las instantáneas pueden acumularse con el tiempo cuando reduce el recuento de retención de instantáneas, y ahora puede eliminarlas para liberar espacio.  Puede hacer esto en cualquier momento a pedido o cuando elimine un plan de replicación.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Administrar sitios, grupos de recursos, planes de replicación, almacenes de datos e información de máquinas virtuales"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Administrar sitios, grupos de recursos, planes de replicación, almacenes de datos e información de máquinas virtuales"] .
 
 
 
@@ -86,4 +86,4 @@ Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recov
 
 Ahora puedes conciliar instantáneas que no están sincronizadas entre el origen y el destino.  Esto podría ocurrir si se eliminan instantáneas en un destino fuera de NetApp Disaster Recovery.  El servicio elimina la instantánea de la fuente automáticamente cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["Administrar planes de replicación"] .
+Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Administrar planes de replicación"] .
