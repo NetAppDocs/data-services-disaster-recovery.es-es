@@ -16,7 +16,33 @@ Descubre las novedades de NetApp Disaster Recovery.
 
 
 
+== 09 de diciembre de 2025
+
+Versión 4.2.8P1
+
+
+
+=== Retención de la jerarquía de carpetas
+
+De forma predeterminada, Disaster Recovery conserva la jerarquía del inventario de VM (estructura de carpetas) en caso de conmutación por error.  Si el destino de recuperación no tiene la carpeta requerida, Disaster Recovery la crea.
+
+Ahora puede anular esta configuración designando una nueva carpeta de VM principal o desmarcando la opción **Conservar jerarquía de carpetas original**.
+
+Para obtener más información, consulte link:../use/drplan-create.adoc["Crear un plan de replicación"].
+
+
+
+=== Actualización optimizada del agente de consola
+
+La recuperación ante desastres ahora admite un proceso optimizado para utilizar múltiples agentes de consola en un entorno de trabajo.  Para cambiar entre agentes de consola, debe editar la configuración de vCenter, redescubrir las credenciales y actualizar los planes de replicación para usar el nuevo agente de consola.
+
+Para obtener más información, consulte link:../reference/switch-console-agent.html["Agentes de la consola Switch"].
+
+
+
 == 1 de diciembre de 2025
+
+Versión 4.2.8
 
 
 
@@ -29,6 +55,8 @@ Asegúrese de revisar ellink:https://docs.netapp.com/us-en/data-services-disaste
 
 
 == 10 de noviembre de 2025
+
+Versión 4.2.7
 
 
 
@@ -61,6 +89,8 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/data
 
 
 == 6 de octubre de 2025
+
+Versión 4.2.6
 
 
 

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference/switch-console-agent.html 
+keywords: disaster recovery, console agent, high availability 
+summary: Obtenga información sobre los requisitos para utilizar varios agentes de consola con NetApp Disaster Recovery. 
+---
+= Cambiar agentes de la consola al utilizar NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+La NetApp Console admite el uso de varios agentes de consola con un único entorno de trabajo.  El uso de varios agentes de consola puede resultar útil para mantener el acceso a los recursos mientras se realiza mantenimiento en otro agente de consola o si un agente de consola falla.  Debido a que cada agente de consola tiene un identificador único, cambiar incorrectamente los agentes de consola puede comprometer la disponibilidad de recursos en un entorno de trabajo.
+
+
+
+== Antes de empezar
+
+* Debes tenerxref:../get-started/dr-prerequisites.html#create-the-netapp-console-agent[Se agregaron al menos dos agentes de consola para su entorno de trabajo] .
+* Ambos agentes de consola deben contener los mismos clústeres ONTAP .
+
+
+
+
+== Pasos
+
+. En Recuperación ante desastres, seleccione **Sitios**.
+. Debe cambiar el agente de la consola tanto para el vCenter de origen como para el de destino.  Identifique los vCenters que desea modificar.  Seleccione el menú de acciones para vCenter y luego **Editar**.
++
+image:dr-sites-subnet-menu.png["Captura de pantalla del panel de control de Sitios"]
+
+. Seleccione el agente de consola que desea utilizar en el menú desplegable y vuelva a ingresar su nombre de usuario y contraseña de vCenter. Seleccione **Guardar**.
++
+image:edit-vcenter.png["Captura de pantalla cambiando el agente de la consola"]
+
+. Repita los pasos 2 y 3 para cada vCenter adicional que desee modificar.
+. En el vCenter que modificó, actualícelo para detectar el nuevo agente de consola.  Repita este paso para cada vCenter que haya modificado.
+. En Recuperación ante desastres, navegue a **Planes de replicación**.
+. Identifique los planes de replicación que desea utilizar para reanudar los flujos de trabajo.  Seleccione el menú de acciones `...` Luego **Actualizar recursos**.  Puede supervisar el estado de los trabajos en **Supervisión de trabajos**.
+
+
+
+
+== Más información
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["Obtenga más información sobre los agentes de consola"^]
+
