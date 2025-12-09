@@ -1927,11 +1927,9 @@
   <block id="b706122b5735a672dec906da7d14b15c" category="doc">Retención de la jerarquía de carpetas</block>
   <block id="c8d94434feabcd9486a228e1a7a02882" category="paragraph">De forma predeterminada, Disaster Recovery conserva la jerarquía del inventario de VM (estructura de carpetas) en caso de conmutación por error.  Si el destino de recuperación no tiene la carpeta requerida, Disaster Recovery la crea.</block>
   <block id="5a54761f5d99470c8137218395b65ca5" category="paragraph">Ahora puede anular esta configuración designando una nueva carpeta de VM principal o desmarcando la opción **Conservar jerarquía de carpetas original**.</block>
-  <block id="4b4839446c123b0f7cbb37cc05973b41" category="paragraph">Para obtener más información, consulte <block ref="8ed6b1ab912526d5ffcc717e1a39851e" category="inline-link-macro-rx"></block>.</block>
   <block id="c1bacabdbdc0d5e57b5ead85a617b4b0" category="section-title">Actualización optimizada del agente de consola</block>
   <block id="1220fc49240c9d2c58d7490c6c40ac65" category="paragraph">La recuperación ante desastres ahora admite un proceso optimizado para utilizar múltiples agentes de consola en un entorno de trabajo.  Para cambiar entre agentes de consola, debe editar la configuración de vCenter, redescubrir las credenciales y actualizar los planes de replicación para usar el nuevo agente de consola.</block>
   <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">Agentes de la consola Switch</block>
-  <block id="8c3cfaa540744075b83a947ed57c6f60" category="paragraph">Para obtener más información, consulte <block ref="0905281a07a8919c4c92242f0cf75d65" category="inline-link-macro-rx"></block>.</block>
   <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">Obtenga información sobre los requisitos para utilizar varios agentes de consola con NetApp Disaster Recovery.</block>
   <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">Cambiar agentes de la consola al utilizar NetApp Disaster Recovery</block>
   <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">La NetApp Console admite el uso de varios agentes de consola con un único entorno de trabajo.  El uso de varios agentes de consola puede resultar útil para mantener el acceso a los recursos mientras se realiza mantenimiento en otro agente de consola o si un agente de consola falla.  Debido a que cada agente de consola tiene un identificador único, cambiar incorrectamente los agentes de consola puede comprometer la disponibilidad de recursos en un entorno de trabajo.</block>
@@ -1965,4 +1963,6 @@
   <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">Desmarque esta casilla para ignorar la jerarquía de carpetas original.</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">Privilegios de vCenter necesarios para la recuperación ante desastres</block>
   <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">Agente de consola de Switch</block>
+  <block id="98ade846ffa73dc9c6bcd3e3e84c38b7" category="paragraph">Para obtener más información, consulte <block ref="1762f821178ef43810c03e86465a946d" category="inline-link-macro-rx"></block>.</block>
+  <block id="1df351797bd2540f3ec41bc24e67bf1f" category="paragraph">Para obtener más información, consulte <block ref="2631c62a2ac2ec2e6a0ebc0352319a2c" category="inline-link-macro-rx"></block>.</block>
 </blocks>
