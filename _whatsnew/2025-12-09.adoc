@@ -10,7 +10,7 @@ De forma predeterminada, Disaster Recovery conserva la jerarquía del inventario
 
 Ahora puede anular esta configuración designando una nueva carpeta de VM principal o desmarcando la opción **Conservar jerarquía de carpetas original**.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Crear un plan de replicación"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"].
 
 
 
@@ -18,4 +18,4 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/data
 
 La recuperación ante desastres ahora admite un proceso optimizado para utilizar múltiples agentes de consola en un entorno de trabajo.  Para cambiar entre agentes de consola, debe editar la configuración de vCenter, redescubrir las credenciales y actualizar los planes de replicación para usar el nuevo agente de consola.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agents.html["Agentes de la consola Switch"].
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agent.html["Agentes de la consola Switch"].

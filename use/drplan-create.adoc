@@ -280,10 +280,7 @@ Para habilitar la ejecución de scripts con el sistema operativo invitado de la 
 
 
 * *Reducir la versión del hardware de la máquina virtual y registrarla*: Seleccione esta opción si la versión del host ESX de destino es anterior a la del origen para que coincidan durante el registro.
-* *Conservar la jerarquía de carpetas original*: cuando se selecciona, la recuperación ante desastres conserva la jerarquía de inventario de la máquina virtual (estructura de carpetas) en caso de conmutación por error.  Si el destino de recuperación _no_ tiene la jerarquía de carpetas original, se crea la recuperación ante desastres.
-+
-Desmarque esta casilla para ignorar la jerarquía de carpetas original.
-
+* *Conservar la jerarquía de carpetas original*: cuando se selecciona, la recuperación ante desastres conserva la jerarquía de inventario de la máquina virtual (estructura de carpetas) en caso de conmutación por error. Si el destino de recuperación _no_ tiene la jerarquía de carpetas original, se crea la recuperación ante desastres. Marque la casilla para conservar la jerarquía de carpetas; desmárquela para ignorar la jerarquía de carpetas original.
 * *Prefijo y sufijo de la máquina virtual de destino*: en los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y un sufijo a cada nombre de máquina virtual conmutada por error.  Esto puede resultar útil para diferenciar las máquinas virtuales conmutadas por error de las máquinas virtuales de producción que se ejecutan en el mismo clúster de vCenter.  Por ejemplo, puede agregar un prefijo "DR-" y un sufijo "-failover" al nombre de la VM.  Algunas personas agregan un segundo vCenter de producción para alojar máquinas virtuales temporalmente en un sitio diferente en caso de desastre.  Agregar un prefijo o sufijo puede ayudarle a identificar rápidamente las máquinas virtuales conmutadas por error.  También puedes usar el prefijo o sufijo en scripts personalizados.
 +
 Puede utilizar el método alternativo para configurar la carpeta de la máquina virtual de destino en la sección Recursos de cómputo.
