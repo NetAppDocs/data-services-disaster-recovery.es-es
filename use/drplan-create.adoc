@@ -130,7 +130,7 @@ TIP: Cree un conjunto dedicado e independiente de asignaciones para sus pruebas 
 . Opcionalmente, busque una máquina virtual o un almacén de datos específico por nombre.
 . En el lado izquierdo de la página Aplicaciones, seleccione las máquinas virtuales o los almacenes de datos que desea proteger y asígnelos al grupo seleccionado.
 +
-El vCenter de origen debe residir en el vCenter local.  El vCenter de destino puede ser un segundo vCenter local en el mismo sitio o un sitio remoto, o un centro de datos definido por software (SDDC) basado en la nube, como VMware Cloud on AWS.  Ambos vCenters ya deberían estar agregados a su entorno de trabajo de BlueXP disaster recovery .
+El vCenter de origen debe residir en el vCenter local. El vCenter de destino puede ser un segundo vCenter local en el mismo sitio o un sitio remoto, o un centro de datos definido por software (SDDC) basado en la nube, como VMware Cloud on AWS. Ambos vCenters ya deberían estar agregados a su entorno de trabajo de recuperación ante desastres.
 
 +
 El recurso seleccionado se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2.  Cada vez que se agrega un recurso al último grupo, se agrega otro grupo.
@@ -170,7 +170,7 @@ Si planea realizar conmutaciones por error de prueba como parte de su plan de re
 Si desea crear una relación SnapMirror en este servicio, el clúster y su emparejamiento SVM ya deben haberse configurado fuera de NetApp Disaster Recovery.
 
 .Pasos
-. En la página de mapeo de recursos, para usar las mismas asignaciones para las operaciones de prueba y conmutación por error, marque la casilla.
+. En la página de mapeo de recursos, marque la casilla para usar las mismas asignaciones para las operaciones de prueba y conmutación por error.
 +
 image:dr-plan-resource-mapping2.png["Plan de replicación, pestaña Asignación de recursos"]
 
@@ -263,7 +263,7 @@ image:dr-plan-vm-subnet-option2.png["Captura de pantalla que muestra Agregar pla
 
 
 
-* *Scripts*: puede incluir scripts personalizados alojados en el sistema operativo invitado en formato .sh, .bat o .ps1 como procesos posteriores.  Con scripts personalizados, la BlueXP disaster recovery puede ejecutar su script después de una conmutación por error, una recuperación y procesos de migración.  Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez completada la conmutación por error.  El servicio puede ejecutar scripts dentro de máquinas virtuales que ejecutan Microsoft Windows o cualquier variante de Linux compatible con parámetros de línea de comandos admitidos.  Puede asignar un script a máquinas virtuales individuales o a todas las máquinas virtuales en el plan de replicación.
+* *Scripts*: puede incluir scripts personalizados alojados en el sistema operativo invitado en formato .sh, .bat o .ps1 como procesos posteriores. Con scripts personalizados, Disaster Recovery puede ejecutar su script después de una conmutación por error, una recuperación y procesos de migración. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez completada la conmutación por error. El servicio puede ejecutar scripts dentro de máquinas virtuales que ejecutan Microsoft Windows o cualquier variante de Linux compatible con parámetros de línea de comandos admitidos. Puede asignar un script a máquinas virtuales individuales o a todas las máquinas virtuales en el plan de replicación.
 +
 Para habilitar la ejecución de scripts con el sistema operativo invitado de la máquina virtual, se deben cumplir las siguientes condiciones:
 
@@ -280,7 +280,10 @@ Para habilitar la ejecución de scripts con el sistema operativo invitado de la 
 
 
 * *Reducir la versión del hardware de la máquina virtual y registrarla*: Seleccione esta opción si la versión del host ESX de destino es anterior a la del origen para que coincidan durante el registro.
-* *Conservar la jerarquía de carpetas original*: cuando se selecciona, la recuperación ante desastres conserva la jerarquía de inventario de la máquina virtual (estructura de carpetas) en caso de conmutación por error. Si el destino de recuperación _no_ tiene la jerarquía de carpetas original, se crea la recuperación ante desastres. Marque la casilla para conservar la jerarquía de carpetas; desmárquela para ignorar la jerarquía de carpetas original.
+* *Conservar la jerarquía de carpetas original*: de manera predeterminada, Disaster Recovery conserva la jerarquía de inventario de VM (estructura de carpetas) en caso de conmutación por error. Si el destino de recuperación _no_ tiene la jerarquía de carpetas original, Disaster Recovery la crea.
++
+Desmarque esta casilla para ignorar la jerarquía de carpetas original.
+
 * *Prefijo y sufijo de la máquina virtual de destino*: en los detalles de las máquinas virtuales, puede agregar opcionalmente un prefijo y un sufijo a cada nombre de máquina virtual conmutada por error.  Esto puede resultar útil para diferenciar las máquinas virtuales conmutadas por error de las máquinas virtuales de producción que se ejecutan en el mismo clúster de vCenter.  Por ejemplo, puede agregar un prefijo "DR-" y un sufijo "-failover" al nombre de la VM.  Algunas personas agregan un segundo vCenter de producción para alojar máquinas virtuales temporalmente en un sitio diferente en caso de desastre.  Agregar un prefijo o sufijo puede ayudarle a identificar rápidamente las máquinas virtuales conmutadas por error.  También puedes usar el prefijo o sufijo en scripts personalizados.
 +
 Puede utilizar el método alternativo para configurar la carpeta de la máquina virtual de destino en la sección Recursos de cómputo.
@@ -295,7 +298,7 @@ image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestr
 
 * *Orden de arranque*: puede modificar el orden de arranque después de una conmutación por error para todas las máquinas virtuales seleccionadas en los grupos de recursos.  De forma predeterminada, todas las máquinas virtuales arrancan juntas en paralelo; sin embargo, puedes realizar cambios en esta etapa.  Esto es útil para garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.
 +
-La BlueXP disaster recovery inicia cualquier máquina virtual con el mismo número de orden de inicio en paralelo.
+Disaster Recovery inicia cualquier máquina virtual con el mismo número de orden de inicio en paralelo.
 
 +
 ** Arranque secuencial: asigna a cada VM un número único para arrancar en el orden asignado, por ejemplo, 1, 2, 3, 4, 5.

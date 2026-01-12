@@ -20,9 +20,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 *Acerca de esta tarea*
 
-Durante una conmutación por error, Disaster Recovery utiliza la copia de instantánea de SnapMirror más reciente.  O bien, puede seleccionar una instantánea específica de una instantánea de un punto en el tiempo (según la política de retención de SnapMirror).
-
-Utilice la opción de punto en el tiempo si las réplicas más recientes están comprometidas, como durante un ataque de ransomware.  La BlueXP disaster recovery muestra todos los puntos disponibles en el tiempo.
+Durante una conmutación por error, Disaster Recovery utiliza de manera predeterminada la copia de instantánea de SnapMirror más reciente, aunque puede seleccionar una instantánea específica de una instantánea de un punto en el tiempo (según la política de retención de SnapMirror). Utilice la opción de punto en el tiempo si las réplicas más recientes están comprometidas, como durante un ataque de ransomware.
 
 Este proceso difiere dependiendo de si el sitio de producción está en buen estado y si está realizando una conmutación por error al sitio de recuperación ante desastres por motivos distintos a una falla crítica de la infraestructura:
 
@@ -38,9 +36,9 @@ Este procedimiento rompe la relación de replicación, coloca las máquinas virt
 
 Antes de iniciar la conmutación por error, puede probar el proceso.  La prueba no coloca las máquinas virtuales fuera de línea.
 
-Durante una prueba de conmutación por error, la BlueXP disaster recovery crea temporalmente máquinas virtuales.  La BlueXP disaster recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
+Durante una prueba de conmutación por error, Disaster Recovery crea temporalmente máquinas virtuales. Risaster Recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
 
-Este proceso no consume capacidad física adicional en el almacenamiento ONTAP local ni en FSx para el almacenamiento ONTAP de NetApp en AWS.  El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
+Este proceso no consume capacidad física adicional en el almacenamiento ONTAP local ni en FSx para el almacenamiento ONTAP de NetApp en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
 
 Cuando finalice la prueba, deberá reiniciar las máquinas virtuales con la opción *Limpiar prueba*.  Si bien esto se recomienda, no es obligatorio.
 
@@ -76,8 +74,8 @@ Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno 
 .Pasos
 . En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
-. A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Limpiar prueba de conmutación por error*.
-. En la página de prueba de conmutación por error, ingrese “Limpiar conmutación por error” y seleccione *Limpiar prueba de conmutación por error*.
+. A la derecha, seleccione la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] Luego *Limpiar prueba de conmutación por error*.
+. En la página de prueba de conmutación por error, ingrese "Limpiar conmutación por error" y luego seleccione *Limpiar prueba de conmutación por error*.
 
 
 
@@ -102,6 +100,9 @@ El proceso de conmutación por error implica las siguientes operaciones:
 
 
 
+NOTE: En el caso de los planes de replicación basados en almacenes de datos, si agregó y descubrió máquinas virtuales pero no proporcionó detalles de mapeo, esas máquinas virtuales se incluyen en la conmutación por error. La conmutación por error fallará con una notificación en los trabajos. Debe proporcionar los detalles de asignación para completar la conmutación por error con éxito.
+
+
 TIP: Una vez iniciada la conmutación por error, podrá ver las máquinas virtuales recuperadas en el vCenter del sitio de recuperación ante desastres (máquinas virtuales, redes y almacenes de datos).  De forma predeterminada, las máquinas virtuales se recuperan en la carpeta Carga de trabajo.
 
 .Pasos
@@ -111,7 +112,7 @@ TIP: Una vez iniciada la conmutación por error, podrá ver las máquinas virtua
 +
 image:dr-plan-failover3.png["Página de conmutación por error"]
 
-. En la página Conmutación por error, inicie una instantánea ahora o elija la instantánea para el almacén de datos desde el cual desea recuperar.  El valor predeterminado es el más reciente.
+. En la página Conmutación por error, cree una nueva instantánea ahora o elija una instantánea existente para que el almacén de datos la utilice como base para la recuperación. El valor predeterminado es el más reciente.
 +
 Se tomará una instantánea de la fuente actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
 

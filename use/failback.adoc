@@ -18,9 +18,11 @@ Una vez resuelto un desastre, se realiza un retorno desde el sitio de recuperaci
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
-*Acerca de esta tarea*
 
-En este flujo de trabajo, NetApp Disaster Recovery replica (resincroniza) cualquier cambio en la máquina virtual de origen original antes de revertir la dirección de replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
+
+== Acerca de la recuperación
+
+En caso de conmutación por error, NetApp Disaster Recovery replica (resincroniza) cualquier cambio en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
 
 * Realice una verificación de cumplimiento en el sitio recuperado.
 * Actualice la información de vCenter para cada clúster de vCenter identificado como ubicado en el sitio recuperado.
@@ -30,13 +32,21 @@ En este flujo de trabajo, NetApp Disaster Recovery replica (resincroniza) cualqu
 * Encienda y registre las máquinas virtuales de origen y monte los volúmenes en el origen.
 
 
-.Pasos
-. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+
+
+== Antes de empezar
+
+Si usa protección basada en almacén de datos, las máquinas virtuales que se hayan agregado al almacén de datos podrían agregarse al mismo en el proceso de conmutación por error. Si esto sucedió, asegúrese de proporcionar información de mapeo adicional para estas máquinas virtuales antes de iniciar la conmutación por error. Para editar la asignación de recursos, consulte link:manage.html#manage-replication-plans["Administrar planes de replicación"].
+
+
+
+== Pasos
+
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Revertir*.
-. Ingrese el nombre del plan de replicación para confirmar e iniciar la conmutación por error.
-. Seleccione la instantánea del almacén de datos desde el cual desea recuperar.  El valor predeterminado es el más reciente.
-. Para comprobar el progreso, en el menú, seleccione *Monitorización de trabajos*.
+. Introduzca el nombre del plan de replicación para iniciar la conmutación por error.
+. Seleccione la instantánea del almacén de datos desde el cual desea recuperar. El valor predeterminado es el más reciente.
+. Para supervisar el progreso del trabajo, seleccione *Supervisión del trabajo* en el menú Recuperación ante desastres.
 

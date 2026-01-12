@@ -16,6 +16,62 @@ Descubre las novedades de NetApp Disaster Recovery.
 
 
 
+== 12 de enero de 2026
+
+Versión 4.2.9
+
+
+
+=== Compatibilidad con múltiples agentes de consola en entornos locales
+
+Si utiliza recuperación ante desastres en sus instalaciones, ahora puede implementar un agente de consola para cada instancia de vCenter, lo que mejora la resiliencia.
+
+Por ejemplo, si tiene dos sitios (sitios A y B), el sitio A puede tener el agente de consola A conectado a vCenter 1, la implementación de ONTAP 1 y la implementación de ONTAP 2. El sitio B puede tener el agente de consola B conectado a vCenter 2 y a las implementaciones de ONTAP 3 y 4.
+
+Para obtener información sobre el agente de consola en recuperación ante desastres, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html#netapp-console-prerequisites["Crear el agente de consola"^].
+
+
+
+=== Agregar máquinas virtuales después de la conmutación por error para los planes de replicación mediante protección basada en almacén de datos
+
+Cuando se activa la conmutación por error, cualquier plan de replicación que utilice protección basada en almacén de datos incluye las máquinas virtuales que se hayan agregado al almacén de datos, siempre que se hayan descubierto. Debe proporcionar detalles de mapeo para las máquinas virtuales agregadas antes de que se complete la conmutación por error.
+
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Aplicaciones de conmutación por error"^].
+
+
+
+=== Nuevas notificaciones por correo electrónico
+
+La recuperación ante desastres ahora proporciona notificaciones por correo electrónico para los siguientes eventos:
+
+* Acercándose al límite de uso de la capacidad
+* Generación de informe completada
+* Fracasos laborales
+* Caducidad o infracciones de licencia
+
+
+
+
+=== Mejoras de Swagger
+
+Ahora puede acceder a la documentación de Swagger desde Disaster Recovery. En Recuperación ante desastres, seleccione **Configuración** y luego **Documentación de API** para vincularse a Swagger, o visite esta URL en el modo incógnito/privado de su navegador: link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^].
+
+
+
+=== Interfaces de usuario mejoradas
+
+La recuperación ante desastres ahora proporciona advertencias mejoradas y resoluciones de errores. Esta versión corrige un error que impedía que los trabajos cancelados se mostraran en la interfaz de usuario. Los trabajos cancelados ahora son visibles. También hay una nueva advertencia cuando la misma red de destino se asigna a varias redes de origen diferentes.
+
+
+
+=== Conservar la estructura de carpetas de la máquina virtual agregada como predeterminada en los planes de replicación
+
+Cuando se crea una replicación, el nuevo valor predeterminado es conservar la estructura de la carpeta de la máquina virtual. Si el destino de recuperación no tiene la jerarquía de carpetas original, Disaster Recovery la crea. Puede anular la selección de esta opción para ignorar la jerarquía de carpetas original.
+
+Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+
+
+
 == 09 de diciembre de 2025
 
 Versión 4.2.8P1
