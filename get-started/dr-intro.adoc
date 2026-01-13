@@ -25,7 +25,7 @@ NetApp Disaster Recovery es un servicio de recuperación ante desastres basado e
 
 NetApp Disaster Recovery utiliza la tecnología ONTAP SnapMirror con orquestación nativa VMware integrada para proteger las máquinas virtuales VMware y sus imágenes de sistema operativo en disco asociadas, al tiempo que conserva todos los beneficios de eficiencia de almacenamiento de ONTAP.  La recuperación ante desastres utiliza estas tecnologías como transporte de replicación al sitio de recuperación ante desastres.  Esto permite la mejor eficiencia de almacenamiento de la industria (compresión y deduplicación) en sitios primarios y secundarios.
 
-image:../use/evs-bluexp-architecture.png["Diagrama que muestra los componentes de NetApp Disaster Recovery para VMware"]
+image:../use/evs-console-architecture.png["Diagrama que muestra los componentes de NetApp Disaster Recovery para VMware"]
 
 
 
