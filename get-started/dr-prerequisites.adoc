@@ -67,7 +67,7 @@ Con la recuperación ante desastres en Google Cloud VMware Engine mediante Googl
 
 **Consideraciones sobre conmutación por error**
 
-* La conmutación por error solo se admite utilizando la última instantánea.  Si es necesario, puede crear una nueva instantánea durante la captura de instantáneas (es decir, la opción de instantánea selectiva debe estar deshabilitada).
+* La conmutación por error solo es compatible usando la última instantánea. Si es necesario, puedes crear una nueva instantánea durante la conmutación por error (es decir, la opción de instantánea selectiva debe estar desactivada).
 * No es posible crear una nueva instantánea después de una conmutación por error.
 * No es posible conservar ni conciliar instantáneas después de una conmutación por error.
 
@@ -170,10 +170,10 @@ El agente de consola es un componente de software que permite que la consola se 
 Se debe configurar un agente de consola en la NetApp Console.  Cuando utilice el agente, incluirá las capacidades adecuadas para el servicio de recuperación ante desastres.
 
 * NetApp Disaster Recovery solo funciona con la implementación del agente en modo estándar. Ver https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introducción a la NetApp Console en modo estándar"^] .
-* Asegúrese de que tanto el vCenter de origen como el de destino utilicen el mismo agente de consola.
+* Asegúrate de que tanto el clúster de origen como el de destino vCenter usen el mismo agente de Console.
 * Tipo de agente de consola necesario:
 +
-** *Recuperación ante desastres local a local*: instale el agente local de la consola en el sitio de recuperación ante desastres. Con este método, una falla del sitio principal no impide que el servicio reinicie sus recursos virtuales en el sitio de recuperación ante desastres. Referirse a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Instalar y configurar el agente de consola en las instalaciones"^] .
+** *Recuperación de desastres de local a local*: Instala el agente de la Console local en el sitio de recuperación ante desastres. Usando este método, una falla en el sitio principal no impide que el servicio reinicie tus recursos virtuales en el sitio de DR. Consulta https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Instalar y configurar el agente de consola en las instalaciones"^].
 +
 La recuperación ante desastres también admite el uso de múltiples agentes de consola con configuraciones locales. Para este escenario, los agentes de la consola dirigen acciones a los vCenters y a los clústeres de matrices ONTAP , y el origen y el destino tendrían cada uno su propio agente de consola. Se recomienda utilizar varios agentes de consola para reducir la latencia y mejorar el tiempo de recuperación si falla un agente de consola o un sitio.
 
@@ -201,4 +201,12 @@ Para garantizar que los procesos de coherencia de aplicaciones sean exitosos, ap
 * Asegúrese de que las herramientas de VMware (o las herramientas de OpenVM) se estén ejecutando en las máquinas virtuales que estarán protegidas.
 * Para las máquinas virtuales Windows que ejecutan Microsoft SQL Server, Oracle Database o ambos, las bases de datos deben tener habilitados sus escritores VSS.
 * Las bases de datos Oracle que se ejecutan en un sistema operativo Linux deben tener habilitada la autenticación de usuario del sistema operativo para el rol SYSDBA de la base de datos Oracle.
+
+
+
+
+== Más información
+
+* xref:../reference/vcenter-privileges.html[Privilegios requeridos de vCenter]
+* xref:../reference/evs-deploy-guide-config-prereqs.html[Requisitos previos para Amazon EVS con NetApp Disaster Recovery]
 
