@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Después de agregar sitios de vCenter, puede crear grupos de recursos para proteger las máquinas virtuales por máquina virtual o almacén de datos como una sola unidad.  Los grupos de recursos le permiten organizar un conjunto de máquinas virtuales dependientes en grupos lógicos que satisfacen sus requisitos.  Por ejemplo, puede agrupar máquinas virtuales asociadas con una aplicación o puede agrupar aplicaciones que tengan niveles similares.  Como otro ejemplo, los grupos podrían contener órdenes de arranque retrasadas que se puedan ejecutar durante la recuperación.
+Después de que hayas añadido los sitios vCenter, puedes crear grupos de recursos para agrupar máquinas virtuales o almacenes de datos como una sola unidad. Los grupos de recursos te permiten organizar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan tus requisitos. Por ejemplo, podrías agrupar máquinas virtuales asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares. Como otro ejemplo, los grupos podrían contener órdenes de arranque retrasado que se pueden ejecutar al momento de la recuperación.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
@@ -32,7 +32,7 @@ Puede crear grupos de recursos utilizando los siguientes métodos:
 TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos.  Las máquinas virtuales se encenderán según la secuencia en que las incluya en el plan de replicación.  Puede cambiar el orden arrastrando las máquinas virtuales o los almacenes de datos hacia arriba o hacia abajo en la lista del grupo de recursos.
 
 .Acerca de los grupos de recursos
-Los grupos de recursos le permiten combinar máquinas virtuales o almacenes de datos como una sola unidad.
+Los grupos de recursos te permiten combinar máquinas virtuales o almacenes de datos en una sola unidad.
 
 Por ejemplo, una aplicación de punto de venta podría utilizar varias máquinas virtuales para bases de datos, lógica empresarial y tiendas.  Puede administrar todas estas máquinas virtuales con un solo grupo de recursos.  Configure grupos de recursos para aplicar reglas de plan de replicación para el orden de inicio de las máquinas virtuales, la conexión de red y la recuperación de todas las máquinas virtuales necesarias para la aplicación.
 

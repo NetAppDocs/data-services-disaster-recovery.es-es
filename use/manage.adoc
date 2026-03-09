@@ -95,7 +95,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 
 . Regrese a la lista de planes seleccionando “Planes de replicación” en las rutas de navegación de la izquierda.
-. Para realizar acciones con el plan, de la lista de planes de replicación, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha del plan y seleccione cualquiera de las opciones, como *Editar programaciones*, *Probar conmutación por error*, *Conmutación por error*, *Conmutación por recuperación*, *Migrar*, *Tomar instantánea ahora*, *Limpiar instantáneas antiguas*, *Deshabilitar*, *Habilitar* o *Eliminar*.
+. Para realizar acciones con el plan, en la lista de planes de replicación, selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha del plan y luego elige una acción: *Editar planificaciones*, *Probar conmutación por error*, *Conmutar por error*, *Revertir conmutación por error*, *Migrar*, *Tomar instantánea ahora*, *Limpiar instantáneas antiguas*, *Desactivar*, *Activar* o *Eliminar*.
 . Para establecer o cambiar un programa de conmutación por error de prueba o establecer la verificación de frecuencia de cumplimiento, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] a la derecha del plan y seleccione *Editar horarios*.
 +
 .. En la página Editar programaciones, ingrese la frecuencia en minutos con la que desea que se realice la verificación de cumplimiento de conmutación por error.

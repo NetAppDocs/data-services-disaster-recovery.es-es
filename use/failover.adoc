@@ -36,7 +36,7 @@ Este procedimiento rompe la relación de replicación, coloca las máquinas virt
 
 Antes de iniciar la conmutación por error, puede probar el proceso.  La prueba no coloca las máquinas virtuales fuera de línea.
 
-Durante una prueba de conmutación por error, Disaster Recovery crea temporalmente máquinas virtuales. Risaster Recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
+Durante una prueba de conmutación por error, Disaster Recovery crea temporalmente máquinas virtuales. Disaster Recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
 
 Este proceso no consume capacidad física adicional en el almacenamiento ONTAP local ni en FSx para el almacenamiento ONTAP de NetApp en AWS. El volumen de origen original no se modifica y los trabajos de réplica pueden continuar incluso durante la recuperación ante desastres.
 

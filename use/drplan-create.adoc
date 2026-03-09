@@ -208,7 +208,7 @@ TIP: Si un vCenter tiene un Programador de recursos distribuidos (DRS) configura
 
 === Recursos cartográficos > Sección de redes virtuales
 
-Las máquinas virtuales utilizan NIC virtuales conectadas a redes virtuales.  En el proceso de conmutación por error, el servicio conecta estas NIC virtuales a redes virtuales definidas en el entorno VMware de destino.  Para cada red virtual de origen utilizada por las máquinas virtuales en el grupo de recursos, el servicio requiere una asignación de red virtual de destino.
+Las máquinas virtuales usan NIC virtuales conectadas a redes virtuales. En el proceso de conmutación por error, el servicio conecta estas NIC virtuales a redes virtuales definidas en el entorno VMware de destino. Para cada red virtual de origen usada por las máquinas virtuales en el grupo de recursos, el servicio requiere una asignación de red virtual de destino.
 
 
 NOTE: Puede asignar varias redes virtuales de origen a la misma red virtual de destino.  Sin embargo, esto podría crear conflictos de configuración de red IP.  Puede asignar varias redes de origen a una única red de destino para garantizar que todas las redes de origen tengan la misma configuración.
@@ -446,9 +446,9 @@ El plan se agrega a la lista de planes.
 
 
 
-== Editar programaciones para probar el cumplimiento y garantizar que las pruebas de conmutación por error funcionen
+== Modificar un plan de replicación
 
-Es posible que desees configurar cronogramas para probar pruebas de cumplimiento y conmutación por error para asegurarte de que funcionarán correctamente si las necesitas.
+Puedes modificar la programación de un plan de replicación para comprobar el cumplimiento y asegurarte de que las pruebas de conmutación por error se completen correctamente.
 
 * *Impacto en el tiempo de cumplimiento*: cuando se crea un plan de replicación, el servicio crea un programa de cumplimiento de forma predeterminada.  El tiempo de cumplimiento predeterminado es de 30 minutos.  Para cambiar este tiempo, puede editar la programación en el plan de replicación.
 * *Impacto de la conmutación por error de prueba*: puede probar un proceso de conmutación por error a pedido o según un cronograma.  Esto le permite probar la conmutación por error de máquinas virtuales a un destino especificado en un plan de replicación.
