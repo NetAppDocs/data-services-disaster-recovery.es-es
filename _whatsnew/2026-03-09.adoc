@@ -8,7 +8,7 @@
 
 Cuando creas un plan de replicación en Disaster, ahora puedes excluir almacenes de datos específicos de la replicación. Para situaciones en las que una máquina virtual está configurada para usar varios almacenes de datos, esto te permite limitar cuáles se replican.
 
-Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Crear un plan de replicación"^].
+Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
 
 
 

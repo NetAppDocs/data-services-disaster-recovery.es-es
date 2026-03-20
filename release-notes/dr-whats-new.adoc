@@ -26,7 +26,7 @@ Versión 4.3.1
 
 Cuando creas un plan de replicación en Disaster, ahora puedes excluir almacenes de datos específicos de la replicación. Para situaciones en las que una máquina virtual está configurada para usar varios almacenes de datos, esto te permite limitar cuáles se replican.
 
-Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["Crear un plan de replicación"^].
+Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
 
 
 
@@ -295,7 +295,8 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles
 ** Cuando se elimina un clúster, un host o un centro de datos en vCenter, NetApp Disaster Recovery ahora lo elimina del plan de replicación y del grupo de recursos.
 
 
-* Ahora puedes acceder a la documentación de Swagger en el modo de incógnito de tu navegador. Puede acceder a él desde NetApp Disaster Recovery desde la opción Configuración > Documentación de API o directamente en la siguiente URL en el modo incógnito de su navegador: https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Documentación de Swagger"^] .
+
+
 * En algunas situaciones, después de una operación de conmutación por error, el iGroup quedó abandonado una vez completada la operación. Esta actualización elimina el iGroup si está obsoleto.
 * Si se utilizó el FQDN de NFS en el plan de replicación, NetApp Disaster Recovery ahora lo resuelve en una dirección IP. Esta actualización es útil si el FQDN no se puede resolver en el sitio de recuperación ante desastres.
 * Mejoras en la alineación de la interfaz de usuario

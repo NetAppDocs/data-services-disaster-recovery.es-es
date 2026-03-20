@@ -72,7 +72,7 @@ Un asistente le guiará a través de estos pasos:
 * Revisar el plan.
 
 
-Al crear el plan, debes seguir estas pautas:
+Cuando crees el plan, sigue estas pautas:
 
 * Utilice las mismas credenciales para todas las máquinas virtuales del plan.
 * Utilice el mismo script para todas las máquinas virtuales del plan.
@@ -86,14 +86,13 @@ Al crear el plan, debes seguir estas pautas:
 Primero, seleccione el vCenter de origen y luego seleccione el vCenter de destino.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
-. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación* y seleccione *Agregar*.  O bien, si recién está comenzando a utilizar el servicio, desde el Panel de control, seleccione *Agregar plan de replicación*.
+. En el menú NetApp Disaster Recovery, selecciona *Replication plans* y selecciona *Add*. Si es la primera vez que creas un plan de replicación, desde el Dashboard, selecciona *Add replication plan*.
+. Ingresa un nombre para el plan de replicación.
+. En *Source vCenter*, selecciona el vCenter donde existen los datos en el menú desplegable. En *Target vCenter*, selecciona el vCenter al que quieres replicar los datos en el menú desplegable.
 +
-image:dr-plan-create-name2.png["Captura de pantalla que muestra la página Agregar plan de replicación > Agregar plan"]
+image:dr-plan-create-name2.png["Captura de pantalla que muestra la página del servidor vCenter"]
 
-. Crea un nombre para el plan de replicación.
-. Seleccione los vCenters de origen y de destino de las listas vCenters de origen y de destino.
 . Seleccione *Siguiente*.
 
 
@@ -103,19 +102,17 @@ image:dr-plan-create-name2.png["Captura de pantalla que muestra la página Agreg
 
 El siguiente paso es agrupar las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales.  Los grupos de recursos le permiten proteger un conjunto de máquinas virtuales o almacenes de datos con una instantánea común.
 
-Al seleccionar aplicaciones en el plan de replicación, puede ver el sistema operativo de cada máquina virtual o almacén de datos en el plan.  Esto es útil para decidir cómo agrupar máquinas virtuales o almacenes de datos en un grupo de recursos.
-
 
 TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos.
 
 Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 
 * Antes de agregar almacenes de datos a grupos de recursos, inicie primero un descubrimiento manual o un descubrimiento programado de las máquinas virtuales.  Esto garantiza que las máquinas virtuales se detecten y se incluyan en el grupo de recursos.  Si no activa un descubrimiento manual, es posible que las máquinas virtuales no aparezcan en el grupo de recursos.
-* Asegúrese de que haya al menos una máquina virtual en el almacén de datos.  Si no hay máquinas virtuales en el almacén de datos, este no se descubrirá.
+* Asegúrate de que hay al menos una máquina virtual en el datastore. Si no hay máquinas virtuales en el datastore, el datastore no se detectará.
 * Un único almacén de datos no debe alojar máquinas virtuales protegidas por más de un plan de replicación.
-* No aloje máquinas virtuales protegidas y no protegidas en el mismo almacén de datos.  Si las máquinas virtuales protegidas y no protegidas están alojadas en el mismo almacén de datos, podrían surgir los siguientes problemas:
+* No alojes máquinas virtuales protegidas y desprotegidas en el mismo almacén de datos. Si las máquinas virtuales protegidas y desprotegidas están alojadas en el mismo almacén de datos, puedes encontrarte con estos problemas:
 +
-** Debido a que NetApp Disaster Recovery utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para consideraciones de licencia.  En este caso, el espacio de volumen consumido por las máquinas virtuales protegidas y no protegidas se incluiría en este cálculo.
+** La capacidad utilizada de ese volumen puede contribuir al cálculo de licencias porque Disaster Recovery utiliza SnapMirror, lo que significa que el sistema replica volúmenes ONTAP completos. En este caso, el espacio de volumen consumido tanto por las VMs protegidas como por las no protegidas se incluiría en este cálculo.
 ** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales no protegidas en el sitio de vCenter de conmutación por error.
 
 
@@ -126,32 +123,20 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 TIP: Cree un conjunto dedicado e independiente de asignaciones para sus pruebas de conmutación por error para evitar que los VMS se conecten a redes de producción utilizando las mismas direcciones IP.
 
 .Pasos
-. Seleccione *Máquinas virtuales* o *Almacenes de datos*.
-. Opcionalmente, busque una máquina virtual o un almacén de datos específico por nombre.
-. En el lado izquierdo de la página Aplicaciones, seleccione las máquinas virtuales o los almacenes de datos que desea proteger y asígnelos al grupo seleccionado.
+. Si ya tienes grupos de recursos, selecciona **Resource groups**, elige el grupo de recursos y luego **Next**.
 +
-El vCenter de origen debe residir en el vCenter local. El vCenter de destino puede ser un segundo vCenter local en el mismo sitio o un sitio remoto, o un centro de datos definido por software (SDDC) basado en la nube, como VMware Cloud on AWS. Ambos vCenters ya deberían estar agregados a su entorno de trabajo de recuperación ante desastres.
+Si no tienes grupos de recursos existentes o necesitas añadir recursos a uno, selecciona *Virtual machines* o *Datastores*.
 
-+
-El recurso seleccionado se agrega automáticamente al grupo 1 y se inicia un nuevo grupo 2.  Cada vez que se agrega un recurso al último grupo, se agrega otro grupo.
-
+. Selecciona las máquinas virtuales o los datastores que quieres añadir al plan de replicación desde la lista generada automáticamente. Para las máquinas virtuales, puedes filtrar por el datastore. Cuando seleccionas un datastore o una máquina virtual, se añade automáticamente a un grupo de recursos.
 +
 image:dr-plan-create-apps-vms6.png["Captura de pantalla que muestra la página Agregar plan de replicación > Aplicaciones para replicar"]
 
+. En la mitad derecha de la página, revisa las máquinas virtuales o los almacenes de datos seleccionados.
 +
-O, para almacenes de datos:
-
+** Para eliminar una máquina virtual o un almacén de datos, pasa el ratón sobre el nombre de la fuente de datos y selecciona *X*.
+** Para organizar los recursos en varios grupos de recursos, selecciona *Haz clic para añadir otro grupo de recursos*. Después de que hayas añadido el grupo de recursos, puedes arrastrar y soltar recursos entre grupos. Selecciona el icono del lápiz* para editar el nombre del grupo de recursos.
 +
 image:dr-plan-create-apps-datastores.png["Captura de pantalla que muestra la página Agregar plan de replicación > Aplicaciones para replicar"]
-
-. Opcionalmente, realice cualquiera de las siguientes acciones:
-+
-** Para cambiar el nombre del grupo, haga clic en el grupo *Editar*image:icon-pencil.png["Icono de lápiz"] icono.
-** Para eliminar un recurso de un grupo, seleccione *X* junto al recurso.
-** Para mover un recurso a un grupo diferente, arrástrelo y suéltelo en el nuevo grupo.
-+
-
-TIP: Para mover un almacén de datos a un grupo de recursos diferente, anule la selección del almacén de datos no deseado y envíe el plan de replicación.  Luego, cree o edite el otro plan de replicación y vuelva a seleccionar el almacén de datos.
 
 
 
@@ -186,7 +171,7 @@ image:dr-plan-resource-mapping2.png["Plan de replicación, pestaña Asignación 
 
 
 
-=== Recursos de mapas > Sección de recursos informáticos
+==== Sección de recursos de compute
 
 La sección Recursos de cómputo define dónde se restaurarán las máquinas virtuales después de una conmutación por error.  Asigne el centro de datos y el clúster de vCenter de origen a un centro de datos y un clúster de destino.
 
@@ -199,6 +184,7 @@ Seleccione la flecha hacia abajo junto a *Recursos informáticos*.
 * *Centros de datos de origen y destino*
 * *Clúster objetivo*
 * *Host de destino* (opcional): después de seleccionar el clúster, puede configurar esta información.
+* *Carpeta* (opcional)
 
 
 
@@ -206,7 +192,7 @@ TIP: Si un vCenter tiene un Programador de recursos distribuidos (DRS) configura
 
 
 
-=== Recursos cartográficos > Sección de redes virtuales
+==== Redes virtuales
 
 Las máquinas virtuales usan NIC virtuales conectadas a redes virtuales. En el proceso de conmutación por error, el servicio conecta estas NIC virtuales a redes virtuales definidas en el entorno VMware de destino. Para cada red virtual de origen usada por las máquinas virtuales en el grupo de recursos, el servicio requiere una asignación de red virtual de destino.
 
@@ -219,7 +205,7 @@ Seleccione la asignación de red a la LAN virtual adecuada.  Las LAN virtuales y
 
 
 
-=== Recursos de mapas > sección de máquinas virtuales
+==== Máquinas virtuales
 
 Puede configurar cada máquina virtual en el grupo de recursos protegido por el plan de replicación para que se adapte al entorno virtual de vCenter de destino configurando cualquiera de las siguientes opciones:
 
@@ -243,6 +229,9 @@ NOTE: Si cambia la configuración a "Diferente de la fuente", deberá proporcion
 Esta sección puede mostrar diferentes campos dependiendo de su selección.
 
 Puede aumentar o disminuir la cantidad de CPU virtuales asignadas a cada máquina virtual conmutada por error.  Sin embargo, cada VM requiere al menos una CPU virtual.  Puede cambiar la cantidad de CPU virtuales y DRAM virtuales asignadas a cada VM.  El motivo más común por el que podría querer cambiar la configuración predeterminada de CPU virtual y DRAM virtual es si los nodos del clúster vCenter de destino no tienen tantos recursos disponibles como el clúster vCenter de origen.
+
+
+NOTE: Activa la configuración avanzada para añadir los ajustes *Scripts* y *consistente con las aplicaciones*.
 
 *Configuración de red* Disaster Recovery admite un amplio conjunto de opciones de configuración para redes de máquinas virtuales.  Es posible que sea necesario cambiarlos si el sitio de destino tiene redes virtuales que usan configuraciones TCP/IP diferentes a las redes virtuales de producción en el sitio de origen.
 
@@ -288,13 +277,10 @@ Desmarque esta casilla para ignorar la jerarquía de carpetas original.
 +
 Puede utilizar el método alternativo para configurar la carpeta de la máquina virtual de destino en la sección Recursos de cómputo.
 
-* *CPU y RAM de la máquina virtual de origen*: en los detalles de las máquinas virtuales, puede cambiar opcionalmente el tamaño de los parámetros de CPU y RAM de la máquina virtual.
+* *CPU* y *Memoria (GB)*: en los detalles de las máquinas virtuales, puedes cambiar opcionalmente el tamaño de la CPU y .
 +
 
 NOTE: Puede configurar la DRAM en gigabytes (GiB) o megabytes (MiB).  Si bien cada VM requiere al menos un MiB de RAM, la cantidad real debe garantizar que el sistema operativo invitado de la VM y cualquier aplicación en ejecución puedan funcionar de manera eficiente.
-
-+
-image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > Máquinas virtuales"]
 
 * *Orden de arranque*: puede modificar el orden de arranque después de una conmutación por error para todas las máquinas virtuales seleccionadas en los grupos de recursos.  De forma predeterminada, todas las máquinas virtuales arrancan juntas en paralelo; sin embargo, puedes realizar cambios en esta etapa.  Esto es útil para garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.
 +
@@ -306,19 +292,13 @@ Disaster Recovery inicia cualquier máquina virtual con el mismo número de orde
 
 
 * *Retraso de arranque*: ajusta el retraso en minutos de la acción de arranque, indicando la cantidad de tiempo que la VM esperará antes de iniciar el proceso de encendido.  Introduzca un valor de 0 a 10 minutos.
+* *App consistent*: Indica si quieres crear copias snapshot consistentes con las aplicaciones. El servicio pondrá en reposo la aplicación y luego tomará una snapshot para obtener un estado consistente de la aplicación. Esta función es compatible con Oracle ejecutándose en Windows y Linux, y con SQL Server ejecutándose en Windows. Mira más detalles a continuación.
 +
-
-TIP: Para restablecer el orden de arranque al predeterminado, seleccione *Restablecer configuración de VM a predeterminada* y luego elija qué configuración desea cambiar a la predeterminada.
-
-* *Crear réplicas consistentes con la aplicación*: indica si se deben crear copias de instantáneas consistentes con la aplicación.  El servicio inactivará la aplicación y luego tomará una instantánea para obtener un estado consistente de la aplicación.  Esta función es compatible con Oracle ejecutándose en Windows y Linux y con SQL Server ejecutándose en Windows.  Ver más detalles a continuación.
-* *Usar Windows LAPS*: si está utilizando la Solución de contraseña de administrador local de Windows (Windows LAPS), marque esta casilla.  Esta opción solo está disponible si ha seleccionado la opción *IP estática*.  Al marcar esta casilla, no es necesario que proporcione una contraseña para cada una de sus máquinas virtuales.  En su lugar, proporciona los detalles del controlador de dominio.
-+
-Si no utiliza Windows LAPS, entonces la VM es una VM de Windows y la opción de credenciales en la fila de VM está habilitada.  Puede proporcionar las credenciales para la VM.
-
-+
-image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > Máquinas virtuales"]
+Debes activar el interruptor *Advance settings* para esta opción. Si activas la consistencia con las aplicaciones, debes proporcionar credenciales en forma de nombre de usuario y contraseña.
 
 
+
+image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla que muestra la sección de la máquina virtual de asignaciones de recursos"]
 
 
 
@@ -363,7 +343,7 @@ Para habilitar réplicas consistentes con la aplicación de las máquinas virtua
 
 
 
-=== Recursos de mapas > Sección Almacenes de datos
+==== Sección de Datastores
 
 Los almacenes de datos de VMware están alojados en volúmenes ONTAP FlexVol o LUN iSCSI o FC de ONTAP mediante VMware VMFS.  Utilice la sección Almacenes de datos para definir el clúster ONTAP de destino, la máquina virtual de almacenamiento (SVM) y el volumen o LUN para replicar los datos del disco al destino.
 
@@ -380,9 +360,9 @@ Cuando se selecciona esta opción, NetApp Disaster Recovery no configura una pro
 +
 Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
 
-* *Hora de inicio*: Ingrese la fecha y la hora en que desea que comiencen a ejecutarse las copias de seguridad y la retención.
-* *Intervalo de ejecución*: Ingrese el intervalo de tiempo en horas y minutos.  Por ejemplo, si ingresa 1 hora, el servicio tomará una instantánea cada hora.
-* *Recuento de retención*: Ingrese la cantidad de instantáneas que desea conservar.
+* *Backups and retention start time*: Introduce la fecha y hora en la que quieres que empiecen a ejecutarse las copias de seguridad y la retención.
+* *Copias de seguridad y frecuencia de retención*: introduce el intervalo de tiempo en horas y minutos. Por ejemplo, si introduces 1 hora, el servicio realizará una instantánea cada hora.
+* *Recuento de retención para todos los almacenes de datos*: Ingresa el número de instantáneas que quieres conservar.
 +
 
 TIP: La cantidad de instantáneas retenidas junto con la tasa de cambio de datos entre cada instantánea determina la cantidad de espacio de almacenamiento consumido tanto en el origen como en el destino.  Cuanto más instantáneas conserve, más espacio de almacenamiento se consumirá.
@@ -399,17 +379,7 @@ NOTE: Si desea crear una relación SnapMirror en este servicio, el clúster y su
 ** Durante la conmutación por error, puede seleccionar cualquier instantánea.  Si selecciona la última instantánea, el servicio crea una copia de seguridad a pedido, actualiza el destino y utiliza esa instantánea para la conmutación por error.
 
 
-* *LIF NFS preferido* y *Política de exportación*: normalmente, deje que el servicio seleccione el LIF NFS preferido y la política de exportación.  Si desea utilizar una política de exportación o LIF de NFS específica, seleccione la flecha hacia abajo junto a cada campo y seleccione la opción adecuada.
-+
-Opcionalmente, puede utilizar interfaces de datos específicas (LIF) para un volumen después de un evento de conmutación por error.  Esto es útil para equilibrar el tráfico de datos si el SVM de destino tiene múltiples LIF.
 
-+
-Para un control adicional sobre la seguridad del acceso a los datos del NAS, el servicio puede asignar políticas de exportación de NAS específicas a diferentes volúmenes de almacenamiento de datos.  Las políticas de exportación definen las reglas de control de acceso para los clientes NFS que acceden a los volúmenes del almacén de datos.  Si no especifica una política de exportación, el servicio utiliza la política de exportación predeterminada para SVM.
-
-
-
-
-TIP: Se recomienda crear una política de exportación dedicada que limite el acceso al volumen _únicamente_ a los hosts vCenter ESXi de origen y destino que alojarán las máquinas virtuales protegidas. Esto garantiza que entidades externas no puedan acceder a la exportación NFS.
 
 
 
