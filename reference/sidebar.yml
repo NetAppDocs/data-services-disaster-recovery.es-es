@@ -2,7 +2,9 @@
 section: reference
 title: Referencia
 entries:
-- title: Privilegios de vCenter necesarios para la recuperación ante desastres
+- title: Permisos ONTAP necesarios
+  url: "/reference/ontap-permissions.html"
+- title: Privilegios requeridos de vCenter
   url: "/reference/vcenter-privileges.html"
 - title: Agentes de la consola Switch
   url: "/reference/switch-console-agent.html"
