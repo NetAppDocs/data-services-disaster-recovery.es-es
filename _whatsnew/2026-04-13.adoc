@@ -1,0 +1,17 @@
+= La compatibilidad con Google Cloud VMware Engine (GCVE) ya está disponible de forma general (GA)
+:allow-uri-read: 
+
+
+
+
+=== La compatibilidad con Google Cloud VMware Engine (GCVE) ya está disponible de forma general (GA)
+
+NetApp Disaster Recovery para GCVE ya está disponible de forma general (GA). Con la disponibilidad GA, Disaster Recovery para GCVE ahora es compatible con:
+
+* *Instantáneas gestionadas por la plataforma:* Administra copias de seguridad y políticas de retención sin problemas a través de ONTAP o Google Cloud Platform (GCP).
+* *Varios almacenes de datos por plan de replicación:* Simplifica tus planes de Disaster Recovery consolidando varios almacenes de datos en una única estrategia de replicación.
+* *Forzar la conmutación por error para sitios de origen no disponibles:* Cambia a un sitio de recuperación de desastres si el origen no está disponible.
+* *Aplazar la resincronización de SnapMirror y restaurar la replicación bajo demanda:* Aplaza las resincronizaciones de SnapMirror para evitar un impacto en las cargas de trabajo de producción durante los periodos de máxima actividad usando la opción "skip protect" y luego restaura la replicación bajo demanda con la opción re-protect
+
+
+Para más información sobre el soporte para GCVE, conoce link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.html["configuraciones compatibles para Disaster Recovery"^].

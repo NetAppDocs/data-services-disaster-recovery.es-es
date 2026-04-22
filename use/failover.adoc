@@ -108,7 +108,7 @@ TIP: Una vez iniciada la conmutación por error, podrá ver las máquinas virtua
 .Pasos
 . En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
-. A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Conmutación por error*.
+. A la derecha, selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse por encima de *Recover* y luego selecciona *Fail over*.
 +
 image:dr-plan-failover3.png["Página de conmutación por error"]
 
