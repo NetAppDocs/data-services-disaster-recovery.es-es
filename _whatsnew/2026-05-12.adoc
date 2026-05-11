@@ -15,4 +15,4 @@ Funciones clave del soporte de cargas de trabajo basado en Kubernetes:
 * **Orquestación simplificada**: Disaster Recovery ofrece flujos de trabajo intuitivos para automatizar la copia de seguridad y la replicación de las cargas de trabajo de Kubernetes, aprovechando la misma tecnología eficiente SnapMirror utilizada para entornos VMware.
 
 
-La compatibilidad con cargas de trabajo basadas en Kubernetes se encuentra actualmente en fase de vista previa. Para empezar a proteger las cargas de trabajo basadas en Kubernetes, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/task-kubernetes-requirements.html["Requisitos de Kubernetes para NetApp Disaster Recovery"^].
+La compatibilidad con cargas de trabajo basadas en Kubernetes se encuentra actualmente en fase de vista previa. Para empezar a proteger las cargas de trabajo basadas en Kubernetes, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["Requisitos de Kubernetes para NetApp Disaster Recovery"^].
