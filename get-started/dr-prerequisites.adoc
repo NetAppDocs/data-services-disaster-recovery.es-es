@@ -105,37 +105,15 @@ El usuario de la NetApp Console debe tener los siguientes roles:
 
 == Requisitos previos de almacenamiento de ONTAP
 
-Estos requisitos previos se aplican a las instancias de ONTAP o Amazon FSX para NetApp ONTAP .
+Estos requisitos previos se aplican a ONTAP y Amazon FSX para NetApp ONTAP instances.
 
 * Los clústeres de origen y destino deben tener una relación de pares.
 * La SVM que aloja los volúmenes de recuperación ante desastres debe existir en el clúster de destino.
 * El SVM de origen y el SVM de destino deben tener una relación de pares.
+* link:task-kubernetes-requirements.html["Revisa los requisitos adicionales para los clústeres Kubernetes"].
 * Si se implementa con Amazon FSx for NetApp ONTAP, se aplica el siguiente requisito previo:
 +
 ** Debe existir una instancia de Amazon FSx for NetApp ONTAP para alojar almacenes de datos de VMware DR en su VPC. Para empezar, consultelink:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Documentación de Amazon FSx para ONTAP"^] .
-
-
-
-
-
-
-== Requisitos previos de los clústeres de VMware vCenter
-
-Estos requisitos previos se aplican tanto a los clústeres de vCenter locales como al centro de datos definido por software (SDDC) de VMware Cloud para AWS.
-
-* Revisarlink:../reference/vcenter-privileges.html["Privilegios de vCenter"] requerido para NetApp Disaster Recovery.
-* Todos los clústeres de VMware que desea que NetApp Disaster Recovery administre utilizan volúmenes ONTAP para alojar cualquier máquina virtual que desee proteger.
-* Todos los almacenes de datos de VMware que administrará NetApp Disaster Recovery deben utilizar uno de los siguientes protocolos:
-+
-** Sistema Nacional de Archivos
-** VMFS utilizando el protocolo iSCSI o FC
-
-
-* VMware vSphere versión 7.0 Actualización 3 (7.0v3) o posterior
-* Si utiliza VMware Cloud SDDC, se aplican estos requisitos previos.
-+
-** En VMware Cloud Console, utilice los roles de servicio de Administrador y Administrador de NSX Cloud.  Utilice también el propietario de la organización para el rol de Organización. Referirse a https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Uso de VMware Cloud Foundations con AWS FSx para la documentación de NetApp ONTAP"^] .
-** Vincule VMware Cloud SDDC con la instancia de Amazon FSx for NetApp ONTAP . Referirse a https://vmc.techzone.vmware.com/fsx-guide#overview["Información sobre la integración de VMware Cloud on AWS con Amazon FSx for NetApp ONTAP"^] .
 
 
 
@@ -202,6 +180,9 @@ Para garantizar que los procesos de coherencia de aplicaciones sean exitosos, ap
 * Para las máquinas virtuales Windows que ejecutan Microsoft SQL Server, Oracle Database o ambos, las bases de datos deben tener habilitados sus escritores VSS.
 * Las bases de datos Oracle que se ejecutan en un sistema operativo Linux deben tener habilitada la autenticación de usuario del sistema operativo para el rol SYSDBA de la base de datos Oracle.
 
+
+
+IMPORTANT: Dependiendo de tu tipo de implementación, revisa el link:reference-vmware-prerequisites.html["Requisitos previos del clúster VMware"] y el link:task-kubernetes-requirements.html["Requisitos previos del clúster Kubernetes"].
 
 
 

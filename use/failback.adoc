@@ -42,11 +42,40 @@ Si usa protección basada en almacén de datos, las máquinas virtuales que se h
 
 == Pasos
 
-. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+[role="tabbed-block"]
+====
+.vCenter
+--
+.Pasos
 . En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
-. Seleccione el plan de replicación.
-. A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Revertir*.
-. Introduzca el nombre del plan de replicación para iniciar la conmutación por error.
-. Seleccione la instantánea del almacén de datos desde el cual desea recuperar. El valor predeterminado es el más reciente.
-. Para supervisar el progreso del trabajo, seleccione *Supervisión del trabajo* en el menú Recuperación ante desastres.
+. En el menú desplegable, establece el filtro en *vCenter* planes de replicación.
++
+image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
+. Identifica el plan de replicación que quieres revertir. Selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse sobre *Recover* y luego selecciona *Failback*.
+. Elige la instantánea del almacén de datos de la que quieres recuperar. Selecciona *Take snapshot now* para iniciar una nueva instantánea o *Select* para elegir entre las instantáneas disponibles.
++
+image:failback.png["Captura de pantalla del diálogo de failback"]
+
+. Introduce "Failback" para confirmar la operación y luego selecciona *Failback*.
+
+
+Para supervisar el progreso del trabajo, seleccione *Supervisión del trabajo* en el menú Recuperación ante desastres.
+
+--
+.Kubernetes
+--
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
+. En el menú desplegable, filtra a planes de replicación *Kubernetes*.
++
+image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
+
+. Identifica el plan de replicación que quieres revertir. Selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse sobre *Recover* y luego selecciona *Failback*.
+. Elige la instantánea del almacén de datos de la que quieres recuperar. Selecciona *Take snapshot now* para iniciar una nueva instantánea o *Use latest snapshot* para usar la instantánea más reciente y exitosa.
+. Introduce "Failback" para confirmar la operación y luego selecciona *Failback*.
+
+
+Para supervisar el progreso del trabajo, seleccione *Supervisión del trabajo* en el menú Recuperación ante desastres.
+
+--
+====

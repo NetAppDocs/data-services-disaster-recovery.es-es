@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: get-started/reference-vmware-prerequisites.html 
+keywords: vmware cluster prerequisites, vmware 
+summary: Antes de usar NetApp Disaster Recovery, asegúrate de que tu entorno cumple los requisitos del clúster de VMware vCenter. 
+---
+= Requisitos previos de los clústeres VMware vCenter para NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Antes de usar NetApp Disaster Recovery, asegúrate de que tu entorno cumple los requisitos del clúster de VMware vCenter.
+
+
+
+== Requisitos generales
+
+Estos requisitos previos se aplican tanto a los clústeres de vCenter locales como al centro de datos definido por software (SDDC) de VMware Cloud para AWS.
+
+* Revisarlink:../reference/vcenter-privileges.html["Privilegios de vCenter"] requerido para NetApp Disaster Recovery.
+* Todos los clústeres de VMware que desea que NetApp Disaster Recovery administre utilizan volúmenes ONTAP para alojar cualquier máquina virtual que desee proteger.
+* Todos los almacenes de datos de VMware que administrará NetApp Disaster Recovery deben utilizar uno de los siguientes protocolos:
++
+** Sistema Nacional de Archivos
+** VMFS utilizando el protocolo iSCSI o FC
+
+
+* VMware vSphere versión 7.0 Actualización 3 (7.0v3) o posterior
+
+
+
+
+== Requisitos previos de VMware Cloud SDDC
+
+Si estás usando VMware Cloud SDDC, se aplican estos requisitos previos adicionales:
+
+* En VMware Cloud Console, utilice los roles de servicio de Administrador y Administrador de NSX Cloud.  Utilice también el propietario de la organización para el rol de Organización. Referirse a https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["Uso de VMware Cloud Foundations con AWS FSx para la documentación de NetApp ONTAP"^] .
+* Vincule VMware Cloud SDDC con la instancia de Amazon FSx for NetApp ONTAP . Referirse a https://vmc.techzone.vmware.com/fsx-guide#overview["Información sobre la integración de VMware Cloud on AWS con Amazon FSx for NetApp ONTAP"^] .
+

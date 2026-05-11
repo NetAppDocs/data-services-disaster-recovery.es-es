@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.  Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de replicación o recuperación ante desastres. 
+summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. Una vez que haya agregado sitios de vCenter, estará listo para crear un plan de replicación o recuperación ante desastres. 
 ---
 = Cree un grupo de recursos para organizar las máquinas virtuales juntas en NetApp Disaster Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Después de que hayas añadido los sitios vCenter, puedes crear grupos de recursos para agrupar máquinas virtuales o almacenes de datos como una sola unidad. Los grupos de recursos te permiten organizar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan tus requisitos. Por ejemplo, podrías agrupar máquinas virtuales asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares. Como otro ejemplo, los grupos podrían contener órdenes de arranque retrasado que se pueden ejecutar al momento de la recuperación.
+Después de añadir sitios de recursos, puedes crear grupos de recursos para agrupar máquinas virtuales, almacenes de datos o clústeres de Kubernetes como una sola unidad. Los grupos de recursos te permiten organizar un conjunto de recursos dependientes en grupos lógicos que cumplan tus requisitos. Por ejemplo, podrías agrupar máquinas virtuales asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares. Como otro ejemplo, los grupos podrían contener órdenes de arranque retardado que se pueden ejecutar al momento de la recuperación.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
@@ -25,14 +25,14 @@ Puede agrupar las máquinas virtuales en sí o las máquinas virtuales en almace
 Puede crear grupos de recursos utilizando los siguientes métodos:
 
 * Desde la opción Grupos de recursos
-* Mientras crea un plan de recuperación ante desastres o _replicación_.  Si tiene muchas máquinas virtuales alojadas en un clúster de vCenter de origen, puede que le resulte más fácil crear los grupos de recursos mientras crea el plan de replicación.  Para obtener instrucciones sobre cómo crear grupos de recursos mientras crea un plan de replicación, consultelink:drplan-create.html["Crear un plan de replicación"] .
+* Mientras creas un plan de recuperación ante desastres o un _plan de replicación_. Si tienes muchas máquinas virtuales alojadas en un clúster de origen vCenter, puede que te resulte más sencillo crear los grupos de recursos mientras creas el plan de replicación. Para ver instrucciones sobre cómo crear grupos de recursos mientras creas un plan de replicación, consulta link:drplan-create.html["Crear un plan de replicación"].
 
 
 
-TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos.  Las máquinas virtuales se encenderán según la secuencia en que las incluya en el plan de replicación.  Puede cambiar el orden arrastrando las máquinas virtuales o los almacenes de datos hacia arriba o hacia abajo en la lista del grupo de recursos.
+TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales, almacenes de datos o clústeres de Kubernetes. Las máquinas virtuales se encenderán en función de la secuencia en la que las incluyas en el plan de replicación. Puedes cambiar el orden arrastrando las máquinas virtuales o los almacenes de datos hacia arriba o hacia abajo en la lista de grupos de recursos.
 
 .Acerca de los grupos de recursos
-Los grupos de recursos te permiten combinar máquinas virtuales o almacenes de datos en una sola unidad.
+Los grupos de recursos te permiten combinar máquinas virtuales, almacenes de datos o aplicaciones Kubernetes en una sola unidad.
 
 Por ejemplo, una aplicación de punto de venta podría utilizar varias máquinas virtuales para bases de datos, lógica empresarial y tiendas.  Puede administrar todas estas máquinas virtuales con un solo grupo de recursos.  Configure grupos de recursos para aplicar reglas de plan de replicación para el orden de inicio de las máquinas virtuales, la conexión de red y la recuperación de todas las máquinas virtuales necesarias para la aplicación.
 
@@ -55,7 +55,7 @@ Si las máquinas virtuales del grupo de recursos están alojadas en diferentes a
 
 
 | Múltiples almacenes de datos: volúmenes FlexVol en *múltiples SVM*  a| 
-* API de ONTAP : `cg_start` .  Pone en pausa todos los volúmenes para que se puedan tomar instantáneas e inicia instantáneas de alcance de volumen de todos los volúmenes del grupo de recursos.
+* API de ONTAP: `cg_start`. Pone en pausa todos los volúmenes para que se puedan tomar instantáneas e inicia instantáneas a nivel de volumen de todos los volúmenes de grupos de recursos.
 * API de ONTAP : `cg_end` .  Reanuda la E/S en todos los volúmenes y habilita la replicación de SnapMirror en todo el volumen después de tomar instantáneas.
 
 
@@ -74,11 +74,18 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 * Para que una VM esté protegida, debe estar incluida en un grupo de recursos.
 
 
-*MEJORES PRÁCTICAS*: Organice sus máquinas virtuales antes de implementar NetApp Disaster Recovery para minimizar la “expansión del almacén de datos”.  Coloque las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y coloque las máquinas virtuales que no van a estar protegidas en un subconjunto diferente de almacenes de datos.  Asegúrese de que las máquinas virtuales en un almacén de datos determinado no estén protegidas por diferentes planes de replicación.
+*PRÁCTICA RECOMENDADA*: Organiza tus máquinas virtuales antes de desplegar NetApp Disaster Recovery para minimizar la proliferación de almacenes de datos. Coloca las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y pon las máquinas virtuales que no se van a proteger en un subconjunto diferente de almacenes de datos. Asegúrate de que las máquinas virtuales en cualquier almacén de datos no estén protegidas por diferentes planes de replicación.
 
+[role="tabbed-block"]
+====
+.vCenters
+--
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
-. Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
+. En Disaster Recovery, selecciona **Resource groups** en la barra lateral.
+. En el menú desplegable, filtra por grupos de recursos de *vCenter*.
++
+image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
+
 . En el menú NetApp Disaster Recovery , seleccione *Grupos de recursos*.
 . Seleccione *Agregar*.
 . Introduzca un nombre para el grupo de recursos.
@@ -95,3 +102,26 @@ image:dr-resource-groups-datastores-add.png["Captura de pantalla que muestra la 
 . Opcionalmente, cambie el orden de las máquinas virtuales a la derecha arrastrando cada máquina virtual hacia arriba o hacia abajo en la lista.  Las máquinas virtuales se encenderán según la secuencia en que las incluya.
 . Seleccione *Agregar*.
 
+
+--
+.Kubernetes
+--
+.Pasos
+. En Disaster Recovery, selecciona **Resource groups** en la barra lateral.
+. En el menú desplegable, filtra por sitios *Kubernetes*.
++
+image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
+
+. Seleccione *Agregar*.
+. Introduce un **Nombre** para el grupo de recursos y selecciona el **Clúster** de Kubernetes en el menú desplegable.
+. Selecciona los *Espacios de nombres* que quieres añadir al grupo de recursos.
+. Opcionalmente, incluye cualquier *selector de etiqueta*.
++
+image:kubernetes-resource-group.png["Añade un grupo de recursos de Kubernetes"]
+
+. Opcionalmente, selecciona *+ Cluster-scoped resources* para añadir recursos que no estén asignados a un espacio de nombres. Si eliges esta opción, selecciona el *Group*, *Version*, *Kind* y, opcionalmente, añade cualquier selector de etiqueta. Selecciona **Add resource**.
+. Selecciona **Añadir**.
+
+
+--
+====

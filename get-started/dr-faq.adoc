@@ -20,4 +20,4 @@ Estas preguntas frecuentes pueden ayudarte si simplemente buscas una respuesta r
 
 Para obtener detalles sobre la configuración de licencias para NetApp Disaster Recovery, consultelink:../get-started/dr-licensing.html["Configurar la licencia de NetApp Disaster Recovery"] .
 
-¿Cómo acceder a NetApp Disaster Recovery?  NetApp Disaster Recovery no requiere ninguna habilitación.  La opción de recuperación ante desastres aparece automáticamente en la navegación izquierda de la NetApp Console .
+*¿Cómo accedes a NetApp Disaster Recovery?* NetApp Disaster Recovery no requiere ninguna habilitación. Disaster Recovery aparece automáticamente en la navegación izquierda de la NetApp Console.

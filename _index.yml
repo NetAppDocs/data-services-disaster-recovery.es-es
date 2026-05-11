@@ -1,15 +1,15 @@
 ---
 indexpage:
   title: Documentación de NetApp Disaster Recovery
-  summary: Con NetApp Disaster Recovery para VMware, puede replicar sus cargas de
-    trabajo locales de VMware que ejecutan almacenamiento ONTAP en un centro de datos
-    definido por software de VMware en una nube pública como un sitio de recuperación
-    ante desastres utilizando almacenamiento en la nube de NetApp .
+  summary: Con NetApp Disaster Recovery, puedes replicar tus cargas de trabajo VMware
+    locales que se ejecutan en almacenamiento ONTAP a un centro de datos VMware definido
+    por software en una nube pública como sitio de recuperación ante desastres usando
+    almacenamiento en la nube NetApp.
   keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
-  lead: La recuperación ante desastres en la nube es una forma resiliente y rentable
-    de proteger las cargas de trabajo contra interrupciones del sitio y eventos de
-    corrupción de datos (por ejemplo, ransomware).  Con NetApp Disaster Recovery for
-    VMware, puede replicar sus cargas de trabajo locales de VMware que ejecutan almacenamiento
+  lead: La recuperación ante desastres en la nube es una forma resistente y rentable
+    de proteger las cargas de trabajo frente a interrupciones en el sitio y eventos
+    de corrupción de datos (por ejemplo, ransomware). Con NetApp Disaster Recovery,
+    puedes replicar tus cargas de trabajo de VMware locales que ejecutan almacenamiento
     ONTAP en un centro de datos definido por software de VMware en una nube pública
     o en otro sitio local como sitio de recuperación ante desastres.
   tiles:

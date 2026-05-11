@@ -7,7 +7,7 @@ entries:
 - title: Vea el estado de sus planes de recuperación ante desastres en el Panel de
     Control
   url: "/use/dashboard-view.html"
-- title: Agregar vCenters a un sitio
+- title: Añade recursos a un sitio
   url: "/use/sites-add.html"
 - title: Crear un grupo de recursos
   url: "/use/resource-group.html"
