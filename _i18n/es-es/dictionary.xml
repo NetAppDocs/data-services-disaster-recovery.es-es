@@ -2219,7 +2219,6 @@
   <block id="ec83ded0a983071f5ddfe6288e7832c9" category="list-text"><block ref="ec83ded0a983071f5ddfe6288e7832c9" category="inline-link-macro-rx"></block></block>
   <block id="56b24cdd5dc24570f7e1dd2ee03d39ca" category="paragraph">Para obtener una visión completa de la solución NetApp Disaster Recovery, consulta <block ref="ccfb532d2846c6e621e9709f67d9a040" category="inline-link-macro-rx"></block>.</block>
   <block id="264f41f7fda3caccf98196e21418201c" category="summary">NetApp Disaster Recovery es un servicio de recuperación de desastres basado en cloud que automatiza los flujos de trabajo de recuperación de desastres. Con NetApp Disaster Recovery, puedes replicar tus cargas de trabajo VMware locales que ejecutan almacenamiento ONTAP en un centro de datos VMware definido por software en clouds públicos como un sitio de recuperación de desastres usando el almacenamiento en cloud NetApp.</block>
-  <block id="e26c1e1448bd5f685a679ff49e20338a" category="section-title">15 de mayo de 2026</block>
   <block id="12af18005a606ba97f9e606aa2b596b8" category="paragraph">Versión 4.3.3</block>
   <block id="1c42a04ac798111ed2c9388b25e2c237" category="paragraph">Después de que hayas añadido los recursos y los sitios, ya estás listo para crear un _plan de replicación_. Los planes de replicación gestionan la protección de datos. Crear la replicación implica designar los sitios de origen y destino, seleccionar los grupos de recursos y elegir cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, podrías agrupar máquinas virtuales (VM) asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares.</block>
   <block id="e6301bcb4d20444817b4b66020da65f2" category="paragraph">Sólo puedes activar la protección si el plan de replicación se encuentra en uno de los siguientes estados:</block>
@@ -2351,4 +2350,5 @@
   <block id="a79ae1fa6b9efc331842efa8d96937c5" category="sidebar">Requisitos previos de VMware</block>
   <block id="ffc29f7e69eb606c4fc0ff797755e240" category="sidebar">Requisitos previos de Kubernetes</block>
   <block id="e5d56575e494e873c5ded63467d12e44" category="paragraph">La compatibilidad con cargas de trabajo basadas en Kubernetes se encuentra actualmente en fase de vista previa. Para empezar a proteger las cargas de trabajo basadas en Kubernetes, consulta <block ref="d1415fee440f8c1c4acbcf4ee7535778" category="inline-link-macro-rx"></block>.</block>
+  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 de mayo de 2026</block>
 </blocks>
