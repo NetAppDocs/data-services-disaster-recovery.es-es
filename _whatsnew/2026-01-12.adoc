@@ -36,7 +36,7 @@ La recuperación ante desastres ahora proporciona notificaciones por correo elec
 
 === Mejoras de Swagger
 
-Ahora puede acceder a la documentación de Swagger desde Disaster Recovery. En Recuperación ante desastres, seleccione **Configuración** y luego **Documentación de API** para vincularse a Swagger, o visite esta URL en el modo incógnito/privado de su navegador: link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^].
+Ahora puedes acceder a la documentación de Swagger desde Disaster Recovery. En Disaster Recovery, selecciona **Configuración** y luego **Documentación de API**. Debes estar en modo privado o de incógnito para acceder a link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["el enlace"^].
 
 
 

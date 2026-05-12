@@ -17,6 +17,9 @@ Con NetApp Disaster Recovery, puede migrar aplicaciones de VMware en su sitio de
 
 TIP: Después de crear el plan de replicación, identificar la recurrencia en el asistente e iniciar la migración, cada 30 minutos NetApp Disaster Recovery verifica que la migración realmente se esté realizando según el plan. Puede supervisar el progreso en la página Monitor de trabajo.
 
+
+NOTE: Actualmente no se admite la migración para cargas de trabajo basadas en Kubernetes.
+
 .Antes de empezar
 Antes de iniciar la migración, debe haber creado un plan de replicación y haber seleccionado migrar las aplicaciones.  Luego, aparece la opción *Migrar* en el menú Acciones.
 
@@ -25,5 +28,7 @@ Antes de iniciar la migración, debe haber creado un plan de replicación y habe
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde el menú, seleccione *Planes de replicación*.
 . Seleccione el plan de replicación.
-. A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Migrar*.
+. A la derecha, selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el ratón por encima de *Recover* y luego selecciona *Migrate*.
+. En el cuadro de diálogo, elige *Hacer una instantánea ahora* para crear una nueva instantánea para la migración o *Seleccionar* para elegir una instantánea existente para la migración.
+. Escribe "Migrar" en el cuadro de texto para confirmar la operación y luego selecciona *Migrar*.
 

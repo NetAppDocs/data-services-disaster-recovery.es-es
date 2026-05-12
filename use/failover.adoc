@@ -145,6 +145,7 @@ image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse por encima de *Recover* y luego selecciona *Fail over*.
 . Elige la copia instantánea que quieres usar para el failover. Puedes *Take snapshot now* para crear una copia instantánea completamente nueva que se copiará en el clúster de destino o *Use latest snapshot* para usar la copia instantánea más reciente disponible en el clúster de destino.
+. Selecciona *Skip protection* si quieres que el servicio no cree automáticamente una relación de protección inversa SnapMirror después de una conmutación por error del plan de replicación. Esto es útil si quieres realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
 . Introduce "Failover" para confirmar la acción y luego selecciona *Failover*.
 
 

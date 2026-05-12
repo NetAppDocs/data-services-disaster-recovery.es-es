@@ -181,18 +181,18 @@ Puedes designar opcionalmente la clase de instantánea de volumen como clase pre
 
 | API de instantáneas | `kubectl get volumesnapshotclass` | Existen CRD; enumera el controlador Trident 
 |===
-Después de verificar el estado de todos los recursos, despliega o link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-migrate-apps.html#migrate-applications-from-one-storage-class-to-another-storage-class["migrar"^] tus cargas de trabajo usando tu Trident StorageClass. Cuando link:../use/sites-add.adoc["añade clústeres de Kubernetes a un sitio"], Disaster Recovery te da instrucciones para instalar Trident Protect en un clúster y registrarlo en tu entorno de Disaster Recovery.
+Después de verificar el estado de todos los recursos, despliega o link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-migrate-apps.html#migrate-applications-from-one-storage-class-to-another-storage-class["migrar"^] tus cargas de trabajo usando tu Trident StorageClass. Cuando link:../use/sites-add.html["añade clústeres de Kubernetes a un sitio"], Disaster Recovery te da instrucciones para instalar Trident Protect en un clúster y registrarlo en tu entorno de Disaster Recovery.
 
 .Revisa las instrucciones para instalar Trident Protect.
 [%collapsible]
 ====
-. Crea un espacio de nombres protegido por Trident:
+. Crea un espacio de nombres Trident protect:
 +
 `kubectl create namespace trident-protect`
 
 . Crea un secreto de Kubernetes usando el client ID y el client secret para crear las credenciales de autenticación de occm.
 +
-`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clidentID> --from-literal=<clientSecret>`
+`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=<clientSecret>`
 
 . Agrega o actualiza el repositorio de helm:
 +
@@ -209,5 +209,5 @@ Después de verificar el estado de todos los recursos, despliega o link:https://
 == Más información
 
 * link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["Conoce Trident Protect"^]
-* link:../use/sites-add.adoc["Agrega un sitio en Disaster Recovery"]
+* link:../use/sites-add.html["Agrega un sitio en Disaster Recovery"]
 

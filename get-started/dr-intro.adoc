@@ -12,9 +12,7 @@ summary: La recuperación ante desastres en la nube es una forma resistente y re
 
 
 [role="lead"]
-La recuperación de desastres en la nube es una forma resistente y rentable de proteger las cargas de trabajo frente a interrupciones del sitio y eventos de corrupción de datos. Con NetApp Disaster Recovery, puedes replicar tus cargas de trabajo VMware VM o datastore locales que se ejecutan en almacenamiento ONTAP a un centro de datos definido por software de VMware en una nube pública usando almacenamiento en la nube de NetApp o a otro entorno VMware local con almacenamiento ONTAP como sitio de recuperación de desastres. También puedes usar Disaster Recovery para migrar cargas de trabajo VM de un sitio a otro.
-
-NetApp Disaster Recovery es un servicio de recuperación de desastres basado en cloud que automatiza los flujos de trabajo de recuperación de desastres. Con NetApp Disaster Recovery, puedes proteger tus clústeres de Kubernetes locales, cargas de trabajo basadas en NFS y almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere para iSCSI y FC que ejecutan almacenamiento NetApp hacia uno de los siguientes:
+La recuperación de desastres en la nube es una forma resistente y rentable de proteger las cargas de trabajo frente a interrupciones del sitio y eventos de corrupción de datos. NetApp Disaster Recovery es un servicio de recuperación de desastres basado en cloud que automatiza los flujos de trabajo de recuperación de desastres. Con NetApp Disaster Recovery, puedes proteger tus clústeres de Kubernetes locales, cargas de trabajo basadas en NFS y almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere para iSCSI y FC que ejecutan almacenamiento NetApp hacia uno de los siguientes:
 
 * Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP Para obtener más detalles, consultelink:../reference/evs-deploy-guide-introduction.html["Introducción de NetApp Disaster Recovery mediante Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP"] .
 * VMware Cloud (VMC) en AWS con Amazon FSx for NetApp ONTAP
@@ -134,7 +132,7 @@ Cuando ocurre un desastre, este servicio le ayuda a recuperar máquinas virtuale
 
 *Componentes de la recuperación ante desastres*
 
-Disaster Recovery utiliza los siguientes componentes para proporcionar cargas de trabajo de Disaster Recovery:
+Disaster Recovery utiliza los siguientes componentes:
 
 * * NetApp Console*: la interfaz de usuario para administrar sus planes de recuperación ante desastres.  Puede utilizar la NetApp Console para crear y administrar planes de replicación, grupos de recursos y operaciones de conmutación por error en sus entornos locales y en la nube.
 * *Agente de consola*: un componente de software liviano que se ejecuta en su red alojada en la nube o en su entorno VMware local.  Se comunica con la NetApp Console y administra la replicación de datos entre su entorno local y el sitio de recuperación ante desastres.  El agente de consola se instala en una máquina virtual en su entorno VMware.

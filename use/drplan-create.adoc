@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Después de que hayas añadido los recursos y los sitios, ya estás listo para crear un _plan de replicación_. Los planes de replicación gestionan la protección de datos. Crear la replicación implica designar los sitios de origen y destino, seleccionar los grupos de recursos y elegir cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, podrías agrupar máquinas virtuales (VM) asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares.
+Después de que hayas añadido recursos y sitios, ya estás listo para crear un _plan de replicación_. Los planes de replicación gestionan la protección de datos. Crear la replicación implica designar los sitios de origen y destino, seleccionar los grupos de recursos y elegir cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, podrías agrupar máquinas virtuales (VMs) asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares.
 
 *Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
 
@@ -94,7 +94,7 @@ image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
 . Seleccione *Agregar*.
 . Ingresa un nombre para el plan de replicación.
-. Para *Source*, selecciona el clúster vCenter o Kubernetes que quieras designar como origen.
+. Para *Source*, selecciona el clúster vCenter o Kubernetes que quieres designar como origen.
 . En *Source vCenter*, selecciona el vCenter donde existen los datos en el menú desplegable. En *Target*, selecciona el vCenter o clúster de Kubernetes que quieres usar como clúster de destino para la recuperación de desastres.
 +
 image:dr-plan-create-name2.png["Captura de pantalla que muestra la página del servidor vCenter"]
@@ -106,10 +106,7 @@ image:dr-plan-create-name2.png["Captura de pantalla que muestra la página del s
 
 === Seleccionar aplicaciones para replicar y asignar grupos de recursos
 
-El siguiente paso es agrupar las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales.  Los grupos de recursos le permiten proteger un conjunto de máquinas virtuales o almacenes de datos con una instantánea común.
-
-
-TIP: Cada grupo de recursos puede incluir una o más máquinas virtuales o almacenes de datos.
+El siguiente paso consiste en agrupar las máquinas virtuales, los almacenes de datos o los clústeres de Kubernetes necesarios en grupos de recursos funcionales. Los grupos de recursos te permiten proteger un conjunto de recursos, como un clúster de Kubernetes o una máquina virtual, con una instantánea común.
 
 Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 
@@ -119,7 +116,7 @@ Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 * No alojes recursos protegidos y no protegidos en el mismo almacén de datos. Si los recursos protegidos y no protegidos se alojan en el mismo almacén de datos, puedes encontrarte con estos problemas:
 +
 ** La capacidad utilizada de ese volumen puede contribuir al cálculo de licencias porque Disaster Recovery utiliza SnapMirror, lo que significa que el sistema replica volúmenes ONTAP completos. En este caso, el espacio de volumen consumido tanto por los recursos protegidos como por los no protegidos se incluiría en este cálculo.
-** Si el grupo de recursos y sus recursos asociados necesitan ser traspasados al sitio de recuperación de desastres, cualquier recurso desprotegido dejará de existir en el sitio de origen desde el proceso de conmutación por error, lo que provocará el fallo de las máquinas virtuales desprotegidas en el sitio de origen. Además, NetApp Disaster Recovery no iniciará esas máquinas virtuales desprotegidas en el sitio de conmutación por error vCenter.
+** Si el grupo de recursos y sus recursos asociados deben transferirse por error al sitio de recuperación ante desastres, los recursos desprotegidos dejarán de existir en el sitio de origen desde el proceso de conmutación por error, lo que provocará el fallo de los recursos desprotegidos en el sitio de origen. Además, NetApp Disaster Recovery no iniciará esos recursos desprotegidos en el sitio de conmutación por error.
 
 
 
@@ -158,7 +155,7 @@ image:dr-plan-create-apps-datastores.png["Captura de pantalla que muestra la pá
 Al crear un plan de replicación para clústeres de Kubernetes, los espacios de nombres de Kubernetes de un grupo de recursos deben pertenecer al mismo clúster de ONTAP.
 
 .Pasos
-. Si ya tienes grupos de recursos, elígelos de la lista.
+. Si tienes grupos de recursos existentes, elige los grupos de la lista.
 +
 Si no tienes grupos de recursos existentes o necesitas añadir recursos a uno, selecciona *+ Crear nuevo grupo de recursos*. Sigue las instrucciones para link:resource-group.html["agrega espacios de nombres a un grupo de recursos"].
 
@@ -224,6 +221,9 @@ Al establecer la frecuencia de las instantáneas, el mínimo permitido es de cin
 .. Selecciona el *Proveedor* de la nube para alojar el *AppVault*.
 .. Basándose en la selección del proveedor, Disaster Recovery rellena las suscripciones configuradas existentes en la nube. Elige la *Suscripción*, el *Grupo de recursos* y la *Cuenta de almacenamiento* para el proveedor de la nube.
 .. Selecciona **Añadir**.
++
+image:kubernetes-mapping.png["Captura de pantalla de la asignación de clases de almacenamiento para Kubernetes"]
+
 
 
 . Selecciona **Siguiente**.
