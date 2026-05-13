@@ -140,6 +140,9 @@ Para obtener una lista de los privilegios de vCenter necesarios, consultelink:..
 
 
 
+TIP: Para usar Disaster Recovery con Amazon Elastic VMware Service (EVS), consulta la link:../reference/evs-deploy-guide-config-prereqs.html["requisitos previos adicionales y guía de configuración"^].
+
+
 
 === Crear el agente de la NetApp Console
 
