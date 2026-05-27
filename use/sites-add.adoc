@@ -17,9 +17,7 @@ Antes de que puedas crear un plan de recuperación ante desastres, necesitas agr
 
 TIP: Asegúrate de que tanto el origen como el destino usen el mismo agente de NetApp Console.
 
-*Rol de NetApp Console requerido* Administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol de NetApp Console requerido* Se necesita el Super admin o el Disaster recovery admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 

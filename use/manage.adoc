@@ -45,7 +45,7 @@ Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 
 Puede crear grupos de recursos por máquinas virtuales o almacenes de datos.  Se pueden agregar al crear el plan de replicación o posteriormente.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea.
 
 Puede crear un grupo de recursos por almacenes de datos de las siguientes maneras:
 
@@ -75,7 +75,7 @@ Para obtener detalles sobre cómo crear un grupo de recursos, consultelink:resou
 
 Puede deshabilitar, habilitar y eliminar planes de replicación.  Puedes cambiar los horarios.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol requerido de NetApp Console* Rol de súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres o administrador de aplicaciones de recuperación ante desastres.
 
 * Si desea pausar un plan de replicación temporalmente, puede deshabilitarlo y habilitarlo más tarde.
 * Si ya no necesitas el plan, puedes eliminarlo.
@@ -112,7 +112,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 La recuperación ante desastres elimina automáticamente las instantáneas de la fuente cada 24 horas.  Si descubre que las instantáneas no están sincronizadas entre el origen y el destino, deberá resolver la discrepancia entre las instantáneas para garantizar la coherencia entre los sitios.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol requerido de NetApp Console* Rol de súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres o administrador de aplicaciones de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -130,7 +130,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Rol requerido de NetApp Console* Rol de súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres o administrador de aplicaciones de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -146,7 +146,7 @@ Si elimina un plan de replicación, también puede eliminar las instantáneas pr
 
 Modificar el recuento de retención le permite aumentar o disminuir el número de almacenes de datos guardados.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres o Administrador de aplicación de recuperación ante desastres.
+*Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin.
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
@@ -165,7 +165,7 @@ image:../use/dr-plan-failover-edit.png["Página de edición de asignaciones de c
 
 Puede ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+*Rol requerido de NetApp Console* Súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres, administrador de aplicaciones de recuperación ante desastres o rol de visualizador de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Panel de control*.
@@ -180,7 +180,7 @@ Puede ver información sobre cuántos almacenes de datos existen en el origen y 
 
 Puede ver información sobre cuántas máquinas virtuales existen en el origen y en el destino junto con la CPU, la memoria y la capacidad disponible.
 
-*Rol de NetApp Console requerido* Administrador de organización, Administrador de carpeta o proyecto, Administrador de recuperación ante desastres, Administrador de conmutación por error de recuperación ante desastres, Administrador de aplicaciones de recuperación ante desastres o Rol de visualizador de recuperación ante desastres.
+*Rol requerido de NetApp Console* Súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres, administrador de aplicaciones de recuperación ante desastres o rol de visualizador de recuperación ante desastres.
 
 .Pasos
 . Desde el menú, seleccione *Panel de control*.
