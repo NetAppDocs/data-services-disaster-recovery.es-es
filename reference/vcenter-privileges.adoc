@@ -30,6 +30,15 @@ La siguiente tabla enumera todos los privilegios necesarios para que Disaster Re
 | Datastore.Rename | Renombrar datastore | Permite cambiar el nombre de un datastore. 
 
 
+.2+| Host | Host.Config.AdvancedConfig | Ajustes avanzados | Permite establecer opciones avanzadas de configuración del host. 
+
+
+| Host.Config.Almacenamiento | Configuración de la partición de almacenamiento | Permite la exploración de nuevos dispositivos de almacenamiento y la gestión de iSCSI. 
+
+
+| Recurso | Resource.AssignVMToPool | Pool de recursos | Permite la asignación de máquinas virtuales a un pool de recursos 
+
+
 .3+| Carpeta | Folder.Create | Crear carpeta | Permite crear una nueva carpeta. 
 
 
@@ -45,7 +54,16 @@ La siguiente tabla enumera todos los privilegios necesarios para que Disaster Re
 | Network.Config | Configura | Permite configurar una red. 
 
 
-.9+| Configuración de máquina virtual | VirtualMachine.Config.AdvancedConfig | Configuración avanzada | Permite añadir o modificar parámetros avanzados en el archivo de configuración de la VM. 
+.12+| Configuración de máquina virtual | VirtualMachine.Config.AdvancedConfig | Configuración avanzada | Permite añadir o modificar parámetros avanzados en el archivo de configuración de la VM. 
+
+
+| VirtualMachine.Config.AddExistingDisk | Agregar disco existente | Permite añadir un disco virtual existente a una máquina virtual. 
+
+
+| VirtualMachine.Config.AddNewDisk | Agregar nuevo disco | Permite crear un nuevo disco virtual para añadirlo a una máquina virtual. 
+
+
+| VirtualMachine.Config.RemoveDisk | Quitar disco | Permite eliminar un dispositivo de disco virtual. 
 
 
 | VirtualMachine.Config.Settings | Cambiar configuración | Permite cambiar la configuración general de la VM. 

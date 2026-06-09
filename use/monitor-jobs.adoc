@@ -18,9 +18,7 @@ Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su 
 
 == Ver trabajos
 
-*Rol requerido de NetApp Console* Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer role.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
@@ -35,11 +33,9 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 == Cancelar un trabajo
 
-Si un trabajo está en progreso o en estado de cola y no desea que continúe, puede cancelarlo.  Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola.  Es posible que desees cancelar un trabajo antes de que caduque.
+Puedes cancelar un trabajo que está en curso o en estado de cola si se queda atascado o para dar prioridad a una operación pendiente.
 
-*Rol requerido de NetApp Console* Rol de súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres o administrador de aplicaciones de recuperación ante desastres.
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.

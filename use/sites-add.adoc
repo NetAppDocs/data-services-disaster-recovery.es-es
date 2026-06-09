@@ -17,7 +17,7 @@ Antes de que puedas crear un plan de recuperación ante desastres, necesitas agr
 
 TIP: Asegúrate de que tanto el origen como el destino usen el mismo agente de NetApp Console.
 
-*Rol de NetApp Console requerido* Se necesita el Super admin o el Disaster recovery admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin o Disaster recovery admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 
 
@@ -129,7 +129,7 @@ Una vez agregados los vCenters, NetApp Disaster Recovery realiza un descubrimien
 .Kubernetes
 --
 . En NetApp Disaster Recovery, selecciona **Sites** en la barra lateral.
-. En el menú desplegable, establece el filtro en *Kubernetes*.
+. En el menú desplegable de carga de trabajo, establece el filtro en *Kubernetes*.
 +
 image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
@@ -245,6 +245,8 @@ Si no desea programar la detección, puede deshabilitar la opción de detección
 . En el menú NetApp Disaster Recovery , seleccione *Sitios*.
 . Seleccione el sitio que desea editar.
 . Seleccione las accionesimage:icon-vertical-dots.png["Icono de acciones"] icono de la derecha y seleccione *Editar*.
+. En la ventana Configuración, edita los campos según sea necesario.
+. Para personalizar la programación de la detección, marca la casilla *Activar detección programada*. Selecciona la fecha de inicio de la detección y el intervalo de detección en horas y minutos.
 . En la página Editar servidor vCenter, edite los campos según sea necesario.
 . Para personalizar la programación de descubrimiento, marque la casilla *Habilitar descubrimiento programado* y seleccione el intervalo de fecha y hora que desee.
 +

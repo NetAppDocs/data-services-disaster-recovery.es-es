@@ -1254,7 +1254,6 @@
   <block id="0e00f106592672a761fa0dcf1949901f" category="list-text">Desactive cualquier aplicación de base de datos compatible en las máquinas virtuales indicadas como "compatibles con la aplicación".</block>
   <block id="89b3318439959d14598bf04d917486ea" category="list-text">Si los clústeres de origen vCenter y ONTAP aún están activos, cree una relación SnapMirror en dirección inversa para replicar cualquier cambio mientras esté en estado de conmutación por error en el sitio de origen original.</block>
   <block id="262b346523c2b98a9b37923882f4fa94" category="list-text">A la derecha, seleccione la opción *Acciones*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> y seleccione *Probar conmutación por error*.</block>
-  <block id="b5a4a47da1665893dbfd001a41980991" category="list-text">En la página de Conmutación por error de prueba, ingrese “Conmutación por error de prueba” y seleccione *Conmutación por error de prueba*.</block>
   <block id="625033464ccff58d2815930ae362a422" category="list-text">Una vez finalizada la prueba, limpie el entorno de prueba.</block>
   <block id="302bf3ef5d8e942b185e4b4d03884ff4" category="section-title">Limpiar el entorno de prueba después de una prueba de conmutación por error</block>
   <block id="b22e9cc3eebab01136ffe8d3f7e201ca" category="paragraph">Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno de prueba.  Este proceso elimina las máquinas virtuales temporales de la ubicación de prueba, los FlexClones y los almacenes de datos temporales.</block>
@@ -1280,7 +1279,6 @@
   <block id="41629e76e0d378b59baf8095f22e3e66" category="paragraph">Las tareas requieren diferentes roles de la NetApp Console .  Para obtener más detalles, consulte la sección *Rol de NetApp Console requerido* en cada tarea.</block>
   <block id="0acfc5a5ce6523c8fad77ea0b4d65862" category="section-title">Administrar sitios de vCenter</block>
   <block id="f6384b4b10f3ca7cfac8402cfb23ef7f" category="paragraph">Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).</block>
-  <block id="ee96f26f36e356a1f6ec9037ad76ba51" category="paragraph">*Rol de NetApp Console requerido* Rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres.</block>
   <block id="d11708747a513e148a12f02e4e603105" category="list-text">Desde el menú, seleccione *Sitios*.</block>
   <block id="b2209ab446f654c29ab1bfca5d8d2693" category="list-text">Seleccione la opción *Acciones*<block ref="b571b46a13691830124ae7cdd5a7ca96" category="inline-image-macro-rx" type="image"></block> a la derecha del nombre de vCenter y seleccione *Editar*.</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">Edite el nombre y la ubicación del sitio vCenter.</block>
@@ -1342,7 +1340,6 @@
   <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">Para ver los detalles de un trabajo en particular, seleccione esa fila.</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">Para actualizar la información, seleccione *Actualizar*.</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Cancelar un trabajo</block>
-  <block id="eead8518396b0c1b849be084fbe4f31a" category="paragraph">Si un trabajo está en progreso o en estado de cola y no desea que continúe, puede cancelarlo.  Es posible que desee cancelar un trabajo si está atascado en el mismo estado y desea liberar la siguiente operación en la cola.  Es posible que desees cancelar un trabajo antes de que caduque.</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* &gt; *Recuperación ante desastres*.</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">En la página del Monitor de trabajos, anote el ID del trabajo que desea cancelar.</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">El trabajo debe estar en estado "En progreso" o "En cola".</block>
@@ -1532,7 +1529,6 @@
   <block id="3c843649a94855e3901bd423ac9ca414" category="paragraph">Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.</block>
   <block id="75c34b3422e5baaae429a2d21a62a9d8" category="list-text">Seleccione si desea eliminar las instantáneas primarias, las instantáneas secundarias o solo los metadatos creados por el plan.</block>
   <block id="8e15489db6e2853bdefe4e39cf285c3d" category="list-text">Introduzca "eliminar" para confirmar la eliminación.</block>
-  <block id="c1ba23522836b9d395a79f30f4da96b4" category="paragraph">Modificar el recuento de retención le permite aumentar o disminuir el número de almacenes de datos guardados.</block>
   <block id="506d82cb3cd3b9175af419eb19bc5740" category="list-text">Seleccione el plan de replicación y luego la pestaña *Asignación de conmutación por error*. Seleccione el icono del lápiz *Editar*.</block>
   <block id="58777a5460ab56ac04a8fc9d5cb1b259" category="list-text">Seleccione la flecha hacia abajo en la fila *Almacenes de datos* para expandirla.</block>
   <block id="2d3c0c55028659ea4dd39b2fd1ee9a30" category="list-text">Cambie el valor del **Recuento de retención para todos los almacenes de datos**.</block>
@@ -2244,7 +2240,6 @@
   <block id="fe2070975262fdb1507084ad02d139e7" category="paragraph"><block ref="fe2070975262fdb1507084ad02d139e7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ec5c6f08ada454e9670285c835649f45" category="list-text">Introduce "Failback" para confirmar la operación y luego selecciona *Failback*.</block>
   <block id="2d518d2a0701e8e4560cbcf883ee4f3a" category="list-text">En el menú desplegable, filtra a planes de replicación *Kubernetes*.</block>
-  <block id="cf3a1b459cc4424970f17bd247150364" category="paragraph">Antes de iniciar la conmutación por error, puedes probar el proceso. La prueba no pone las máquinas virtuales fuera de línea.</block>
   <block id="1125e3b29e278ae1d41547291cfcb9fb" category="paragraph">Durante una prueba de conmutación por error, Disaster Recovery crea temporalmente máquinas virtuales. Disaster Recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.</block>
   <block id="1d235eca89fa1ce9ae2c129b3459f24d" category="paragraph">Cuando termines la prueba, debes reiniciar las máquinas virtuales con la opción *Limpiar prueba*. Aunque esto es recomendable, no es obligatorio.</block>
   <block id="1ce56da10e5d8a1c98a950af6b3aa8f0" category="list-text">Registra las máquinas virtuales de destino en vCenter como nuevos almacenes de datos.</block>
@@ -2281,7 +2276,6 @@
   <block id="7abaaec8330e6093848e8ad2b5fc55ad" category="admonition">NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas. Después de configurar un sitio, puedes editar más tarde el vCenter o el clúster de Kubernetes para personalizar el horario de descubrimiento que se adapte a tus necesidades. Por ejemplo, si tienes un gran número de máquinas virtuales, puedes configurar el horario de descubrimiento para que se ejecute cada 23 horas y 59 minutos. Si tienes un número reducido de máquinas virtuales, puedes configurar el horario de descubrimiento para que se ejecute cada 12 horas. El intervalo mínimo es de 30 minutos y el máximo es de 24 horas.</block>
   <block id="3df06dfecbba3cf48d3e0f796002cd30" category="paragraph">Los recursos sólo pueden protegerse si el plan de replicación se encuentra en uno de los siguientes estados:</block>
   <block id="3feb9d576508e0f0d5b31b94130afff9" category="paragraph">Necesitas la siguiente información para añadir un clúster vCenter a un sitio:</block>
-  <block id="95a40723328d7973d1b42377e4a9279b" category="list-text">En el menú desplegable, establece el filtro en *Kubernetes*.</block>
   <block id="6ec607d90131ba368742b9a99a146722" category="list-text">Elige el sitio al que quieres añadir un clúster de Kubernetes. Selecciona el menú de acciones del sitio y luego **Add cluster**.</block>
   <block id="7e592170164af97cef86b80a254c840b" category="list-text">En la página Sitios, selecciona el menú de acciones de un sitio y luego *Add vCenter*.</block>
   <block id="ff3b9c54386661390d0a394f4a1d50c4" category="list-text">Asegúrate de que el *Site* es correcto. Elige el *Console agent* del menú desplegable.</block>
@@ -2356,10 +2350,64 @@
   <block id="78a1d5987eca33284817a9dca555eece" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery failover admin para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
   <block id="6505512d1e3705256403aea56cc17f65" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
   <block id="16f190cf7635b199438ae35b0fe59f2c" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
-  <block id="471f9859d1f2a18f91bcac6a9a7a7cdf" category="paragraph">*Rol requerido de NetApp Console* Rol de súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres o administrador de aplicaciones de recuperación ante desastres.</block>
-  <block id="1f78a1c33aa4c1ac6fb7d77efb19a5f4" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea.</block>
-  <block id="bf857d514ad33034eb60ee79c8a3aa99" category="paragraph">*Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin.</block>
-  <block id="be5c474e990158548482b3a953022881" category="paragraph">*Rol requerido de NetApp Console* Súper administrador, administrador de recuperación ante desastres, administrador de conmutación por error de recuperación ante desastres, administrador de aplicaciones de recuperación ante desastres o rol de visualizador de recuperación ante desastres.</block>
-  <block id="8e745eb6a2225b985f69a165c4ffe3a6" category="paragraph">*Rol requerido de NetApp Console* Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer role.</block>
-  <block id="e509f2e4181583fe783409b5fef67c2d" category="paragraph">*Rol de NetApp Console requerido* Se necesita el Super admin o el Disaster recovery admin para realizar esta tarea. <block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="612649a00367a8c0d47c862b2609f91a" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin o Disaster recovery admin para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="84673f07cefbab42e915cbd959f8f20f" category="paragraph">*Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="f30e78142cdfb38729492098fb4e8de0" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="a986e84430ee60de89573d632903e271" category="paragraph">*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. <block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>. <block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="332fe49e1772f15dfec47321d1f86499" category="doc">Actualizaciones de Kubernetes</block>
+  <block id="c0471f20c72304b23fb6eb762ed470b8" category="paragraph">Disaster Recovery ha introducido los siguientes cambios para las cargas de trabajo basadas en Kubernetes:</block>
+  <block id="b1f52bc1b1d4ff2b36103a44b4128f19" category="section-title">Prueba la compatibilidad de la conmutación por error para las cargas de trabajo de Kubernetes</block>
+  <block id="7e284075cd571fe0081cd386d1d3493c" category="paragraph">Recuperación ante desastres ahora admite la prueba del proceso de conmutación por error para cargas de trabajo de Kubernetes. Probar la conmutación por error te permite validar los planes de recuperación ante desastres. Cuando terminas la prueba, puedes limpiar la conmutación por error de prueba para que el sistema limpie automáticamente los recursos de prueba, reduzca la sobrecarga y asegure la coherencia de tu entorno.</block>
+  <block id="6031837c36096c58788ef48c962f6ff8" category="paragraph">Para obtener más información, consulta <block ref="a8818044286b10a3ca635d0b39faff78" category="inline-link-macro-rx"></block>.</block>
+  <block id="9be7f1264301a801add3868ed7829904" category="section-title">Pruebas programadas de failover</block>
+  <block id="2cb1fc25b0b81893e3832eea3384812d" category="paragraph">Ahora puedes automatizar las pruebas de recuperación ante desastres programando pruebas de conmutación por error. Puedes programar pruebas de conmutación por error recurrentes para validar continuamente los planes de recuperación sin intervención manual, lo que ayuda a mantener la confianza en los objetivos de recuperación y a cumplir los requisitos de cumplimiento.</block>
+  <block id="35bd874c9b191a5ec4ef2620bcba1d01" category="paragraph">Para obtener más información, consulta <block ref="5e1f430868dd2493a6125e8cf919005e" category="inline-link-macro-rx"></block>.</block>
+  <block id="61a19574e3bdebdbc07d7daaaf8f76e1" category="section-title">Descubrimiento programado de cargas de trabajo Kubernetes</block>
+  <block id="d45fce8600e6e092745f48fddf5cd172" category="paragraph">Con la detección programada, puedes controlar la frecuencia con la que Disaster Recovery busca nuevas cargas de trabajo de Kubernetes. Puedes configurar los intervalos de detección para alinearlos con tu cadencia operativa, reduciendo la sobrecarga innecesaria del sistema mientras aseguras que las nuevas cargas de trabajo se detectan y protegen a tiempo.</block>
+  <block id="d5500e4522bde3536eb21086a6278cb6" category="inline-link-macro">Personaliza el calendario de descubrimiento</block>
+  <block id="58b54ef9bb1184e1a76831a4c8532cdf" category="paragraph">Para obtener más información, consulta <block ref="00c64813bfb7d5f31a94dc7f7401aec7" category="inline-link-macro-rx"></block>.</block>
+  <block id="49bc059dcf19f0a0115deba3b42c6932" category="section-title">Actualizaciones de VMware</block>
+  <block id="239000f59be4987b700a238e8ca4cbac" category="section-title">Protección para almacenes de datos vacíos</block>
+  <block id="9a870179d2b3e04319fde1e2148bdde1" category="inline-link-macro">información de mapeo</block>
+  <block id="386068b3c8ab30655c493a434548a956" category="paragraph">Disaster Recovery permite ahora configurar la protección de almacenes de datos que no contienen ninguna máquina virtual (VM). Cualquier VM añadida posteriormente al almacén de datos es detectada automáticamente por Disaster Recovery, momento en el que tienes que proporcionar <block ref="96f22499fac7fb5ec06f64e20472e919" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ea79c5d84513219216b19fc3aa62033" category="inline-link-macro">Conmutación por error a un sitio remoto</block>
+  <block id="fcf6f6ded14457afdca64680218d849c" category="paragraph">Cuando agregas un datastore vacío a un plan de protección, debes eliminar el datastore del plan de protección antes de realizar una conmutación por error o realizar una conmutación por error forzada. Para más información, consulta <block ref="a16180f75826879573c72d14ccfccc18" category="inline-link-macro-rx"></block>.</block>
+  <block id="2d2e356e77ef22acf218ffb017d91233" category="section-title">Restaurar almacenes de datos previamente excluidos a un plan de protección</block>
+  <block id="1453aa4dc117cbab5d75827143b273ea" category="paragraph">Los almacenes de datos que anteriormente estaban excluidos de la protección ahora se pueden volver a incluir. Esta mejora proporciona una mayor flexibilidad al gestionar y actualizar tus configuraciones de recuperación ante desastres con el tiempo.</block>
+  <block id="0f76cabceee2286086c65391269ec324" category="paragraph">Para obtener más información, consulta <block ref="37d0eb884ec50ead320898709eb6d605" category="inline-link-macro-rx"></block>.</block>
+  <block id="05c185480595feac79a02ae4a685fcc6" category="section-title">Conmutación por error más rápida para almacenes de datos basados en VMFS</block>
+  <block id="e63830ec714a620621135f51c7c84114" category="paragraph">Disaster Recovery ha mejorado el rendimiento de la conmutación por error para los datastores basados en VMFS. Las operaciones de reexploración del Host Bus Adapter (HBA) y de montaje del datastore ahora se ejecutan en paralelo, lo que reduce los tiempos totales de conmutación por error y minimiza el tiempo de inactividad durante los eventos de recuperación.</block>
+  <block id="69aa1f50c340d05c0f749dc51b5d5737" category="inline-link-macro">Fail over con recuperación ante desastres</block>
+  <block id="bda5d94c4f296d65baa89f57187dafbd" category="paragraph">Para obtener más información sobre las conmutaciones por error, consulta <block ref="6f81e5aa1c9b02c34c5ec309d5755115" category="inline-link-macro-rx"></block>.</block>
+  <block id="c2ca16d048ec66e04bca283eab048ec2" category="cell">Host</block>
+  <block id="c558a0155ca880ce7651092b8d34bdda" category="cell">Host.Config.AdvancedConfig</block>
+  <block id="fe4c6a5e7bd6793b37370e4e46daf998" category="cell">Ajustes avanzados</block>
+  <block id="bfc4aca9e679b5e54fe1e06ec1a2fdae" category="cell">Permite establecer opciones avanzadas de configuración del host.</block>
+  <block id="b65acfdfa8b200521132554a2bf785c1" category="cell">Host.Config.Almacenamiento</block>
+  <block id="a327173237d5e04189c770059b93c5b8" category="cell">Configuración de la partición de almacenamiento</block>
+  <block id="8d1a22575f27ac05ff7b4dbaa3e07dd0" category="cell">Permite la exploración de nuevos dispositivos de almacenamiento y la gestión de iSCSI.</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">Recurso</block>
+  <block id="a7e4bee1172f5ae98efff7f374c7c442" category="cell">Resource.AssignVMToPool</block>
+  <block id="4a80639450ebfdba618d1bb0d7fd4bc9" category="cell">Pool de recursos</block>
+  <block id="467e9c87035095663a3dab61ee7fa11f" category="cell">Permite la asignación de máquinas virtuales a un pool de recursos</block>
+  <block id="1c47c283c10eb040185d834c1d4f570f" category="cell">VirtualMachine.Config.AddExistingDisk</block>
+  <block id="c629a65bf0cad09db50b338d3b22ceaa" category="cell">Agregar disco existente</block>
+  <block id="c77e1221a533a8ee299fde02b09ab63e" category="cell">Permite añadir un disco virtual existente a una máquina virtual.</block>
+  <block id="826a9b0bd0c5de4d98b547fcc69301ff" category="cell">VirtualMachine.Config.AddNewDisk</block>
+  <block id="290f3ac3e6b4bd78ff9a9070bb2c965a" category="cell">Agregar nuevo disco</block>
+  <block id="04195979ac94ef25dd5acd4ddb6f6d46" category="cell">Permite crear un nuevo disco virtual para añadirlo a una máquina virtual.</block>
+  <block id="87a51990ea0f64db3976bc03be144283" category="cell">VirtualMachine.Config.RemoveDisk</block>
+  <block id="175d3bc37a203b0e58c2d1bb572971de" category="cell">Quitar disco</block>
+  <block id="23f63c2f1d737c005d58d613f81f3d37" category="cell">Permite eliminar un dispositivo de disco virtual.</block>
+  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">08 de junio de 2026</block>
+  <block id="0926e17414694f3b4201b416c6c4a6ca" category="paragraph">Versión 4.3.4</block>
+  <block id="7aa7ac5ef00e37e99f8bb57b253d37ed" category="paragraph">Antes de realizar una conmutación por error en vivo, puedes realizar una prueba para comprobar que estás preparado. Las cargas de trabajo permanecen en línea durante el proceso de prueba.</block>
+  <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">En la página Test failover, elige la instantánea para el test failover: selecciona **Take snapshot now** o **Select** para elegir una instantánea existente. Si eliges **Select**, elige la instantánea existente.</block>
+  <block id="0a07084d59200e5f62afd96db98a68b5" category="paragraph">Luego, ingresa "Test failover" y selecciona *Test fail over*.</block>
+  <block id="962e92831673929912f04cd68819059b" category="admonition">Si el plan de replicación incluye un almacén de datos vacío, primero tienes que eliminar el almacén de datos vacío del plan o usar la opción **Forzar conmutación por error**, que omite los almacenes de datos vacíos.</block>
+  <block id="919dfe02d5a57784fd83bb645e8f8b8e" category="paragraph">Cambiar el recuento de retención te permite aumentar o disminuir el número de instantáneas guardadas.</block>
+  <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">Puedes cancelar un trabajo que está en curso o en estado de cola si se queda atascado o para dar prioridad a una operación pendiente.</block>
+  <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">En el menú desplegable de carga de trabajo, establece el filtro en *Kubernetes*.</block>
+  <block id="86839797735bfc02dea42929601e887a" category="list-text">En la ventana Configuración, edita los campos según sea necesario.</block>
+  <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">Para personalizar la programación de la detección, marca la casilla *Activar detección programada*. Selecciona la fecha de inicio de la detección y el intervalo de detección en horas y minutos.</block>
 </blocks>

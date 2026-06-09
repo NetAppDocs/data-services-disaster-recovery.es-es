@@ -16,6 +16,70 @@ Descubre las novedades de NetApp Disaster Recovery.
 
 
 
+== 08 de junio de 2026
+
+Versión 4.3.4
+
+
+
+=== Actualizaciones de Kubernetes
+
+Disaster Recovery ha introducido los siguientes cambios para las cargas de trabajo basadas en Kubernetes:
+
+
+
+==== Prueba la compatibilidad de la conmutación por error para las cargas de trabajo de Kubernetes
+
+Recuperación ante desastres ahora admite la prueba del proceso de conmutación por error para cargas de trabajo de Kubernetes. Probar la conmutación por error te permite validar los planes de recuperación ante desastres. Cuando terminas la prueba, puedes limpiar la conmutación por error de prueba para que el sistema limpie automáticamente los recursos de prueba, reduzca la sobrecarga y asegure la coherencia de tu entorno.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html#test-the-failover-process["Probar el proceso de conmutación por error"^].
+
+
+
+==== Pruebas programadas de failover
+
+Ahora puedes automatizar las pruebas de recuperación ante desastres programando pruebas de conmutación por error. Puedes programar pruebas de conmutación por error recurrentes para validar continuamente los planes de recuperación sin intervención manual, lo que ayuda a mantener la confianza en los objetivos de recuperación y a cumplir los requisitos de cumplimiento.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html#manage-replication-plans["Administrar planes de replicación"^].
+
+
+
+==== Descubrimiento programado de cargas de trabajo Kubernetes
+
+Con la detección programada, puedes controlar la frecuencia con la que Disaster Recovery busca nuevas cargas de trabajo de Kubernetes. Puedes configurar los intervalos de detección para alinearlos con tu cadencia operativa, reduciendo la sobrecarga innecesaria del sistema mientras aseguras que las nuevas cargas de trabajo se detectan y protegen a tiempo.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#edit-the-site-and-customize-the-discovery-schedule["Personaliza el calendario de descubrimiento"^].
+
+
+
+=== Actualizaciones de VMware
+
+
+
+==== Protección para almacenes de datos vacíos
+
+Disaster Recovery permite ahora configurar la protección de almacenes de datos que no contienen ninguna máquina virtual (VM). Cualquier VM añadida posteriormente al almacén de datos es detectada automáticamente por Disaster Recovery, momento en el que tienes que proporcionar link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#add-subnet-mapping-for-a-vcenter-site["información de mapeo"^].
+
+Cuando agregas un datastore vacío a un plan de protección, debes eliminar el datastore del plan de protección antes de realizar una conmutación por error o realizar una conmutación por error forzada. Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Conmutación por error a un sitio remoto"^].
+
+
+
+==== Restaurar almacenes de datos previamente excluidos a un plan de protección
+
+Los almacenes de datos que anteriormente estaban excluidos de la protección ahora se pueden volver a incluir. Esta mejora proporciona una mayor flexibilidad al gestionar y actualizar tus configuraciones de recuperación ante desastres con el tiempo.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Administrar sitios, grupos de recursos y planes de replicación"^].
+
+
+
+==== Conmutación por error más rápida para almacenes de datos basados en VMFS
+
+Disaster Recovery ha mejorado el rendimiento de la conmutación por error para los datastores basados en VMFS. Las operaciones de reexploración del Host Bus Adapter (HBA) y de montaje del datastore ahora se ejecutan en paralelo, lo que reduce los tiempos totales de conmutación por error y minimiza el tiempo de inactividad durante los eventos de recuperación.
+
+Para obtener más información sobre las conmutaciones por error, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Fail over con recuperación ante desastres"^].
+
+
+
 == 11 de mayo de 2026
 
 Versión 4.3.3

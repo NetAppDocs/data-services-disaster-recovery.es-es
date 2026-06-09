@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin o Disaster recovery admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
