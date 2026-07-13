@@ -12,13 +12,16 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Después de que hayas añadido recursos y sitios, ya estás listo para crear un _plan de replicación_. Los planes de replicación gestionan la protección de datos. Crear la replicación implica designar los sitios de origen y destino, seleccionar los grupos de recursos y elegir cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, podrías agrupar máquinas virtuales (VMs) asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares.
+Una vez que hayas añadido recursos y sitios, crea un _plan de replicación_ para gestionar la protección de datos. Crear el plan de replicación implica designar los sitios de origen y destino, seleccionar los grupos de recursos y elegir cómo deben restaurarse y encenderse las aplicaciones. Por ejemplo, podrías agrupar máquinas virtuales (VMs) asociadas con una aplicación o podrías agrupar aplicaciones que tengan niveles similares.
+
+Al crear un plan de replicación, también puedes modificar las programaciones para el cumplimiento y las pruebas, realizando conmutaciones de prueba sin afectar tus datos de producción.
 
 *Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
-*Acerca de esta tarea*
 
-Puede crear un plan de replicación y también editar cronogramas para cumplimiento y pruebas.  Ejecute conmutaciones por error de prueba de máquinas virtuales sin afectar las cargas de trabajo de producción.
+
+[[about-replication-plans]]
+== Acerca de los planes de replicación
 
 Puede proteger varias máquinas virtuales en varios almacenes de datos.  NetApp Disaster Recovery crea grupos de consistencia ONTAP para todos los volúmenes ONTAP que alojan almacenes de datos de máquinas virtuales protegidos.
 
@@ -29,7 +32,10 @@ Sólo puedes activar la protección si el plan de replicación se encuentra en u
 * Prueba de conmutación por error confirmada
 
 
-*Instantáneas del plan de replicación*
+
+
+[[replication-plan-snapshots]]
+=== Instantáneas del plan de replicación
 
 La recuperación ante desastres mantiene la misma cantidad de instantáneas en los clústeres de origen y destino.  De forma predeterminada, el servicio realiza un proceso de conciliación de instantáneas cada 24 horas para garantizar que la cantidad de instantáneas en los clústeres de origen y destino sea la misma.
 
@@ -46,11 +52,15 @@ Las siguientes situaciones pueden provocar que la cantidad de instantáneas var�
 
 En estos casos, Disaster Recovery elimina instantáneas más antiguas de los clústeres de origen y destino en la siguiente verificación de consistencia.  O bien, el administrador puede realizar una limpieza de instantáneas inmediata seleccionando *Acciones*image:icon-horizontal-dots.png["Menú Acciones de puntos horizontales"] icono en el plan de replicación y seleccionando *Limpiar instantáneas*.
 
-El servicio realiza comprobaciones de simetría de instantáneas cada 24 horas.
+Disaster Recovery realiza comprobaciones de simetría de instantáneas cada 24 horas.
 
-*Antes de empezar*
+
+
+[[before-you-begin]]
+== Antes de empezar
 
 * Antes de crear una relación SnapMirror , configure el clúster y el emparejamiento SVM fuera de Disaster Recovery.
+* Si configuras las asignaciones de red a nivel de vCenter, Disaster Recovery reconoce esas asignaciones cuando creas el plan de replicación. Si modificas o agregas la asignación de red a nivel de vCenter después de crear el plan de replicación, Disaster Recovery reconoce esas asignaciones cuando editas manualmente el plan de replicación.
 * Con Google Cloud, solo puedes agregar un volumen o almacén de datos a un plan de replicación.
 
 
@@ -59,7 +69,8 @@ TIP: Organiza tus máquinas virtuales o clústeres de Kubernetes antes de implem
 
 
 
-== Crear el plan
+[[create-the-replication-plan]]
+== Crear el plan de replicación
 
 Un asistente le guiará a través de estos pasos:
 
@@ -79,6 +90,7 @@ Cuando crees el plan, sigue estas pautas:
 
 
 
+[[select-vcenter-servers]]
 === Seleccionar servidores vCenter
 
 Primero, seleccione el vCenter de origen y luego seleccione el vCenter de destino.
@@ -102,6 +114,7 @@ image:dr-plan-create-name2.png["Captura de pantalla que muestra la página del s
 
 
 
+[[select-applications-to-replicate-and-assign-resource-groups]]
 === Seleccionar aplicaciones para replicar y asignar grupos de recursos
 
 El siguiente paso consiste en agrupar las máquinas virtuales, los almacenes de datos o los clústeres de Kubernetes necesarios en grupos de recursos funcionales. Los grupos de recursos te permiten proteger un conjunto de recursos, como un clúster de Kubernetes o una máquina virtual, con una instantánea común.
@@ -168,6 +181,7 @@ Cuando se nombra un grupo de recursos, los únicos caracteres admitidos son letr
 ====
 
 
+[[map-source-resources-to-the-target]]
 === Asignar recursos de origen al destino
 
 En el paso de mapeo de recursos, especifique cómo deben mapearse los recursos del entorno de origen al destino.  Al crear un plan de replicación, puede establecer un retraso y un orden de arranque para cada máquina virtual en el plan.  Esto le permite establecer una secuencia para que se inicien las máquinas virtuales.
@@ -453,6 +467,7 @@ NOTE: Si desea crear una relación SnapMirror en este servicio, el clúster y su
 
 
 
+[[add-test-failover-mappings]]
 === Agregar asignaciones de conmutación por error de prueba
 
 .Pasos
@@ -469,6 +484,7 @@ TIP: Podrás probar el plan completo más tarde.  En este momento, estás config
 
 
 
+[[review-the-replication-plan]]
 === Revisar el plan de replicación
 
 Por último, tómese unos momentos para revisar el plan de replicación.
@@ -486,6 +502,7 @@ El plan se agrega a la lista de planes.
 
 
 
+[[modify-a-replication-plan]]
 == Modificar un plan de replicación
 
 Puedes modificar la programación de un plan de replicación para comprobar el cumplimiento y asegurarte de que las pruebas de conmutación por error se completen correctamente.

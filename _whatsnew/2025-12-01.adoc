@@ -4,6 +4,7 @@
 
 
 
+[[support-for-google-cloud-vmware-engine-using-google-cloud-netapp-volumes]]
 === Compatibilidad con Google Cloud VMware Engine mediante Google Cloud NetApp Volumes
 
 NetApp Disaster Recovery ahora es compatible con Google Cloud VMware Engine mediante Google Cloud NetApp Volumes para operaciones de migración, conmutación por error, recuperación y prueba.  Esta integración permite flujos de trabajo de recuperación ante desastres sin inconvenientes entre entornos locales y Google Cloud.

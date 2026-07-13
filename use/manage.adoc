@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-vcenter-sites]]
 == Administrar sitios de vCenter
 
 Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
@@ -41,6 +42,7 @@ Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 
 
 
+[[manage-resource-groups]]
 == Administrar grupos de recursos
 
 Puede crear grupos de recursos por máquinas virtuales o almacenes de datos.  Se pueden agregar al crear el plan de replicación o posteriormente.
@@ -71,6 +73,7 @@ Para obtener detalles sobre cómo crear un grupo de recursos, consultelink:resou
 
 
 
+[[manage-replication-plans]]
 == Administrar planes de replicación
 
 Puede deshabilitar, habilitar y eliminar planes de replicación.  Puedes cambiar los horarios.
@@ -108,6 +111,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 
 
+[[reconcile-snapshots-on-demand]]
 === Conciliar instantáneas a pedido
 
 La recuperación ante desastres elimina automáticamente las instantáneas de la fuente cada 24 horas.  Si descubre que las instantáneas no están sincronizadas entre el origen y el destino, deberá resolver la discrepancia entre las instantáneas para garantizar la coherencia entre los sitios.
@@ -126,6 +130,7 @@ image:../use/dr-plan-list.png["Lista de planes de replicación"]
 
 
 
+[[delete-a-replication-plan]]
 === Eliminar un plan de replicación
 
 Si elimina un plan de replicación, también puede eliminar las instantáneas principales y secundarias creadas por el plan.
@@ -142,6 +147,7 @@ Si elimina un plan de replicación, también puede eliminar las instantáneas pr
 
 
 
+[[change-retention-count-for-failover-schedules]]
 === Cambiar el recuento de retención para programaciones de conmutación por error
 
 Cambiar el recuento de retención te permite aumentar o disminuir el número de instantáneas guardadas.
@@ -161,7 +167,38 @@ image:../use/dr-plan-failover-edit.png["Página de edición de asignaciones de c
 
 
 
-== Ver información de almacenes de datos
+[[manage-trident-protect]]
+== Administra Trident Protect
+
+Desde la interfaz de usuario de recuperación ante desastres, puedes actualizar o desinstalar Trident Protect.
+
+.Actualizar Trident Protect
+. En «Recuperación ante desastres», selecciona **Sitios** en la barra lateral.
+. Selecciona **Kubernetes** en el menú desplegable.
+. En el menú de acciones del clúster que quieres modificar, selecciona **Upgrade cluster**.
+. En el menú desplegable **Seleccionar versión de destino**, elige la versión de Trident Protect a la que deseas actualizar. Deberías revisar el link:https://docs.netapp.com/us-en/trident/trident-rn.html["Notas de la versión de Trident"^] antes de actualizar para entender las diferencias entre las distintas versiones y su impacto en tu clúster.
+. Selecciona **Actualizar** para iniciar la actualización.
+
+
+.Eliminar Trident Protect
+. En «Recuperación ante desastres», selecciona **Sitios** en la barra lateral.
+. Selecciona **Kubernetes** en el menú desplegable.
+. En el menú de acciones del sitio que quieres modificar, selecciona **Remove cluster**.
+. Revisa el cuadro de diálogo y, a continuación, ejecuta el comando de desinstalación en el clúster del que quieras eliminar Trident Protect: `helm uninstall trident-protect -n trident-protect`.
+. Para completar la eliminación de Trident Protect, vuelve a la interfaz de usuario de Disaster Recovery y selecciona **Remove site**.
+
+
+.Eliminar un clúster de un sitio
+. En «Recuperación ante desastres», selecciona **Sitios** en la barra lateral.
+. Selecciona **Kubernetes** en el menú desplegable.
+. En el menú de acciones del sitio que quieres modificar, selecciona **Remove cluster**.
+. Revisa el menú del cuadro de diálogo y selecciona **Remove from site**. Asegúrate de elegir la opción correcta para continuar con el funcionamiento de Trident Protect.
+
+
+
+
+[[view-datastore-information]]
+== Ver información del almacén de datos
 
 Puede ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
 
@@ -176,6 +213,7 @@ Puede ver información sobre cuántos almacenes de datos existen en el origen y 
 
 
 
+[[view-virtual-machines-information]]
 == Ver información de máquinas virtuales
 
 Puede ver información sobre cuántas máquinas virtuales existen en el origen y en el destino junto con la CPU, la memoria y la capacidad disponible.

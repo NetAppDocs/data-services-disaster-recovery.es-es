@@ -18,6 +18,7 @@ Una vez resuelto un desastre, se realiza un retorno desde el sitio de recuperaci
 
 
 
+[[about-failback]]
 == Acerca de la recuperación
 
 En caso de conmutación por error, NetApp Disaster Recovery replica (resincroniza) cualquier cambio en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
@@ -32,12 +33,14 @@ En caso de conmutación por error, NetApp Disaster Recovery replica (resincroniz
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 Si usa protección basada en almacén de datos, las máquinas virtuales que se hayan agregado al almacén de datos podrían agregarse al mismo en el proceso de conmutación por error. Si esto sucedió, asegúrese de proporcionar información de mapeo adicional para estas máquinas virtuales antes de iniciar la conmutación por error. Para editar la asignación de recursos, consulte link:manage.html#manage-replication-plans["Administrar planes de replicación"].
 
 
 
+[[steps]]
 == Pasos
 
 [role="tabbed-block"]

@@ -4,6 +4,7 @@
 
 
 
+[[support-for-on-premises-to-on-premises-vmware-vmfs-datastores]]
 === Compatibilidad con almacenes de datos VMware VMFS locales a locales
 
 Esta versión incluye soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para iSCSI y FC protegidos en almacenamiento local.  Anteriormente, el servicio proporcionaba una _vista previa de tecnología_ compatible con almacenes de datos VMFS para iSCSI y FC.

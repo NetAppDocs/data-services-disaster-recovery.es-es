@@ -4,6 +4,7 @@
 
 
 
+[[support-for-on-premises-to-on-premises-vmware-vmfs-datastores-for-fc]]
 === Compatibilidad con almacenes de datos VMware VMFS locales a locales para FC
 
 Esta versión incluye una _vista previa tecnológica_ de soporte para máquinas virtuales montadas en almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) VMware vSphere para almacenamiento local protegido por FC.  Anteriormente, el servicio proporcionaba una vista previa de la tecnología compatible con almacenes de datos VMFS para iSCSI.
@@ -13,6 +14,7 @@ NOTE: NetApp no ​​le cobrará por ninguna capacidad de carga de trabajo prev
 
 
 
+[[job-cancel]]
 === Cancelación de trabajo
 
 Con esta versión, ahora puedes cancelar un trabajo en la interfaz de usuario del Monitor de trabajos.

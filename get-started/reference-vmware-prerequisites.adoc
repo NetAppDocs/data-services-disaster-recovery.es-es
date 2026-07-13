@@ -16,6 +16,7 @@ Antes de usar NetApp Disaster Recovery, asegúrate de que tu entorno cumple los 
 
 
 
+[[general-prerequisites]]
 == Requisitos generales
 
 Estos requisitos previos se aplican tanto a los clústeres de vCenter locales como al centro de datos definido por software (SDDC) de VMware Cloud para AWS.
@@ -33,6 +34,7 @@ Estos requisitos previos se aplican tanto a los clústeres de vCenter locales co
 
 
 
+[[vmware-cloud-sddc-prerequisites]]
 == Requisitos previos de VMware Cloud SDDC
 
 Si estás usando VMware Cloud SDDC, se aplican estos requisitos previos adicionales:

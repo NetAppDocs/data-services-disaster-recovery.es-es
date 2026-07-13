@@ -37,6 +37,7 @@ Una vez finalizada la prueba gratuita o caducada la licencia, aún puedes hacer 
 
 
 
+[[try-it-out-using-a-30-day-free-trial]]
 == Pruébelo utilizando una prueba gratuita de 30 días
 
 Puede probar NetApp Disaster Recovery mediante una prueba gratuita de 30 días.
@@ -70,6 +71,7 @@ Para obtener más detalles, consulta link:../use/sites-add.html["Agregar sitios"
 
 
 
+[[after-the-trial-ends-subscribe-through-one-of-the-marketplaces]]
 == Una vez finalizada la prueba, suscríbete a través de uno de los Marketplaces
 
 Una vez finalizada la prueba gratuita, puede comprar una licencia de NetApp o suscribirse a través de AWS Marketplace o Microsoft Azure Marketplace. Este procedimiento proporciona una descripción general de alto nivel sobre cómo suscribirse directamente en uno de los Marketplaces.
@@ -92,6 +94,7 @@ Puede ver los detalles de la suscripción en la página de suscripción de la Ne
 
 
 
+[[after-the-trial-ends-purchase-a-byol-license-through-netapp]]
 == Una vez finalizada la prueba, compre una licencia BYOL a través de NetApp
 
 Una vez finalizada la prueba, puede comprar una licencia a través de su representante de ventas de NetApp .
@@ -104,6 +107,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[update-your-license-when-it-expires]]
 == Actualice su licencia cuando expire
 
 Si su período de licencia está cerca de la fecha de vencimiento o si su capacidad de licencia está alcanzando el límite, se le notificará en la interfaz de usuario de NetApp Disaster Recovery .  Puede actualizar su licencia de NetApp Disaster Recovery antes de que caduque para que no haya interrupciones en su capacidad de acceder a los datos escaneados.
@@ -115,6 +119,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[end-the-free-trial]]
 == Finalizar la prueba gratuita
 
 Puedes detener la prueba gratuita en cualquier momento o esperar hasta que caduque.

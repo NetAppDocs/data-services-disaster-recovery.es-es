@@ -4,6 +4,7 @@
 
 
 
+[[kubernetes-based-workload-support-preview]]
 === Compatibilidad con cargas de trabajo basadas en Kubernetes (vista previa)
 
 NetApp Disaster Recovery ahora incluye compatibilidad con cargas de trabajo basadas en Kubernetes. Con la compatibilidad con Kubernetes, puedes proteger aplicaciones que se ejecutan en clústeres de Kubernetes, incluidos los entornos de virtualización OpenShift. Disaster Recovery es compatible con link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["cualquier versión de Kubernetes actualmente soportada por Trident Protect"^], lo que garantiza una integración fluida y sólidas capacidades de recuperación ante desastres para aplicaciones en contenedores.

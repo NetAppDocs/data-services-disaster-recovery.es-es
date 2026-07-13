@@ -16,12 +16,14 @@ Las limitaciones conocidas identifican plataformas, dispositivos o funciones que
 
 
 
+[[wait-until-failback-completes-before-running-discovery]]
 == Espere hasta que se complete la conmutación por error antes de ejecutar el descubrimiento
 
 Una vez finalizada una conmutación por error, no inicie la detección en el vCenter de origen manualmente.  Espere hasta que finalice la conmutación por error y luego inicie la detección en el vCenter de origen.
 
 
 
+[[netapp-console-might-not-discover-amazon-fsx-for-netapp-ontap]]
 == Es posible que la NetApp Console no ​​detecte Amazon FSx for NetApp ONTAP
 
 A veces, la NetApp Console no ​​detecta Amazon FSx for NetApp ONTAP .  Esto podría deberse a que las credenciales de FSx no eran correctas.
@@ -47,6 +49,7 @@ Esto redescubre el almacén de datos, sus máquinas virtuales y su relación de 
 
 
 
+[[limitations-with-google-cloud-netapp-volumes]]
 == Limitaciones de Google Cloud NetApp Volumes
 
 * Después de ejecutar una prueba de conmutación por error, debe esperar al menos 52 horas para eliminar el volumen clonado.  Debes eliminar el volumen manualmente.  Después de 52 horas, puedes probar la conmutación por error nuevamente.

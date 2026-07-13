@@ -13,6 +13,7 @@ Utilice NetApp Disaster Recovery con Amazon EVS y Amazon FSx for NetApp ONTAP pa
 
 
 
+[[fail-over]]
 == Conmutación por error
 
 La operación principal que posiblemente necesite realizar es la que espera que nunca suceda: conmutar por error al centro de datos de DR (destino) en caso de una falla catastrófica en el sitio de producción local.
@@ -43,6 +44,7 @@ image:evs-rp-failover-dialog.png["Cuadro de diálogo de conmutación por error"]
 
 
 
+[[test-failover]]
 == Prueba de conmutación por error
 
 Una conmutación por error de prueba es similar a una conmutación por error, excepto por dos diferencias.
@@ -72,6 +74,7 @@ image:evs-test-failover-dialog.png["Cuadro de diálogo de prueba de conmutación
 
 
 
+[[run-a-compliance-check]]
 == Ejecutar una verificación de cumplimiento
 
 Los controles de cumplimiento se ejecutan cada tres horas, de forma predeterminada.  En cualquier momento, es posible que desees ejecutar manualmente una verificación de cumplimiento.
@@ -87,6 +90,7 @@ image:evs-rp-menu-compliance-check.png["Opción de menú Ejecutar verificación 
 
 
 
+[[refresh-resources]]
 == Actualizar recursos
 
 Cada vez que realice cambios en su infraestructura virtual (como agregar o eliminar máquinas virtuales, agregar o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos), deberá realizar una actualización de los clústeres de vCenter afectados en el servicio NetApp Disaster Recovery .  El servicio hace esto automáticamente una vez cada 24 horas de manera predeterminada, pero una actualización manual garantiza que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección contra desastres.
@@ -101,6 +105,7 @@ image::evs-rp-menu-refresh-resources.png[Opción Actualizar menú de recursos]
 
 
 
+[[migrate]]
 == Emigrar
 
 Si bien NetApp Disaster Recovery se utiliza principalmente para casos de uso de recuperación ante desastres, también puede permitir movimientos únicos de un conjunto de máquinas virtuales desde el sitio de origen al sitio de destino.  Esto podría ser para un proyecto de migración concertada a la nube o podría usarse para evitar desastres, como mal tiempo, conflictos políticos u otros posibles eventos catastróficos temporales.
@@ -115,6 +120,7 @@ image::evs-rp-menu-migrate.png[Opción de menú Migrar]
 
 
 
+[[take-a-snapshot-now]]
 == Toma una instantánea ahora
 
 En cualquier momento, puede tomar una instantánea inmediata del plan de replicación.  Esta instantánea está incluida en las consideraciones de NetApp Disaster Recovery establecidas por el recuento de retención de instantáneas del plan de replicación.
@@ -128,6 +134,7 @@ image::evs-rp-menu-take-snapshot-now.png[Opción de menú Tomar instantánea aho
 
 
 
+[[disable-or-enable-replication-plan]]
 == Deshabilitar o habilitar el plan de replicación
 
 Es posible que sea necesario detener temporalmente el plan de replicación para realizar alguna operación o mantenimiento que pueda afectar el proceso de replicación.  El servicio proporciona un método para detener e iniciar la replicación.
@@ -144,6 +151,7 @@ image::evs-rp-menu-disable-enable.png[Deshabilitar/Habilitar opción de menú]
 
 
 
+[[clean-up-old-snapshots]]
 == Limpiar instantáneas antiguas
 
 Es posible que desees limpiar instantáneas antiguas que se hayan conservado en los sitios de origen y destino.  Esto puede suceder si se modifica el recuento de retención de instantáneas del plan de replicación.
@@ -157,6 +165,7 @@ image::evs-rp-menu-cleanup-old-snapshots.png[Opción de menú Limpiar instantán
 
 
 
+[[reconcile-snapshots]]
 == Conciliar instantáneas
 
 Debido a que el servicio orquesta instantáneas de volumen de ONTAP , es posible que un administrador de almacenamiento de ONTAP elimine directamente instantáneas mediante el Administrador del sistema de ONTAP , la CLI de ONTAP o las API REST de ONTAP sin el conocimiento del servicio.  El servicio elimina automáticamente cualquier instantánea del origen que no esté en el clúster de destino cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
@@ -170,6 +179,7 @@ image::evs-rp-menu-reconcile-snapshots.png[Opción de menú Conciliar instantán
 
 
 
+[[delete-replication-plan]]
 == Eliminar plan de replicación
 
 Si el plan de replicación ya no es necesario, puede eliminarlo.
@@ -183,6 +193,7 @@ image::evs-rp-menu-delete.png[Eliminar opción de menú]
 
 
 
+[[edit-schedules]]
 == Editar horarios
 
 Se realizan dos operaciones de forma automática según una programación regular: conmutaciones por error de prueba y comprobaciones de cumplimiento.
@@ -196,6 +207,7 @@ image::evs-rp-menu-edit-schedules.png[Opción de menú Editar horarios]
 
 
 
+[[change-compliance-check-interval]]
 === Cambiar el intervalo de verificación de cumplimiento
 
 De forma predeterminada, las comprobaciones de cumplimiento se realizan cada tres horas.  Puede cambiar esto a cualquier intervalo entre 30 minutos y 24 horas.
@@ -206,6 +218,7 @@ image::evs-rp-edit-compliance-check-schedule.png[Cronograma de verificación de 
 
 
 
+[[schedule-automated-test-failovers]]
 === Programar conmutaciones por error de pruebas automatizadas
 
 Las conmutaciones por error de prueba se ejecutan manualmente de forma predeterminada.  Puede programar conmutaciones por error de pruebas automáticas, lo que ayuda a garantizar que sus planes de replicación funcionen como se espera.  Para obtener más información sobre el proceso de conmutación por error de prueba, consultelink:../use/failover.html["Probar el proceso de conmutación por error"] .

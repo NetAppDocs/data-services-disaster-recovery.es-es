@@ -4,6 +4,7 @@
 
 
 
+[[exclude-a-datastore-from-replication-plans]]
 === Excluir un datastore de los planes de replicación
 
 Cuando creas un plan de replicación en Disaster, ahora puedes excluir almacenes de datos específicos de la replicación. Para situaciones en las que una máquina virtual está configurada para usar varios almacenes de datos, esto te permite limitar cuáles se replican.
@@ -12,6 +13,7 @@ Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-di
 
 
 
+[[removed-password-validation-from-vcenter-password]]
 === Se eliminó la validación de contraseña de la contraseña de vCenter
 
 Disaster Recovery eliminó las restricciones de contraseña en vCenter para permitir contraseñas que contienen espacios.
@@ -20,6 +22,7 @@ Para más información, consulta link:https://docs.netapp.com/us-en/data-service
 
 
 
+[[new-replication-plan-submenu]]
 === Nuevo submenú de plan de replicación
 
 Disaster Recover ahora incluye nuevas opciones de menú para activar actualizaciones de vCenter desde el panel de control del plan de replicación. Puedes acceder al submenú desde el menú de acciones del panel de control del plan de replicación: selecciona **Salud del plan** y luego **Refrescar origen vCenter / Refrescar destino vCenter**.
@@ -28,6 +31,7 @@ Para más información, consulta link:https://docs.netapp.com/us-en/data-service
 
 
 
+[[improved-network-discovery]]
 === Detección de red mejorada
 
 Disaster Recovery ahora incluye una detección de red mejorada para admitir una gama más amplia de configuraciones de red.

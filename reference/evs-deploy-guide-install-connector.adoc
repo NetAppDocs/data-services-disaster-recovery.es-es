@@ -15,6 +15,7 @@ Para NetApp Disaster Recovery, las acciones que se realizan orquestan clústeres
 
 
 
+[[installation]]
 == Instalación
 
 * Para usar Disaster Recovery, instala el agente de Console en modo estándar. Para saber más sobre los tipos de instalación del agente de Console, visita https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Conoce los modos de implementación de NetApp Console"^].

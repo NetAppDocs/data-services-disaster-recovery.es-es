@@ -4,6 +4,7 @@
 
 
 
+[[support-for-multiple-console-agents-in-on-premises-environments]]
 === Compatibilidad con múltiples agentes de consola en entornos locales
 
 Si utiliza recuperación ante desastres en sus instalaciones, ahora puede implementar un agente de consola para cada instancia de vCenter, lo que mejora la resiliencia.
@@ -14,6 +15,7 @@ Para obtener información sobre el agente de consola en recuperación ante desas
 
 
 
+[[add-vms-after-failover-for-replication-plans-using-datastore-based-protection]]
 === Agregar máquinas virtuales después de la conmutación por error para los planes de replicación mediante protección basada en almacén de datos
 
 Cuando se activa la conmutación por error, cualquier plan de replicación que utilice protección basada en almacén de datos incluye las máquinas virtuales que se hayan agregado al almacén de datos, siempre que se hayan descubierto. Debe proporcionar detalles de mapeo para las máquinas virtuales agregadas antes de que se complete la conmutación por error.
@@ -22,6 +24,7 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/data
 
 
 
+[[new-email-notifications]]
 === Nuevas notificaciones por correo electrónico
 
 La recuperación ante desastres ahora proporciona notificaciones por correo electrónico para los siguientes eventos:
@@ -34,18 +37,21 @@ La recuperación ante desastres ahora proporciona notificaciones por correo elec
 
 
 
+[[swagger-improvements]]
 === Mejoras de Swagger
 
 Ahora puedes acceder a la documentación de Swagger desde Disaster Recovery. En Disaster Recovery, selecciona **Configuración** y luego **Documentación de API**. Debes estar en modo privado o de incógnito para acceder a link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["el enlace"^].
 
 
 
+[[improved-user-interfaces]]
 === Interfaces de usuario mejoradas
 
 La recuperación ante desastres ahora proporciona advertencias mejoradas y resoluciones de errores. Esta versión corrige un error que impedía que los trabajos cancelados se mostraran en la interfaz de usuario. Los trabajos cancelados ahora son visibles. También hay una nueva advertencia cuando la misma red de destino se asigna a varias redes de origen diferentes.
 
 
 
+[[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Conservar la estructura de carpetas de la máquina virtual agregada como predeterminada en los planes de replicación
 
 Cuando se crea una replicación, el nuevo valor predeterminado es conservar la estructura de la carpeta de la máquina virtual. Si el destino de recuperación no tiene la jerarquía de carpetas original, Disaster Recovery la crea. Puede anular la selección de esta opción para ignorar la jerarquía de carpetas original.

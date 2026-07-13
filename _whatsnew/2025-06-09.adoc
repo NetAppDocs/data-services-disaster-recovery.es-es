@@ -4,6 +4,7 @@
 
 
 
+[[windows-local-administrator-password-solution-laps-support]]
 === Compatibilidad con la solución de contraseña de administrador local de Windows (LAPS)
 
 La Solución de contraseña de administrador local de Windows (Windows LAPS) es una función de Windows que administra y realiza copias de seguridad automáticamente de la contraseña de una cuenta de administrador local en Active Directory.

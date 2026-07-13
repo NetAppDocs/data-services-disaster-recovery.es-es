@@ -4,6 +4,7 @@
 
 
 
+[[subnet-mapping]]
 === Mapeo de subredes
 
 Con esta versión, puede administrar direcciones IP en conmutación por error de una nueva manera mediante el mapeo de subredes, que le permite agregar subredes para cada vCenter.  Al hacerlo, define el CIDR IPv4, la puerta de enlace predeterminada y el DNS para cada red virtual.
@@ -26,6 +27,7 @@ Para obtener detalles sobre cómo incluir la asignación de subredes en sus siti
 
 
 
+[[skip-protection]]
 === Protección contra saltos
 
 Ahora puede omitir la protección para que el servicio no cree automáticamente una relación de protección inversa después de una conmutación por error del plan de replicación.  Esto es útil si desea realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
@@ -40,6 +42,7 @@ Para obtener más detalles sobre cómo omitir la protección, consulte https://d
 
 
 
+[[snapmirror-schedule-updates-in-the-replication-plan]]
 === Actualizaciones de programación de SnapMirror en el plan de replicación
 
 NetApp Disaster Recovery ahora admite el uso de soluciones de gestión de instantáneas externas, como el programador de políticas nativo ONTAP SnapMirror o integraciones de terceros con ONTAP.  Si cada almacén de datos (volumen) en el plan de replicación ya tiene una relación SnapMirror que se administra en otro lugar, puede usar esas instantáneas como puntos de recuperación en NetApp Disaster Recovery.

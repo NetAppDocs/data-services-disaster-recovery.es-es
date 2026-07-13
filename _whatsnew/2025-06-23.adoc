@@ -4,6 +4,7 @@
 
 
 
+[[subnet-mapping-improvements]]
 === Mejoras en el mapeo de subredes
 
 Esta actualización mejora el cuadro de diálogo Agregar y editar mapeo de subred con una nueva funcionalidad de búsqueda.  Ahora puede encontrar rápidamente subredes específicas ingresando términos de búsqueda, lo que facilita la administración de las asignaciones de subredes.

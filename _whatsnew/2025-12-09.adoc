@@ -4,6 +4,7 @@
 
 
 
+[[folder-hierarchy-retention]]
 === Retención de la jerarquía de carpetas
 
 De forma predeterminada, Disaster Recovery conserva la jerarquía del inventario de VM (estructura de carpetas) en caso de conmutación por error.  Si el destino de recuperación no tiene la carpeta requerida, Disaster Recovery la crea.
@@ -14,6 +15,7 @@ Para obtener más información, consulte link:https://docs.netapp.com/us-en/data
 
 
 
+[[streamlined-console-agent-updating]]
 === Actualización optimizada del agente de consola
 
 La recuperación ante desastres ahora admite un proceso optimizado para utilizar múltiples agentes de consola en un entorno de trabajo.  Para cambiar entre agentes de consola, debe editar la configuración de vCenter, redescubrir las credenciales y actualizar los planes de replicación para usar el nuevo agente de consola.

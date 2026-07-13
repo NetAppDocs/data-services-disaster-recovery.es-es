@@ -16,6 +16,7 @@ La NetApp Console admite el uso de varios agentes de consola con un único entor
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 * Debes tenerxref:../get-started/dr-prerequisites.html#create-the-netapp-console-agent[Se agregaron al menos dos agentes de consola para su entorno de trabajo] .
@@ -24,6 +25,7 @@ La NetApp Console admite el uso de varios agentes de consola con un único entor
 
 
 
+[[steps]]
 == Pasos
 
 . En Recuperación ante desastres, seleccione **Sitios**.
@@ -43,6 +45,7 @@ image:edit-vcenter.png["Captura de pantalla cambiando el agente de la consola"]
 
 
 
+[[more-information]]
 == Más información
 
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["Obtenga más información sobre los agentes de consola"^]

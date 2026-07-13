@@ -4,6 +4,7 @@
 
 
 
+[[asa-r2-support-for-vms-and-datastores-on-vmfs-storage]]
 === Compatibilidad de ASA r2 con máquinas virtuales y almacenes de datos en almacenamiento VMFS
 
 Esta versión de NetApp Disaster Recovery proporciona soporte para ASA r2 para máquinas virtuales y almacenes de datos en almacenamiento VMFS.  En un sistema ASA r2, el software ONTAP admite la funcionalidad SAN esencial y elimina funciones que no son compatibles con los entornos SAN.

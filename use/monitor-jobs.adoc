@@ -16,6 +16,7 @@ Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su 
 
 
 
+[[view-jobs]]
 == Ver trabajos
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
@@ -31,6 +32,7 @@ Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su 
 
 
 
+[[cancel-a-job]]
 == Cancelar un trabajo
 
 Puedes cancelar un trabajo que está en curso o en estado de cola si se queda atascado o para dar prioridad a una operación pendiente.

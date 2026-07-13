@@ -19,6 +19,7 @@ Necesitas crear lo siguiente:
 
 
 
+[[create-on-premises-sites]]
 == Crear sitios locales
 
 Cree un sitio vCenter de producción.
@@ -45,6 +46,7 @@ Si tiene otros sitios de vCenter de producción, puede agregarlos siguiendo los 
 
 
 
+[[create-amazon-cloud-sites]]
 == Crear sitios en la nube de Amazon
 
 Cree un sitio de recuperación ante desastres para Amazon EVS utilizando Amazon FSx for NetApp ONTAP .

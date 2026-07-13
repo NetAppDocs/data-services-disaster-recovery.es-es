@@ -30,6 +30,7 @@ Este procedimiento rompe la relación de replicación, coloca las máquinas virt
 
 
 
+[[test-the-failover-process]]
 == Probar el proceso de conmutación por error
 
 Antes de realizar una conmutación por error en vivo, puedes realizar una prueba para comprobar que estás preparado. Las cargas de trabajo permanecen en línea durante el proceso de prueba.
@@ -68,6 +69,7 @@ Luego, ingresa "Test failover" y selecciona *Test fail over*.
 
 
 
+[[clean-up-the-test-environment-after-a-failover-test]]
 == Limpiar el entorno de prueba después de una prueba de conmutación por error
 
 Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno de prueba.  Este proceso elimina las máquinas virtuales temporales de la ubicación de prueba, los FlexClones y los almacenes de datos temporales.
@@ -81,6 +83,7 @@ Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno 
 
 
 
+[[fail-over-the-source-site-to-a-disaster-recovery-site]]
 == Conmutar por error el sitio de origen a un sitio de recuperación ante desastres
 
 En caso de desastre, conmute su sitio local principal de VMware a pedido a otro sitio local de VMware o VMware Cloud en AWS con FSx para NetApp ONTAP.
@@ -108,9 +111,6 @@ TIP: Después de que comienza la conmutación por error, puedes ver las máquina
 .vCenter
 --
 En el caso de los planes de replicación basados en almacenes de datos, si agregó y descubrió máquinas virtuales pero no proporcionó detalles de mapeo, esas máquinas virtuales se incluyen en la conmutación por error. La conmutación por error fallará con una notificación en los trabajos. Debe proporcionar los detalles de asignación para completar la conmutación por error con éxito.
-
-
-IMPORTANT: Si el plan de replicación incluye un almacén de datos vacío, primero tienes que eliminar el almacén de datos vacío del plan o usar la opción **Forzar conmutación por error**, que omite los almacenes de datos vacíos.
 
 .Pasos
 . En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.

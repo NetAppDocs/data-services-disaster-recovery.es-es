@@ -21,6 +21,7 @@ TIP: Asegúrate de que tanto el origen como el destino usen el mismo agente de N
 
 
 
+[[add-a-site]]
 == Agregar un sitio
 
 Al añadir un sitio a Disaster Recovery, debes distinguir en función del tipo de recursos en el sitio. Puedes añadir vCenters o clústeres de Kubernetes.
@@ -40,6 +41,7 @@ Después de agregar un sitio a NetApp Disaster Recovery, debes asociar recursos 
 
 
 
+[[add-resources-to-a-site]]
 == Añade recursos a un sitio
 
 Si agregó vCenters en versiones anteriores y desea personalizar la programación de detección, debe editar el sitio del servidor vCenter y configurar la programación.
@@ -153,6 +155,7 @@ Después de añadir recursos, selecciona *Monitorización de trabajos* para segu
 
 
 
+[[add-subnet-mapping-for-a-vcenter-site]]
 == Agregar asignación de subred para un sitio de vCenter
 
 Puede administrar direcciones IP en operaciones de conmutación por error mediante la asignación de subredes, lo que le permite agregar subredes para cada vCenter.  Al hacerlo, define el CIDR IPv4, la puerta de enlace predeterminada y el DNS para cada red virtual.
@@ -205,6 +208,7 @@ TIP: La notación CIDR es un método para especificar direcciones IP y sus másc
 
 
 
+[[select-subnet-mapping-for-a-replication-plan]]
 === Seleccionar la asignación de subred para un plan de replicación
 
 Al crear un plan de replicación, puede seleccionar la asignación de subred para el plan de replicación.
@@ -233,6 +237,7 @@ NOTE: Si hay dos máquinas virtuales (por ejemplo, una es Linux y la otra es Win
 
 
 
+[[edit-the-vcenter-server-site-and-customize-the-discovery-schedule]]
 == Edite el sitio del servidor vCenter y personalice la programación de detección
 
 Puede editar el sitio del servidor vCenter para personalizar la programación de detección.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 23 horas y 59 minutos.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
@@ -257,6 +262,7 @@ image:sites-edit-schedule.png["Editar captura de pantalla del programa de descub
 
 
 
+[[refresh-discovery-manually]]
 == Actualizar el descubrimiento manualmente
 
 Puede actualizar el descubrimiento manualmente en cualquier momento.  Esto es útil si ha agregado o eliminado máquinas virtuales y desea actualizar la información en NetApp Disaster Recovery.

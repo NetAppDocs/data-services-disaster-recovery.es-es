@@ -1,0 +1,55 @@
+= Actualizaciones de Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-updates]]
+=== Actualizaciones de Kubernetes
+
+Disaster Recovery ha introducido los siguientes cambios para las cargas de trabajo basadas en Kubernetes:
+
+
+
+==== Gestiona Trident Protect desde el menú «Sitios»
+
+Disaster Recovery ahora permite gestionar Trident Protect directamente desde el menú Sites de la interfaz de usuario de Disaster Recovery. Puedes actualizar Trident Protect o eliminarlo de Disaster Recovery, lo que agiliza la gestión de tus recursos de Kubernetes.
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["Gestionar sitios"^].
+
+
+
+[[vmware-updates]]
+=== Actualizaciones de VMware
+
+Recuperación ante desastres ha introducido los siguientes cambios para las cargas de trabajo basadas en VMware:
+
+
+
+==== Conmutación por error en almacenes de datos vacíos
+
+Los planes de replicación que incluyen almacenes de datos vacíos ahora pueden someterse a una conmutación por error con éxito sin excluirlos del plan ni forzar la conmutación por error. Durante la conmutación por error, Disaster Recovery monta automáticamente el almacén de datos vacío en el sitio de recuperación ante desastres, permitiendo añadir máquinas virtuales y protegerlas para las operaciones de conmutación de vuelta.
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Conmutación por error a un sitio remoto"^].
+
+
+
+==== vCenter mapeo automático de red
+
+Ahora puedes configurar las relaciones de asignación de red a nivel de vCenter (es decir, fuera del cuadro de diálogo del plan de replicación). Una vez configurado, Disaster Recovery aplica automáticamente estas asignaciones de red cuando añades o editas un plan de replicación, lo que agiliza la gestión de los planes de replicación.
+
+La recuperación ante desastres sigue admitiendo modificaciones específicas por plan. Las asignaciones de red existentes definidas en un plan de replicación pueden seguir editándose por red; estas asignaciones tienen prioridad sobre las definiciones a nivel de vCenter.
+
+
+
+[[disaster-recovery-viewer-role-tightening]]
+=== Restricción del rol de visor de Disaster Recovery
+
+Se ha eliminado la posibilidad de ver la pestaña Upgrade System del rol Disaster Recovery viewer. Este cambio adapta el rol a la experiencia más adecuada para los usuarios con acceso de solo lectura. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^].
+
+
+
+[[system-performance-enhancements]]
+=== Mejoras del rendimiento del sistema
+
+Recuperación ante desastres ha introducido cambios para reducir el consumo de recursos del sistema y mejorar el rendimiento en todas las operaciones.

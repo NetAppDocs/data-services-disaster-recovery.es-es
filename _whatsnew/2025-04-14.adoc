@@ -4,6 +4,7 @@
 
 
 
+[[scheduled-discovery-for-vms]]
 === Descubrimiento programado para máquinas virtuales
 
 NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Con esta versión, ahora puede personalizar el programa de descubrimiento para satisfacer sus necesidades y reducir el impacto en el rendimiento cuando lo necesite.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 48 horas.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
@@ -14,6 +15,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 
 
+[[resource-group-datastore-support]]
 === Compatibilidad con almacenes de datos de grupos de recursos
 
 Anteriormente, solo se podían crear grupos de recursos por máquinas virtuales.  Con esta versión, puede crear un grupo de recursos por almacenes de datos.  Cuando crea un plan de replicación y crea un grupo de recursos para ese plan, se enumerarán todas las máquinas virtuales en un almacén de datos.  Esto es útil si tiene una gran cantidad de máquinas virtuales y desea agruparlas por almacén de datos.
@@ -28,12 +30,14 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 
 
+[[notifications-of-free-trial-or-license-expiration]]
 === Notificaciones de prueba gratuita o vencimiento de licencia
 
 Este comunicado proporciona notificaciones de que la prueba gratuita expirará en 60 días para garantizar que tenga tiempo de obtener una licencia.  Esta versión también proporciona notificaciones el día en que vence la licencia.
 
 
 
+[[notification-of-service-updates]]
 === Notificación de actualizaciones del servicio
 
 Con esta versión, aparece un banner en la parte superior para indicar que los servicios se están actualizando y que el servicio se coloca en modo de mantenimiento.  El banner aparece cuando se está actualizando el servicio y desaparece cuando se completa la actualización.  Si bien puede continuar trabajando en la interfaz de usuario mientras la actualización está en progreso, no puede enviar nuevos trabajos.  Los trabajos programados se ejecutarán después de que se complete la actualización y el servicio vuelva al modo de producción.

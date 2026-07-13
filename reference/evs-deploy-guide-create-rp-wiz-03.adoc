@@ -36,6 +36,7 @@ image:evs-create-rp-wiz-c0.png["Crear plan de replicación, página de mapeo de 
 
 
 
+[[compute-resource-mapping]]
 == Mapeo de recursos computacionales
 
 Debido a que un sitio puede alojar varios centros de datos virtuales y varios clústeres de vCenter, debe identificar en qué clúster de vCenter recuperar las máquinas virtuales en caso de una conmutación por error.
@@ -58,6 +59,7 @@ image:evs-create-rp-wiz-c-compute-resources-1-4.png["Crear un plan de replicaci�
 
 
 
+[[map-virtual-network-resources]]
 == Mapear recursos de red virtual
 
 Cada máquina virtual puede tener una o más NIC virtuales conectadas a redes virtuales dentro de la infraestructura de red de vCenter.  Para garantizar que cada máquina virtual esté conectada correctamente a las redes deseadas al reiniciar en el sitio de DR, identifique a qué redes virtuales del sitio de DR conectará estas máquinas virtuales.  Para ello, asigne cada red virtual del sitio local a una red asociada en el sitio de recuperación ante desastres.
@@ -72,6 +74,7 @@ image:evs-create-rp-wiz-c-network-resources-1-2.png["Crear un plan de replicaci�
 
 
 
+[[define-options-for-vm-reconfiguration-during-failover]]
 == Definir opciones para la reconfiguración de la máquina virtual durante la conmutación por error
 
 Es posible que cada máquina virtual requiera modificaciones para funcionar correctamente en el sitio DR vCenter.  La sección Máquinas virtuales le permite proporcionar los cambios necesarios.
@@ -80,6 +83,7 @@ De forma predeterminada, NetApp Disaster Recovery utiliza la misma configuració
 
 
 
+[[network-reconfiguration]]
 === Reconfiguración de la red
 
 Los tipos de direcciones IP admitidos son estáticos y DHCP.  Para direcciones IP estáticas, tienes las siguientes configuraciones de IP de destino:
@@ -103,6 +107,7 @@ image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["Crear un plan de replica
 
 
 
+[[vm-compute-resource-reconfiguration]]
 === Reconfiguración de recursos informáticos de la máquina virtual
 
 Hay varias opciones para reconfigurar los recursos informáticos de la máquina virtual.  NetApp Disaster Recovery admite cambiar la cantidad de CPU virtuales, la cantidad de DRAM virtual y el nombre de la máquina virtual.
@@ -117,6 +122,7 @@ image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["Crear un plan de replica
 
 
 
+[[boot-order]]
 === Orden de arranque
 
 NetApp Disaster Recovery admite un reinicio ordenado de las máquinas virtuales según un campo de orden de arranque.  El campo Orden de arranque indica cómo se inician las máquinas virtuales en cada grupo de recursos.  Aquellas máquinas virtuales con el mismo valor en el campo Orden de arranque arrancan en paralelo.
@@ -131,6 +137,7 @@ image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["Crear plan de replica
 
 
 
+[[custom-guest-os-operations]]
 === Operaciones personalizadas del sistema operativo invitado
 
 NetApp Disaster Recovery permite realizar algunas operaciones del sistema operativo invitado para cada máquina virtual:
@@ -154,6 +161,7 @@ image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["Crear un plan d
 
 
 
+[[map-datastores]]
 == Almacenes de datos de mapas
 
 El paso final en la creación de un plan de replicación es identificar cómo ONTAP debe proteger los almacenes de datos.  Estas configuraciones definen el objetivo de punto de recuperación (RPO) de los planes de replicación, cuántas copias de seguridad se deben mantener y dónde replicar los volúmenes ONTAP de alojamiento de cada almacén de datos de vCenter.
