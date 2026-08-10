@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Con el panel de NetApp Disaster Recovery , puede determinar el estado de sus sitios de recuperación ante desastres y sus planes de replicación.  Puede determinar rápidamente qué sitios y planes están en buen estado, desconectados o degradados.
+Con el panel de NetApp Disaster Recovery, puedes determinar el estado de salud de tus sitios de recuperación ante desastres y planes de replicación. Puedes evaluar fácilmente qué sitios y planes están en buen estado, desconectados o degradados. También puedes revisar las advertencias recientes y los trabajos fallidos, ver qué cargas de trabajo están protegidas y cuáles no, y ver un resumen de la capacidad.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -23,15 +23,15 @@ Con el panel de NetApp Disaster Recovery , puede determinar el estado de sus sit
 +
 image:dr-dashboard.png["Panel de NetApp Disaster Recovery"]
 
-. Revise la siguiente información en el Tablero:
+. Revisa la información sobre salud que aparece en el panel de control:
 +
 ** *Sitios*: vea el estado de sus sitios.  Un sitio puede tener uno de los siguientes estados:
 +
-*** *En ejecución*: el vCenter está conectado, en buen estado y funcionando.
-*** *Caído*: No se puede acceder al vCenter o hay problemas de conectividad.
-*** *Problema*: No se puede acceder al vCenter o hay problemas de conectividad.
+*** *En funcionamiento*: el sitio está conectado, funciona correctamente y está operativo.
+*** *Fuera de servicio*: No se puede acceder al sitio o hay problemas de conexión.
+*** *Problema*: El sitio está teniendo problemas de conectividad.
 +
-Para ver los detalles del sitio, seleccione *Ver todo* para un estado o *Ver sitios* para verlos todos.
+Para ver los detalles, selecciona **Ver todos los sitios**.
 
 
 
@@ -39,19 +39,14 @@ Para ver los detalles del sitio, seleccione *Ver todo* para un estado o *Ver sit
 +
 *** *Listo*
 *** *Fallido*
+*** *Advertencia*
 +
-Para revisar los detalles del plan de replicación, seleccione *Ver todo* para ver un estado o *Ver planes de replicación* para verlos todos.
+Para consultar los detalles del plan de replicación, selecciona *Ver todos los planes de replicación*.
 
 
 
-** *Grupos de recursos*: vea el estado de sus grupos de recursos.  Un grupo de recursos puede tener uno de los siguientes estados:
-** *Máquinas virtuales protegidas*: Las máquinas virtuales son parte de un grupo de recursos.
-** *Máquinas virtuales no protegidas*: Las máquinas virtuales no son parte de un grupo de recursos.
-+
-Para revisar los detalles, seleccione el enlace *Ver* debajo de cada uno.
-
-** El número de conmutaciones por error, conmutaciones por error de prueba y migraciones.  Por ejemplo, si creó dos planes y migró a los destinos, el recuento de migración aparece como "2".
 
 
-. Revise todas las operaciones en el panel Actividad.  Para ver todas las operaciones en el Monitor de trabajos, seleccione *Ver todos los trabajos*.
+. Consulta *Advertencias y tareas recientes* para ver las tareas y advertencias ejecutadas más recientemente y sus estados correspondientes. Selecciona *Ver todas las tareas* para ver todas las tareas.
+. Consulta el *Estado de detección y protección* para ver el número de cargas de trabajo detectadas y un desglose numérico de las cargas de trabajo protegidas frente a las no protegidas, clasificadas por tipo. También puedes consultar la capacidad total detectada de todas las cargas de trabajo y las cargas de trabajo por tipo.
 

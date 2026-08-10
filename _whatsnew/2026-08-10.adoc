@@ -1,0 +1,46 @@
+= Panel de control mejorado
+:allow-uri-read: 
+
+
+
+
+[[improved-dashboard]]
+=== Panel de control mejorado
+
+El panel de control de Disaster Recovery se ha actualizado con una experiencia mejorada que ofrece una visión global y de un solo vistazo de todo tu entorno de Disaster Recovery. El nuevo panel de control incluye:
+
+* *Visibilidad unificada de las cargas de trabajo* — supervisa tanto las cargas de trabajo de VMware como las de Kubernetes junto con el estado de la infraestructura subyacente desde un único panel de control.
+* *Detección proactiva de incidencias* — El panel de control ahora destaca automáticamente las incidencias relacionadas con el entorno, lo que permite un diagnóstico más rápido y reduce el tiempo necesario para resolverlas.
+* *Uso de la capacidad* — Las métricas de capacidad ahora se presentan directamente en el panel de control, lo que facilita entender el consumo de recursos.
+
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["Vea el estado de sus planes de NetApp Disaster Recovery en el Panel de control"^].
+
+
+
+[[improved-reports]]
+=== Informes mejorados
+
+Se han ampliado las funciones de generación de informes para ofrecer una visión más detallada de las actividades de NetApp Disaster Recovery en todo tu entorno:
+
+* Genera informes centrados en cargas de trabajo de VMware, de Kubernetes o en ambas, lo que te ofrece la flexibilidad necesaria para adaptar los informes a tu público.
+* Cada informe ofrece un resumen completo de la actividad durante un periodo de tiempo determinado, lo que garantiza una visibilidad total de los eventos que tienen lugar en tu entorno de NetApp Disaster Recovery.
+
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/reports.html["Crear informes de NetApp Disaster Recovery"^].
+
+
+
+[[user-job-logging]]
+=== Registro de tareas de los usuarios
+
+Disaster Recovery ha mejorado la rendición de cuentas y la auditabilidad de los trabajos gracias al registro de trabajos a nivel de usuario. Ahora, cada trabajo ejecutado registra el usuario que lo inició, lo que proporciona un registro de auditoría claro con fines de cumplimiento y resolución de problemas. Los trabajos activados automáticamente por Disaster Recovery se identifican como "system", lo que facilita distinguir entre la actividad iniciada por el usuario y la iniciada por el servicio.
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["Supervisar trabajos de NetApp Disaster Recovery"^].
+
+
+
+[[performance-and-resource-optimization]]
+=== Rendimiento y optimización de recursos
+
+Se han realizado varias mejoras internas para reducir el consumo general de recursos del sistema y aumentar el rendimiento en todas las operaciones de NetApp Disaster Recovery.

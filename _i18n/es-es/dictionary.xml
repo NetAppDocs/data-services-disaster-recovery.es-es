@@ -1062,24 +1062,11 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Al utilizar esta opción se le solicitará que inicie sesión nuevamente. Tenga en cuenta que el token de estas cuentas caduca después de 90 días. Se publicará una notificación para avisarle de esto.</block>
   <block id="c3533d0746cb1de0d34486c00ae36990" category="summary">NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres.</block>
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">Vea el estado de sus planes de NetApp Disaster Recovery en el Panel de control</block>
-  <block id="f236d43ec0e67c4b89d0afe52b6b6a75" category="paragraph">Con el panel de NetApp Disaster Recovery , puede determinar el estado de sus sitios de recuperación ante desastres y sus planes de replicación.  Puede determinar rápidamente qué sitios y planes están en buen estado, desconectados o degradados.</block>
   <block id="f23e4fbac73cf601cee1add8b6e11922" category="list-text">Desde el menú NetApp Disaster Recovery , seleccione *Panel de control*.</block>
-  <block id="04edaa59dc99bd9193a5ad37083cc900" category="list-text">Revise la siguiente información en el Tablero:</block>
   <block id="b845a02ab309809100805f1256a064e8" category="list-text">*Sitios*: vea el estado de sus sitios.  Un sitio puede tener uno de los siguientes estados:</block>
-  <block id="0e17ce70dd39a8a056cb5ca0081d4526" category="list-text">*En ejecución*: el vCenter está conectado, en buen estado y funcionando.</block>
-  <block id="ed4bdaafb191f860f256d0b1e88eb50e" category="list-text">*Caído*: No se puede acceder al vCenter o hay problemas de conectividad.</block>
-  <block id="45fa526b7f7589c94a8a5911f187838f" category="list-text">*Problema*: No se puede acceder al vCenter o hay problemas de conectividad.</block>
-  <block id="e2438a3d730fa8490b06524ee1d8b0ed" category="paragraph">Para ver los detalles del sitio, seleccione *Ver todo* para un estado o *Ver sitios* para verlos todos.</block>
   <block id="18c8e34abace1973ab5a4468dba74870" category="list-text">*Planes de replicación*: vea el estado de sus planes.  Un plan puede tener uno de los siguientes estados:</block>
   <block id="ddc1e4c30a24a09d9ea40b7e332147a4" category="list-text">*Listo*</block>
   <block id="f44027b669999f97854e8ef8c8215f16" category="list-text">*Fallido*</block>
-  <block id="71fa181482da7d95240895b60c1654ee" category="paragraph">Para revisar los detalles del plan de replicación, seleccione *Ver todo* para ver un estado o *Ver planes de replicación* para verlos todos.</block>
-  <block id="42ad006ef72ab8b86610109a75d3073b" category="list-text">*Grupos de recursos*: vea el estado de sus grupos de recursos.  Un grupo de recursos puede tener uno de los siguientes estados:</block>
-  <block id="44cd3c457f12a5322db95c67eb00d629" category="list-text">*Máquinas virtuales protegidas*: Las máquinas virtuales son parte de un grupo de recursos.</block>
-  <block id="8a5ac28d6ec264c5863fb5328c2943db" category="list-text">*Máquinas virtuales no protegidas*: Las máquinas virtuales no son parte de un grupo de recursos.</block>
-  <block id="348a99edae23b1f4e21c5ce75d209a50" category="paragraph">Para revisar los detalles, seleccione el enlace *Ver* debajo de cada uno.</block>
-  <block id="2ce874f5717134aa8a63e219f05d39f9" category="list-text">El número de conmutaciones por error, conmutaciones por error de prueba y migraciones.  Por ejemplo, si creó dos planes y migró a los destinos, el recuento de migración aparece como "2".</block>
-  <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">Revise todas las operaciones en el panel Actividad.  Para ver todas las operaciones en el Monitor de trabajos, seleccione *Ver todos los trabajos*.</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">Crear un plan de replicación en NetApp Disaster Recovery</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*Acerca de esta tarea*</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">Puede proteger varias máquinas virtuales en varios almacenes de datos.  NetApp Disaster Recovery crea grupos de consistencia ONTAP para todos los volúmenes ONTAP que alojan almacenes de datos de máquinas virtuales protegidos.</block>
@@ -1331,13 +1318,11 @@
   <block id="d112f103569329954b57e42717e32021" category="paragraph">Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su progreso.</block>
   <block id="b2885babde6f690716af50f947f38fa4" category="list-text">Desde el menú, seleccione *Supervisión de trabajos*.</block>
   <block id="a658e38fe05c1b71ade8529d73e083db" category="list-text">Explora todos los trabajos relacionados con operaciones y revisa sus marcas de tiempo y estado.</block>
-  <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">Para ver los detalles de un trabajo en particular, seleccione esa fila.</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">Para actualizar la información, seleccione *Actualizar*.</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">Cancelar un trabajo</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* &gt; *Recuperación ante desastres*.</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">En la página del Monitor de trabajos, anote el ID del trabajo que desea cancelar.</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">El trabajo debe estar en estado "En progreso" o "En cola".</block>
-  <block id="fa463eaf10ea5f2243e402c5c574ce96" category="list-text">En la columna Acciones, seleccione *Cancelar trabajo*.</block>
   <block id="73f285b2a2d2e36caf8a2b3dceba3bff" category="summary">Con NetApp Disaster Recovery, puede replicar aplicaciones de VMware en su sitio de origen a un sitio remoto de recuperación ante desastres en la nube mediante la replicación SnapMirror .</block>
   <block id="5542a31575b0db973ecf1e27638145e5" category="doc">Replique aplicaciones a otro sitio con NetApp Disaster Recovery</block>
   <block id="f198c3ed2ffa46dda182aca950d079a7" category="admonition">Después de crear el plan de recuperación ante desastres, identificar la recurrencia en el asistente e iniciar una replicación en un sitio de recuperación ante desastres, cada 30 minutos NetApp Disaster Recovery verifica que la replicación realmente se esté realizando de acuerdo con el plan. Puede supervisar el progreso en la página Monitor de trabajo.</block>
@@ -1345,15 +1330,9 @@
   <block id="860a7c0767c6d5a81c5c68c072b88c23" category="list-text">A la derecha, seleccione la opción *Acciones*<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> y seleccione *Replicar*.</block>
   <block id="4fcb591c27b70823ff71112c0db6af4f" category="summary">Revisar los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de conmutaciones por error y recuperación, detalles de replicación en todos los sitios y detalles de trabajos del año pasado.</block>
   <block id="a82244df08ebf8974422f7646e0239a4" category="doc">Crear informes de NetApp Disaster Recovery</block>
-  <block id="840e9ba54a3eb4b6ca1ba64036216f73" category="paragraph">Revisar los informes de NetApp Disaster Recovery puede ayudarlo a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de las conmutaciones por error de pruebas, detalles del plan de replicación y detalles del trabajo en todos los sitios dentro de una cuenta durante los últimos siete días.</block>
   <block id="8c0063a0e5fb937e4b6c45cefbf9765b" category="paragraph">Puede descargar informes en formato PDF, HTML o JSON.</block>
-  <block id="cd463f7ca5dbc8268a82ea8d8f5e4281" category="paragraph">El enlace de descarga es válido por seis horas.</block>
   <block id="d034750cd0fb1d447a3cf19d364332e1" category="list-text">Desde la barra de navegación izquierda de la NetApp Console , seleccione *Planes de replicación*.</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">Seleccione *Crear informe*.</block>
-  <block id="32e3f74f58555c69fe922de2e2c5a1fb" category="list-text">Seleccione el tipo de formato de archivo y el período de tiempo dentro de los últimos 7 días.</block>
-  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">Seleccione *Crear*.</block>
-  <block id="5da6bcdd6ceb1c5910fb17277177402d" category="admonition">El informe podría tardar unos minutos en mostrarse.</block>
-  <block id="ab6b0c72784c216662673e59f1357cc1" category="list-text">Para descargar un informe, seleccione *Descargar informe* y selecciónelo en la carpeta de descargas del administrador.</block>
   <block id="c52bb35ab590385850c5a43aeeb51966" category="doc">Cree un grupo de recursos para organizar las máquinas virtuales juntas en NetApp Disaster Recovery</block>
   <block id="68924c47e2eb51445ff8e93c1ce1bbc2" category="paragraph">Puede agrupar las máquinas virtuales en sí o las máquinas virtuales en almacenes de datos.</block>
   <block id="142aa3cf2c56c4cee9658fbb7fa95634" category="paragraph">Puede crear grupos de recursos utilizando los siguientes métodos:</block>
@@ -2441,4 +2420,45 @@
   <block id="8527638a378e1869ef948cf228cb1967" category="list-title">Eliminar un clúster de un sitio</block>
   <block id="2e6e87ad0d5bb097a11e43a094522ce3" category="list-text">Revisa el menú del cuadro de diálogo y selecciona **Remove from site**. Asegúrate de elegir la opción correcta para continuar con el funcionamiento de Trident Protect.</block>
   <block id="4c6f2ecfa631674b204ee705d90449fe" category="section-title">Ver información del almacén de datos</block>
+  <block id="63459ccd5f56d025aab8953dda2cac89" category="doc">Panel de control mejorado</block>
+  <block id="f682318aec1bd156e47f27a6821a89a5" category="paragraph">El panel de control de Disaster Recovery se ha actualizado con una experiencia mejorada que ofrece una visión global y de un solo vistazo de todo tu entorno de Disaster Recovery. El nuevo panel de control incluye:</block>
+  <block id="9823d8b117c3e7a42545ab50cbf51e42" category="list-text">*Visibilidad unificada de las cargas de trabajo* — supervisa tanto las cargas de trabajo de VMware como las de Kubernetes junto con el estado de la infraestructura subyacente desde un único panel de control.</block>
+  <block id="cb6d28fda9538aed2308a2a41da8fef6" category="list-text">*Detección proactiva de incidencias* — El panel de control ahora destaca automáticamente las incidencias relacionadas con el entorno, lo que permite un diagnóstico más rápido y reduce el tiempo necesario para resolverlas.</block>
+  <block id="4682c01fd7e04d919efdbb898660b551" category="list-text">*Uso de la capacidad* — Las métricas de capacidad ahora se presentan directamente en el panel de control, lo que facilita entender el consumo de recursos.</block>
+  <block id="83ffc188b91ae4a820fc973dcb4f2932" category="paragraph">Para más información, consulta <block ref="8f765f2bdeedf185243a86837c41ce64" category="inline-link-macro-rx"></block>.</block>
+  <block id="1b89eeafa349152b4736736033fd9afa" category="section-title">Informes mejorados</block>
+  <block id="0dc7dafa2af4e7002cfea0adec9f9574" category="paragraph">Se han ampliado las funciones de generación de informes para ofrecer una visión más detallada de las actividades de NetApp Disaster Recovery en todo tu entorno:</block>
+  <block id="7f09e48950606d1acab05c889751f513" category="list-text">Genera informes centrados en cargas de trabajo de VMware, de Kubernetes o en ambas, lo que te ofrece la flexibilidad necesaria para adaptar los informes a tu público.</block>
+  <block id="7a778b01d59bf3ae1ff3f2feb2d289b6" category="list-text">Cada informe ofrece un resumen completo de la actividad durante un periodo de tiempo determinado, lo que garantiza una visibilidad total de los eventos que tienen lugar en tu entorno de NetApp Disaster Recovery.</block>
+  <block id="fd5ba3d3711dc4d9c0e25f25fe06d680" category="paragraph">Para más información, consulta <block ref="39a309d4a05fe8ce442631f7b813f522" category="inline-link-macro-rx"></block>.</block>
+  <block id="2c06591fa7a638998ecf07caf020e711" category="section-title">Registro de tareas de los usuarios</block>
+  <block id="c021095f262d283ec8653a39f95e447d" category="paragraph">Disaster Recovery ha mejorado la rendición de cuentas y la auditabilidad de los trabajos gracias al registro de trabajos a nivel de usuario. Ahora, cada trabajo ejecutado registra el usuario que lo inició, lo que proporciona un registro de auditoría claro con fines de cumplimiento y resolución de problemas. Los trabajos activados automáticamente por Disaster Recovery se identifican como "system", lo que facilita distinguir entre la actividad iniciada por el usuario y la iniciada por el servicio.</block>
+  <block id="42ed5c1343751a7af21890f24cd3c64e" category="paragraph">Para más información, consulta <block ref="40b7771ffeffc9237f3cc63a2ebdb5c0" category="inline-link-macro-rx"></block>.</block>
+  <block id="00d2a24b32e6b20b963007b68cdb131f" category="section-title">Rendimiento y optimización de recursos</block>
+  <block id="30f4219e3688914aa51c7df386e1780b" category="paragraph">Se han realizado varias mejoras internas para reducir el consumo general de recursos del sistema y aumentar el rendimiento en todas las operaciones de NetApp Disaster Recovery.</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
+  <block id="2c613e5d46b6a88da4ef71969949f8ed" category="paragraph">Versión 4.3.6</block>
+  <block id="64d5f2a483005a7cc6303c4015d43a5c" category="paragraph">Con el panel de NetApp Disaster Recovery, puedes determinar el estado de salud de tus sitios de recuperación ante desastres y planes de replicación. Puedes evaluar fácilmente qué sitios y planes están en buen estado, desconectados o degradados. También puedes revisar las advertencias recientes y los trabajos fallidos, ver qué cargas de trabajo están protegidas y cuáles no, y ver un resumen de la capacidad.</block>
+  <block id="bd068902af2ce39e706eebf1c24b4d76" category="list-text">Revisa la información sobre salud que aparece en el panel de control:</block>
+  <block id="a42ca2864206a93e33039e6598055690" category="list-text">*En funcionamiento*: el sitio está conectado, funciona correctamente y está operativo.</block>
+  <block id="36cd7041f6cbfd714bd608ae3d78d535" category="list-text">*Fuera de servicio*: No se puede acceder al sitio o hay problemas de conexión.</block>
+  <block id="9b2a75730600af9907e95659422ba650" category="list-text">*Problema*: El sitio está teniendo problemas de conectividad.</block>
+  <block id="a34ac24ac668b7073f201165e855f7fa" category="paragraph">Para ver los detalles, selecciona **Ver todos los sitios**.</block>
+  <block id="205be22566e424b4c8a81c6d8e8864e6" category="list-text">*Advertencia*</block>
+  <block id="f45e2c030a4c208e00f685932255a3ca" category="paragraph">Para consultar los detalles del plan de replicación, selecciona *Ver todos los planes de replicación*.</block>
+  <block id="c829e7823834805c5cfdbad004224956" category="list-text">Consulta *Advertencias y tareas recientes* para ver las tareas y advertencias ejecutadas más recientemente y sus estados correspondientes. Selecciona *Ver todas las tareas* para ver todas las tareas.</block>
+  <block id="cb616e9285bb30b93344966fddafd029" category="list-text">Consulta el *Estado de detección y protección* para ver el número de cargas de trabajo detectadas y un desglose numérico de las cargas de trabajo protegidas frente a las no protegidas, clasificadas por tipo. También puedes consultar la capacidad total detectada de todas las cargas de trabajo y las cargas de trabajo por tipo.</block>
+  <block id="c1f56983411f9326a2cf92b7e410cdf2" category="list-text">Para ver los detalles de un trabajo concreto, selecciona esa fila. Puedes descargar los detalles del trabajo para consultarlos sin conexión seleccionando el menú de acciones y luego **Download job details**.</block>
+  <block id="7e8d3582ff1a097fae78e430ac2242b4" category="admonition">Al consultar los detalles de un trabajo, Disaster Recovery indica quién lo inició. Si el responsable que aparece es "system", significa que Disaster Recovery inició el trabajo.</block>
+  <block id="69ebf4461fc9429dbfcd7813c2832c6a" category="list-text">Selecciona el menú de acciones y luego **Cancelar tarea**.</block>
+  <block id="c6f5d2645082be603586c7fcecedd01e" category="doc">Crear informes en NetApp Disaster Recovery</block>
+  <block id="458bdb93da448c5d3e7bece387f1c4d2" category="paragraph">NetApp Disaster Recovery te ayuda a analizar tu preparación para la recuperación ante desastres con sus informes. Los informes ofrecen información sobre los planes de replicación, incluyendo el número de grupos de recursos, máquinas virtuales o clústeres de Kubernetes y los almacenes de datos cubiertos por el plan. También muestran el estado de cumplimiento, un resumen de los trabajos y la configuración de backup, incluyendo el objetivo de punto de recuperación (RPO) y el recuento de retención.</block>
+  <block id="466b68043567b88303b6c00217b4aeb5" category="paragraph">El enlace para descargar el informe es válido durante seis horas después de que lo generes.</block>
+  <block id="c5cbff21ca879b1c12f07a2c7ced7d25" category="list-text">Inicia sesión en <block ref="3127a7e60ca42a30e72a85e6e4e87658" category="inline-link-macro-rx"></block>.</block>
+  <block id="86179d32bfddb5ed25033adf646f60d7" category="list-text">Elige a qué *Workload* quieres limitar el informe: Kubernetes, VMware o todas.</block>
+  <block id="a4b18ba0532b0bf268eb0e3e25dcb79c" category="list-text">Selecciona el *tipo de archivo* (PDF, HTML o JSON) y el *período de tiempo* (entre uno y siete días anteriores) que debe abarcar el informe.</block>
+  <block id="a5a7078aa40bb08318bf73843094da19" category="image-alt">Captura de pantalla de crear informe</block>
+  <block id="3d5401fc3d8a7a798c226379efd0e54a" category="list-text">Selecciona *Crear* para generar el informe.</block>
+  <block id="c7752461db4ae72d9cab16a4731fae88" category="admonition">El informe puede tardar unos minutos en generarse.</block>
+  <block id="570cb7369470f1ec54ee8b421baca86e" category="list-text">En el panel de control de planes de replicación, selecciona *Descargar informe*.</block>
 </blocks>

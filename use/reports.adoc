@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/reports.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports, kubernetes 
 summary: Revisar los informes de recuperación ante desastres puede ayudarle a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de conmutaciones por error y recuperación, detalles de replicación en todos los sitios y detalles de trabajos del año pasado. 
 ---
-= Crear informes de NetApp Disaster Recovery
+= Crear informes en NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,22 +12,26 @@ summary: Revisar los informes de recuperación ante desastres puede ayudarle a a
 
 
 [role="lead"]
-Revisar los informes de NetApp Disaster Recovery puede ayudarlo a analizar su preparación para la recuperación ante desastres.  Los informes prediseñados incluyen un resumen de las conmutaciones por error de pruebas, detalles del plan de replicación y detalles del trabajo en todos los sitios dentro de una cuenta durante los últimos siete días.
+NetApp Disaster Recovery te ayuda a analizar tu preparación para la recuperación ante desastres con sus informes. Los informes ofrecen información sobre los planes de replicación, incluyendo el número de grupos de recursos, máquinas virtuales o clústeres de Kubernetes y los almacenes de datos cubiertos por el plan. También muestran el estado de cumplimiento, un resumen de los trabajos y la configuración de backup, incluyendo el objetivo de punto de recuperación (RPO) y el recuento de retención.
 
 Puede descargar informes en formato PDF, HTML o JSON.
 
-El enlace de descarga es válido por seis horas.
+El enlace para descargar el informe es válido durante seis horas después de que lo generes.
 
 .Pasos
-. Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
+. Inicia sesión en link:https://console.netapp.com/["NetApp Console"^].
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde la barra de navegación izquierda de la NetApp Console , seleccione *Planes de replicación*.
 . Seleccione *Crear informe*.
-. Seleccione el tipo de formato de archivo y el período de tiempo dentro de los últimos 7 días.
-. Seleccione *Crear*.
+. Elige a qué *Workload* quieres limitar el informe: Kubernetes, VMware o todas.
+. Selecciona el *tipo de archivo* (PDF, HTML o JSON) y el *período de tiempo* (entre uno y siete días anteriores) que debe abarcar el informe.
++
+image::report.png[Captura de pantalla de crear informe]
+
+. Selecciona *Crear* para generar el informe.
 +
 
-NOTE: El informe podría tardar unos minutos en mostrarse.
+NOTE: El informe puede tardar unos minutos en generarse.
 
-. Para descargar un informe, seleccione *Descargar informe* y selecciónelo en la carpeta de descargas del administrador.
+. En el panel de control de planes de replicación, selecciona *Descargar informe*.
 
