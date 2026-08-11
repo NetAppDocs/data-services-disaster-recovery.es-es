@@ -2,8 +2,6 @@
 section: use
 title: Utilice NetApp Disaster Recovery
 entries:
-- title: Descripción general del uso de NetApp Disaster Recovery
-  url: "/use/use-overview.html"
 - title: Vea el estado de sus planes de recuperación ante desastres en el Panel de
     Control
   url: "/use/dashboard-view.html"

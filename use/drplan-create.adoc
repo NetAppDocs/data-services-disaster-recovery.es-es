@@ -56,6 +56,42 @@ Disaster Recovery realiza comprobaciones de simetría de instantáneas cada 24 h
 
 
 
+[[considerations-for-platform-managed-backups]]
+=== Aspectos a tener en cuenta en las copias de seguridad gestionadas por la plataforma
+
+Si tienes previsto usar copias de seguridad gestionadas por la plataforma (es decir, instantáneas gestionadas por ONTAP), se recomienda que uses la política de replicación *MirrorAll*. Revisa la tabla para entender el impacto de las diferentes políticas de replicación de SnapMirror y por qué MirrorAll es la opción recomendada.
+
+[cols="10,10,80"]
+|===
+
+
+| Política | Recomendación | Notas 
+
+
+| *MirrorAll* | Recomendado | No utilices instantáneas de transferencia de SnapMirror para operaciones de conmutación por error o restablecimiento. 
+
+
+| *MirrorVault* .2+| Recomendación alternativa .2+| Asegúrate de que las copias de Snapshot seleccionadas durante la conmutación por error o la conmutación por recuperación estén presentes tanto en el volumen de origen como en el de destino. De lo contrario, se producirá el error: "Transition to 'snapmirrored' state failed. Reason: No common snapshot found." 
+
+
+| *Asíncrono* 
+
+
+| *MirrorLatest* | _NO_ se recomienda | Esta política hace que el destino disponga, en la práctica, de una única instantánea común para la conmutación por error, lo cual no es óptimo para situaciones de recuperación ante desastres. 
+|===
+
+
+[[considerations-for-disaster-recovery-managed-backups]]
+=== Aspectos a tener en cuenta para las copias de seguridad gestionadas por NetApp Disaster Recovery
+
+Al utilizar las copias de seguridad gestionadas de NetApp Disaster Recovery, se aplican las siguientes directrices a las relaciones de SnapMirror creadas fuera de NetApp Disaster Recovery:
+
+* Las relaciones de SnapMirror pueden admitir las políticas de replicación MirrorAll, MirrorVault, MirrorLatest y Asynchronous.
+* *No* programes actualizaciones para estas relaciones, ya que serán gestionadas por el servicio de NetApp Disaster Recovery.
+
+
+
+
 [[before-you-begin]]
 == Antes de empezar
 
@@ -437,7 +473,10 @@ Esta sección puede estar habilitada o deshabilitada según su selección.
 
 image:dr-plan-datastore-platform.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > Almacenes de datos"]
 
-* *Utilizar copias de seguridad administradas por la plataforma y programas de retención*: si está utilizando una solución de administración de instantáneas externa, marque esta casilla.  NetApp Disaster Recovery admite el uso de soluciones de gestión de instantáneas externas, como el programador de políticas nativo ONTAP SnapMirror o integraciones de terceros.  Si cada almacén de datos (volumen) en el plan de replicación ya tiene una relación SnapMirror que se administra en otro lugar, puede usar esas instantáneas como puntos de recuperación en NetApp Disaster Recovery.
+
+TIP: Consulta la <<Aspectos a tener en cuenta en las copias de seguridad gestionadas por la plataforma>> antes de realizar estas selecciones.
+
+* *Utiliza copias de seguridad y programas de retención gestionados por la plataforma*: Si estás usando una solución externa de gestión de instantáneas, marca esta casilla. NetApp Disaster Recovery admite el uso de soluciones externas de gestión de instantáneas, como el programador de políticas nativo de ONTAP SnapMirror o integraciones de terceros. Si cada datastore (volumen) del plan de replicación ya tiene una relación SnapMirror que se gestiona en otro lugar, puedes usar esas instantáneas como puntos de recuperación en NetApp Disaster Recovery.
 +
 Cuando se selecciona esta opción, NetApp Disaster Recovery no configura una programación de respaldo.  Sin embargo, aún es necesario configurar un programa de retención porque aún se podrían tomar instantáneas para operaciones de prueba, conmutación por error y recuperación.
 
