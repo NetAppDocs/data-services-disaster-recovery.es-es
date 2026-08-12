@@ -71,7 +71,7 @@ Si tienes previsto usar copias de seguridad gestionadas por la plataforma (es de
 | *MirrorAll* | Recomendado | No utilices instantáneas de transferencia de SnapMirror para operaciones de conmutación por error o restablecimiento. 
 
 
-| *MirrorVault* .2+| Recomendación alternativa .2+| Asegúrate de que las copias de Snapshot seleccionadas durante la conmutación por error o la conmutación por recuperación estén presentes tanto en el volumen de origen como en el de destino. De lo contrario, se producirá el error: "Transition to 'snapmirrored' state failed. Reason: No common snapshot found." 
+| *MirrorVault* .2+| Recomendación alternativa .2+| Asegúrate de que las copias de Snapshot seleccionadas durante la conmutación por error o la conmutación por recuperación estén presentes tanto en el volumen de origen como en el de destino. De lo contrario, se producirá el error: "Transition to 'snapmirrored' state failed. Reason: No common snapshot found." No utilices instantáneas de transferencia de SnapMirror para operaciones de conmutación por error o restablecimiento. 
 
 
 | *Asíncrono* 
