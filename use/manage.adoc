@@ -30,7 +30,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 [[manage-vcenter-sites]]
 == Administrar sitios de vCenter
 
-Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
+Puedes modificar el nombre y el tipo del sitio de vCenter (local o AWS).
 
 *Rol requerido de NetApp Console* Se requiere el rol de administrador de organización, administrador de carpeta o proyecto, o administrador de recuperación ante desastres para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -45,7 +45,7 @@ Puede editar el nombre del sitio de vCenter y el tipo de sitio (local o AWS).
 [[manage-resource-groups]]
 == Administrar grupos de recursos
 
-Puede crear grupos de recursos por máquinas virtuales o almacenes de datos.  Se pueden agregar al crear el plan de replicación o posteriormente.
+Puedes crear grupos de recursos por máquinas virtuales o por almacenes de datos. Puedes añadirlos cuando creas el plan de replicación o más tarde.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -76,7 +76,7 @@ Para obtener detalles sobre cómo crear un grupo de recursos, consultelink:resou
 [[manage-replication-plans]]
 == Administrar planes de replicación
 
-Puede deshabilitar, habilitar y eliminar planes de replicación.  Puedes cambiar los horarios.
+Puedes desactivar, activar y eliminar planes de replicación. Puedes cambiar las programaciones.
 
 *Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -150,13 +150,13 @@ Si elimina un plan de replicación, también puede eliminar las instantáneas pr
 [[change-retention-count-for-failover-schedules]]
 === Cambiar el recuento de retención para programaciones de conmutación por error
 
-Cambiar el recuento de retención te permite aumentar o disminuir el número de instantáneas guardadas.
+Al modificar el recuento de retención, puedes aumentar o reducir el número de instantáneas guardadas.
 
 *Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
 .Pasos
 . Desde el menú, seleccione *Planes de replicación*.
-. Seleccione el plan de replicación y luego la pestaña *Asignación de conmutación por error*. Seleccione el icono del lápiz *Editar*.
+. Selecciona el plan de replicación y luego selecciona la pestaña *Asignación de conmutación por error*. Selecciona el icono de lápiz *Editar*.
 . Seleccione la flecha hacia abajo en la fila *Almacenes de datos* para expandirla.
 +
 image:../use/dr-plan-failover-edit.png["Página de edición de asignaciones de conmutación por error"]
@@ -192,7 +192,7 @@ Desde la interfaz de usuario de recuperación ante desastres, puedes actualizar 
 . En «Recuperación ante desastres», selecciona **Sitios** en la barra lateral.
 . Selecciona **Kubernetes** en el menú desplegable.
 . En el menú de acciones del sitio que quieres modificar, selecciona **Remove cluster**.
-. Revisa el menú del cuadro de diálogo y selecciona **Remove from site**. Asegúrate de elegir la opción correcta para continuar con el funcionamiento de Trident Protect.
+. Revisa el cuadro de diálogo y luego selecciona **Eliminar del sitio**. Asegúrate de elegir la opción correcta para continuar con el funcionamiento de Trident Protect.
 
 
 
@@ -200,7 +200,7 @@ Desde la interfaz de usuario de recuperación ante desastres, puedes actualizar 
 [[view-datastore-information]]
 == Ver información del almacén de datos
 
-Puede ver información sobre cuántos almacenes de datos existen en el origen y en el destino.
+Puedes ver cuántos almacenes de datos hay en los sitios de origen y de destino.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -216,7 +216,7 @@ Puede ver información sobre cuántos almacenes de datos existen en el origen y 
 [[view-virtual-machines-information]]
 == Ver información de máquinas virtuales
 
-Puede ver información sobre cuántas máquinas virtuales existen en el origen y en el destino junto con la CPU, la memoria y la capacidad disponible.
+Puedes ver cuántas máquinas virtuales hay en los sitios de origen y destino, junto con la CPU, la memoria y la capacidad disponible.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery failover admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 

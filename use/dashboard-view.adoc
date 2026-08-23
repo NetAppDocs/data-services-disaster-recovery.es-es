@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en la nube que automatiza los flujos de trabajo de recuperación ante desastres. 
 ---
-= Consulta el estado de salud de tus planes de recuperación ante desastres en NetApp Disaster Recovery
+= Consulta el estado de salud del plan de recuperación ante desastres en NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Con el panel de NetApp Disaster Recovery, puedes determinar el estado de salud de tus sitios de recuperación ante desastres y planes de replicación. Puedes evaluar fácilmente qué sitios y planes están en buen estado, desconectados o degradados. También puedes revisar las advertencias recientes y los trabajos fallidos, ver qué cargas de trabajo están protegidas y cuáles no, y ver un resumen de la capacidad.
+Utiliza el panel de control de recuperación ante desastres de NetApp para comprobar el estado de tus sitios de recuperación ante desastres y tus planes de replicación. Puedes ver si los sitios y los planes están en buen estado, desconectados o degradados, revisar las advertencias recientes y los trabajos fallidos, identificar las cargas de trabajo protegidas y no protegidas, y consultar la capacidad de un vistazo.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin, Disaster recovery application admin o Disaster recovery viewer para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -28,7 +28,7 @@ image:dr-dashboard.png["Panel de NetApp Disaster Recovery"]
 ** *Sitios*: vea el estado de sus sitios.  Un sitio puede tener uno de los siguientes estados:
 +
 *** *En funcionamiento*: el sitio está conectado, funciona correctamente y está operativo.
-*** *Fuera de servicio*: No se puede acceder al sitio o hay problemas de conexión.
+*** *Fuera de servicio*: No se puede acceder al sitio o presenta problemas de conectividad.
 *** *Problema*: El sitio está teniendo problemas de conectividad.
 +
 Para ver los detalles, selecciona **Ver todos los sitios**.

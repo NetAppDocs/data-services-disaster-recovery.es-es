@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Una vez resuelto un desastre, se realiza un retorno desde el sitio de recuperación ante desastres al sitio de origen para regresar a las operaciones normales.  Puede seleccionar la instantánea desde la cual desea recuperar.
+Una vez resuelta la situación de emergencia, revierte desde el sitio de recuperación ante desastres al sitio de origen para reanudar el funcionamiento normal. Puedes elegir la instantánea que quieres usar para la recuperación.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery failover admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -21,7 +21,7 @@ Una vez resuelto un desastre, se realiza un retorno desde el sitio de recuperaci
 [[about-failback]]
 == Acerca de la recuperación
 
-En caso de conmutación por error, NetApp Disaster Recovery replica (resincroniza) cualquier cambio en la máquina virtual de origen original antes de revertir la dirección de la replicación. Este proceso comienza a partir de una relación que ha completado la conmutación por error a un destino e implica los siguientes pasos:
+En la recuperación tras un fallo (failback), NetApp Disaster Recovery replica (resincroniza) cualquier cambio de vuelta a la máquina virtual de origen original antes de invertir la dirección de la replicación. Este proceso comienza después de que una relación haya pasado al destino tras un fallo e implica los siguientes pasos:
 
 * Realice una verificación de cumplimiento en el sitio recuperado.
 * Actualice la información de vCenter para cada clúster de vCenter identificado como ubicado en el sitio recuperado.
@@ -36,7 +36,7 @@ En caso de conmutación por error, NetApp Disaster Recovery replica (resincroniz
 [[before-you-begin]]
 == Antes de empezar
 
-Si usa protección basada en almacén de datos, las máquinas virtuales que se hayan agregado al almacén de datos podrían agregarse al mismo en el proceso de conmutación por error. Si esto sucedió, asegúrese de proporcionar información de mapeo adicional para estas máquinas virtuales antes de iniciar la conmutación por error. Para editar la asignación de recursos, consulte link:manage.html#manage-replication-plans["Administrar planes de replicación"].
+Si utilizas la protección basada en almacenes de datos, es posible que se añadan máquinas virtuales al almacén de datos durante la conmutación por error. Si esto ha ocurrido, asegúrate de proporcionar la información de asignación adicional para estas máquinas virtuales antes de iniciar la conmutación de retorno. Para editar la asignación de recursos, consulta link:manage.html#manage-replication-plans["Administrar planes de replicación"].
 
 
 
@@ -53,7 +53,7 @@ Si usa protección basada en almacén de datos, las máquinas virtuales que se h
 +
 image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
-. Identifica el plan de replicación que quieres revertir. Selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse sobre *Recover* y luego selecciona *Failback*.
+. Identifica el plan de replicación que deseas revertir. Selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el cursor por encima de *Recuperar* y luego selecciona *Revertir*.
 . Elige la instantánea del almacén de datos de la que quieres recuperar. Selecciona *Take snapshot now* para iniciar una nueva instantánea o *Select* para elegir entre las instantáneas disponibles.
 +
 image:failback.png["Captura de pantalla del diálogo de failback"]
@@ -71,7 +71,7 @@ Para supervisar el progreso del trabajo, seleccione *Supervisión del trabajo* e
 +
 image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
-. Identifica el plan de replicación que quieres revertir. Selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse sobre *Recover* y luego selecciona *Failback*.
+. Identifica el plan de replicación que deseas revertir. Selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el cursor por encima de *Recuperar* y luego selecciona *Revertir*.
 . Elige la instantánea del clúster del que quieres recuperar. Selecciona *Take snapshot now* para iniciar una nueva instantánea o *Use latest snapshot* para usar la instantánea más reciente y exitosa.
 . Introduce "Failback" para confirmar la operación y luego selecciona *Failback*.
 

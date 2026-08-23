@@ -12,14 +12,14 @@ summary: Antes de usar NetApp Disaster Recovery, asegúrate de que tus clústere
 
 
 [role="lead"]
-Antes de configurar NetApp Disaster Recovery para clústeres de Kubernetes, tienes que preparar cada clúster de Kubernetes. Normalmente, la protección se aplica a un clúster de origen y a un clúster de destino independiente, lo que significa que estos procedimientos deben aplicarse a cada clúster del par.
+Antes de configurar NetApp Disaster Recovery para Kubernetes, prepara cada clúster de Kubernetes. La protección suele aplicarse a un clúster de origen y a un clúster de destino independiente, así que completa estos procedimientos en cada clúster del par.
 
 
 
 [[prerequisites]]
 == Prerrequisitos
 
-Antes de configurar los requisitos del clúster de Kubernetes, asegúrate de haber configurado tu clúster de Kubernetes y los clústeres de ONTAP.
+Antes de empezar, asegúrate de que tu clúster de Kubernetes y los clústeres de ONTAP estén configurados.
 
 Recuperación en caso de catástrofe es compatible con link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["cualquier versión de Kubernetes actualmente soportada por Trident Protect"^].
 
@@ -31,7 +31,7 @@ Recuperación en caso de catástrofe es compatible con link:https://docs.netapp.
 Para cada clúster de Kubernetes, asegúrate de lo siguiente:
 
 * Tienes acceso de administrador `kubectl` a cada clúster Kubernetes.
-* Helm 3 está disponible donde ejecutas los comandos de instalación
+* Helm 3 está disponible donde ejecutas los comandos de instalación.
 
 
 
@@ -41,10 +41,10 @@ Para cada clúster de Kubernetes, asegúrate de lo siguiente:
 
 Para cada clúster ONTAP, asegúrate de haber configurado los siguientes recursos:
 
-* **Management LIF** - lo utiliza Trident para acceder a la API de gestión
-* **Data (NFS) LIF** - se utiliza para el tráfico NFS de volúmenes
-* **Nombre de la SVM** - la SVM de almacenamiento que aloja los volúmenes
-* **Credenciales** - La cuenta que utilizará Trident (generalmente, `admin` o una cuenta de ámbito SVM)
+* **LIF de gestión**: lo utiliza Trident para acceder a la API de gestión.
+* **LIF de datos (NFS)**: Se usa para el tráfico NFS de los volúmenes.
+* **Nombre de la máquina virtual de almacenamiento (SVM)**: la máquina virtual de almacenamiento que aloja los volúmenes.
+* **Credenciales**: la cuenta que utiliza Trident, normalmente `admin` o una cuenta con ámbito SVM.
 * Los nodos de trabajo deben poder acceder a los LIFs de gestión y datos de ONTAP.
 * Si usas `autoExportPolicy` con restricciones CIDR, incluye las subredes de tus nodos.
 
@@ -86,7 +86,7 @@ Para más información, consulta link:https://docs.netapp.com/us-en/trident/trid
 [[create-the-tridentbackendconfig]]
 === Crea el TridentBackendConfig
 
- Puedes
+Aplica un enlace:https://docs.netapp.com/us-en/trident/trident-use/backend-kubectl.html#step-2-create-the-tridentbackendconfig-cr[`TridentBackendConfig` que apunte a tu SVM^]. Por ejemplo:
 
 [source, yaml]
 ----
@@ -147,7 +147,7 @@ Para que Trident Protect replique los datos de tus aplicaciones, estas deben usa
 [[configure-volume-group-snapshot-custom-resource-definitions-crd]]
 == Configura las definiciones de recursos personalizados (CRD) de instantáneas de grupo de volúmenes
 
-link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["Instala el CRD de instantáneas y el controlador de instantáneas."^]. Estas instalaciones son necesarias para las instantáneas de volumen en Trident Protect.
+Instala el link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["CRD de instantáneas y controlador de instantáneas"^]. Estas instalaciones son necesarias para las instantáneas de volumen en Trident Protect.
 
 Verifica las definiciones de recursos personalizados con el comando:
 
@@ -203,7 +203,7 @@ Después de verificar el estado de todos los recursos, despliega o link:https://
 
 . Crea un secreto de Kubernetes usando el client ID y el client secret para crear las credenciales de autenticación de occm.
 +
-`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=<clientSecret>`
+`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=client_secret=<clientSecret>`
 
 . Agrega o actualiza el repositorio de helm:
 +

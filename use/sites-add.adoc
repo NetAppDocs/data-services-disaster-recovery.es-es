@@ -12,7 +12,7 @@ summary: Antes de poder crear un plan de recuperación ante desastres, debe agre
 
 
 [role="lead"]
-Antes de que puedas crear un plan de recuperación ante desastres, necesitas agregar sitios a Disaster Recovery. Un sitio es una colección de servidores vCenter o clústeres de Kubernetes (en las instalaciones o en la nube). Deberías agregar el sitio principal o de producción y el sitio de recuperación ante desastres.
+Antes de crear un plan de recuperación ante desastres, añade los sitios que quieres proteger en NetApp Disaster Recovery. Un sitio es un conjunto de servidores vCenter o clústeres de Kubernetes, ya sea en tus propias instalaciones o en la nube. Añade tanto el sitio de producción como el de recuperación ante desastres.
 
 
 TIP: Asegúrate de que tanto el origen como el destino usen el mismo agente de NetApp Console.

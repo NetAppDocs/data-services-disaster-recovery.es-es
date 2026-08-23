@@ -53,9 +53,9 @@ ONTAP 9.10.0 o posterior
 [[google-cloud-prerequisites-and-considerations]]
 == Requisitos previos y consideraciones de Google Cloud
 
-Con la recuperación ante desastres en Google Cloud VMware Engine mediante Google Cloud NetApp Volumes, asegúrese de configurar los permisos correctos y cumplir con las consideraciones señaladas.
+Cuando utilices NetApp Disaster Recovery con Google Cloud VMware Engine y Google Cloud NetApp Volumes, asegúrate de configurar los permisos correctos y revisa las siguientes consideraciones.
 
-* Comuníquese con el equipo de SRE de Google para incluir en la lista de permitidos lo siguiente:
+* Ponte en contacto con el equipo de SRE de Google para incluir en la lista de permitidos lo siguiente:
 +
 ** API de sincronización para transferir instantáneas desde el almacenamiento local a Google Cloud NetApp Volumes.
 ** el proyecto de Google con el motor VMware para crear, montar y desmontar almacenes de datos.
@@ -110,7 +110,7 @@ El usuario de la NetApp Console debe tener los siguientes roles:
 [[ontap-storage-prerequisites]]
 == Requisitos previos de almacenamiento de ONTAP
 
-Estos requisitos previos se aplican a ONTAP y Amazon FSX para NetApp ONTAP instances.
+Estos requisitos previos se aplican a las instancias de ONTAP y Amazon FSx for NetApp ONTAP.
 
 * Los clústeres de origen y destino deben tener una relación de pares.
 * La SVM que aloja los volúmenes de recuperación ante desastres debe existir en el clúster de destino.
@@ -133,7 +133,7 @@ Estos requisitos previos se aplican a ONTAP y Amazon FSX para NetApp ONTAP insta
 [[get-started-with-the-netapp-console]]
 === Comience a utilizar la NetApp Console
 
-Si aún no lo has hecho, https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["Regístrese en la NetApp Console y cree una organización"^] .
+Si aún no lo has hecho, https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["Regístrate en la NetApp Console y crea una organización"^].
 
 
 

@@ -9,7 +9,7 @@
 
 NetApp Disaster Recovery realiza el descubrimiento una vez cada 24 horas.  Con esta versión, ahora puede personalizar el programa de descubrimiento para satisfacer sus necesidades y reducir el impacto en el rendimiento cuando lo necesite.  Por ejemplo, si tiene una gran cantidad de máquinas virtuales, puede configurar la programación de descubrimiento para que se ejecute cada 48 horas.  Si tiene una pequeña cantidad de máquinas virtuales, puede configurar la programación de detección para que se ejecute cada 12 horas.
 
-Si no desea programar el descubrimiento, puede deshabilitar la opción de descubrimiento programado y actualizar el descubrimiento manualmente en cualquier momento.
+Si no desea programar la detección, puede deshabilitar la opción de detección programada y actualizar la detección manualmente en cualquier momento.
 
 Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["Agregar sitios de servidor vCenter"] .
 

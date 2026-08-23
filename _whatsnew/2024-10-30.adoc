@@ -76,7 +76,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 [[vm-name-aliasing]]
 === Alias de nombres de máquinas virtuales
 
-Al crear un plan de replicación, ahora puede agregar un prefijo y un sufijo a los nombres de las máquinas virtuales en el sitio de recuperación ante desastres.  Esto le permite utilizar un nombre más descriptivo para las máquinas virtuales en el plan.
+Al crear un plan de replicación, ahora puedes añadir un prefijo y un sufijo a los nombres de las máquinas virtuales en el sitio de recuperación ante desastres. Esto te permite utilizar un nombre más descriptivo para las máquinas virtuales del plan.
 
 Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
 

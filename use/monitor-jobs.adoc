@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su progreso.
+Supervisa los trabajos de NetApp Disaster Recovery para hacer un seguimiento de su estado y progreso.
 
 
 
@@ -25,11 +25,11 @@ Puede supervisar todos los trabajos de NetApp Disaster Recovery y determinar su 
 . Iniciar sesión en el https://console.netapp.com/["NetApp Console"^] .
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde el menú, seleccione *Supervisión de trabajos*.
-. Explora todos los trabajos relacionados con operaciones y revisa sus marcas de tiempo y estado.
-. Para ver los detalles de un trabajo concreto, selecciona esa fila. Puedes descargar los detalles del trabajo para consultarlos sin conexión seleccionando el menú de acciones y luego **Download job details**.
+. Revisa los trabajos, incluyendo sus marcas de tiempo y estado.
+. Para ver los detalles de un trabajo, selecciona su fila. Para descargar los detalles de un trabajo para revisarlos sin conexión, selecciona el menú de acciones y luego selecciona **Descargar detalles del trabajo**.
 +
 
-TIP: Al consultar los detalles de un trabajo, Disaster Recovery indica quién lo inició. Si el responsable que aparece es "system", significa que Disaster Recovery inició el trabajo.
+TIP: Al consultar los detalles de un trabajo, Disaster Recovery muestra el usuario que inició el trabajo. Si el responsable que aparece es «system», Disaster Recovery inició el trabajo.
 
 . Para actualizar la información, seleccione *Actualizar*.
 
@@ -46,7 +46,7 @@ Puedes cancelar un trabajo que está en curso o en estado de cola si se queda at
 .Pasos
 . Desde la barra de navegación izquierda de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde el menú, seleccione *Supervisión de trabajos*.
-. En la página del Monitor de trabajos, anote el ID del trabajo que desea cancelar.
+. En la página de seguimiento de trabajos, anota el ID del trabajo que deseas cancelar.
 +
 El trabajo debe estar en estado "En progreso" o "En cola".
 

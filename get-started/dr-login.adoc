@@ -12,9 +12,9 @@ summary: Comience a utilizar NetApp Disaster Recovery accediendo al servicio en 
 
 
 [role="lead"]
-Utilice la NetApp Console para iniciar sesión en el servicio de NetApp Disaster Recovery .
+Inicia sesión en NetApp Disaster Recovery a través de la NetApp Console.
 
-Para iniciar sesión, puede utilizar sus credenciales del sitio de soporte de NetApp o puede registrarse para iniciar sesión en la nube de NetApp usando su correo electrónico y una contraseña. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^] .
+Para iniciar sesión, utiliza tus credenciales del sitio de soporte de NetApp o regístrate para obtener un inicio de sesión en la nube de NetApp con tu dirección de correo electrónico y contraseña. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Obtenga más información sobre cómo iniciar sesión"^].
 
 Tareas específicas requieren roles de usuario específicos. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -35,8 +35,8 @@ image:draas-landing6-free-trial.png["Captura de pantalla de la página de destin
 De lo contrario, aparecerá el Panel de NetApp Disaster Recovery .
 
 +
-** Si aún no ha agregado un agente de NetApp Console , deberá agregar uno. Para agregar el agente, consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^] .
-** Si es un usuario de la NetApp Console con un agente existente, cuando selecciona "Recuperación ante desastres", aparece un mensaje sobre cómo registrarse.
+** Si aún no has añadido un agente de NetApp Console, añádelo. Para obtener más información, consulta https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Obtenga más información sobre los agentes de consola"^].
+** Si eres usuario de la NetApp Console y ya dispones de un agente, cuando seleccionas *Disaster recovery*, aparece un mensaje sobre registrarte.
 ** Si ya está utilizando el servicio, cuando seleccione "Recuperación ante desastres", aparecerá el Panel de control.
 
 

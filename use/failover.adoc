@@ -12,13 +12,16 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-En caso de desastre, conmute su sitio local principal de VMware a otro sitio local de VMware o VMware Cloud en AWS.  Puede probar el proceso de conmutación por error para garantizar el éxito cuando lo necesite.
+Si se produce un desastre, realiza la conmutación por error de tu entorno VMware local principal a otro entorno VMware local o a VMware Cloud on AWS. También puedes probar el proceso de conmutación por error con antelación para confirmar que la recuperación funciona como esperas.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery failover admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
-*Acerca de esta tarea*
 
-Durante una conmutación por error, Disaster Recovery utiliza de manera predeterminada la copia de instantánea de SnapMirror más reciente, aunque puede seleccionar una instantánea específica de una instantánea de un punto en el tiempo (según la política de retención de SnapMirror). Utilice la opción de punto en el tiempo si las réplicas más recientes están comprometidas, como durante un ataque de ransomware.
+
+[[about-this-task]]
+== Acerca de esta tarea
+
+Durante la conmutación por error, NetApp Disaster Recovery utiliza de forma predeterminada la copia de instantánea más reciente de SnapMirror, aunque puedes seleccionar una instantánea específica de un momento específico (según la política de retención de SnapMirror). Usa la opción de momento específico si las réplicas más recientes están comprometidas, por ejemplo, durante un ataque de ransomware.
 
 Este proceso difiere dependiendo de si el sitio de producción está en buen estado y si está realizando una conmutación por error al sitio de recuperación ante desastres por motivos distintos a una falla crítica de la infraestructura:
 
@@ -33,7 +36,7 @@ Este procedimiento rompe la relación de replicación, coloca las máquinas virt
 [[test-the-failover-process]]
 == Probar el proceso de conmutación por error
 
-Antes de realizar una conmutación por error en vivo, puedes realizar una prueba para comprobar que estás preparado. Las cargas de trabajo permanecen en línea durante el proceso de prueba.
+Antes de llevar a cabo una conmutación por error en directo, puedes realizar una prueba para comprobar que todo está listo. Las cargas de trabajo permanecen en línea durante el proceso de prueba.
 
 Durante una prueba de conmutación por error, Disaster Recovery crea temporalmente máquinas virtuales. Disaster Recovery asigna un almacén de datos temporal que respalda el volumen FlexClone a los hosts ESXi.
 
@@ -62,7 +65,7 @@ Para una conmutación por error de prueba, Disaster Recovery realiza las siguien
 . A la derecha, seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] y seleccione *Probar conmutación por error*.
 . En la página Test failover, elige la instantánea para el test failover: selecciona **Take snapshot now** o **Select** para elegir una instantánea existente. Si eliges **Select**, elige la instantánea existente.
 +
-Luego, ingresa "Test failover" y selecciona *Test fail over*.
+A continuación, escribe “Test failover” y selecciona *Test failover*.
 
 . Una vez finalizada la prueba, limpie el entorno de prueba.
 
@@ -86,7 +89,7 @@ Una vez finalizada la prueba de conmutación por error, debe limpiar el entorno 
 [[fail-over-the-source-site-to-a-disaster-recovery-site]]
 == Conmutar por error el sitio de origen a un sitio de recuperación ante desastres
 
-En caso de desastre, conmute su sitio local principal de VMware a pedido a otro sitio local de VMware o VMware Cloud en AWS con FSx para NetApp ONTAP.
+Si se produce un desastre, realiza una conmutación por error de tu entorno VMware local principal, según sea necesario, a otro entorno VMware local o a VMware Cloud on AWS con FSx para NetApp ONTAP.
 
 El proceso de conmutación por error implica las siguientes operaciones:
 
@@ -125,9 +128,9 @@ image:dr-plan-failover3.png["Página de conmutación por error"]
 
 . En la página Conmutación por error, cree una nueva instantánea ahora o elija una instantánea existente para que el almacén de datos la utilice como base para la recuperación. El valor predeterminado es el más reciente.
 +
-Se tomará una instantánea de la fuente actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
+Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
 
-. Selecciona *Forzar conmutación por error* si quieres que la conmutación por error ocurra aunque se detecte un error que normalmente impediría que ocurriera la conmutación por error.
+. Selecciona *Forzar conmutación por error* si deseas que la conmutación por error continúe incluso cuando el servicio detecte un error que, en condiciones normales, la bloquearía.
 . Selecciona *Skip protection* si quieres que el servicio no cree automáticamente una relación de protección inversa SnapMirror después de una conmutación por error del plan de replicación. Esto es útil si quieres realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
 +
 

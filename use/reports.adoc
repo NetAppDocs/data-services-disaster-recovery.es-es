@@ -12,7 +12,7 @@ summary: Revisar los informes de recuperación ante desastres puede ayudarle a a
 
 
 [role="lead"]
-NetApp Disaster Recovery te ayuda a analizar tu preparación para la recuperación ante desastres con sus informes. Los informes ofrecen información sobre los planes de replicación, incluyendo el número de grupos de recursos, máquinas virtuales o clústeres de Kubernetes y los almacenes de datos cubiertos por el plan. También muestran el estado de cumplimiento, un resumen de los trabajos y la configuración de backup, incluyendo el objetivo de punto de recuperación (RPO) y el recuento de retención.
+Utiliza los informes de NetApp Disaster Recovery para evaluar la preparación ante desastres. Los informes proporcionan detalles sobre los planes de replicación, incluido el número de grupos de recursos, máquinas virtuales, clústeres de Kubernetes y almacenes de datos que cubre cada plan. Los informes también muestran el estado de cumplimiento, resúmenes de trabajos y configuraciones de copia de seguridad, como el objetivo de punto de recuperación (RPO) y el recuento de retención.
 
 Puede descargar informes en formato PDF, HTML o JSON.
 
@@ -23,8 +23,8 @@ El enlace para descargar el informe es válido durante seis horas después de qu
 . Desde el panel de navegación izquierdo de la NetApp Console , seleccione *Protección* > *Recuperación ante desastres*.
 . Desde la barra de navegación izquierda de la NetApp Console , seleccione *Planes de replicación*.
 . Seleccione *Crear informe*.
-. Elige a qué *Workload* quieres limitar el informe: Kubernetes, VMware o todas.
-. Selecciona el *tipo de archivo* (PDF, HTML o JSON) y el *período de tiempo* (entre uno y siete días anteriores) que debe abarcar el informe.
+. Elige a qué *carga de trabajo* quieres limitar el informe: Kubernetes, VMware o Todas.
+. Selecciona el *tipo de archivo* (PDF, HTML o JSON) y el *periodo de tiempo* (entre uno y siete días anteriores) para el informe.
 +
 image::report.png[Captura de pantalla de crear informe]
 

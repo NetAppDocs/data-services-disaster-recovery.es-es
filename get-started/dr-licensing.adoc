@@ -12,11 +12,16 @@ summary: Con NetApp Disaster Recovery, puede utilizar diferentes planes de licen
 
 
 [role="lead"]
-Con NetApp Disaster Recovery, puede utilizar diferentes planes de licencia, incluida una prueba gratuita, una suscripción de pago por uso o traer su propia licencia.
+NetApp Disaster Recovery ofrece varias opciones de licencia, incluyendo una prueba gratuita, una suscripción de pago por uso y la opción de traer tu propia licencia (BYOL).
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
-*Opciones de licencia* Puede utilizar las siguientes opciones de licencia:
+
+
+[[licensing-options]]
+== Opciones de licencia
+
+Puedes utilizar las siguientes opciones de licencia:
 
 * Regístrese para una prueba gratuita de 30 días.
 * Compre una suscripción de pago por uso (PAYGO) en Amazon Web Services (AWS) Marketplace o en Microsoft Azure Marketplace.
@@ -79,13 +84,13 @@ Una vez finalizada la prueba gratuita, puede comprar una licencia de NetApp o su
 .Pasos
 . En NetApp Disaster Recovery, verá un mensaje que indica que la prueba gratuita está por vencer.  En el mensaje, seleccione *Suscribirse o comprar una licencia*.
 +
-O bien, desde , seleccione *Ver métodos de pago*.
+O, en el menú Disaster Recovery, selecciona *View payment methods*.
 
 +
 image:dr-licensing-payment-methods.png["La página de métodos de pago de NetApp Disaster Recovery"]
 
 . Seleccione *Suscribirse en AWS Marketplace* o *Suscribirse en Azure Marketplace*.
-. Utilice AWS Marketplace o Microsoft Azure Marketplace para suscribirse a * NetApp Disaster Recovery*.
+. Utiliza AWS Marketplace o Microsoft Azure Marketplace para suscribirte a *NetApp Disaster Recovery*.
 . Cuando regrese a NetApp Disaster Recovery, aparecerá un mensaje que indica que está suscrito.
 +
 Puede ver los detalles de la suscripción en la página de suscripción de la NetApp Console . link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-homepage.html["Obtenga más información sobre cómo administrar suscripciones con la NetApp Console"^].
@@ -101,7 +106,12 @@ Una vez finalizada la prueba, puede comprar una licencia a través de su represe
 
 Si trae su propia licencia (BYOL), la configuración incluye comprar la licencia, obtener el archivo de licencia de NetApp (NLF) y agregar la licencia a la NetApp Console.
 
-*Agregue la licencia a la NetApp Console** Después de haber comprado su licencia de NetApp Disaster Recovery a un representante de ventas de NetApp , puede administrar la licencia en la consola.
+
+
+[[add-the-license-to-the-netapp-console]]
+=== Agrega la licencia a la NetApp Console
+
+Después de que hayas comprado tu licencia de NetApp Disaster Recovery a un representante de ventas de NetApp, puedes gestionar la licencia en la Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Obtenga información sobre cómo agregar licencias con la NetApp Console"^].
 
@@ -110,7 +120,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 [[update-your-license-when-it-expires]]
 == Actualice su licencia cuando expire
 
-Si su período de licencia está cerca de la fecha de vencimiento o si su capacidad de licencia está alcanzando el límite, se le notificará en la interfaz de usuario de NetApp Disaster Recovery .  Puede actualizar su licencia de NetApp Disaster Recovery antes de que caduque para que no haya interrupciones en su capacidad de acceder a los datos escaneados.
+Si tu periodo de licencia está por llegar a la fecha de vencimiento o si tu capacidad licenciada está alcanzando el límite, recibirás una notificación en la interfaz de usuario de NetApp Disaster Recovery. Puedes actualizar tu licencia de NetApp Disaster Recovery antes de que expire para que no haya ninguna interrupción en tu capacidad de usar el servicio.
 
 
 TIP: Este mensaje también aparece en la NetApp Console y en https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["Notificaciones"] .

@@ -14,9 +14,9 @@ summary: La recuperación ante desastres en la nube es una forma resistente y re
 [role="lead"]
 La recuperación de desastres en la nube es una forma resistente y rentable de proteger las cargas de trabajo frente a interrupciones del sitio y eventos de corrupción de datos. NetApp Disaster Recovery es un servicio de recuperación de desastres basado en cloud que automatiza los flujos de trabajo de recuperación de desastres. Con NetApp Disaster Recovery, puedes proteger tus clústeres de Kubernetes locales, cargas de trabajo basadas en NFS y almacenes de datos del sistema de archivos de máquinas virtuales (VMFS) de VMware vSphere para iSCSI y FC que ejecutan almacenamiento NetApp hacia uno de los siguientes:
 
-* Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP Para obtener más detalles, consultelink:../reference/evs-deploy-guide-introduction.html["Introducción de NetApp Disaster Recovery mediante Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP"] .
+* Amazon Elastic VMware Service (EVS) con Amazon FSx for NetApp ONTAP. Para obtener más información, consulta link:../reference/evs-deploy-guide-introduction.html["Introducción a la recuperación ante desastres de NetApp con Amazon Elastic VMware Service y Amazon FSx for NetApp ONTAP"].
 * VMware Cloud (VMC) en AWS con Amazon FSx for NetApp ONTAP
-* Azure VMware Solution (AVS) con NetApp Cloud Volumes ONTAP (iSCSI) (versión preliminar privada)
+* Solución de Azure VMware con NetApp Cloud Volumes ONTAP (iSCSI) (versión preliminar privada)
 * Google Cloud VMware Engine (GCVE) con Google Cloud NetApp Volumes
 * Otro entorno VMware local basado en NFS y/o VMFS (iSCSI/FC) con almacenamiento ONTAP
 
@@ -185,9 +185,9 @@ Después de que Disaster Recovery crea e inicializa todas las relaciones, en cad
 *Objetivos de protección admitidos*
 
 * VMware Cloud (VMC) en AWS con Amazon FSx for NetApp ONTAP
-* Otro entorno VMware basado en NFS local con almacenamiento ONTAP o un VMSF FC/iSCSI local
+* Otro entorno VMware local basado en NFS con almacenamiento ONTAP o un entorno VMFS local FC/iSCSI
 * Servicio Amazon Elastic VMware
-* Azure VMware Solution (AVS) con NetApp Cloud Volumes ONTAP (iSCSI) (versión preliminar privada)
+* Solución de Azure VMware con NetApp Cloud Volumes ONTAP (iSCSI) (versión preliminar privada)
 * Google Cloud VMware Engine (GCVE) con Google Cloud NetApp Volumes
 
 

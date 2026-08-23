@@ -54,6 +54,6 @@ La recuperación ante desastres ahora proporciona advertencias mejoradas y resol
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === Conservar la estructura de carpetas de la máquina virtual agregada como predeterminada en los planes de replicación
 
-Cuando se crea una replicación, el nuevo valor predeterminado es conservar la estructura de la carpeta de la máquina virtual. Si el destino de recuperación no tiene la jerarquía de carpetas original, Disaster Recovery la crea. Puede anular la selección de esta opción para ignorar la jerarquía de carpetas original.
+Cuando creas un plan de replicación, la nueva configuración predeterminada es conservar la estructura de carpetas de la máquina virtual. Si el destino de recuperación no tiene la jerarquía de carpetas original, Disaster Recovery la crea. Puedes desmarcar esta opción para ignorar la jerarquía de carpetas original.
 
 Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
