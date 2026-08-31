@@ -1,0 +1,23 @@
+= Mejor gestión de instantáneas de SnapMirror
+:allow-uri-read: 
+
+
+
+
+[[improved-snapmirror-snapshot-management]]
+=== Mejor gestión de instantáneas de SnapMirror
+
+Ahora puedes activar la conmutación por error utilizando la instantánea más reciente, que es el método recomendado cuando no estás tomando una nueva instantánea.
+
+Al seleccionar una línea de base de instantáneas específica, las instantáneas de transferencia de SnapMirror quedan ocultas de forma predeterminada. Esto se debe a que pueden eliminarse durante la conmutación por error, lo que impediría volver a proteger la carga de trabajo tras la conmutación por error debido a un error de "no se ha encontrado ninguna instantánea común". Aun así, puedes usar estas instantáneas, pero tendrás que completar un mensaje de confirmación adicional para reconocer el riesgo.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["Conmutación por error a un sitio remoto"^].
+
+
+
+[[other-improvements]]
+=== Otras mejoras
+
+* Se han introducido pequeñas mejoras para aumentar la resiliencia del flujo de trabajo de conmutación por error de las pruebas.
+* Se ha corregido un error de validación al añadir un script.
+

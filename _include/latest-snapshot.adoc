@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Al seleccionar una línea de base de instantáneas específica, las instantáneas de transferencia de SnapMirror se ocultan de forma predeterminada porque pueden eliminarse durante la conmutación por error. Esta eliminación impide volver a proteger la carga de trabajo tras la conmutación por error debido a un error de "no se ha encontrado ninguna instantánea común". Aún puedes usar las instantáneas de transferencia de SnapMirror, pero tendrás que completar un mensaje de confirmación adicional para reconocer el riesgo.

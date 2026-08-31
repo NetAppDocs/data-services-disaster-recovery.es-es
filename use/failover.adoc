@@ -101,9 +101,9 @@ El proceso de conmutación por error implica las siguientes operaciones:
 * Los almacenes de datos se crean y se montan en el clúster o host VMware o VMC según la información capturada en el plan de replicación.  Si alguno de los almacenes de datos es VMFS, cree y asigne un iGroup a cada LUN.
 * Las máquinas virtuales de destino se registran en vCenter como nuevos almacenes de datos.
 * Las máquinas virtuales de destino se encienden según el orden de arranque capturado en la página Resource groups.
-* Si el vCenter de origen aún está activo, apague todas las máquinas virtuales del lado de origen que se están conmutando por error.
+* Si el vCenter de origen sigue activo, apaga todas las máquinas virtuales del lado de origen que estén siendo objeto de una conmutación por error.
 * Desactive cualquier aplicación de base de datos compatible en las máquinas virtuales indicadas como "compatibles con la aplicación".
-* Si los clústeres de origen vCenter y ONTAP aún están activos, cree una relación SnapMirror en dirección inversa para replicar cualquier cambio mientras se encuentre en estado de conmutación por error en el sitio de origen original.  La relación de SnapMirror se invierte de la máquina virtual de destino a la de origen.
+* Si los clústeres de origen vCenter y ONTAP siguen activos, crea una relación SnapMirror en sentido inverso para replicar cualquier cambio que se produzca mientras se esté en estado de conmutación por error de vuelta al sitio de origen original. La relación SnapMirror se invierte, pasando de la máquina virtual de destino a la de origen.
 
 
 
@@ -126,9 +126,16 @@ image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 +
 image:dr-plan-failover3.png["Página de conmutación por error"]
 
-. En la página Conmutación por error, cree una nueva instantánea ahora o elija una instantánea existente para que el almacén de datos la utilice como base para la recuperación. El valor predeterminado es el más reciente.
+. Elige la copia de instantánea que quieres usar para la conmutación por error:
 +
-Se tomará una instantánea del origen actual y se replicará en el destino actual antes de que se produzca la conmutación por error.
+** Selecciona *Tomar instantánea ahora* para crear una instantánea totalmente nueva que se copiará al clúster de destino antes de la conmutación por error.
+** Selecciona *Usar la última instantánea* para utilizar la instantánea más reciente disponible en el clúster de destino.
+** Selecciona *Seleccionar* para consultar una lista de instantáneas ordenadas por recencia.
++
+
+NOTE: Al seleccionar una línea de base de instantáneas específica, las instantáneas de transferencia de SnapMirror se ocultan de forma predeterminada porque pueden eliminarse durante la conmutación por error. Esta eliminación impide volver a proteger la carga de trabajo tras la conmutación por error debido a un error de "no se ha encontrado ninguna instantánea común". Aún puedes usar las instantáneas de transferencia de SnapMirror, pero tendrás que completar un mensaje de confirmación adicional para reconocer el riesgo.
+
+
 
 . Selecciona *Forzar conmutación por error* si deseas que la conmutación por error continúe incluso cuando el servicio detecte un error que, en condiciones normales, la bloquearía.
 . Selecciona *Skip protection* si quieres que el servicio no cree automáticamente una relación de protección inversa SnapMirror después de una conmutación por error del plan de replicación. Esto es útil si quieres realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
@@ -151,8 +158,18 @@ image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 
 . Seleccione el plan de replicación.
 . A la derecha, selecciona la opción *Actions* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el mouse por encima de *Recover* y luego selecciona *Fail over*.
-. Elige la copia instantánea que quieres usar para el failover. Puedes *Take snapshot now* para crear una copia instantánea completamente nueva que se copiará en el clúster de destino o *Use latest snapshot* para usar la copia instantánea más reciente disponible en el clúster de destino.
-. Selecciona *Skip protection* si quieres que el servicio no cree automáticamente una relación de protección inversa SnapMirror después de una conmutación por error del plan de replicación. Esto es útil si quieres realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
+. Elige la copia de instantánea que quieres usar para la conmutación por error:
++
+** Selecciona *Realizar instantánea ahora* para crear una instantánea totalmente nueva que se copiará al clúster de destino.
+** Selecciona *Usar la última instantánea* para utilizar la instantánea más reciente disponible en el clúster de destino.
+** Selecciona *Seleccionar* para consultar una lista de instantáneas ordenadas por recencia.
++
+
+NOTE: Al seleccionar una línea de base de instantáneas específica, las instantáneas de transferencia de SnapMirror se ocultan de forma predeterminada porque pueden eliminarse durante la conmutación por error. Esta eliminación impide volver a proteger la carga de trabajo tras la conmutación por error debido a un error de "no se ha encontrado ninguna instantánea común". Aún puedes usar las instantáneas de transferencia de SnapMirror, pero tendrás que completar un mensaje de confirmación adicional para reconocer el riesgo.
+
+
+
+. Selecciona *Omitir protección* si quieres que NetApp Disaster Recovery no cree automáticamente una relación de protección inversa de SnapMirror después de una conmutación por error del plan de replicación. Esto es útil si quieres realizar operaciones adicionales en el sitio restaurado antes de volver a ponerlo en línea dentro de NetApp Disaster Recovery.
 . Introduce "Failover" para confirmar la acción y luego selecciona *Failover*.
 
 
