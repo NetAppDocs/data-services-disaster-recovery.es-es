@@ -12,7 +12,9 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Si se produce un desastre, realiza la conmutación por error de tu entorno VMware local principal a otro entorno VMware local o a VMware Cloud on AWS. También puedes probar el proceso de conmutación por error con antelación para confirmar que la recuperación funciona como esperas.
+Cuando ocurra un desastre u otro evento similar, usa NetApp Disaster Recovery para recuperar cargas de trabajo críticas y que las aplicaciones puedan reanudarse en el sitio de recuperación ante desastres con las asignaciones planificadas.
+
+La recuperación ante desastres también permite realizar pruebas de conmutación por error. Realizar pruebas te ayuda a familiarizarte con el proceso y confirma que la recuperación funciona como esperas.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery failover admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 

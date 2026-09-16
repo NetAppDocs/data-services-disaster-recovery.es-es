@@ -19,9 +19,10 @@ Antes de configurar NetApp Disaster Recovery para Kubernetes, prepara cada clús
 [[prerequisites]]
 == Prerrequisitos
 
-Antes de empezar, asegúrate de que tu clúster de Kubernetes y los clústeres de ONTAP estén configurados.
+* Antes de configurar los requisitos del clúster de Kubernetes, asegúrate de haber configurado tu clúster de Kubernetes y los clústeres de ONTAP.
+* Asegúrate de que utilizas una versión compatible de Kubernetes. NetApp Disaster Recovery es compatible con link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["cualquier versión de Kubernetes actualmente soportada por Trident Protect"^].
+* Configura el link:../reference/trident-permissions.html["permisos para Trident Protect"] correspondiente.
 
-Recuperación en caso de catástrofe es compatible con link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["cualquier versión de Kubernetes actualmente soportada por Trident Protect"^].
 
 
 
@@ -61,13 +62,8 @@ Si ya has instalado Trident, verifica la instalación con el comando
 
 
 
-[[configure-ontap-backend-and-trident-storageclass]]
-== Configura el backend de ONTAP y el StorageClass de Trident
-
-
-
 [[create-a-kubernetes-secret]]
-=== Crear un secreto de Kubernetes
+== Crear un secreto de Kubernetes
 
 Crea un secreto de Kubernetes en el espacio de nombres:
 
@@ -113,7 +109,7 @@ Puedes verificar la configuración con el comando `kubectl get TridentBackendCon
 
 
 [[configure-the-storage-class]]
-=== Configura la clase de almacenamiento
+== Configura la clase de almacenamiento
 
 link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["Crear el objeto de clase de almacenamiento"^]. Usa el provisioner `csi.trident.netapp.io`. Por ejemplo:
 
@@ -215,6 +211,13 @@ Después de verificar el estado de todos los recursos, despliega o link:https://
 
 
 ====
+
+
+[[netapp-console-roles]]
+== NetApp roles de la consola
+
+Una vez que hayas realizado las configuraciones de Trident Protect y Kubernetes, link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Asegúrate de tener los roles correctos de NetApp Console para NetApp Disaster Recovery y así poder realizar la detección, la conmutación por error y otras tareas."^]
+
 
 
 [[more-information]]

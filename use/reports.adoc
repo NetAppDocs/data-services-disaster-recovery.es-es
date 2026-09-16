@@ -14,6 +14,16 @@ summary: Revisar los informes de recuperación ante desastres puede ayudarle a a
 [role="lead"]
 Utiliza los informes de NetApp Disaster Recovery para evaluar la preparación ante desastres. Los informes proporcionan detalles sobre los planes de replicación, incluido el número de grupos de recursos, máquinas virtuales, clústeres de Kubernetes y almacenes de datos que cubre cada plan. Los informes también muestran el estado de cumplimiento, resúmenes de trabajos y configuraciones de copia de seguridad, como el objetivo de punto de recuperación (RPO) y el recuento de retención.
 
+Utiliza los informes para evaluar el cumplimiento de la replicación y el historial de recuperación antes de que ocurra un incidente, así puedes identificar las brechas en la protección.
+
+
+TIP: link:dashboard-view.html["Puedes consultar el estado de la protección a grandes rasgos en el panel de control o por carga de trabajo en la página Workloads."]
+
+
+
+[[about-disaster-recovery-reports]]
+== Acerca de los informes de Disaster Recovery
+
 Puede descargar informes en formato PDF, HTML o JSON.
 
 El enlace para descargar el informe es válido durante seis horas después de que lo generes.
