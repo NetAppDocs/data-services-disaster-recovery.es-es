@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: use/task-resource-transformation.html 
+keywords: disaster recovery, resource transformation, kubernetes, templates 
+summary: La transformación de recursos te permite modificar cualquier aspecto de una carga de trabajo durante la conmutación por error. Esta función te da flexibilidad para adaptar las cargas de trabajo a diferentes entornos y configuraciones durante un evento de recuperación ante desastres. 
+---
+= Gestiona las transformaciones de recursos en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Para las cargas de trabajo de Kubernetes en NetApp Disaster Recovery, puedes crear transformaciones de recursos. Una transformación de recursos te permite modificar cualquier aspecto de una carga de trabajo durante la conmutación por error. Las transformaciones de recursos ofrecen flexibilidad para adaptar las cargas de trabajo a diferentes entornos y configuraciones durante un evento de recuperación ante desastres.
+
+Las transformaciones de recursos se añaden al crear un plan de replicación para Kubernetes.
+
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+
+[[create-a-resource-transformation-template]]
+== Crear una plantilla de transformación de recursos
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. En la ficha «Transformación de recursos», selecciona *+ Add template*.
+. Introduce un *Nombre* para la transformación del recurso.
+. Selecciona la *operación*: agregar, copiar, mover, eliminar, reemplazar o probar.
+. Introduce la *ruta JSON* y el *nombre de la variable*. Opcionalmente, añade el *valor por defecto*.
++
+image::resource-transformation-template.png[Captura de pantalla de la plantilla de transformación de recursos]
+
+. Para añadir más operaciones a la plantilla, selecciona *+ Add operation*. Repite los dos pasos anteriores, luego ordena las operaciones según el orden en que deban ejecutarse.
+. Selecciona *Add* para crear la plantilla.
+
+
+
+
+[[edit-a-resource-transformation]]
+== Editar una transformación de recursos
+
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. En la tarjeta de transformaciones de recursos, selecciona *Gestionar transformaciones de recursos*.
+. Busca la transformación de recursos que deseas editar. En el menú de acciones situado al final de la fila, selecciona *Editar*.
+. Puedes editar cualquiera de los campos de la plantilla. Edita el *Nombre*, la *Operación* (añadir, copiar, mover, eliminar, sustituir o probar) y sus valores correspondientes: la *ruta JSON* y el *nombre de la variable*, o el *valor por defecto*. También puedes añadir operaciones o editar el orden en que se ejecutan las operaciones.
+. Seleccione *Guardar*.
+
+
+
+
+[[clone-a-resource-transformation]]
+== Clonar una transformación de recursos
+
+Puedes clonar una transformación de recursos para usarla como base de una nueva plantilla de transformación de recursos. Las plantillas clonadas usan el nombre de la plantilla de origen y se les añade "-v1". Por ejemplo, si clonas la plantilla "scale up deployment", el clon se llama "scale up deployment-v1".
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. En la tarjeta de transformaciones de recursos, selecciona *Gestionar transformaciones de recursos*.
+. Busca la transformación de recurso que deseas clonar. En el menú de acciones situado al final de esa fila, selecciona *Clonar*.
+. Cuando la operación se realiza con éxito, NetApp Disaster Recovery muestra un cuadro de diálogo de confirmación en la interfaz de usuario.
++
+Puedes ver la plantilla clonada en la lista de transformaciones de recursos.
+
+
+
+
+
+[[delete-a-resource-transformation]]
+== Eliminar una transformación de recursos
+
+Si ya no necesitas una transformación de recursos, puedes eliminarla.
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. En la tarjeta de transformaciones de recursos, selecciona *Gestionar transformaciones de recursos*.
+. Busca la transformación de recursos que deseas eliminar. En el menú de acciones situado al final de la fila, selecciona *Eliminar*.
+. En el cuadro de diálogo, selecciona *Eliminar* para confirmar la operación.
+
+
+
+
+[[next-steps]]
+== Próximos pasos
+
+* link:drplan-create.html["Crear un plan de replicación"]
+

@@ -16,6 +16,65 @@ Descubre las novedades de NetApp Disaster Recovery.
 
 
 
+[[16-september-2026]]
+== 16 de septiembre de 2026
+
+Versión 4.3.7
+
+
+
+[[kubernetes-support-in-netapp-disaster-recovery-is-now-generally-available-ga]]
+=== La compatibilidad con Kubernetes en NetApp Disaster Recovery ya está disponible de forma general (GA)
+
+La compatibilidad con cargas de trabajo basadas en Kubernetes en NetApp Disaster Recovery ya está disponible de forma general (GA). Con la compatibilidad con cargas de trabajo basadas en Kubernetes, puedes proteger aplicaciones que se ejecutan en clústeres de Kubernetes, incluidos los entornos de OpenShift Virtualization. Disaster Recovery es compatible con cualquier versión de Kubernetes actualmente admitida por Trident Protect, lo que garantiza una integración fluida y sólidas capacidades de recuperación ante desastres para aplicaciones en contenedores.
+
+Para empezar a proteger las cargas de trabajo basadas en Kubernetes, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["Requisitos de Kubernetes para NetApp Disaster Recovery"^].
+
+
+
+[[resource-transformations]]
+=== Transformaciones de recursos
+
+La recuperación ante desastres ahora admite transformaciones de recursos, lo que te permite modificar cualquier aspecto de una carga de trabajo durante la conmutación por error. Esta función ofrece flexibilidad para adaptar las cargas de trabajo a diferentes entornos y configuraciones durante un evento de recuperación ante desastres.
+
+Las transformaciones de recursos se aplican al crear un plan de replicación. Puedes crear, editar y eliminar transformaciones de recursos en la nueva página de Configuración. Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gestiona las transformaciones de recursos"^].
+
+
+
+[[script-execution]]
+=== Ejecución de scripts
+
+Ahora puedes incorporar scripts personalizados en el flujo de trabajo de conmutación por error para coordinar la suspensión y la reanudación de las aplicaciones. Esta función ayuda a garantizar que las aplicaciones estén debidamente preparadas antes de que se replique una instantánea y se restaure correctamente, de modo que las operaciones puedan reanudarse sin interrupciones tras la conmutación por error.
+
+Para saber cómo insertar un script personalizado, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+
+
+
+[[new-workloads-page]]
+=== Nueva página de cargas de trabajo
+
+La función de recuperación ante desastres ha añadido una página de cargas de trabajo a la interfaz de usuario, que ofrece una visión completa de todas las cargas de trabajo detectadas y su estado de protección. La página de cargas de trabajo te permite supervisar y gestionar tus cargas de trabajo de forma más eficaz.
+
+Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["Revisa el estado de salud y protección en NetApp Disaster Recovery"^].
+
+
+
+[[settings-page]]
+=== Página de configuración
+
+La recuperación ante desastres ofrece ahora una página de configuración para gestionar de forma centralizada las plantillas de transformación de recursos y AppVaults. Esta página proporciona una interfaz única para configurar y gestionar estos componentes críticos de tus planes de recuperación ante desastres. Para obtener más información sobre las opciones de la página de configuración, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["Gestiona las transformaciones de recursos"^] y link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-appvault.html["Administra AppVaults"^].
+
+
+
+[[general-improvements]]
+=== Mejoras generales
+
+Disaster Recovery ha incorporado validaciones mejoradas en la página de creación del plan de replicación para garantizar una experiencia de usuario más fluida y sin errores.
+
+La recuperación ante desastres también ha aumentado la resiliencia del servicio para tolerar los tiempos de espera intermitentes de las solicitudes, mejorando el rendimiento y la fiabilidad generales de la interfaz de usuario.
+
+
+
 [[31-august-2026]]
 == 31 de agosto de 2026
 

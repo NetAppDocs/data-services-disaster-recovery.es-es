@@ -12,14 +12,14 @@ summary: Cuando utilices NetApp Disaster Recovery, asegúrate de tener configura
 
 
 [role="lead"]
-Cuando utilices NetApp Disaster Recovery, asegúrate de tener configurados los permisos correctos en ONTAP para garantizar un funcionamiento adecuado.
+Configura los permisos necesarios de ONTAP para que NetApp Disaster Recovery funcione correctamente.
 
 
 
 [[minimum-ontap-permissions]]
 == Permisos mínimos de ONTAP
 
-Los siguientes permisos de ONTAP son necesarios con NetApp Disaster Recovery:
+La recuperación ante desastres requiere los siguientes permisos de ONTAP:
 
 [cols="3,1"]
 |===
@@ -111,7 +111,7 @@ Los siguientes permisos de ONTAP son necesarios con NetApp Disaster Recovery:
 [[add-permissions-in-ontap]]
 == Agrega permisos en ONTAP
 
-Para añadir permisos en ONTAP es necesario crear un rol con los permisos necesarios y asignar el rol a un usuario. Puedes realizar esta tarea en ONTAP usando System Manager o la CLI de ONTAP.
+Para añadir permisos en ONTAP, crea un rol con los privilegios necesarios y asígnalo a un usuario. Puedes realizar esta tarea en ONTAP con System Manager o la CLI de ONTAP.
 
 [role="tabbed-block"]
 ====

@@ -259,13 +259,20 @@ TIP: Ejecuta el comando CLI `kubectl get pvc -n <namespace>` en el espacio de no
 Elige la *Hora de inicio de instantáneas y retención* (fecha y hora del calendario), la *Frecuencia de instantáneas y retención* (con qué frecuencia se inician las instantáneas) y el *Conteo de retención de instantáneas* (cuántas instantáneas se guardan).
 
 +
-Al establecer la frecuencia de las instantáneas, el mínimo permitido es de cinco minutos.
+Al configurar la frecuencia de las instantáneas, debes elegir una frecuencia de al menos cada cinco minutos.
 
 . Selecciona *Add AppVault* para crear el AppVault donde se guardarán los datos de protección.
 +
 .. Introduce un *Nombre* y selecciona el *Console agent* al que debe conectarse AppVault.
 .. Selecciona el *Proveedor* de la nube para alojar el *AppVault*.
-.. Basándose en la selección del proveedor, Disaster Recovery rellena las suscripciones configuradas existentes en la nube. Elige la *Suscripción*, el *Grupo de recursos* y la *Cuenta de almacenamiento* para el proveedor de la nube.
+.. Basándose en la selección del proveedor, Disaster Recovery rellena las suscripciones configuradas existentes en la nube.
++
+Para Azure, elige la *suscripción*, el *grupo de recursos* y la *cuenta de almacenamiento* para el proveedor de la nube.
+
++
+Para AWS, ONTAP S3 y StorageGRID, selecciona la *cuenta*, las *credenciales* y el *bucket*.
+
+.. Si seleccionaste ONTAP S3 o StorageGRID, puedes añadir credenciales de forma opcional. Selecciona *Add credentials* para expandir las opciones y luego añade el *Credential name*, *Gateway node FQDN*, el número de *Port*, *Access key* y *Secret key*.
 .. Selecciona **Añadir**.
 +
 image:kubernetes-mapping.png["Captura de pantalla de la asignación de clases de almacenamiento para Kubernetes"]
@@ -282,7 +289,29 @@ Después de seleccionar Add, puedes supervisar los diferentes trabajos en **Job 
 --
 ====
 
-NOTE: Para Kubernetes, este es el paso final para crear una replicación. Para vCenters, continúa en <<Sección de recursos de compute>>.
+
+==== Transformaciones de recursos y ejecuciones de scripts
+
+En los planes de replicación de Kubernetes, puedes aplicar transformaciones de recursos y ejecuciones de scripts. Estos pasos son opcionales.
+
+.Agrega una transformación de recursos
+La incorporación de una transformación de recursos permite modificar cualquier aspecto de una carga de trabajo durante la conmutación por error. Las transformaciones de recursos ofrecen flexibilidad para adaptar las cargas de trabajo a diferentes entornos y configuraciones durante un evento de recuperación ante desastres. link:task-resource-transformation.html["Aprende a crear transformaciones y a asignarles recursos."^]
+
+Las transformaciones de recursos se aplican en el orden en que las indiques.
+
+. En el menú desplegable, selecciona la transformación de recursos que quieras añadir.
+. Elige a qué recursos quieres aplicar la transformación y luego añade los valores necesarios
+. Revisa el orden de las transformaciones para asegurarte de que las operaciones se ejecuten en el orden adecuado.
+
+
+.Agrega una ejecución de script
+La recuperación ante desastres puede ejecutar un script antes o después de tomar una instantánea para gestionar la suspensión y la reanudación de una aplicación. Realizar esta acción garantiza que las aplicaciones estén debidamente preparadas antes de que se replique y restaure una instantánea y que puedan reanudar sus operaciones sin problemas después de la conmutación por error.
+
+. Selecciona *+ Add script*.
+. Selecciona *Cargar* para elegir el archivo de script.
+. Elige la *fase de ejecución*: *Pre-snapshot* para ejecutar antes de crear la instantánea o *Post-snapshot* para ejecutar después.
+. Seleccione *Guardar*.
+
 
 
 

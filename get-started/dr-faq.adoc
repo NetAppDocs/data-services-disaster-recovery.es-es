@@ -242,4 +242,4 @@ Puedes generar informes centrados en VMware, Kubernetes o todas las cargas de tr
 == Preguntas específicas sobre Kubernetes
 
 .¿Qué es un AppVault?
-Un AppVault es el destino de almacenamiento en la nube donde Trident Protect guarda los datos de protección de Kubernetes. Tú creas un AppVault mientras configuras un plan de replicación de Kubernetes.
+Un AppVault es el destino de almacenamiento en la nube donde Trident Protect guarda los datos de protección de Kubernetes. Tú creas un AppVault mientras configuras un plan de replicación de Kubernetes. También puedes gestionar AppVaults en la página de Configuración.

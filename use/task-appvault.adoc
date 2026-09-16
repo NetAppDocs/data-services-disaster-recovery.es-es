@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: use/task-appvault.html 
+keywords: disaster recovery, appvault, update credentials, trident protect, kubernetes, edit endpoints 
+summary: Gestionar AppVaults en Disaster Recovery te permite revisar el estado de conectividad de tus AppVaults, así como las credenciales y los endpoints de los AppVaults para asegurar la continuidad de tus planes de recuperación ante desastres. 
+---
+= Gestiona AppVaults en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Las cargas de trabajo de NetApp Disaster Recovery con Kubernetes usan AppVault, un destino de almacenamiento en la nube donde Trident Protect guarda los datos de protección de Kubernetes. Gestionar AppVaults te permite revisar el estado de conectividad de tus AppVaults, así como las credenciales y los endpoints de los AppVaults para asegurar la salud de tus planes de replicación.
+
+*Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+
+[[add-an-appvault]]
+== Agrega un AppVault
+
+Puedes añadir un AppVault cuando creas un plan de replicación para Kubernetes o crear uno desde la página de Configuración.
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. En la tarjeta AppVault, selecciona *+ Add AppVault*.
+. Introduce un *Nombre* y selecciona el *Console agent* al que debe conectarse AppVault.
+. Selecciona el *Proveedor* de la nube para alojar el *AppVault*.
+. Basándose en la selección del proveedor, Disaster Recovery rellena las suscripciones configuradas existentes en la nube.
++
+En Azure, selecciona la *suscripción*, el *grupo de recursos* y la *cuenta de almacenamiento*.
+
++
+Para AWS, ONTAP S3 y StorageGRID, selecciona la *cuenta* o las *credenciales* y el *bucket*.
+
+. Si seleccionaste ONTAP S3 o StorageGRID, puedes añadir credenciales de forma opcional. Selecciona *Add credentials* para expandir las opciones y luego añade el *Credential name*, *Gateway node FQDN*, el número de *Port*, *Access key* y *Secret key*.
+. Selecciona **Añadir**.
+
+
+
+
+[[update-appvault-credentials]]
+== Actualizar credenciales de AppVault
+
+Si han cambiado las credenciales de tu AppVault, actualízalas en la página de Configuración para garantizar la continuidad de tus planes de replicación. Al actualizar las credenciales, se sustituirán las claves de cada AppVault que comparta esta credencial.
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. Selecciona *Manage AppVaults*.
+. Busca el AppVault que deseas actualizar. En el menú de acciones, selecciona *Actualizar*.
+. Revisa el número de AppVaults y planes de replicación afectados por el cambio.
+. Introduce la nueva *clave secreta* y la *clave de acceso*.
+. Selecciona *Actualizar credenciales* para aplicar los cambios.
+
+
+
+
+[[edit-an-appvault-endpoint]]
+== Edita un endpoint de AppVault
+
+Si han cambiado los parámetros de conexión a tu AppVault, actualízalos para garantizar la continuidad de tus planes de replicación para las cargas de trabajo de Kubernetes.
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. Selecciona *Manage AppVaults*.
+. Busca el AppVault que quieres editar. En el menú de acciones, selecciona *Editar*.
+. Introduce el nuevo punto final para tu AppVault.
+. Selecciona *Guardar* para aplicar el nuevo endpoint.
+
+
+
+
+[[delete-an-appvault]]
+== Eliminar un AppVault
+
+Si ya no necesitas un AppVault, puedes eliminarlo.
+
+.Pasos
+. En Disaster Recovery, selecciona *Configuración* en la barra lateral.
+. Selecciona *Manage AppVaults*.
+. Busca el AppVault que quieras eliminar. En el menú de acciones, selecciona *Eliminar*.
+. En la ventana de diálogo, selecciona *Eliminar* para confirmar la acción.
+

@@ -9,14 +9,12 @@ summary: Introducción de NetApp Disaster Recovery mediante Amazon EVS y Amazon 
 
 
 [role="lead"]
-Utilice NetApp Disaster Recovery con Amazon EVS y Amazon FSx for NetApp ONTAP para realizar las siguientes operaciones: conmutación por error, probar la conmutación por error, actualizar recursos, migrar, tomar una instantánea ahora, deshabilitar/habilitar el plan de replicación, limpiar instantáneas antiguas, conciliar instantáneas, eliminar el plan de replicación y editar programaciones.
+Después de configurar el plan de replicación en NetApp Disaster Recovery, puedes realizar conmutaciones por error, pruebas de conmutación por error, actualizar recursos, migrar y gestionar instantáneas y planes de replicación. La acción principal que debes realizar, además del mantenimiento, es la conmutación por error en caso de fallo.
 
 
 
 [[fail-over]]
 == Conmutación por error
-
-La operación principal que posiblemente necesite realizar es la que espera que nunca suceda: conmutar por error al centro de datos de DR (destino) en caso de una falla catastrófica en el sitio de producción local.
 
 La conmutación por error es un proceso iniciado manualmente.
 
@@ -63,8 +61,7 @@ Los pasos para ejecutar una conmutación por error de prueba son idénticos a lo
 +
 image:evs-rp-menu-test-failover.png["Opción de menú de prueba de conmutación por error"]
 
-. Decide si quieres obtener el último estado del entorno de producción (Tomar instantánea ahora) o utilizar una copia de seguridad del plan de replicación creada previamente (Seleccionar)
-. Si eligió una copia de seguridad creada previamente, seleccione la copia de seguridad que se utilizará para la recuperación.
+. Elige qué instantánea deseas utilizar. Para crear la copia más actualizada del entorno de producción, selecciona *Tomar instantánea ahora*. Para utilizar una instantánea capturada anteriormente, selecciona *Seleccionar* y luego elige la instantánea existente.
 . Escriba la palabra “Prueba de conmutación por error” para verificar que desea continuar.
 . Seleccione *Prueba de conmutación por error*.
 +
@@ -93,7 +90,7 @@ image:evs-rp-menu-compliance-check.png["Opción de menú Ejecutar verificación 
 [[refresh-resources]]
 == Actualizar recursos
 
-Cada vez que realice cambios en su infraestructura virtual (como agregar o eliminar máquinas virtuales, agregar o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos), deberá realizar una actualización de los clústeres de vCenter afectados en el servicio NetApp Disaster Recovery .  El servicio hace esto automáticamente una vez cada 24 horas de manera predeterminada, pero una actualización manual garantiza que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección contra desastres.
+Cada vez que realices cambios en tu infraestructura virtual, como añadir o eliminar máquinas virtuales, añadir o eliminar almacenes de datos o mover máquinas virtuales entre almacenes de datos, necesitas actualizar los clústeres de vCenter afectados en Disaster Recovery. Disaster Recovery se actualiza automáticamente una vez cada 24 horas por defecto, pero una actualización manual asegura que la información más reciente sobre la infraestructura virtual esté disponible y se tenga en cuenta para la protección de recuperación ante desastres.
 
 Hay dos casos en los que es necesaria una actualización:
 
@@ -108,7 +105,7 @@ image::evs-rp-menu-refresh-resources.png[Opción Actualizar menú de recursos]
 [[migrate]]
 == Emigrar
 
-Si bien NetApp Disaster Recovery se utiliza principalmente para casos de uso de recuperación ante desastres, también puede permitir movimientos únicos de un conjunto de máquinas virtuales desde el sitio de origen al sitio de destino.  Esto podría ser para un proyecto de migración concertada a la nube o podría usarse para evitar desastres, como mal tiempo, conflictos políticos u otros posibles eventos catastróficos temporales.
+Además de utilizar NetApp Disaster Recovery para gestionar la replicación y la conmutación por error ante desastres, también puede admitir migraciones puntuales de máquinas virtuales desde el sitio de origen al sitio de destino. Podrías realizar una migración puntual como parte de un traslado a la nube o como un procedimiento de prevención de desastres al responder a sucesos catastróficos como fenómenos meteorológicos extremos o inestabilidad política.
 
 . Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
 . Para mover las máquinas virtuales en un plan de replicación al clúster de Amazon EVS de destino, seleccione *Migrar* en el menú Acciones del plan de replicación:
@@ -168,7 +165,7 @@ image::evs-rp-menu-cleanup-old-snapshots.png[Opción de menú Limpiar instantán
 [[reconcile-snapshots]]
 == Conciliar instantáneas
 
-Debido a que el servicio orquesta instantáneas de volumen de ONTAP , es posible que un administrador de almacenamiento de ONTAP elimine directamente instantáneas mediante el Administrador del sistema de ONTAP , la CLI de ONTAP o las API REST de ONTAP sin el conocimiento del servicio.  El servicio elimina automáticamente cualquier instantánea del origen que no esté en el clúster de destino cada 24 horas.  Sin embargo, puedes realizar esto bajo demanda.  Esta función le permite garantizar que las instantáneas sean consistentes en todos los sitios.
+Dado que Disaster Recovery coordina las instantáneas de volúmenes de ONTAP, un administrador de almacenamiento de ONTAP puede eliminar directamente las instantáneas mediante ONTAP System Manager, la CLI de ONTAP o las ONTAP REST APIs sin que el servicio lo sepa. Disaster Recovery elimina automáticamente cada 24 horas cualquier instantánea del origen que no esté en el clúster de destino. Puedes eliminar instantáneas manualmente cuando lo necesites. Esta función te permite asegurarte de que las instantáneas sean coherentes en todos los sitios.
 
 . Seleccione la opción *Acciones*image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"] junto al plan de replicación.
 . Para eliminar instantáneas del clúster de origen que no existen en el clúster de destino, seleccione *Reconciliar instantáneas* en el menú Acciones del plan de replicación.
@@ -236,7 +233,7 @@ Las conmutaciones por error de prueba se ejecutan manualmente de forma predeterm
 
 
 . Elija la hora del día para ejecutar la prueba de conmutación por error
-. Elija la fecha de inicio.
+. Elige la fecha de inicio.
 . Decida si desea que el servicio limpie automáticamente el entorno de prueba y durante cuánto tiempo desea que el entorno de prueba se ejecute antes de que comience el proceso de limpieza.
 . Seleccione *Guardar*.
 +
