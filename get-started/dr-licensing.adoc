@@ -12,7 +12,7 @@ summary: Con NetApp Disaster Recovery, puede utilizar diferentes planes de licen
 
 
 [role="lead"]
-NetApp Disaster Recovery ofrece varias opciones de licencia, incluyendo una prueba gratuita, una suscripción de pago por uso y la opción de traer tu propia licencia (BYOL).
+NetApp Disaster Recovery ofrece varias opciones de licencia, entre las que se incluyen una prueba gratuita, una suscripción de pago por uso y traer tu propia licencia (BYOL). Confirma tu modelo de licencia antes de configurar la recuperación ante desastres para asegurarte de que el servicio se adapta a las necesidades de tu organización.
 
 *Rol requerido de NetApp Console* Se requiere el rol de Super admin, Disaster recovery admin o Disaster recovery application admin para realizar esta tarea. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
