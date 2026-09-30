@@ -58,7 +58,7 @@ Estas tareas requieren el rol de _Disaster recovery admin_.
 [role="quick-margin-para"]
 Estas tareas requieren el _rol de administrador de Disaster Recovery_ o el _rol de administrador de failover de Disaster Recovery_.
 
-[role="quick-margin-para"]
+[role="quick-margin-list"]
 * link:../use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"]
 * link:../use/failback.html["Regresar las aplicaciones al sitio de origen original"]
 
