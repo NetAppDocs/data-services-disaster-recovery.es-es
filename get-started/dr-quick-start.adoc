@@ -12,29 +12,53 @@ summary: Comience a utilizar el servicio NetApp Disaster Recovery en unos pocos 
 
 
 [role="lead"]
-Descubre cómo empezar rápidamente con NetApp Disaster Recovery, asegurándote de que tu sistema cumple los requisitos, identificando las cargas de trabajo y configurando planes de replicación para prepararte para la conmutación por error.
+Descubre cómo configurar NetApp Disaster Recovery, asegurándote de que tu sistema cumpla los requisitos necesarios para detectar correctamente las cargas de trabajo y configurar planes de replicación con el fin de prepararte para la conmutación por error.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1"]Revisar los prerrequisitos
 [role="quick-margin-para"]
-link:../get-started/dr-prerequisites.html["Asegúrese de que su sistema cumpla estos requisitos"] .
+Necesitas el rol de _Super admin_ o _Organization admin_ para implementar un agente de Console y asignar permisos.
+
+[role="quick-margin-list"]
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Despliega un agente de consola"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Revisa los roles de usuario de NetApp Disaster Recovery y asigna permisos a los usuarios que los necesiten"^]
+* link:../get-started/dr-prerequisites.html["Asegúrese de que su sistema cumpla estos requisitos"]
+* Asegúrate de cumplir los requisitos correspondientes al tipo de carga de trabajo que tengas:
++
+** link:../get-started/reference-vmware-prerequisites.html["Requisitos previos de VMware"]
+** link:../get-started/task-kubernetes-requirements.html["Requisitos previos de Kubernetes"]
+
+
+
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dos"]Configurar NetApp Disaster Recovery
-[role="quick-margin-list"]
-* link:../get-started/dr-setup.html["Configurar la infraestructura para el servicio"] .
-* link:../get-started/dr-licensing.html["Configurar licencias"] .
-
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"]¿Que sigue?
 [role="quick-margin-para"]
-Después de configurar el servicio, puedes completar estos próximos pasos.
+Estas tareas requieren el rol de _Super admin_ o _Disaster recovery admin_.
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["Agregue sus sitios de vCenter a NetApp Disaster Recovery"] .
-* link:../use/manage.html#manage-resource-groups["Crea tu primer grupo de recursos"] .
-* link:../use/drplan-create.html["Crea tu primer plan de replicación"] .
-* link:../use/replicate.html["Replicar aplicaciones a otro sitio"] .
-* link:../use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"] .
-* link:../use/failback.html["Regresar las aplicaciones al sitio de origen original"] .
-* link:../use/manage.html["Administrar sitios, grupos de recursos y planes de replicación"] .
-* link:../use/monitor-jobs.html["Supervisar las operaciones de recuperación ante desastres"] .
+* link:../get-started/dr-setup.html["Configurar la infraestructura para el servicio"]
+* link:../get-started/dr-licensing.html["Configurar licencias"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tres"] Configurar planes de recuperación ante desastres
+[role="quick-margin-para"]
+Estas tareas requieren el rol de _Disaster recovery admin_.
+
+[role="quick-margin-list"]
+* link:../use/sites-add.html["Añade tus sitios a Disaster Recovery"]
+* link:../use/manage.html#manage-resource-groups["Crear grupos de recursos"]
+* link:../use/task-appvault.html["Para las cargas de trabajo de Kubernetes, añade un AppVault"]
+* link:../use/drplan-create.html["Crear un plan de replicación"]
+* link:../use/replicate.html["Replicar aplicaciones a otro sitio"]
+* link:../use/task-resource-transformation.html["Gestiona las transformaciones de recursos para las cargas de trabajo de Kubernetes"]
+* link:../use/manage.html["Administrar sitios, grupos de recursos y planes de replicación"]
+* link:../use/monitor-jobs.html["Supervisar las operaciones de recuperación ante desastres"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Cuatro"] Recuperarse de desastres
+[role="quick-margin-para"]
+Estas tareas requieren el _rol de administrador de Disaster Recovery_ o el _rol de administrador de failover de Disaster Recovery_.
+
+[role="quick-margin-para"]
+* link:../use/failover.html["Conmutar por error las aplicaciones a un sitio remoto"]
+* link:../use/failback.html["Regresar las aplicaciones al sitio de origen original"]
 

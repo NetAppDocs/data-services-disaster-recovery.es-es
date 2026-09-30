@@ -22,7 +22,7 @@ entries:
   url: "/use/task-appvault.html"
 - title: Gestiona plantillas de transformación de recursos
   url: "/use/task-resource-transformation.html"
-- title: Administrar información de sitios, planes, almacenes de datos y máquinas
+- title: Gestiona sitios, planes, almacenes de datos e información sobre máquinas
     virtuales
   url: "/use/manage.html"
 - title: Supervisar trabajos de recuperación ante desastres
