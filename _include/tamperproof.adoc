@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+
+NOTE: Si utilizas instantáneas de SnapLock a prueba de manipulaciones, debes utilizar la opción *Tomar instantánea ahora*. De lo contrario, la operación fallará.

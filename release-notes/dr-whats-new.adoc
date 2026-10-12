@@ -16,6 +16,45 @@ Descubre las novedades de NetApp Disaster Recovery.
 
 
 
+[[12-october-2026]]
+== 12 de octubre de 2026
+
+Versión 4.3.8
+
+
+
+[[optional-boot-order-for-kubernetes-resource-groups]]
+=== Orden de arranque opcional para los grupos de recursos de Kubernetes
+
+NetApp Disaster Recovery ahora admite configurar un orden de arranque opcional para los grupos de recursos en un plan de replicación de Kubernetes, especificando un orden de prioridad y un tiempo de retraso opcional para los recursos. Esta opción te permite arrancar recursos al mismo tiempo cuando sea necesario y retrasar el arranque de aquellos que dependen de otros, lo que ayuda a que tus aplicaciones vuelvan a estar operativas correctamente.
+
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["crear un plan de replicación"^].
+
+
+
+[[snaplock-volume-support]]
+=== Compatibilidad con volúmenes de SnapLock
+
+Disaster Recovery ahora es compatible con volúmenes de SnapLock, lo que te permite realizar una conmutación por error de instantáneas a prueba de manipulaciones.. Al realizar una conmutación de vuelta con volúmenes de SnapLock, debes usar la opción *Take snapshot now* para garantizar que la conmutación de vuelta se complete correctamente.
+
+Para obtener más información, consulta las instrucciones para link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["conmutación por error"^] y link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failback.html["conmutación por recuperación"^].
+
+
+
+[[simplified-refresh-and-compliance-runs]]
+=== Actualización y ejecuciones de cumplimiento simplificadas
+
+Las ejecuciones de actualización de vCenter, los planes de replicación y el cumplimiento normativo se han simplificado en una única tarea para facilitar una ejecución más rápida. Para ver este cambio, descubre cómo link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["supervisar trabajos"^].
+
+
+
+[[kubernetes-compliance-checks]]
+=== Comprobaciones de cumplimiento de Kubernetes
+
+Disaster Recovery ha añadido comprobaciones de cumplimiento para identificar entornos de trabajo que faltan para las cargas de trabajo de Kubernetes. Estas comprobaciones de cumplimiento ayudan a garantizar el buen estado de las cargas de trabajo y la integridad de tus planes de replicación.
+
+
+
 [[16-september-2026]]
 == 16 de septiembre de 2026
 

@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres
 
 
 [role="lead"]
-Una vez que hayas añadido recursos y sitios, crea un _plan de replicación_ para proteger tus datos. El plan define los sitios de origen y destino, los grupos de recursos, las asignaciones de recuperación y el comportamiento de encendido de tus aplicaciones. También puedes configurar programas de cumplimiento y de pruebas, y realizar pruebas de conmutación por error sin afectar los datos de producción.
+Una vez que hayas añadido recursos y sitios, crea un _plan de replicación_ para proteger tus datos con NetApp Disaster Recovery. El plan define los sitios de origen y destino, los grupos de recursos, las asignaciones de recuperación y el comportamiento de encendido de tus aplicaciones. También puedes configurar programas de cumplimiento y pruebas, así como realizar pruebas de conmutación por error sin afectar a los datos de producción.
 
 *Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
 
@@ -290,7 +290,7 @@ Después de seleccionar Add, puedes supervisar los diferentes trabajos en **Job 
 ====
 
 
-==== Transformaciones de recursos y ejecuciones de scripts
+==== Transformaciones de recursos, ejecuciones de scripts y orden de arranque
 
 En los planes de replicación de Kubernetes, puedes aplicar transformaciones de recursos y ejecuciones de scripts. Estos pasos son opcionales.
 
@@ -311,6 +311,14 @@ La recuperación ante desastres puede ejecutar un script antes o después de tom
 . Selecciona *Cargar* para elegir el archivo de script.
 . Elige la *fase de ejecución*: *Pre-snapshot* para ejecutar antes de crear la instantánea o *Post-snapshot* para ejecutar después.
 . Seleccione *Guardar*.
+
+
+.Configurar el orden de arranque
+En los planes de replicación que incluyen varios grupos de recursos, puedes establecer opcionalmente un orden de arranque para garantizar que los recursos que deben ponerse en línea al mismo tiempo lo hagan, mientras que los grupos de recursos que dependen de otros no se pondrán en línea hasta que lo hagan los recursos de los que dependen.
+
+. Selecciona la sección *Orden de arranque y retardo*.
+. Asigna un valor de *Orden* de arranque a cada recurso del plan de replicación, empezando por el número uno. A los recursos que deban arrancar al mismo tiempo asígnales el mismo número.
+. Establece el tiempo de *Retraso* en minutos. Si hay algún recurso que deba retrasarse, establece cuánto debe durar el retraso en minutos.
 
 
 

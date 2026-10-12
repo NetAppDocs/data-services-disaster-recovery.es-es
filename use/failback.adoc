@@ -56,6 +56,10 @@ image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
 . Identifica el plan de replicación que deseas revertir. Selecciona la opción *Acciones* image:../use/icon-horizontal-dots.png["Icono del menú Acciones en el servicio NetApp Disaster Recovery"], pasa el cursor por encima de *Recuperar* y luego selecciona *Revertir*.
 . Elige la instantánea del almacén de datos de la que quieres recuperar. Selecciona *Take snapshot now* para iniciar una nueva instantánea o *Select* para elegir entre las instantáneas disponibles.
 +
+
+NOTE: Si utilizas instantáneas de SnapLock a prueba de manipulaciones, debes utilizar la opción *Tomar instantánea ahora*. De lo contrario, la operación fallará.
+
++
 image:failback.png["Captura de pantalla del diálogo de failback"]
 
 . Introduce "Failback" para confirmar la operación y luego selecciona *Failback*.
