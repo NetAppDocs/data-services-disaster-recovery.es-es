@@ -165,7 +165,7 @@ Si esta comprobación es exitosa, Disaster Recovery realiza los siguientes pasos
 
 Después de que Disaster Recovery crea e inicializa todas las relaciones, en cada copia de seguridad programada, el servicio realiza los siguientes pasos de protección de datos:
 
-. Para cada máquina virtual marcada como “compatible con la aplicación”, utilice VMtools para colocar la aplicación compatible en un estado de respaldo.
+. Para cada VM marcada como «coherente con la aplicación», utiliza VMware Tools para poner la aplicación compatible en estado de copia de seguridad.
 . Cree una nueva instantánea de todos los volúmenes ONTAP que alojan almacenes de datos VMware protegidos.
 . Realice una operación de actualización de SnapMirror para replicar esas instantáneas en el clúster ONTAP de destino.
 . Determine si la cantidad de instantáneas retenidas ha excedido la retención máxima de instantáneas definida en el plan de replicación y elimine cualquier instantánea extraña de los volúmenes de origen y destino.

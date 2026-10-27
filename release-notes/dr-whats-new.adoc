@@ -26,9 +26,9 @@ Versión 4.3.8
 [[optional-boot-order-for-kubernetes-resource-groups]]
 === Orden de arranque opcional para los grupos de recursos de Kubernetes
 
-NetApp Disaster Recovery ahora admite configurar un orden de arranque opcional para los grupos de recursos en un plan de replicación de Kubernetes, especificando un orden de prioridad y un tiempo de retraso opcional para los recursos. Esta opción te permite arrancar recursos al mismo tiempo cuando sea necesario y retrasar el arranque de aquellos que dependen de otros, lo que ayuda a que tus aplicaciones vuelvan a estar operativas correctamente.
+NetApp Disaster Recovery ahora admite la configuración de un orden de arranque opcional para los grupos de recursos en un plan de replicación de Kubernetes, al especificar un orden de prioridad y un tiempo de retraso opcional para los recursos. Esta opción te permite arrancar recursos al mismo tiempo cuando sea necesario y retrasar el arranque de los recursos que dependen de otros, lo que ayuda a que tus aplicaciones vuelvan a estar en línea de forma correcta.
 
-Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["crear un plan de replicación"^].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["crear un plan de replicación"^].
 
 
 
@@ -85,7 +85,7 @@ Las transformaciones de recursos se aplican al crear un plan de replicación. Pu
 
 Ahora puedes incorporar scripts personalizados en el flujo de trabajo de conmutación por error para coordinar la suspensión y la reanudación de las aplicaciones. Esta función ayuda a garantizar que las aplicaciones estén debidamente preparadas antes de que se replique una instantánea y se restaure correctamente, de modo que las operaciones puedan reanudarse sin interrupciones tras la conmutación por error.
 
-Para saber cómo insertar un script personalizado, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+Para saber cómo insertar un script personalizado, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["Crear un plan de replicación"^].
 
 
 
@@ -374,7 +374,7 @@ Versión 4.3.1
 
 Al crear un plan de replicación en NetApp Disaster Recovery, ahora puedes excluir almacenes de datos específicos de la replicación. En los casos en los que una máquina virtual esté configurada para utilizar varios almacenes de datos, esto te permite limitar cuáles se replican.
 
-Para más detalles, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"^].
 
 
 
@@ -392,7 +392,7 @@ Para más información, consulta link:https://docs.netapp.com/us-en/data-service
 
 La función de recuperación ante desastres ahora incluye nuevas opciones de menú para activar actualizaciones de vCenter desde el panel de control del plan de replicación. Puedes acceder al submenú desde el menú de acciones del panel de control del plan de replicación: selecciona **Estado del plan** y luego **Actualizar fuente vCenter / Actualizar destino vCenter**.
 
-Para más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["Modificar un plan de replicación"^].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-modify.html["Modificar un plan de replicación"^].
 
 
 
@@ -483,7 +483,7 @@ La recuperación ante desastres ahora proporciona advertencias mejoradas y resol
 
 Cuando creas un plan de replicación, la nueva configuración predeterminada es conservar la estructura de carpetas de la máquina virtual. Si el destino de recuperación no tiene la jerarquía de carpetas original, Disaster Recovery la crea. Puedes desmarcar esta opción para ignorar la jerarquía de carpetas original.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"^].
 
 
 
@@ -501,7 +501,7 @@ De forma predeterminada, Disaster Recovery conserva la jerarquía del inventario
 
 Ahora puede anular esta configuración designando una nueva carpeta de VM principal o desmarcando la opción **Conservar jerarquía de carpetas original**.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -549,7 +549,7 @@ Ahora puede configurar una relación en cascada en ONTAP y utilizar cualquiera d
 
 La función de Recuperación ante Desastres ahora permite degradar el hardware de VMware a una versión anterior de vSphere durante el registro. Esto resulta útil cuando el host ESX de origen ejecuta una versión posterior a la del sitio de recuperación ante desastres.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].
 
 
 
@@ -565,7 +565,7 @@ La recuperación ante desastres ahora apaga las máquinas virtuales de forma con
 
 Ahora puedes inyectar scripts personalizados en el flujo de trabajo de conmutación por error para que se ejecuten antes de crear una copia de seguridad. La creación de scripts previos a la copia de seguridad le permite controlar el estado de la máquina virtual antes de que se replique una instantánea y preparar una máquina virtual para una transición. Por ejemplo, puede inyectar un script que desmonte un montaje NFS que se volverá a montar utilizando un script diferente después de la conmutación por error.
 
-Para obtener más información, consulte link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html#select-vcenter-servers["Crear un plan de replicación en NetApp Disaster Recovery"].
 
 
 
@@ -727,7 +727,7 @@ La solución de contraseña de administrador local de Windows (Windows LAPS) es 
 
 Ahora puede seleccionar las opciones de mapeo de subred y marcar la opción LAPS proporcionando los detalles del controlador de dominio.  Al utilizar esta opción, no es necesario proporcionar una contraseña para cada una de sus máquinas virtuales.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -787,7 +787,7 @@ Cuando se selecciona la opción, NetApp Disaster Recovery no configura una progr
 
 Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
 
-Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -820,7 +820,7 @@ Puede crear un grupo de recursos con un almacén de datos de las siguientes mane
 * Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
 
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -936,7 +936,7 @@ Aquí te explicamos cómo:
 
 Cuando crea un plan de replicación y asigna recursos informáticos, ahora puede asignar carpetas para que las máquinas virtuales se recuperen en una carpeta que especifique para el centro de datos, el clúster y el host.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -954,7 +954,7 @@ Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/fa
 
 Al crear un plan de replicación, ahora puede establecer un retraso de arranque para cada máquina virtual en el plan.  Esto le permite establecer una secuencia para que las máquinas virtuales se inicien a fin de garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -963,7 +963,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Al crear un plan de replicación, ahora puede ver el sistema operativo de cada máquina virtual en el plan.  Esto es útil para decidir cómo agrupar las máquinas virtuales en un grupo de recursos.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -972,7 +972,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Al crear un plan de replicación, ahora puedes añadir un prefijo y un sufijo a los nombres de las máquinas virtuales en el sitio de recuperación ante desastres. Esto te permite utilizar un nombre más descriptivo para las máquinas virtuales del plan.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1103,7 +1103,7 @@ NOTE: NetApp no ​​le cobrará por ninguna capacidad de carga de trabajo prev
 [[replication-plan-updates]]
 === Actualizaciones del plan de replicación
 
-Puede agregar un plan de replicación más fácilmente filtrando las máquinas virtuales por almacén de datos en la página Aplicaciones y seleccionando más detalles de destino en la página de mapeo de recursos. Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Puedes añadir un plan de replicación más fácilmente filtrando las VMs por datastore en la página Applications y seleccionando más detalles del destino en la página Resource mapping. Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1198,9 +1198,9 @@ Para obtener detalles sobre la administración de licencias para *todos* los ser
 [[edit-schedules]]
 === Editar horarios
 
-Con esta versión, ahora puede configurar cronogramas para probar pruebas de cumplimiento y conmutación por error para asegurarse de que funcionarán correctamente si las necesita.
+Con esta versión, ya puedes configurar programaciones para probar el cumplimiento y la conmutación por error, y así asegurarte de que funcionarán correctamente.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear el plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-modify.html["Modificar un plan de replicación"].
 
 
 
@@ -1220,7 +1220,7 @@ Con esta versión, ahora puedes cambiar el tamaño de los valores de CPU y RAM d
 * IP estática: puede seleccionar la misma información o una diferente de la máquina virtual de origen.  Si elige lo mismo que la fuente, no necesita ingresar credenciales.  Por otro lado, si elige utilizar información diferente de la fuente, puede proporcionar las credenciales, la dirección IP, la máscara de subred, el DNS y la información de la puerta de enlace.
 
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1238,7 +1238,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Ahora puede crear una relación SnapMirror mientras desarrolla el plan de replicación.  Anteriormente, era necesario crear la relación fuera de NetApp Disaster Recovery.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1247,7 +1247,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Al crear un plan de replicación, puede incluir máquinas virtuales de diferentes volúmenes y diferentes SVM.  NetApp Disaster Recovery crea una instantánea de grupo de consistencia incluyendo todos los volúmenes y actualiza todas las ubicaciones secundarias.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1256,7 +1256,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Cuando crea un plan de replicación, puede agregar máquinas virtuales a un grupo de recursos.  Con los grupos de recursos, puede establecer un retraso en cada máquina virtual para que se enciendan en una secuencia retrasada.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1265,7 +1265,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Puede especificar la creación de copias de instantáneas consistentes con la aplicación.  El servicio inactivará la aplicación y luego tomará una instantánea para obtener un estado consistente de la aplicación.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1325,11 +1325,11 @@ Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/da
 
 * *RPO*: Ahora puede ingresar el Objetivo de punto de recuperación (RPO) y el recuento de retención en la sección Almacenes de datos del plan de replicación. Esto indica la cantidad de datos que deben existir que no sean más antiguos que el tiempo establecido. Si, por ejemplo, lo configura en 5 minutos, el sistema puede perder hasta 5 minutos de datos si ocurre un desastre sin afectar las necesidades críticas del negocio.
 +
-Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 * *Mejoras de red*: al asignar redes entre ubicaciones de origen y destino en la sección de máquinas virtuales del plan de replicación, NetApp Disaster Recovery ahora ofrece dos opciones: DHCP o IP estática. Anteriormente solo se admitía DHCP. Para las direcciones IP estáticas, configure la subred, la puerta de enlace y los servidores DNS. Además, ahora puedes ingresar credenciales para máquinas virtuales.
 +
-Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 * *Editar programaciones*: ahora puedes actualizar las programaciones del plan de replicación.
 +
@@ -1342,7 +1342,7 @@ Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/ma
 ** Muchos a 1 como grupo de consistencia
 ** Muchos a muchos
 +
-Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -1372,7 +1372,7 @@ Esta versión incluye las siguientes actualizaciones:
 [[resource-groups-update-for-boot-order]]
 === Actualización de los grupos de recursos para el orden de arranque
 
-Cuando crea un plan de replicación o recuperación ante desastres, puede agregar máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos le permiten colocar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan con sus requisitos. Por ejemplo, los grupos podrían contener el orden de arranque que se puede ejecutar durante la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en que las incluya en el plan. Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["Seleccionar aplicaciones para replicar y asignar grupos de recursos"] .
+Al crear un plan de recuperación ante desastres o de replicación, puedes añadir máquinas virtuales a grupos de recursos funcionales. Los grupos de recursos te permiten colocar un conjunto de máquinas virtuales dependientes en grupos lógicos que cumplan tus requisitos. Por ejemplo, los grupos podrían contener un orden de arranque que pueda ejecutarse tras la recuperación. Con esta versión, cada grupo de recursos puede incluir una o más máquinas virtuales. Las máquinas virtuales se encenderán según la secuencia en la que las incluyas en el plan. Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Seleccionar aplicaciones para replicar y asignar grupos de recursos"].
 
 
 
@@ -1386,7 +1386,7 @@ Después de crear el plan de recuperación ante desastres o de replicación, ide
 [[replication-plan-shows-recovery-point-objective-rpo-transfer-schedules]]
 === El plan de replicación muestra los cronogramas de transferencia del objetivo del punto de recuperación (RPO)
 
-Cuando crea un plan de replicación o recuperación ante desastres, selecciona las máquinas virtuales. En esta versión, ahora puede ver el SnapMirror asociado con cada uno de los volúmenes asociados con el almacén de datos o la máquina virtual. También puede ver los programas de transferencia de RPO que están asociados con el programa de SnapMirror . RPO le ayuda a determinar si su programa de copias de seguridad es suficiente para recuperarse después de un desastre. Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Cuando creas un plan de recuperación ante desastres o de replicación, seleccionas las máquinas virtuales. En esta versión, ahora puedes ver SnapMirror asociado a cada uno de los volúmenes que están asociados con el almacén de datos o la máquina virtual. También puedes ver las programaciones de transferencia de RPO asociadas con la programación de SnapMirror. RPO te ayuda a determinar si tu programación de copias de seguridad es suficiente para recuperarte después de un desastre. Consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 

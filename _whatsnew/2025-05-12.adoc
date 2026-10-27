@@ -53,4 +53,4 @@ Cuando se selecciona la opción, NetApp Disaster Recovery no configura una progr
 
 Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
 
-Para obtener detalles sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información sobre el uso de soluciones de instantáneas externas en el plan de replicación, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].

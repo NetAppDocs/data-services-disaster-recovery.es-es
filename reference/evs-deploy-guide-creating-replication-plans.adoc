@@ -36,7 +36,7 @@ Esto abre el asistente Crear plan de replicación.
 .Pasos
 . Introduzca un nombre único para el plan de replicación.
 +
-Solo se permiten caracteres alfanuméricos y guiones bajos (_) para los nombres de los planes de replicación.
+En los nombres de los planes de replicación solo se permiten caracteres alfanuméricos y guiones bajos (_).
 
 . Seleccione un clúster de vCenter de origen.
 . Seleccione un clúster de vCenter de destino.
@@ -54,7 +54,7 @@ image:evs-create-rp-wiz-a-1-4.png["Cree un plan de replicación, seleccione vCen
 Existen varias formas de seleccionar máquinas virtuales para protegerlas. Los siguientes pasos muestran cómo proteger todos los almacenes de datos de vCenter, pero debes elegir el método que mejor se adapte a tus necesidades.
 
 * *Seleccionar máquinas virtuales individuales*: Al hacer clic en el botón *Máquinas virtuales*, puedes seleccionar máquinas virtuales individuales para protegerlas. A medida que seleccionas cada máquina virtual, el servicio la añade a un grupo de recursos predeterminado situado en la parte derecha de la pantalla.
-* *Seleccionar grupos de recursos creados previamente*: Puedes crear grupos de recursos personalizados con antelación usando la opción Grupo de recursos del menú Disaster Recovery. Esto es opcional porque puedes usar los otros dos métodos para crear un grupo de recursos durante la creación del plan de replicación. Para más detalles, consulta link:../use/drplan-create.html["Crear un plan de replicación"].
+* *Seleccionar grupos de recursos creados previamente*: Puedes crear grupos de recursos personalizados con antelación usando la opción Grupo de recursos del menú Disaster Recovery. Esto es opcional porque puedes usar los otros dos métodos para crear un grupo de recursos durante la creación del plan de replicación. Para obtener más información, consulta link:../use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 * *Selecciona todos los almacenes de datos de vCenter*: Con esta opción, todas las máquinas virtuales que se encuentren en un almacén de datos se replicarán como parte del volumen. Usa esta opción si tienes varias máquinas virtuales que proteger con el plan de replicación para evitar seleccionar las máquinas virtuales una por una. En la mayoría de los casos, deberías hacer que Disaster Recovery proteja y reinicie cualquier máquina virtual ubicada en el almacén de datos. Usa esta opción para indicarle al servicio que agregue cualquier máquina virtual alojada en un almacén de datos seleccionado a la lista de máquinas virtuales protegidas.
 
 

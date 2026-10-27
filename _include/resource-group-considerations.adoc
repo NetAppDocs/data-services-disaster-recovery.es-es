@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Al crear grupos de recursos, ten en cuenta los siguientes casos:
+
+* Antes de añadir almacenes de datos o espacios de nombres a los grupos de recursos, inicia una detección manual o espera a que se ejecute una detección programada. De este modo, te aseguras de que las máquinas virtuales se detecten y aparezcan en el grupo de recursos. Si no inicias una detección manual, es posible que los recursos no aparezcan en el grupo de recursos.
+* Asegúrate de que haya al menos un recurso (VM o namespace) en el almacén de datos. Si no hay recursos en el almacén de datos, Disaster Recovery no detecta el almacén de datos.
+* Un único almacén de datos no debe alojar máquinas virtuales protegidas por más de un plan de replicación.
+* No alojes recursos protegidos y no protegidos en el mismo almacén de datos. Si se alojan recursos protegidos y no protegidos en el mismo almacén de datos, podrían surgir los siguientes problemas:
++
+** Como Disaster Recovery usa SnapMirror y el sistema replica volúmenes de ONTAP completos, la capacidad utilizada de ese volumen se tiene en cuenta para las licencias. En este caso, en este cálculo se incluiría el espacio del volumen consumido tanto por las máquinas virtuales protegidas como por las no protegidas.
+** Si es necesario realizar una conmutación por error del grupo de recursos y sus entidades asociadas al sitio de recuperación ante desastres, cualquier recurso no protegido (máquinas virtuales o espacios de nombres que no formen parte del grupo de recursos, pero que estén alojados en el volumen ONTAP) dejará de existir en el sitio de origen como resultado del proceso de conmutación por error, lo que provocará el fallo de las máquinas virtuales no protegidas en el sitio de origen. Además, Disaster Recovery no iniciará esos recursos no protegidos en el sitio de conmutación por error.
+
+
+* Para proteger un recurso, debes incluirlo en un grupo de recursos.
+
+
+*PRÁCTICA RECOMENDADA*: Organiza tus máquinas virtuales antes de desplegar NetApp Disaster Recovery para minimizar la proliferación de almacenes de datos. Coloca las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y pon las máquinas virtuales que no se van a proteger en un subconjunto diferente de almacenes de datos. Asegúrate de que las máquinas virtuales en cualquier almacén de datos no estén protegidas por diferentes planes de replicación.

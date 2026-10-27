@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: use/task-replication-plan-modify.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+summary: Modifica un plan de replicación para ajustar el tiempo de cumplimiento o la configuración de conmutación por error. 
+---
+= Modificar un plan de replicación en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+En NetApp Disaster Recovery, puedes modificar el impacto en el tiempo de cumplimiento de un plan de replicación para asegurarte de que las pruebas de conmutación por error se completen con éxito.
+
+Puedes modificar el tiempo de cumplimiento y el impacto de la conmutación por error de prueba. Para editar la periodicidad del plan, las asignaciones de conmutación por error o las máquinas virtuales, elimina el plan de replicación y crea uno nuevo.
+
+
+
+[[modifiable-fields]]
+== Campos modificables
+
+* *Impacto en el tiempo de cumplimiento*: cuando se crea un plan de replicación, el servicio crea un programa de cumplimiento de forma predeterminada.  El tiempo de cumplimiento predeterminado es de 30 minutos.  Para cambiar este tiempo, puede editar la programación en el plan de replicación.
+* *Prueba del impacto de la conmutación por error*: puedes probar un proceso de conmutación por error cuando lo desees o según una programación. Esto te permite probar la conmutación por error de VM a un destino especificado en un plan de replicación.
++
+Una conmutación por error de prueba crea un volumen FlexClone , monta el almacén de datos y mueve la carga de trabajo en ese almacén de datos.  Una operación de conmutación por error de prueba _no_ afecta las cargas de trabajo de producción, la relación SnapMirror utilizada en el sitio de prueba y las cargas de trabajo protegidas que deben seguir funcionando normalmente.
+
+
+
+Según el cronograma, se ejecuta la prueba de conmutación por error y garantiza que las cargas de trabajo se muevan al destino especificado por el plan de replicación.
+
+
+
+[[modify-a-replication-plan]]
+== Modificar un plan de replicación
+
+. En el menú NetApp Disaster Recovery , seleccione *Planes de replicación*.
++
+image:dr-plan-list.png["Captura de pantalla que muestra la lista de planes de replicación"]
+
+. Seleccione las *Acciones*image:icon-horizontal-dots.png["Menú Acciones de puntos horizontales"] icono y seleccione *Editar horarios*.
+. Ingrese la frecuencia en minutos con la que desea que NetApp Disaster Recovery verifique el cumplimiento de las pruebas.
+. Para comprobar que sus pruebas de conmutación por error funcionan correctamente, marque *Ejecutar conmutaciones por error según una programación mensual*.
++
+.. Seleccione el día del mes y la hora en que desea que se ejecuten estas pruebas.
+.. Ingrese la fecha en formato aaaa-mm-dd en la que desea que comience la prueba.
++
+image:dr-plan-schedule-edit2.png["Captura de pantalla que muestra dónde puedes editar los horarios"]
+
+
+
+. *Utilizar instantánea bajo demanda para la conmutación por error de prueba programada*: para crear una nueva instantánea antes de iniciar la conmutación por error de prueba automatizada, marca esta casilla.
+. Para limpiar el entorno de prueba una vez finalizada la prueba de conmutación por error, marque *Limpiar automáticamente después de la conmutación por error de prueba* e ingrese la cantidad de minutos que desea esperar antes de que comience la limpieza.
++
+
+NOTE: Este proceso anula el registro de las VM temporales de la ubicación de prueba, elimina el volumen FlexClone que se creó y desmonta los datastores temporales.
+
+. Seleccione *Guardar*.
+

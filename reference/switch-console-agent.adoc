@@ -12,7 +12,7 @@ summary: Obtenga información sobre los requisitos para utilizar varios agentes 
 
 
 [role="lead"]
-La NetApp Console admite el uso de varios agentes de consola con un único entorno de trabajo.  El uso de varios agentes de consola puede resultar útil para mantener el acceso a los recursos mientras se realiza mantenimiento en otro agente de consola o si un agente de consola falla.  Debido a que cada agente de consola tiene un identificador único, cambiar incorrectamente los agentes de consola puede comprometer la disponibilidad de recursos en un entorno de trabajo.
+La NetApp Console admite el uso de varios agentes de Console en un único entorno de trabajo. Usar varios agentes de Console puede ser útil para mantener el acceso a los recursos mientras realizas tareas de mantenimiento en otro agente de Console o si falla un agente de Console. Como cada agente de Console tiene un identificador único, cambiar de agente de Console de forma incorrecta puede comprometer la disponibilidad de los recursos en un entorno de trabajo.
 
 
 

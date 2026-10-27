@@ -1,0 +1,342 @@
+---
+sidebar: sidebar 
+permalink: use/task-replication-plan-vmware.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
+summary: NetApp Disaster Recovery es un servicio de recuperación ante desastres basado en cloud que automatiza los flujos de trabajo de recuperación ante desastres. Una vez que hayas añadido los sitios de vCenter, ya estarás listo para crear un plan de recuperación ante desastres o de replicación para tus cargas de trabajo de VMware. 
+---
+= Crear un plan de replicación para cargas de trabajo de VMware en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Una vez que hayas añadido sitios y recursos de vCenter, crea un _plan de replicación_ para proteger tus cargas de trabajo de VMware con NetApp Disaster Recovery. El plan define los vCenters de origen y destino, los grupos de recursos, las asignaciones de recuperación y el comportamiento de encendido de tus máquinas virtuales. También puedes configurar programaciones de cumplimiento y pruebas, y realizar pruebas de conmutación por error sin afectar a los datos de producción.
+
+*Función de NetApp Console requerida* Para realizar esta tarea se requiere la función Super admin, Disaster recovery admin, Disaster recovery failover admin o Disaster recovery application admin. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["Obtenga información sobre los roles y permisos de usuario en NetApp Disaster Recovery"^]. link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Obtenga información sobre los roles de acceso a la NetApp Console para todos los servicios"^].
+
+
+NOTE: Para proteger las cargas de trabajo de Kubernetes, consulta link:task-replication-plan-kubernetes.html["Crear un plan de replicación de Kubernetes"].
+
+
+
+[[before-you-begin]]
+== Antes de empezar
+
+* Antes de crear una relación SnapMirror , configure el clúster y el emparejamiento SVM fuera de Disaster Recovery.
+* Si configuras las asignaciones de red a nivel de vCenter, Disaster Recovery reconoce esas asignaciones cuando creas el plan de replicación. Si modificas o agregas la asignación de red a nivel de vCenter después de crear el plan de replicación, Disaster Recovery reconoce esas asignaciones cuando editas manualmente el plan de replicación.
+* Con Google Cloud, solo puedes agregar un volumen o almacén de datos a un plan de replicación.
+* Solo puedes activar la protección si el plan de replicación está en uno de los siguientes estados: listo, recuperación tras fallo confirmada o prueba de conmutación por error confirmada.
+
+
+
+
+[[create-the-replication-plan]]
+== Crear el plan de replicación
+
+Cuando crees el plan, sigue estas pautas:
+
+* Utiliza las mismas credenciales para todas las máquinas virtuales del plan.
+* Utiliza el mismo script para todas las máquinas virtuales del plan.
+* Utiliza la misma subred, DNS y puerta de enlace para todas las máquinas virtuales del plan.
+
+
+
+
+[[select-vcenter-servers]]
+=== Seleccionar servidores vCenter
+
+Primero, selecciona el vCenter de origen y el vCenter de destino.
+
+.Pasos
+. Desde el menú Disaster Recovery, selecciona *Replication plans*.
+. En el menú desplegable, selecciona *vCenter*.
++
+image::site-type-toggle.png[Captura de pantalla del conmutador de tipo de sitio]
+
+. Seleccione *Agregar*.
+. Ingresa un nombre para el plan de replicación.
++
+El nombre solo puede contener letras, números y guiones bajos. No se admiten espacios, guiones ni otros caracteres especiales.
+
+. En *Fuente vCenter*, selecciona en el menú desplegable el vCenter donde se encuentran los datos. En *Destino*, selecciona el vCenter que usarás como destino de recuperación ante desastres.
++
+image:dr-plan-create-name2.png["Captura de pantalla que muestra la página del servidor vCenter"]
+
+. Seleccione *Siguiente*.
+
+
+
+
+[[select-applications-to-replicate-and-assign-resource-groups]]
+=== Seleccionar aplicaciones para replicar y asignar grupos de recursos
+
+Agrupa las máquinas virtuales o los almacenes de datos necesarios en grupos de recursos funcionales. Los grupos de recursos te permiten proteger un conjunto de máquinas virtuales con una instantánea común. Puedes asignar máquinas virtuales a grupos de recursos fuera del flujo de trabajo del plan de replicación. Para obtener recomendaciones sobre la planificación, consulta link:resource-group.html["buenas prácticas para los grupos de recursos"].
+
+.Pasos
+. Si ya tienes grupos de recursos, selecciona **Resource groups**, elige el grupo de recursos y luego **Next**.
++
+Si aún no tienes ningún grupo de recursos o necesitas añadir recursos a uno, selecciona *Máquinas virtuales* (VMs) o *Almacenes de datos*.
+
+. Selecciona las VM o los datastores que quieres añadir al plan de replicación de la lista generada automáticamente. Para VM, puedes filtrar por datastore. Cuando seleccionas un datastore o una VM, se añade automáticamente a un grupo de recursos.
++
+image:dr-plan-create-apps-vms6.png["Captura de pantalla que muestra la página Agregar plan de replicación > Aplicaciones para replicar"]
+
+. En la mitad derecha de la página, revisa las máquinas virtuales o los almacenes de datos seleccionados.
++
+** Para eliminar una máquina virtual o un almacén de datos, pasa el cursor por encima del nombre del recurso y luego selecciona *X*.
+** Para organizar los recursos en varios grupos de recursos, selecciona *Haz clic para añadir otro grupo de recursos*. Una vez añadido el grupo de recursos, puedes arrastrar y soltar recursos entre grupos. Selecciona el icono del lápiz para editar el nombre del grupo de recursos.
++
+image:dr-plan-create-apps-datastores.png["Captura de pantalla que muestra la página Agregar plan de replicación > Aplicaciones para replicar"]
+
+
+
+. Seleccione *Siguiente*.
+
+
+
+
+[[map-source-resources-to-the-target]]
+=== Asignar recursos de origen al destino
+
+En Resource mapping, especifica cómo deben asignarse los recursos del entorno de origen al de destino. Al crear un plan de replicación, puedes establecer un retardo y un orden de arranque para cada VM del plan. Esto te permite establecer una secuencia para iniciar las VM.
+
+Si planeas realizar conmutaciones por error de prueba como parte de tu plan de replicación, debes proporcionar un conjunto de asignaciones de conmutación por error de prueba para garantizar que las máquinas virtuales iniciadas durante la prueba de conmutación por error no interfieran con las máquinas virtuales de producción. Puedes lograrlo asignando a las máquinas virtuales de prueba direcciones IP diferentes o asignando las NIC virtuales de las máquinas virtuales de prueba a una red diferente que esté aislada de la de producción, pero que tenga la misma configuración de IP (lo que se conoce como «burbuja» o «red de prueba»).
+
+.Antes de empezar
+Si quieres crear una relación de SnapMirror en este servicio, el clúster y el emparejamiento de su SVM ya deberían haberse configurado fuera de Disaster Recovery.
+
+.Pasos
+. En la página de mapeo de recursos, marque la casilla para usar las mismas asignaciones para las operaciones de prueba y conmutación por error.
++
+image:dr-plan-resource-mapping2.png["Plan de replicación, pestaña Asignación de recursos"]
+
+. En la pestaña Asignaciones de conmutación por error, seleccione la flecha hacia abajo a la derecha de cada recurso y asigne los recursos en cada sección:
++
+** Recursos computacionales
+** Redes virtuales
+** Máquinas virtuales
+** Almacenes de datos
+
+
+
+
+
+
+==== Recursos computacionales
+
+La sección «Recursos de computación» define dónde se restauran las máquinas virtuales tras una conmutación por error. Asocia el centro de datos y el clúster de origen vCenter a un centro de datos y un clúster de destino.
+
+Opcionalmente, las máquinas virtuales se pueden reiniciar en un host ESXi específico vCenter. Si VMware DRS está habilitado, puedes trasladar la máquina virtual a un host alternativo de forma automática si es necesario para cumplir con la política de DR configurada.
+
+También tienes la opción de colocar todas las máquinas virtuales de este plan de replicación en una carpeta específica dentro del inventario de vCenter. Esto ofrece una forma sencilla de organizar rápidamente las máquinas virtuales tras la conmutación por error en vCenter.
+
+.Pasos
+. Seleccione la flecha hacia abajo junto a *Recursos informáticos*.
+. Facilita la siguiente información:
++
+** *Centros de datos de origen y destino*
+** *Clúster objetivo*
+** *Host de destino* (opcional): después de seleccionar el clúster, puede configurar esta información.
+** *Carpeta* (opcional)
+
+
+
+
+
+TIP: Si un vCenter tiene un Distributed Resource Scheduler (DRS) configurado para gestionar varios hosts en un clúster, no necesitas seleccionar un host. Si seleccionas un host, Disaster Recovery colocará todas las VMs en el host seleccionado. * *Carpeta VM de destino* (opcional): crea una nueva carpeta raíz para almacenar las VMs seleccionadas.
+
+
+
+==== Redes virtuales
+
+Las máquinas virtuales utilizan tarjetas de red virtuales conectadas a redes virtuales. En el proceso de conmutación por error, el servicio conecta estas tarjetas de red virtuales a las redes virtuales definidas en el entorno VMware de destino. Para cada red virtual de origen utilizada por las máquinas virtuales del grupo de recursos, Disaster Recovery requiere una asignación a una red virtual de destino.
+
+
+NOTE: Puede asignar varias redes virtuales de origen a la misma red virtual de destino.  Sin embargo, esto podría crear conflictos de configuración de red IP.  Puede asignar varias redes de origen a una única red de destino para garantizar que todas las redes de origen tengan la misma configuración.
+
+.Pasos
+. En la pestaña «Asignaciones de conmutación por error», selecciona la flecha hacia abajo situada junto a *Redes virtuales*.
+. La función de recuperación ante desastres rellena automáticamente las redes virtuales de origen. Para cada red de origen, selecciona la red de destino adecuada en el menú desplegable.
+
+
+
+
+==== Máquinas virtuales
+
+Puede configurar cada máquina virtual en el grupo de recursos protegido por el plan de replicación para que se adapte al entorno virtual de vCenter de destino configurando cualquiera de las siguientes opciones:
+
+* El número de CPU virtuales
+* La cantidad de DRAM virtual
+* La configuración de la dirección IP
+* La capacidad de ejecutar scripts de shell del sistema operativo invitado como parte del proceso de conmutación por error
+* La capacidad de cambiar los nombres de las máquinas virtuales conmutadas por error mediante un prefijo y un sufijo únicos
+* La capacidad de establecer el orden de reinicio durante la conmutación por error de la máquina virtual
+
+
+En la pestaña Mapeos de conmutación por error, seleccione la flecha hacia abajo junto a *Máquinas virtuales*.
+
+El valor predeterminado para las máquinas virtuales está asignado.  La asignación predeterminada utiliza las mismas configuraciones que usan las máquinas virtuales en el entorno de producción (misma dirección IP, máscara de subred y puerta de enlace).
+
+Si realiza algún cambio en la configuración predeterminada, deberá cambiar el campo IP de destino a "Diferente de la fuente".
+
+
+NOTE: Si cambia la configuración a "Diferente de la fuente", deberá proporcionar las credenciales del sistema operativo invitado de la máquina virtual.
+
+Esta sección puede mostrar diferentes campos dependiendo de su selección.
+
+Puede aumentar o disminuir la cantidad de CPU virtuales asignadas a cada máquina virtual conmutada por error.  Sin embargo, cada VM requiere al menos una CPU virtual.  Puede cambiar la cantidad de CPU virtuales y DRAM virtuales asignadas a cada VM.  El motivo más común por el que podría querer cambiar la configuración predeterminada de CPU virtual y DRAM virtual es si los nodos del clúster vCenter de destino no tienen tantos recursos disponibles como el clúster vCenter de origen.
+
+
+NOTE: Activa la opción *Configuración avanzada* para añadir scripts y configurar la consistencia de la aplicación.
+
+*Configuración de red* Disaster Recovery admite un amplio conjunto de opciones de configuración para redes de máquinas virtuales. Puede que sea necesario cambiarlas si el sitio de destino tiene redes virtuales que utilizan una configuración TCP/IP diferente a la de las redes virtuales de producción del sitio de origen.
+
+En el nivel más básico (y predeterminado), la configuración simplemente utiliza la misma configuración de red TCP/IP para cada VM en el sitio de destino que la utilizada en el sitio de origen.  Esto requiere que configure los mismos ajustes TCP/IP en las redes virtuales de origen y destino.
+
+Disaster Recovery admite configuraciones de red con IP estática o Dynamic Host Configuration Protocol (DHCP) para VMs. DHCP proporciona un método basado en estándares para configurar dinámicamente los ajustes de TCP/IP de un puerto de red del host. DHCP debe proporcionar, como mínimo, una dirección TCP/IP, y también puede proporcionar una dirección de puerta de enlace predeterminada (para el enrutamiento a una conexión externa a internet), una máscara de subred y una dirección de servidor DNS. DHCP se usa habitualmente para dispositivos informáticos de usuario final, como conexiones de desktop, laptop y teléfonos móviles de empleados, aunque también puede usarse para cualquier dispositivo informático de red, como servidores.
+
+* Opción *Usar la misma máscara de subred, DNS y configuración de puerta de enlace*: debido a que estas configuraciones suelen ser las mismas para todas las máquinas virtuales conectadas a las mismas redes virtuales, es posible que le resulte más fácil configurarlas una vez y dejar que Disaster Recovery use las configuraciones para todas las máquinas virtuales en el grupo de recursos protegido por el plan de replicación.  Si algunas máquinas virtuales usan configuraciones diferentes, deberá desmarcar esta casilla y proporcionar esas configuraciones para cada máquina virtual.
+* *Tipo de dirección IP*: reconfigura la configuración de VM para que coincida con los requisitos de la red virtual de destino. Disaster Recovery ofrece dos opciones: DHCP o IP estática. Para las IP estáticas, configura la máscara de subred, la puerta de enlace y los servidores DNS. Además, introduce las credenciales para las VM.
++
+** *DHCP*: seleccione esta configuración si desea que sus máquinas virtuales obtengan información de configuración de red de un servidor DHCP.  Si elige esta opción, proporcionará únicamente las credenciales para la máquina virtual.
+** *IP estática*: seleccione esta configuración si desea especificar la información de configuración de IP manualmente.  Puede seleccionar una de las siguientes opciones: igual que la fuente, diferente de la fuente o asignación de subred.  Si elige lo mismo que la fuente, no necesita ingresar credenciales.  Por otro lado, si elige utilizar información diferente de la fuente, puede proporcionar las credenciales, la dirección IP de la VM, la máscara de subred, el DNS y la información de la puerta de enlace.  Las credenciales del sistema operativo invitado de la máquina virtual se deben proporcionar al nivel global o a cada nivel de la máquina virtual.
++
+Esto puede ser muy útil al recuperar entornos grandes en clústeres de destino más pequeños o para realizar pruebas de recuperación ante desastres sin tener que aprovisionar una infraestructura VMware física uno a uno.
+
++
+image:dr-plan-vm-subnet-option2.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > Máquinas virtuales"]
+
+
+
+* *Scripts*: puede incluir scripts personalizados alojados en el sistema operativo invitado en formato .sh, .bat o .ps1 como procesos posteriores. Con scripts personalizados, Disaster Recovery puede ejecutar su script después de una conmutación por error, una recuperación y procesos de migración. Por ejemplo, puede utilizar un script personalizado para reanudar todas las transacciones de la base de datos una vez completada la conmutación por error. El servicio puede ejecutar scripts dentro de máquinas virtuales que ejecutan Microsoft Windows o cualquier variante de Linux compatible con parámetros de línea de comandos admitidos. Puede asignar un script a máquinas virtuales individuales o a todas las máquinas virtuales en el plan de replicación.
++
+Para habilitar la ejecución de scripts con el SO invitado VM, deben cumplirse las siguientes condiciones:
+
++
+** VMware Tools debe estar instalado en la máquina virtual.
+** Se deben proporcionar credenciales de usuario apropiadas con privilegios de sistema operativo invitado adecuados para ejecutar el script.
+** Opcionalmente, incluya un valor de tiempo de espera en segundos para el script.
++
+*Máquinas virtuales que ejecutan Microsoft Windows*: pueden ejecutar scripts por lotes de Windows (.bat) o PowerShell (ps1). Los scripts de Windows pueden utilizar argumentos de línea de comandos. Da formato a cada argumento en el formato `arg_name$value`, donde `arg_name` es el nombre del argumento y `$value` es el valor del argumento, y un punto y coma separa cada par `argument$value`.
+
++
+*Máquinas virtuales que ejecutan Linux*: pueden ejecutar cualquier script de shell (.sh) compatible con la versión de Linux utilizada por la máquina virtual.  Los scripts de Linux pueden utilizar argumentos de línea de comandos.  Proporcione argumentos en una lista de valores separados por punto y coma.  No se admiten argumentos con nombre.  Añade cada argumento a la `Arg[x]` lista de argumentos y hacer referencia a cada valor mediante un puntero a la `Arg[x]` matriz, por ejemplo, `value1;value2;value3` .
+
+
+
+* *Reducir la versión del hardware de la máquina virtual y registrarla*: Seleccione esta opción si la versión del host ESX de destino es anterior a la del origen para que coincidan durante el registro.
+* *Conservar la jerarquía de carpetas original*: de manera predeterminada, Disaster Recovery conserva la jerarquía de inventario de VM (estructura de carpetas) en caso de conmutación por error. Si el destino de recuperación _no_ tiene la jerarquía de carpetas original, Disaster Recovery la crea.
++
+Desmarque esta casilla para ignorar la jerarquía de carpetas original.
+
+* *Prefijo y sufijo de la VM de destino*: en los detalles de la VM, puedes añadir opcionalmente un prefijo y un sufijo al nombre de cada VM con conmutación por error. Esto puede ser útil para diferenciar las VM con conmutación por error de las VM de producción que se ejecutan en el mismo clúster de vCenter. Por ejemplo, puedes añadir el prefijo "DR-" y el sufijo "-failover" al nombre de la VM. Algunas personas añaden un segundo vCenter de producción para alojar VM temporalmente en otro sitio en caso de desastre. Añadir un prefijo o un sufijo puede ayudarte a identificar rápidamente las VM con conmutación por error. También puedes usar el prefijo o el sufijo en scripts personalizados.
++
+Puede utilizar el método alternativo para configurar la carpeta de la máquina virtual de destino en la sección Recursos de cómputo.
+
+* *CPU* y *Memoria (GB)*: en los detalles de la VM, puedes cambiar opcionalmente el tamaño de la CPU y la memoria de la VM.
++
+
+NOTE: Puede configurar la DRAM en gigabytes (GiB) o megabytes (MiB).  Si bien cada VM requiere al menos un MiB de RAM, la cantidad real debe garantizar que el sistema operativo invitado de la VM y cualquier aplicación en ejecución puedan funcionar de manera eficiente.
+
+* *Orden de arranque*: puedes modificar el orden de arranque tras una conmutación por error para todas las máquinas virtuales seleccionadas en los distintos grupos de recursos. De forma predeterminada, todas las máquinas virtuales se inician al mismo tiempo en paralelo; sin embargo, puedes realizar cambios en esta fase. Esto resulta útil para garantizar que todas tus máquinas virtuales de prioridad uno estén en funcionamiento antes de que se inicien las máquinas virtuales de prioridades posteriores.
++
+Disaster Recovery inicia cualquier máquina virtual con el mismo número de orden de inicio en paralelo.
+
++
+** Arranque secuencial: Asigna a cada máquina virtual un número único para que se inicien en el orden asignado, por ejemplo, 1,2,3,4,5.
+** Arranque simultáneo: asigne el mismo número a todas las máquinas virtuales para iniciarlas al mismo tiempo, por ejemplo, 1,1,1,1,2,2,3,4,4.
+
+
+* *Retraso de arranque*: ajusta el retraso en minutos de la acción de arranque, indicando la cantidad de tiempo que la VM esperará antes de iniciar el proceso de encendido.  Introduzca un valor de 0 a 10 minutos.
+* *App consistent*: Indica si quieres crear copias snapshot consistentes con las aplicaciones. El servicio pondrá en reposo la aplicación y luego tomará una snapshot para obtener un estado consistente de la aplicación. Esta función es compatible con Oracle ejecutándose en Windows y Linux, y con SQL Server ejecutándose en Windows. Mira más detalles a continuación.
++
+Debes activar el interruptor *Advance settings* para esta opción. Si activas la consistencia con las aplicaciones, debes proporcionar credenciales en forma de nombre de usuario y contraseña.
+
+
+
+image:dr-plan-resource-mapping-vm-boot-order.png["Captura de pantalla en la que se muestra la sección de máquinas virtuales de las asignaciones de recursos"]
+
+
+
+==== Crear réplicas consistentes con la aplicación
+
+Para habilitar réplicas consistentes con la aplicación de las máquinas virtuales y sus almacenes de datos de alojamiento, marque la casilla junto a *Crear réplicas consistentes con la aplicación* para cada máquina virtual y proporcione credenciales de inicio de sesión de invitado con los privilegios adecuados.
+
+Para obtener más información sobre cómo funcionan las réplicas consistentes con las aplicaciones, consulta link:concept-replication-plan.html#application-consistent-replicas["Infórmate sobre las réplicas consistentes con las aplicaciones"].
+
+
+
+==== Almacenes de datos
+
+Los almacenes de datos de VMware están alojados en volúmenes ONTAP FlexVol o LUN iSCSI o FC de ONTAP mediante VMware VMFS.  Utilice la sección Almacenes de datos para definir el clúster ONTAP de destino, la máquina virtual de almacenamiento (SVM) y el volumen o LUN para replicar los datos del disco al destino.
+
+Selecciona la flecha hacia abajo situada junto a *Datastores*. En función de la selección de VMs, las asignaciones de datastore se seleccionan automáticamente.
+
+Esta sección puede estar habilitada o deshabilitada según su selección.
+
+image:dr-plan-datastore-platform.png["Captura de pantalla que muestra Agregar plan de replicación > Asignación de recursos > Almacenes de datos"]
+
+
+TIP: Consulta la link:concept-replication-plan.html#platform-managed-backups["información sobre los backups gestionados por la plataforma (es decir, las snapshots gestionadas por ONTAP)"] antes de realizar estas selecciones.
+
+* *Usar copias de seguridad y programaciones de retención gestionadas por la plataforma*: si usas una solución externa de gestión de instantáneas, marca esta casilla. Disaster Recovery admite el uso de soluciones externas de gestión de instantáneas, como el programador de políticas nativo de ONTAP SnapMirror o integraciones de terceros. Si cada almacén de datos (volumen) del plan de replicación ya tiene una relación de SnapMirror que se gestiona en otro lugar, puedes usar esas instantáneas como puntos de recuperación en Disaster Recovery.
++
+Cuando se selecciona esta opción, Disaster Recovery no configura una programación de copias de seguridad. Sin embargo, aún debes configurar una programación de retención, ya que es posible que se sigan realizando instantáneas para operaciones de prueba, conmutación por error y conmutación de retorno.
+
++
+Una vez configurado esto, el servicio no toma ninguna instantánea programada regularmente, sino que depende de la entidad externa para tomar y actualizar esas instantáneas.
+
+* *Backups and retention start time*: Introduce la fecha y hora en la que quieres que empiecen a ejecutarse las copias de seguridad y la retención.
+* *Copias de seguridad y frecuencia de retención*: introduce el intervalo de tiempo en horas y minutos. Por ejemplo, si introduces 1 hora, el servicio realizará una instantánea cada hora.
+* *Recuento de retención para todos los almacenes de datos*: Ingresa el número de instantáneas que quieres conservar.
++
+
+TIP: La cantidad de instantáneas retenidas junto con la tasa de cambio de datos entre cada instantánea determina la cantidad de espacio de almacenamiento consumido tanto en el origen como en el destino.  Cuanto más instantáneas conserve, más espacio de almacenamiento se consumirá.
+
+* *Almacenes de datos de origen y de destino*: Si existen varias relaciones SnapMirror (tipo fan-out), puedes seleccionar el destino que quieres usar. Si un volumen ya tiene establecida una relación SnapMirror, aparecen los almacenes de datos de origen y de destino correspondientes. Si un volumen no tiene una relación SnapMirror, puedes crear una ahora seleccionando un clúster de destino, seleccionando una SVM de destino y proporcionando un nombre para el volumen. El servicio creará el volumen y la relación SnapMirror.
++
+
+NOTE: Si quieres crear una relación de SnapMirror en este servicio, el clúster y el emparejamiento de su SVM ya deberían haberse configurado fuera de Disaster Recovery.
+
++
+** Si las máquinas virtuales son del mismo volumen y del mismo SVM, el servicio realiza una instantánea de ONTAP estándar y actualiza los destinos secundarios.
+** Si las máquinas virtuales son de diferentes volúmenes y del mismo SVM, el servicio crea una instantánea del grupo de consistencia incluyendo todos los volúmenes y actualiza los destinos secundarios.
+** Si las máquinas virtuales son de diferentes volúmenes y diferentes SVM, el servicio realiza una instantánea de la fase de inicio y la fase de confirmación del grupo de consistencia incluyendo todos los volúmenes en el mismo clúster o en uno diferente y actualiza los destinos secundarios.
+** Durante la conmutación por error, puedes seleccionar cualquier instantánea. Si seleccionas la instantánea más reciente, el servicio crea una copia de seguridad bajo demanda, actualiza el destino y utiliza esa instantánea para la conmutación por error.
+
+
+
+
+
+
+[[add-test-failover-mappings]]
+=== Agregar asignaciones de conmutación por error de prueba
+
+.Pasos
+. Para configurar diferentes asignaciones para el entorno de prueba, desmarque la casilla y seleccione la pestaña *Asignaciones de prueba*.
+. Revise cada pestaña como antes, pero esta vez para el entorno de prueba.
++
+En la pestaña «Asignaciones de prueba», las asignaciones de máquinas virtuales y almacenes de datos están desactivadas.
+
++
+
+TIP: Podrás probar el plan completo más tarde.  En este momento, estás configurando las asignaciones para el entorno de prueba.
+
+
+
+
+
+[[review-the-replication-plan]]
+=== Revisar el plan de replicación
+
+Revisa el plan de replicación para asegurarte de que tus selecciones sean correctas. Puedes link:task-replication-plan-modify.html["modificar determinados campos de un plan de replicación"]. También puedes desactivarlo o eliminarlo más adelante.
+
+.Pasos
+. Revise la información en cada pestaña: Detalles del plan, Mapeo de conmutación por error y Máquinas virtuales.
+. Seleccione *Agregar plan*.
++
+El plan se agrega a la lista de planes.
+
+

@@ -27,7 +27,7 @@ Las transformaciones de recursos se aplican al crear un plan de replicación. Pu
 
 Ahora puedes incorporar scripts personalizados en el flujo de trabajo de conmutación por error para coordinar la suspensión y la reanudación de las aplicaciones. Esta función ayuda a garantizar que las aplicaciones estén debidamente preparadas antes de que se replique una instantánea y se restaure correctamente, de modo que las operaciones puedan reanudarse sin interrupciones tras la conmutación por error.
 
-Para saber cómo insertar un script personalizado, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"^].
+Para saber cómo insertar un script personalizado, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["Crear un plan de replicación"^].
 
 
 

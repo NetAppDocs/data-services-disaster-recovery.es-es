@@ -7,9 +7,9 @@
 [[optional-boot-order-for-kubernetes-resource-groups]]
 === Orden de arranque opcional para los grupos de recursos de Kubernetes
 
-NetApp Disaster Recovery ahora admite configurar un orden de arranque opcional para los grupos de recursos en un plan de replicación de Kubernetes, especificando un orden de prioridad y un tiempo de retraso opcional para los recursos. Esta opción te permite arrancar recursos al mismo tiempo cuando sea necesario y retrasar el arranque de aquellos que dependen de otros, lo que ayuda a que tus aplicaciones vuelvan a estar operativas correctamente.
+NetApp Disaster Recovery ahora admite la configuración de un orden de arranque opcional para los grupos de recursos en un plan de replicación de Kubernetes, al especificar un orden de prioridad y un tiempo de retraso opcional para los recursos. Esta opción te permite arrancar recursos al mismo tiempo cuando sea necesario y retrasar el arranque de los recursos que dependen de otros, lo que ayuda a que tus aplicaciones vuelvan a estar en línea de forma correcta.
 
-Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["crear un plan de replicación"^].
+Para obtener más información, consulta link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["crear un plan de replicación"^].
 
 
 

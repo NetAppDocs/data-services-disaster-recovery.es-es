@@ -42,7 +42,7 @@ Aquí te explicamos cómo:
 
 Cuando crea un plan de replicación y asigna recursos informáticos, ahora puede asignar carpetas para que las máquinas virtuales se recuperen en una carpeta que especifique para el centro de datos, el clúster y el host.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -60,7 +60,7 @@ Referirse a https://docs.netapp.com/us-en/data-services-disaster-recovery/use/fa
 
 Al crear un plan de replicación, ahora puede establecer un retraso de arranque para cada máquina virtual en el plan.  Esto le permite establecer una secuencia para que las máquinas virtuales se inicien a fin de garantizar que todas las máquinas virtuales de prioridad uno se estén ejecutando antes de que se inicien las máquinas virtuales de prioridad posterior.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -69,7 +69,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Al crear un plan de replicación, ahora puede ver el sistema operativo de cada máquina virtual en el plan.  Esto es útil para decidir cómo agrupar las máquinas virtuales en un grupo de recursos.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
@@ -78,7 +78,7 @@ Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaste
 
 Al crear un plan de replicación, ahora puedes añadir un prefijo y un sufijo a los nombres de las máquinas virtuales en el sitio de recuperación ante desastres. Esto te permite utilizar un nombre más descriptivo para las máquinas virtuales del plan.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 

@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: use/concept-replication-plan.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, snapmirror, snapshot, backup, best practices 
+summary: Antes de implementar tu replicación en NetApp Disaster Recovery, familiarízate con las prácticas recomendadas para garantizar la eficacia de tu estrategia de recuperación ante desastres. 
+---
+= Optimiza tu plan de replicación en NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+El plan de replicación es una parte esencial de tu estrategia de recuperación ante desastres, ya que define la frecuencia de las instantáneas, el orden de arranque, la asignación de red y otros detalles clave de la conmutación por error y la conmutación por recuperación. Antes de crear un plan de replicación en NetApp Disaster Recovery, asegúrate de entender cómo funcionan los planes de replicación y cuáles son las mejores prácticas.
+
+
+
+[[about-replication-plans]]
+== Acerca de los planes de replicación
+
+Puedes proteger varias máquinas virtuales, datastores o espacios de nombres con un único plan de replicación. Disaster Recovery crea grupos de consistencia de ONTAP para todos los volúmenes de ONTAP que alojan recursos de datos protegidos.
+
+
+
+[[resource-planning]]
+== Planificación de recursos
+
+Organiza tus máquinas virtuales o espacios de nombres antes de asignar recursos a un plan de replicación para minimizar la dispersión. Coloca los recursos que necesitan protección en un subconjunto de datastores y los recursos que no se van a proteger en otro subconjunto de datastores. Para organizar grupos de recursos antes de crear el plan de replicación, consulta link:resource-group.html["Crear un grupo de recursos"].
+
+
+
+[[test-failover]]
+== Prueba de conmutación por error
+
+Al crear el plan de replicación, tienes la opción de configurar asignaciones únicas de conmutación por error de prueba.
+
+Si planeas realizar conmutaciones por error de prueba como parte de tu plan de replicación, debes proporcionar un conjunto de asignaciones de conmutación por error de prueba para garantizar que las máquinas virtuales iniciadas durante la prueba de conmutación por error no interfieran con las máquinas virtuales de producción. Puedes lograrlo asignando a las máquinas virtuales de prueba direcciones IP diferentes o asignando las NIC virtuales de las máquinas virtuales de prueba a una red diferente que esté aislada de la de producción, pero que tenga la misma configuración de IP (lo que se conoce como «burbuja» o «red de prueba»).
+
+
+
+[[snapshots]]
+== Instantáneas
+
+La recuperación ante desastres mantiene la misma cantidad de instantáneas en los clústeres de origen y destino.  De forma predeterminada, el servicio realiza un proceso de conciliación de instantáneas cada 24 horas para garantizar que la cantidad de instantáneas en los clústeres de origen y destino sea la misma.
+
+Las siguientes situaciones pueden provocar que la cantidad de instantáneas varíe entre los clústeres de origen y destino:
+
+* Algunas situaciones pueden provocar que las operaciones de ONTAP fuera de la recuperación ante desastres agreguen o eliminen instantáneas del volumen:
++
+** Si faltan instantáneas en el sitio de origen, es posible que se eliminen las instantáneas correspondientes en el sitio de destino, según la política de SnapMirror predeterminada para la relación.
+** Si faltan instantáneas en el sitio de destino, es posible que el servicio elimine las instantáneas correspondientes del sitio de origen durante el siguiente proceso programado de conciliación de instantáneas, dependiendo de la política predeterminada de SnapMirror para la relación.
+
+
+* Una reducción en el recuento de retención de instantáneas del plan de replicación puede provocar que el servicio elimine las instantáneas más antiguas tanto en el sitio de origen como en el de destino para cumplir con el número de retención recientemente reducido.
+
+
+En estos casos, Disaster Recovery elimina instantáneas más antiguas de los clústeres de origen y destino en la siguiente verificación de consistencia.  O bien, el administrador puede realizar una limpieza de instantáneas inmediata seleccionando *Acciones*image:icon-horizontal-dots.png["Menú Acciones de puntos horizontales"] icono en el plan de replicación y seleccionando *Limpiar instantáneas*.
+
+Disaster Recovery realiza comprobaciones de simetría de instantáneas cada 24 horas.
+
+
+
+[[platform-managed-backups]]
+== Copias de seguridad gestionadas por la plataforma
+
+Si tienes previsto usar copias de seguridad gestionadas por la plataforma (es decir, instantáneas gestionadas por ONTAP), se recomienda que uses la política de replicación *MirrorAll*. Revisa la tabla para entender el impacto de las diferentes políticas de replicación de SnapMirror y por qué MirrorAll es la opción recomendada.
+
+[cols="10,10,80"]
+|===
+
+
+| Política | Recomendación | Notas 
+
+
+| *MirrorAll* | Recomendado | No utilices instantáneas de transferencia de SnapMirror para operaciones de conmutación por error o restablecimiento. 
+
+
+| *MirrorVault* .2+| Recomendación alternativa .2+| Asegúrate de que las copias de Snapshot seleccionadas durante la conmutación por error o la conmutación por recuperación estén presentes tanto en el volumen de origen como en el de destino. De lo contrario, se producirá el error: "Transition to 'snapmirrored' state failed. Reason: No common snapshot found." No utilices instantáneas de transferencia de SnapMirror para operaciones de conmutación por error o restablecimiento. 
+
+
+| *Asíncrono* 
+
+
+| *MirrorLatest* | _NO_ se recomienda | Esta política hace que el destino disponga, en la práctica, de una única instantánea común para la conmutación por error, lo cual no es óptimo para situaciones de recuperación ante desastres. 
+|===
+
+
+[[disaster-recovery-managed-backups]]
+== Copias de seguridad gestionadas por Disaster Recovery
+
+Al utilizar las copias de seguridad gestionadas de NetApp Disaster Recovery, se aplican las siguientes directrices a las relaciones de SnapMirror creadas fuera de NetApp Disaster Recovery:
+
+* Las relaciones de SnapMirror pueden admitir las políticas de replicación MirrorAll, MirrorVault, MirrorLatest y Asynchronous.
+* *No* programes actualizaciones para estas relaciones, ya que serán gestionadas por el servicio de NetApp Disaster Recovery.
+
+
+
+
+[[application-consistent-replicas]]
+== Réplicas consistentes con la aplicación
+
+Muchas máquinas virtuales alojan servidores de bases de datos como Oracle o Microsoft SQL Server.  Estos servidores de bases de datos requieren instantáneas consistentes con la aplicación para garantizar que la base de datos esté en un estado consistente cuando se toma la instantánea.
+
+Las instantáneas consistentes con la aplicación garantizan que la base de datos esté en un estado consistente cuando se toma la instantánea.  Esto es importante porque garantiza que la base de datos pueda restaurarse a un estado consistente después de una operación de conmutación por error o recuperación.
+
+Los datos gestionados por el servidor de bases de datos pueden encontrarse en el mismo almacén de datos que la máquina virtual que aloja dicho servidor, o bien en un almacén de datos diferente. La siguiente tabla muestra las configuraciones compatibles con las instantáneas consistentes con las aplicaciones en NetApp Disaster Recovery:
+
+[cols="20,20,40a"]
+|===
+| Ubicación de los datos | Apoyado | Notas 
+
+
+| Dentro del mismo almacén de datos de vCenter que la máquina virtual | Sí  a| 
+Debido a que el servidor de base de datos y la base de datos residen en el mismo almacén de datos, tanto el servidor como los datos estarán sincronizados en caso de conmutación por error.
+
+
+
+| Dentro de un almacén de datos de vCenter diferente al de la máquina virtual | No  a| 
+La recuperación ante desastres no puede identificar cuándo los datos de un servidor de base de datos están en un almacén de datos de vCenter diferente.  El servicio no puede replicar los datos, pero puede replicar la máquina virtual del servidor de base de datos.
+
+Si bien los datos de la base de datos no se pueden replicar, el servicio garantiza que el servidor de la base de datos realice todos los pasos necesarios para garantizar que la base de datos esté inactiva en el momento de la copia de seguridad de la máquina virtual.
+
+
+
+| Dentro de una fuente de datos externa | No  a| 
+Si los datos residen en un LUN o recurso compartido NFS montado por el invitado, Disaster Recovery no puede replicar los datos, pero puede replicar la máquina virtual del servidor de base de datos.
+
+Si bien los datos de la base de datos no se pueden replicar, el servicio garantiza que el servidor de la base de datos realice todos los pasos necesarios para garantizar que la base de datos esté inactiva en el momento de la copia de seguridad de la máquina virtual.
+
+|===
+Durante una copia de seguridad programada, Disaster Recovery inactiva el servidor de base de datos y luego toma una instantánea de la máquina virtual que aloja el servidor de base de datos.  Esto garantiza que la base de datos esté en un estado consistente cuando se toma la instantánea.
+
+* En el caso de las máquinas virtuales de Windows, el servicio utiliza el Servicio de copias en la sombra de volumen (VSS) de Microsoft para coordinarse con cualquiera de los dos tipos de servidor de bases de datos.
+* Para las máquinas virtuales Linux, el servicio utiliza un conjunto de scripts para colocar el servidor Oracle en modo de respaldo.
+

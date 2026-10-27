@@ -11,4 +11,4 @@ La solución de contraseña de administrador local de Windows (Windows LAPS) es 
 
 Ahora puede seleccionar las opciones de mapeo de subred y marcar la opción LAPS proporcionando los detalles del controlador de dominio.  Al utilizar esta opción, no es necesario proporcionar una contraseña para cada una de sus máquinas virtuales.
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].

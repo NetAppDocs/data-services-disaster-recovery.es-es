@@ -23,21 +23,29 @@ Puede agrupar las máquinas virtuales en sí o las máquinas virtuales en almace
 Puede crear grupos de recursos utilizando los siguientes métodos:
 
 * Desde la opción Grupos de recursos
-* Mientras creas un plan de recuperación ante desastres o un _plan de replicación_. Si tienes muchas máquinas virtuales alojadas en un clúster de origen vCenter, puede que te resulte más fácil crear los grupos de recursos mientras creas el plan de replicación. Para ver las instrucciones sobre cómo crear grupos de recursos mientras creas un plan de replicación, consulta link:drplan-create.html["Crear un plan de replicación"].
+* Mientras creas un plan de recuperación ante desastres o un _plan de replicación_. Si tienes muchas máquinas virtuales alojadas en un clúster de origen vCenter, puede que te resulte más fácil crear los grupos de recursos mientras creas el plan de replicación. Para ver las instrucciones sobre cómo crear grupos de recursos mientras creas un plan de replicación, consulta link:task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 
 TIP: Cada grupo de recursos puede incluir una o más VMs, almacenes de datos o clústeres de Kubernetes. Las VMs se encenderán según el orden en el que las incluyas en el plan de replicación. Puedes cambiar el orden arrastrando las VMs o los almacenes de datos hacia arriba o hacia abajo en la lista del grupo de recursos.
 
-.Acerca de los grupos de recursos
+
+
+[[about-resource-groups]]
+== Acerca de los grupos de recursos
+
 Los grupos de recursos te permiten combinar máquinas virtuales, almacenes de datos o aplicaciones Kubernetes en una sola unidad.
 
 Por ejemplo, una aplicación de punto de venta podría utilizar varias máquinas virtuales para bases de datos, lógica empresarial y tiendas.  Puede administrar todas estas máquinas virtuales con un solo grupo de recursos.  Configure grupos de recursos para aplicar reglas de plan de replicación para el orden de inicio de las máquinas virtuales, la conexión de red y la recuperación de todas las máquinas virtuales necesarias para la aplicación.
 
-.¿Cómo funciona?
-NetApp Disaster Recovery protege las máquinas virtuales (VM) replicando los volúmenes ONTAP subyacentes y los LUN que alojan las máquinas virtuales en el grupo de recursos. Para hacer esto, el sistema consulta vCenter para obtener el nombre de cada almacén de datos que aloja máquinas virtuales en un grupo de recursos. NetApp Disaster Recovery luego identifica el volumen ONTAP de origen o el LUN que aloja ese almacén de datos. Toda la protección se realiza a nivel de volumen ONTAP usando la replicación de SnapMirror.
 
-Si las máquinas virtuales del grupo de recursos están alojadas en diferentes almacenes de datos, NetApp Disaster Recovery utiliza uno de los siguientes métodos para crear una instantánea con consistencia de datos de los volúmenes ONTAP o los LUN.
+
+[[how-resource-groups-work]]
+=== Cómo funcionan los grupos de recursos
+
+Disaster Recovery protege las máquinas virtuales (VM) mediante la replicación de los volúmenes y LUN subyacentes de ONTAP que alojan las máquinas virtuales en el grupo de recursos. Para ello, el sistema consulta vCenter para obtener el nombre de cada datastore que aloja máquinas virtuales en un grupo de recursos. A continuación, Disaster Recovery identifica el volumen o LUN de origen de ONTAP que aloja ese datastore. Toda la protección se realiza a nivel de volumen de ONTAP mediante la replicación de SnapMirror.
+
+Si las máquinas virtuales del grupo de recursos están alojadas en diferentes almacenes de datos, Disaster Recovery utiliza uno de los siguientes métodos para crear una instantánea coherente con los datos de los volúmenes ONTAP o los LUN.
 
 [cols="30,65a"]
 |===
@@ -58,18 +66,23 @@ Si las máquinas virtuales del grupo de recursos están alojadas en diferentes a
 
 
 |===
-Al crear grupos de recursos, tenga en cuenta las siguientes cuestiones:
 
-* Antes de agregar almacenes de datos a grupos de recursos, inicie primero un descubrimiento manual o un descubrimiento programado de las máquinas virtuales.  Esto garantiza que las máquinas virtuales se detecten y se incluyan en el grupo de recursos.  Si no inicia un descubrimiento manual, es posible que las máquinas virtuales no aparezcan en el grupo de recursos.
-* Asegúrese de que haya al menos una máquina virtual en el almacén de datos.  Si no hay máquinas virtuales en el almacén de datos, Disaster Recovery no descubre el almacén de datos.
+
+[[best-practices-for-resource-groups]]
+== Buenas prácticas para los grupos de recursos
+
+Al crear grupos de recursos, ten en cuenta los siguientes casos:
+
+* Antes de añadir almacenes de datos o espacios de nombres a los grupos de recursos, inicia una detección manual o espera a que se ejecute una detección programada. De este modo, te aseguras de que las máquinas virtuales se detecten y aparezcan en el grupo de recursos. Si no inicias una detección manual, es posible que los recursos no aparezcan en el grupo de recursos.
+* Asegúrate de que haya al menos un recurso (VM o namespace) en el almacén de datos. Si no hay recursos en el almacén de datos, Disaster Recovery no detecta el almacén de datos.
 * Un único almacén de datos no debe alojar máquinas virtuales protegidas por más de un plan de replicación.
-* No aloje máquinas virtuales protegidas y no protegidas en el mismo almacén de datos.  Si las máquinas virtuales protegidas y no protegidas están alojadas en el mismo almacén de datos, podrían surgir los siguientes problemas:
+* No alojes recursos protegidos y no protegidos en el mismo almacén de datos. Si se alojan recursos protegidos y no protegidos en el mismo almacén de datos, podrían surgir los siguientes problemas:
 +
-** Debido a que NetApp Disaster Recovery utiliza SnapMirror y el sistema replica volúmenes ONTAP completos, la capacidad utilizada de ese volumen se utiliza para consideraciones de licencia.  En este caso, el espacio de volumen consumido por las máquinas virtuales protegidas y no protegidas se incluiría en este cálculo.
-** Si el grupo de recursos y sus almacenes de datos asociados deben conmutarse por error al sitio de recuperación ante desastres, todas las máquinas virtuales desprotegidas (máquinas virtuales que no forman parte del grupo de recursos, pero que están alojadas en el volumen de ONTAP ) ya no existirán en el sitio de origen debido al proceso de conmutación por error, lo que provocará una falla de las máquinas virtuales desprotegidas en el sitio de origen.  Además, NetApp Disaster Recovery no iniciará aquellas máquinas virtuales no protegidas en el sitio de vCenter de conmutación por error.
+** Como Disaster Recovery usa SnapMirror y el sistema replica volúmenes de ONTAP completos, la capacidad utilizada de ese volumen se tiene en cuenta para las licencias. En este caso, en este cálculo se incluiría el espacio del volumen consumido tanto por las máquinas virtuales protegidas como por las no protegidas.
+** Si es necesario realizar una conmutación por error del grupo de recursos y sus entidades asociadas al sitio de recuperación ante desastres, cualquier recurso no protegido (máquinas virtuales o espacios de nombres que no formen parte del grupo de recursos, pero que estén alojados en el volumen ONTAP) dejará de existir en el sitio de origen como resultado del proceso de conmutación por error, lo que provocará el fallo de las máquinas virtuales no protegidas en el sitio de origen. Además, Disaster Recovery no iniciará esos recursos no protegidos en el sitio de conmutación por error.
 
 
-* Para que una VM esté protegida, debe estar incluida en un grupo de recursos.
+* Para proteger un recurso, debes incluirlo en un grupo de recursos.
 
 
 *PRÁCTICA RECOMENDADA*: Organiza tus máquinas virtuales antes de desplegar NetApp Disaster Recovery para minimizar la proliferación de almacenes de datos. Coloca las máquinas virtuales que necesitan protección en un subconjunto de almacenes de datos y pon las máquinas virtuales que no se van a proteger en un subconjunto diferente de almacenes de datos. Asegúrate de que las máquinas virtuales en cualquier almacén de datos no estén protegidas por diferentes planes de replicación.

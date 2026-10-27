@@ -26,7 +26,7 @@ Puede crear un grupo de recursos con un almacén de datos de las siguientes mane
 * Cuando crea un plan de replicación y crea un grupo de recursos dentro del plan, puede ver las máquinas virtuales en los almacenes de datos.
 
 
-Para más detalles, consulte https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["Crear un plan de replicación"] .
+Para obtener más información, consulta https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["Crear un plan de replicación"].
 
 
 

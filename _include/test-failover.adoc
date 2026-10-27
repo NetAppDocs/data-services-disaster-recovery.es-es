@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Si planeas realizar conmutaciones por error de prueba como parte de tu plan de replicación, debes proporcionar un conjunto de asignaciones de conmutación por error de prueba para garantizar que las máquinas virtuales iniciadas durante la prueba de conmutación por error no interfieran con las máquinas virtuales de producción. Puedes lograrlo asignando a las máquinas virtuales de prueba direcciones IP diferentes o asignando las NIC virtuales de las máquinas virtuales de prueba a una red diferente que esté aislada de la de producción, pero que tenga la misma configuración de IP (lo que se conoce como «burbuja» o «red de prueba»).
